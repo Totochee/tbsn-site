@@ -3,259 +3,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TBSN groupe — Création graphique, vidéo, photo & drone</title>
+<title>TBSN — Studio de création graphique, vidéo, photo & drone</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0A1A33;
-    --navy-deep:#060F20;
-    --navy-soft:#122A4D;
-    --orange:#FF6B2C;
-    --orange-soft:#FF8F5E;
-    --paper:#F4F6FA;
-    --ink:#EAF0F8;
-    --muted:#9FB0C8;
-    --line:rgba(159,176,200,.18);
-    --radius:18px;
-    --display:'Syne',sans-serif;
+    --navy-2:#16305A;
+    --ink:#111826;
+    --muted:#5B6678;
+    --line:#E7E9EF;
+    --bg:#FFFFFF;
+    --bg-2:#F6F7F9;
+    --orange:#FF5A1F;
+    /* couleurs par métier */
+    --c-logo:#FF5A1F;
+    --c-print:#2563EB;
+    --c-video:#7C3AED;
+    --c-photo:#0D9488;
+    --c-social:#DB2777;
+    --c-drone:#0891B2;
+    --radius:16px;
+    --display:'Space Grotesk',sans-serif;
     --body:'Inter',sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:var(--body);background:var(--navy);color:var(--ink);line-height:1.6}
+  body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   ::selection{background:var(--orange);color:#fff}
 
-  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-  .eyebrow{font-family:var(--display);font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-  h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin-bottom:16px}
-  .section{padding:96px 0}
-  .section-head{max-width:640px;margin-bottom:48px}
-  .section-head p{color:var(--muted)}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:var(--display);font-weight:600;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+  h2{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.12;letter-spacing:-.015em;color:var(--navy)}
+  .section{padding:104px 0}
+  .section-head{max-width:620px;margin-bottom:52px}
+  .section-head p{color:var(--muted);margin-top:14px;font-size:1.02rem}
 
   /* ---------- HEADER ---------- */
-  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,15,32,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:.02em}
+  .logo{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:.02em;color:var(--navy)}
   .logo span{color:var(--orange)}
-  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links{display:flex;gap:30px;align-items:center}
   .nav-links a{font-size:.92rem;font-weight:500;color:var(--muted);transition:color .2s}
-  .nav-links a:hover,.nav-links a:focus-visible{color:#fff}
-  .btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:.92rem;padding:13px 26px;border-radius:999px;background:var(--orange);color:#fff;border:none;cursor:pointer;transition:transform .15s,background .2s}
-  .btn:hover{background:var(--orange-soft);transform:translateY(-2px)}
-  .btn:focus-visible{outline:3px solid var(--orange-soft);outline-offset:3px}
-  .btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
-  .btn-ghost:hover{background:var(--navy-soft);border-color:var(--muted)}
-  .burger{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--navy)}
+  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:.92rem;padding:12px 24px;border-radius:999px;background:var(--orange);color:#fff;border:none;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s}
+  .btn:hover{background:#e94e15;transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,90,31,.28)}
+  .btn:focus-visible{outline:3px solid rgba(255,90,31,.4);outline-offset:3px}
+  .btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--navy)}
+  .btn-ghost:hover{background:var(--bg-2);border-color:var(--muted);box-shadow:none}
+  .burger{display:none;background:none;border:none;color:var(--navy);font-size:1.6rem;cursor:pointer}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:140px 0 90px;overflow:hidden;
-    background:
-      radial-gradient(900px 500px at 85% 15%, rgba(255,107,44,.16), transparent 60%),
-      radial-gradient(700px 600px at 10% 90%, rgba(18,42,77,.9), transparent 70%),
-      var(--navy-deep)}
-  .hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(700px 500px at 70% 40%,black,transparent);pointer-events:none}
-  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
-  h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5.6vw,4rem);line-height:1.08;letter-spacing:-.01em}
-  h1 em{font-style:normal;color:var(--orange);position:relative;white-space:nowrap}
-  .hero p.lead{margin:22px 0 34px;font-size:1.08rem;color:var(--muted);max-width:520px}
-  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
-  .hero-tags{margin-top:44px;display:flex;flex-wrap:wrap;gap:10px}
-  .tag{font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+  .hero{position:relative;padding:150px 0 70px;overflow:hidden}
+  .hero .wrap{position:relative;z-index:2}
+  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,6.4vw,4.6rem);line-height:1.04;letter-spacing:-.03em;color:var(--navy);max-width:15ch}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .hero .lead{margin:26px 0 34px;font-size:1.14rem;color:var(--muted);max-width:56ch}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 
-  .hero-visual{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,var(--navy-soft),var(--navy-deep));border:1px solid var(--line);display:grid;place-items:center}
-  .hero-visual svg{width:78%;height:auto}
-  .float-chip{position:absolute;background:rgba(6,15,32,.88);border:1px solid var(--line);border-radius:14px;padding:12px 18px;font-size:.85rem;font-weight:600;backdrop-filter:blur(8px);animation:float 5s ease-in-out infinite}
-  .float-chip b{color:var(--orange);font-family:var(--display)}
-  .chip-1{top:9%;left:-4%}
-  .chip-2{bottom:14%;right:-3%;animation-delay:2.2s}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    .float-chip{animation:none}
-    .btn:hover{transform:none}
-  }
-
-  /* ---------- HERO TRUST BAR ---------- */
-  .hero-trust{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px}
-  .hero-trust div{flex:1;min-width:92px;background:rgba(6,15,32,.5);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-  .hero-trust b{display:block;font-family:var(--display);font-weight:800;font-size:1.5rem;color:var(--orange);line-height:1}
-  .hero-trust span{display:block;font-size:.76rem;color:var(--muted);margin-top:5px}
+  /* signature : spectre des 6 métiers */
+  .spectrum{margin-top:64px;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .spec{position:relative;padding-top:18px}
+  .spec::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;border-radius:2px;background:var(--sc)}
+  .spec b{display:block;font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--navy);margin-bottom:2px}
+  .spec span{font-size:.8rem;color:var(--muted)}
+  .spec:nth-child(1){--sc:var(--c-logo)} .spec:nth-child(2){--sc:var(--c-print)}
+  .spec:nth-child(3){--sc:var(--c-video)} .spec:nth-child(4){--sc:var(--c-photo)}
+  .spec:nth-child(5){--sc:var(--c-social)} .spec:nth-child(6){--sc:var(--c-drone)}
 
   /* ---------- SERVICES ---------- */
-  #services{background:var(--navy)}
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .service{position:relative;display:flex;flex-direction:column;background:var(--navy-soft);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;overflow:hidden;transition:transform .2s,border-color .2s}
-  .service::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),transparent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-  .service:hover{transform:translateY(-6px);border-color:rgba(255,107,44,.5)}
-  .service:hover::before{transform:scaleX(1)}
-  .service .ico{width:48px;height:48px;border-radius:12px;background:rgba(255,107,44,.14);display:grid;place-items:center;margin-bottom:18px;color:var(--orange);font-size:1.15rem}
-  .service h3{font-family:var(--display);font-weight:700;font-size:1.12rem;margin-bottom:8px}
-  .service>p{font-size:.92rem;color:var(--muted);margin-bottom:16px}
-  .deliver{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-direction:column;gap:9px}
+  #services{background:var(--bg-2)}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .service{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .service:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(16,24,38,.08);border-color:transparent}
+  .service .dot{width:11px;height:11px;border-radius:50%;background:var(--sc);margin-bottom:20px}
+  .service h3{font-family:var(--display);font-weight:600;font-size:1.12rem;margin-bottom:8px;color:var(--navy)}
+  .service>p{font-size:.92rem;color:var(--muted);margin-bottom:18px}
+  .deliver{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:9px}
   .deliver li{position:relative;padding-left:24px;font-size:.86rem;color:var(--ink)}
-  .deliver li::before{content:"";position:absolute;left:0;top:6px;width:12px;height:8px;border-left:2px solid var(--orange);border-bottom:2px solid var(--orange);transform:rotate(-45deg)}
-  .svc-price{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:.98rem;color:var(--orange);padding-top:6px;transition:gap .2s}
-  .svc-price span{transition:transform .2s;display:inline-block}
-  .service:hover .svc-price span{transform:translateX(4px)}
+  .deliver li::before{content:"";position:absolute;left:0;top:6px;width:11px;height:7px;border-left:2px solid var(--sc);border-bottom:2px solid var(--sc);transform:rotate(-45deg)}
+  .svc-price{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:.98rem;color:var(--navy);transition:gap .2s}
+  .svc-price .ar{color:var(--sc);transition:transform .2s;display:inline-block}
+  .service:hover .svc-price .ar{transform:translateX(4px)}
+  .service:nth-child(1){--sc:var(--c-logo)} .service:nth-child(2){--sc:var(--c-print)}
+  .service:nth-child(3){--sc:var(--c-video)} .service:nth-child(4){--sc:var(--c-photo)}
+  .service:nth-child(5){--sc:var(--c-social)} .service:nth-child(6){--sc:var(--c-drone)}
 
   /* ---------- PROCESS ---------- */
-  #process{background:var(--navy-deep);position:relative;overflow:hidden}
-  #process::before{content:"";position:absolute;bottom:-160px;left:-120px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,44,.10),transparent 70%);pointer-events:none}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
-  .step{background:var(--navy-soft);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;transition:transform .2s,border-color .2s}
-  .step:hover{transform:translateY(-4px);border-color:rgba(255,107,44,.4)}
-  .step-n{font-family:var(--display);font-weight:800;font-size:1.9rem;color:var(--orange);opacity:.85;letter-spacing:-.02em}
-  .step h3{font-family:var(--display);font-weight:700;font-size:1.05rem;margin:12px 0 8px}
+  #process{background:var(--bg)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .step{padding:28px 26px 28px 0;border-top:2px solid var(--navy)}
+  .step + .step{padding-left:26px}
+  .step-n{font-family:var(--display);font-weight:700;font-size:1rem;color:var(--orange);letter-spacing:.05em}
+  .step h3{font-family:var(--display);font-weight:600;font-size:1.08rem;margin:14px 0 8px;color:var(--navy)}
   .step p{font-size:.88rem;color:var(--muted)}
 
   /* ---------- A PROPOS ---------- */
-  #apropos{background:var(--navy)}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  #apropos{background:var(--bg-2)}
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
   .about-copy .eyebrow{margin-bottom:14px}
   .about-copy h2{margin-bottom:18px}
   .about-copy p{color:var(--muted);margin-bottom:16px}
   .about-copy p strong{color:var(--ink);font-weight:600}
   .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
-  .stat{background:var(--navy-soft);border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center}
-  .stat b{display:block;font-family:var(--display);font-weight:800;font-size:1.7rem;color:var(--orange);line-height:1}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .stat b{display:block;font-family:var(--display);font-weight:700;font-size:1.7rem;color:var(--orange);line-height:1}
   .stat small{color:var(--muted);font-size:.78rem;display:block;margin-top:6px}
-  .about-values{display:flex;flex-direction:column;gap:14px}
-  .value{display:flex;gap:16px;background:var(--navy-soft);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
-  .value .vico{flex-shrink:0;width:42px;height:42px;border-radius:11px;background:rgba(255,107,44,.14);display:grid;place-items:center;color:var(--orange);font-size:1.1rem}
-  .value h4{font-family:var(--display);font-weight:700;font-size:1rem;margin-bottom:4px}
+  .about-values{display:flex;flex-direction:column;gap:12px}
+  .value{display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+  .value .vico{flex-shrink:0;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:1.05rem;color:#fff}
+  .value:nth-child(1) .vico{background:var(--c-logo)} .value:nth-child(2) .vico{background:var(--c-print)}
+  .value:nth-child(3) .vico{background:var(--c-drone)} .value:nth-child(4) .vico{background:var(--c-photo)}
+  .value h4{font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:4px;color:var(--navy)}
   .value p{font-size:.88rem;color:var(--muted)}
 
   /* ---------- PORTFOLIO ---------- */
-  #portfolio{background:var(--navy-deep)}
-  .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
-  .filter{font-family:var(--body);font-weight:600;font-size:.86rem;padding:9px 20px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
-  .filter:hover{color:#fff;border-color:var(--muted)}
-  .filter.active{background:var(--orange);border-color:var(--orange);color:#fff}
-  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .pf-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line);cursor:pointer}
+  #portfolio{background:var(--bg)}
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+  .filter{font-family:var(--body);font-weight:500;font-size:.86rem;padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;transition:all .2s}
+  .filter:hover{color:var(--navy);border-color:var(--muted)}
+  .filter.active{background:var(--navy);border-color:var(--navy);color:#fff}
+  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .pf-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line);cursor:pointer;background:#fff}
   .pf-item .illus{position:absolute;inset:0}
   .pf-item .illus svg{width:100%;height:100%;display:block}
   .pf-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .pf-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,32,.92) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;opacity:0;transition:opacity .25s}
+  .pf-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,26,51,.92) 0%,rgba(10,26,51,.05) 60%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;opacity:0;transition:opacity .25s}
   .pf-item:hover .overlay,.pf-item:focus-within .overlay{opacity:1}
-  .overlay .cat{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange)}
-  .overlay .ttl{font-family:var(--display);font-weight:700;font-size:1.05rem}
+  .overlay .cat{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff;opacity:.85}
+  .overlay .ttl{font-family:var(--display);font-weight:600;font-size:1.05rem;color:#fff}
 
   /* ---------- DEVIS ---------- */
-  #devis{background:var(--navy);position:relative;overflow:hidden}
-  #devis::before{content:"";position:absolute;top:-200px;right:-200px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,44,.12),transparent 70%);pointer-events:none}
-  .devis-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:start}
-  .cards{display:flex;flex-direction:column;gap:16px}
-  .svc-card{background:var(--navy-soft);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .2s}
-  .svc-card.on{border-color:var(--orange)}
+  #devis{background:var(--bg-2);position:relative}
+  .devis-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:start}
+  .cards{display:flex;flex-direction:column;gap:14px}
+  .svc-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .2s,box-shadow .2s}
+  .svc-card.on{border-color:var(--orange);box-shadow:0 8px 26px rgba(255,90,31,.10)}
   .svc-head{display:flex;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;user-select:none}
   .svc-head input{width:20px;height:20px;accent-color:var(--orange);cursor:pointer;flex-shrink:0}
   .svc-head .t{flex:1}
-  .svc-head .t b{font-family:var(--display);font-size:1.02rem;font-weight:700;display:block}
+  .svc-head .t b{font-family:var(--display);font-size:1.02rem;font-weight:600;display:block;color:var(--navy)}
   .svc-head .t small{color:var(--muted);font-size:.82rem}
-  .svc-head .base{font-family:var(--display);font-weight:700;color:var(--orange);white-space:nowrap;font-size:.95rem}
-  .svc-body{display:none;padding:0 22px 22px;border-top:1px solid var(--line)}
+  .svc-head .base{font-family:var(--display);font-weight:600;color:var(--orange);white-space:nowrap;font-size:.95rem}
+  .svc-body{display:none;padding:0 22px 20px;border-top:1px solid var(--line)}
   .svc-card.on .svc-body{display:block}
   .opt-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.9rem}
   .opt-row:last-child{border-bottom:none}
-  .opt-row label{display:flex;align-items:center;gap:10px;cursor:pointer;color:var(--ink)}
-  .opt-row input[type=checkbox]{width:17px;height:17px;accent-color:var(--orange);cursor:pointer}
-  .opt-row .price{color:var(--muted);font-weight:600;white-space:nowrap;font-size:.85rem}
   .opt-row.km-note{padding-top:4px;font-size:.82rem}
   .opt-row.km-note span:first-child{color:var(--muted)}
-  select,.qty input{background:var(--navy-deep);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 12px;font-family:var(--body);font-size:.88rem}
+  .opt-row label{display:flex;align-items:center;gap:10px;cursor:pointer;color:var(--ink)}
+  .opt-row input[type=checkbox]{width:17px;height:17px;accent-color:var(--orange);cursor:pointer}
+  .opt-row .price{color:var(--muted);font-weight:500;white-space:nowrap;font-size:.85rem}
+  select,.qty input{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 12px;font-family:var(--body);font-size:.88rem}
   select:focus,.qty input:focus,input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--orange);outline-offset:1px}
   .qty{display:flex;align-items:center;gap:8px}
-  .qty input{width:64px;text-align:center}
+  .qty input{width:70px;text-align:center}
 
-  .summary{position:sticky;top:92px;background:var(--navy-deep);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
-  .summary h3{font-family:var(--display);font-weight:800;font-size:1.25rem;margin-bottom:18px}
+  .summary{position:sticky;top:92px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 40px rgba(16,24,38,.06)}
+  .summary h3{font-family:var(--display);font-weight:700;font-size:1.2rem;margin-bottom:18px;color:var(--navy)}
   #sum-lines{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;min-height:40px}
   .sum-line{display:flex;justify-content:space-between;gap:12px;font-size:.88rem}
   .sum-line span:first-child{color:var(--muted)}
   .sum-line.sub{padding-left:14px;font-size:.82rem}
   .sum-empty{color:var(--muted);font-size:.88rem;font-style:italic}
-  .sum-discount{color:var(--orange-soft);font-weight:600}
+  .sum-discount{color:var(--orange);font-weight:600}
   .total-row{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
-  .total-row .lbl{font-weight:600;color:var(--muted);font-size:.9rem}
-  #total{font-family:var(--display);font-weight:800;font-size:2.2rem;color:var(--orange);transition:transform .15s}
-  #total.pulse{transform:scale(1.06)}
+  .total-row .lbl{font-weight:500;color:var(--muted);font-size:.9rem}
+  #total{font-family:var(--display);font-weight:700;font-size:2.1rem;color:var(--navy);transition:transform .15s}
+  #total.pulse{transform:scale(1.05)}
   .monthly-note{font-size:.78rem;color:var(--muted);margin-bottom:18px}
   .summary .fields{display:flex;flex-direction:column;gap:10px;margin:14px 0 16px}
-  .summary .fields input{background:var(--navy-soft);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:11px 14px;font-size:.9rem;width:100%}
+  .summary .fields input{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:11px 14px;font-size:.9rem;width:100%}
   #send-devis{width:100%;text-align:center}
-  #send-devis:disabled{opacity:.45;cursor:not-allowed;transform:none}
+  #send-devis:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
   .legal{font-size:.72rem;color:var(--muted);margin-top:12px;text-align:center}
 
-  /* ---------- CONTACT / FOOTER ---------- */
-  #contact{background:var(--navy-deep);border-top:1px solid var(--line)}
+  /* ---------- CONTACT (bande marine) ---------- */
+  #contact{background:var(--navy)}
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-  .contact-grid .big{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.2}
+  .contact-grid .eyebrow{color:#FF8A5E}
+  .contact-grid .big{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.6vw,2.4rem);line-height:1.15;color:#fff;letter-spacing:-.01em}
   .contact-grid .big span{color:var(--orange)}
-  .contact-list{display:flex;flex-direction:column;gap:14px;font-size:.95rem}
-  .contact-list a{display:flex;align-items:center;gap:12px;color:var(--muted);transition:color .2s}
-  .contact-list a:hover{color:var(--orange)}
-  footer{background:var(--navy-deep);border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:var(--muted)}
+  .contact-list{display:flex;flex-direction:column;gap:14px;font-size:.98rem}
+  .contact-list a{display:flex;align-items:center;gap:12px;color:#B9C4D6;transition:color .2s}
+  .contact-list a:hover{color:#fff}
+  footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.08);padding:26px 0;font-size:.82rem;color:#8A99B2}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:960px){
-    .hero .wrap{grid-template-columns:1fr}
-    .hero-visual{max-width:420px;margin:0 auto}
     .services-grid{grid-template-columns:repeat(2,1fr)}
+    .spectrum{grid-template-columns:repeat(3,1fr);gap:18px 14px}
     .steps{grid-template-columns:repeat(2,1fr)}
+    .step{border-top:2px solid var(--navy)}
+    .step,.step + .step{padding-left:0;padding-right:20px}
     .pf-grid{grid-template-columns:repeat(2,1fr)}
-    .about-grid{grid-template-columns:1fr;gap:40px}
+    .about-grid{grid-template-columns:1fr;gap:38px}
     .devis-layout{grid-template-columns:1fr}
     .summary{position:static}
     .contact-grid{grid-template-columns:1fr}
   }
   @media(max-width:640px){
     .wrap{padding:0 18px}
-    .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--navy-deep);flex-direction:column;padding:22px;gap:18px;border-bottom:1px solid var(--line)}
+    .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;flex-direction:column;padding:22px;gap:18px;border-bottom:1px solid var(--line)}
     .nav-links.open{display:flex}
     .nav-links a{font-size:1rem}
     .nav-links .btn{text-align:center}
     .burger{display:block}
-    .section{padding:64px 0}
+    .section{padding:70px 0}
     .section-head{margin-bottom:34px}
-    .services-grid,.pf-grid{grid-template-columns:1fr}
-    .steps{grid-template-columns:1fr}
-    .hero-trust{gap:10px}
-    .hero-trust div{min-width:calc(50% - 5px);flex:1 1 calc(50% - 5px)}
-    .hero-trust b{font-size:1.3rem}
-    .float-chip{display:none}
-    .hero{padding:120px 0 70px;min-height:auto}
+    .hero{padding:120px 0 60px}
+    .services-grid,.pf-grid,.steps{grid-template-columns:1fr}
+    .spectrum{grid-template-columns:repeat(2,1fr)}
     .hero-cta{flex-direction:column;align-items:stretch}
     .hero-cta .btn{text-align:center}
     .about-stats{gap:10px}
     .stat b{font-size:1.4rem}
-    .stat small{font-size:.72rem}
-    /* devis : options plus lisibles au pouce */
     .svc-head{padding:16px}
     .svc-body{padding:0 16px 18px}
     .opt-row{flex-wrap:wrap;align-items:flex-start;gap:8px}
-    .opt-row .price{font-size:.8rem}
     select,.qty input{width:100%}
     .qty{width:100%}
     .summary{padding:22px 18px}
     #total{font-size:1.9rem}
-    .contact-list a{font-size:.9rem}
     footer .wrap{flex-direction:column;text-align:left}
   }
-  @media(max-width:380px){
-    .about-stats{grid-template-columns:1fr;gap:8px}
-    .stat{display:flex;align-items:center;justify-content:center;gap:8px}
-    .stat b{font-size:1.3rem}
-    .stat small{margin-top:0}
-  }
-  /* zones tactiles confortables sur tactile */
   @media(hover:none){
     .filter,.btn,.svc-head,.opt-row label{min-height:44px}
-    .opt-row label{align-items:center}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .btn:hover,.service:hover{transform:none}
   }
 </style>
 </head>
@@ -280,34 +261,20 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <div>
-      <div class="eyebrow">Studio créatif · Occitanie</div>
-      <h1>Une image pro, sans jongler entre <em>dix prestataires.</em></h1>
-      <p class="lead">TBSN réunit sous un même toit votre logo, vos supports imprimés, vos vidéos, vos photos, vos réseaux sociaux et vos prises de vues drone. Vous expliquez votre projet une fois, on s'occupe de tout.</p>
-      <div class="hero-cta">
-        <a href="#devis" class="btn">Estimer mon projet en 2 min</a>
-        <a href="#portfolio" class="btn btn-ghost">Voir nos réalisations</a>
-      </div>
-      <div class="hero-trust">
-        <div><b>6</b><span>métiers réunis</span></div>
-        <div><b>4K</b><span>vidéo &amp; drone</span></div>
-        <div><b>0 €</b><span>1er échange</span></div>
-        <div><b>DGAC</b><span>drone déclaré</span></div>
-      </div>
+    <div class="eyebrow">Studio créatif · Occitanie</div>
+    <h1>Toute votre image, <em>au même endroit.</em></h1>
+    <p class="lead">Logo, supports imprimés, vidéo, photo, réseaux sociaux et prises de vues drone. Vous expliquez votre projet une fois — on s'occupe de tout, du premier trait à la diffusion.</p>
+    <div class="hero-cta">
+      <a href="#devis" class="btn">Estimer mon projet en 2 min</a>
+      <a href="#portfolio" class="btn btn-ghost">Voir nos réalisations</a>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="150" cy="110" r="78" fill="none" stroke="#FF6B2C" stroke-width="3"/>
-        <circle cx="150" cy="110" r="52" fill="#FF6B2C" opacity=".15"/>
-        <rect x="60" y="215" width="180" height="10" rx="5" fill="#9FB0C8" opacity=".5"/>
-        <rect x="60" y="240" width="130" height="10" rx="5" fill="#9FB0C8" opacity=".3"/>
-        <rect x="60" y="265" width="155" height="10" rx="5" fill="#FF6B2C"/>
-        <path d="M115 110 l25 25 45 -50" fill="none" stroke="#EAF0F8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="243" cy="52" r="6" fill="#FF6B2C"/>
-        <circle cx="52" cy="180" r="4" fill="#9FB0C8"/>
-      </svg>
-      <div class="float-chip chip-1">🎬 Vidéo livrée en <b>4K</b></div>
-      <div class="float-chip chip-2">🚁 Drone <b>certifié</b></div>
+    <div class="spectrum" aria-hidden="true">
+      <div class="spec"><b>Logo</b><span>Identité</span></div>
+      <div class="spec"><b>Print</b><span>Supports</span></div>
+      <div class="spec"><b>Vidéo</b><span>Motion</span></div>
+      <div class="spec"><b>Photo</b><span>Retouche</span></div>
+      <div class="spec"><b>Réseaux</b><span>Contenus</span></div>
+      <div class="spec"><b>Drone</b><span>Aérien 4K</span></div>
     </div>
   </div>
 </section>
@@ -318,12 +285,12 @@
     <div class="section-head">
       <div class="eyebrow">Ce que nous faisons</div>
       <h2>Six façons de rendre votre marque visible</h2>
-      <p>Pour chaque prestation, vous savez exactement ce que vous recevez et à partir de quel prix. Pas de devis opaque, pas de mauvaise surprise.</p>
+      <p>Pour chaque prestation, vous savez ce que vous recevez et à partir de quel prix. Pas de devis opaque.</p>
     </div>
     <div class="services-grid">
 
       <article class="service">
-        <div class="ico">◆</div>
+        <span class="dot"></span>
         <h3>Logo &amp; identité visuelle</h3>
         <p>On crée l'image de votre marque, pensée pour durer et se décliner partout.</p>
         <ul class="deliver">
@@ -331,11 +298,11 @@
           <li>Palette de couleurs &amp; typographies</li>
           <li>Déclinaisons (fond clair/foncé, favicon)</li>
         </ul>
-        <a class="svc-price" href="#devis">dès 490 € <span>→</span></a>
+        <a class="svc-price" href="#devis">dès 490 € <span class="ar">→</span></a>
       </article>
 
       <article class="service">
-        <div class="ico">▤</div>
+        <span class="dot"></span>
         <h3>Supports de communication</h3>
         <p>Vos affiches, flyers et cartes prêtes à imprimer, qui donnent envie de s'arrêter.</p>
         <ul class="deliver">
@@ -343,11 +310,11 @@
           <li>Fichiers d'impression HD (CMJN, fonds perdus)</li>
           <li>Déclinaisons print &amp; web</li>
         </ul>
-        <a class="svc-price" href="#devis">dès 120 € <span>→</span></a>
+        <a class="svc-price" href="#devis">dès 120 € <span class="ar">→</span></a>
       </article>
 
       <article class="service">
-        <div class="ico">▶</div>
+        <span class="dot"></span>
         <h3>Vidéo &amp; motion design</h3>
         <p>Du film qui raconte votre histoire au format court qui cartonne sur les réseaux.</p>
         <ul class="deliver">
@@ -355,11 +322,11 @@
           <li>Motion design &amp; habillage graphique</li>
           <li>Versions verticales pour les réseaux</li>
         </ul>
-        <a class="svc-price" href="#devis">dès 590 € <span>→</span></a>
+        <a class="svc-price" href="#devis">dès 590 € <span class="ar">→</span></a>
       </article>
 
       <article class="service">
-        <div class="ico">◉</div>
+        <span class="dot"></span>
         <h3>Photographie</h3>
         <p>Des images nettes et lumineuses, retouchées et prêtes à publier.</p>
         <ul class="deliver">
@@ -367,11 +334,11 @@
           <li>Photos retouchées haute définition</li>
           <li>Formats web &amp; impression fournis</li>
         </ul>
-        <a class="svc-price" href="#devis">dès 320 € <span>→</span></a>
+        <a class="svc-price" href="#devis">dès 320 € <span class="ar">→</span></a>
       </article>
 
       <article class="service">
-        <div class="ico">✦</div>
+        <span class="dot"></span>
         <h3>Animation des réseaux sociaux</h3>
         <p>On fait vivre vos comptes pour rester présent, sans y passer vos soirées.</p>
         <ul class="deliver">
@@ -379,11 +346,11 @@
           <li>Publication régulière (8 à 16 posts/mois)</li>
           <li>Community management en option</li>
         </ul>
-        <a class="svc-price" href="#devis">dès 279 € / mois <span>→</span></a>
+        <a class="svc-price" href="#devis">dès 279 € / mois <span class="ar">→</span></a>
       </article>
 
       <article class="service">
-        <div class="ico">✈</div>
+        <span class="dot"></span>
         <h3>Vidéo &amp; photo par drone</h3>
         <p>Des images aériennes spectaculaires, réalisées par un télépilote déclaré.</p>
         <ul class="deliver">
@@ -391,7 +358,7 @@
           <li>Immobilier, événementiel, tourisme, chantiers</li>
           <li>Montage &amp; pack photos HD en option</li>
         </ul>
-        <a class="svc-price" href="#devis">dès 380 € <span>→</span></a>
+        <a class="svc-price" href="#devis">dès 380 € <span class="ar">→</span></a>
       </article>
 
     </div>
@@ -436,13 +403,13 @@
   <div class="wrap about-grid">
     <div class="about-copy">
       <div class="eyebrow">À propos</div>
-      <h2>Un studio, tous vos supports au même endroit</h2>
-      <p><strong>TBSN</strong> est né d'une idée simple : réunir sous un même toit tout ce qui fait votre image — du logo à la vidéo, de l'affiche au drone. Fini de jongler entre plusieurs prestataires.</p>
+      <h2>Un studio, tous vos supports</h2>
+      <p><strong>TBSN</strong> réunit sous un même toit tout ce qui fait votre image — du logo à la vidéo, de l'affiche au drone. Fini de jongler entre plusieurs prestataires.</p>
       <p>Nous accompagnons artisans, commerçants, entreprises et associations qui veulent une communication soignée, cohérente et prête à diffuser. Chaque projet est traité avec la même exigence, quel que soit son budget.</p>
-      <p>Notre différence : la <strong>polyvalence</strong>. Une seule équipe pense votre identité graphique, la met en mouvement en vidéo, la capture en photo et la fait vivre sur vos réseaux.</p>
+      <p>Notre différence : la <strong>polyvalence</strong>. Une seule équipe pense votre identité, la met en mouvement, la capture et la fait vivre sur vos réseaux.</p>
       <div class="about-stats">
-        <div class="stat"><b>6</b><small>domaines maîtrisés</small></div>
-        <div class="stat"><b>4K</b><small>vidéo & drone</small></div>
+        <div class="stat"><b>6</b><small>métiers réunis</small></div>
+        <div class="stat"><b>4K</b><small>vidéo &amp; drone</small></div>
         <div class="stat"><b>100%</b><small>sur mesure</small></div>
       </div>
     </div>
@@ -453,7 +420,7 @@
       </div>
       <div class="value">
         <div class="vico">⚡</div>
-        <div><h4>Réactivité & délais tenus</h4><p>Des échanges directs, des retours rapides et des livraisons dans les temps.</p></div>
+        <div><h4>Réactivité &amp; délais tenus</h4><p>Des échanges directs, des retours rapides et des livraisons dans les temps.</p></div>
       </div>
       <div class="value">
         <div class="vico">✈</div>
@@ -486,11 +453,10 @@
     <div class="section-head">
       <div class="eyebrow">Simulateur de devis</div>
       <h2>Estimez votre projet en 2 minutes</h2>
-      <p>Cochez les prestations qui vous intéressent, ajustez les options : le prix s'actualise en direct. Envoyez ensuite votre demande en un clic.</p>
+      <p>Cochez les prestations, ajustez les options : le prix s'actualise en direct. Envoyez ensuite votre demande en un clic.</p>
     </div>
     <div class="devis-layout">
       <div class="cards" id="devis-cards"></div>
-
       <aside class="summary" aria-live="polite">
         <h3>Votre estimation</h3>
         <div id="sum-lines"><div class="sum-empty">Sélectionnez au moins une prestation pour voir votre estimation.</div></div>
@@ -528,17 +494,12 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 TBSN Studio — Création graphique, vidéo, photo & drone</span>
+    <span>© 2026 TBSN — Création graphique, vidéo, photo &amp; drone</span>
     <span>Mentions légales · Télépilote drone déclaré DGAC</span>
   </div>
 </footer>
 
 <script>
-/* -- fermeture du menu mobile au clic sur un lien -- */
-document.querySelectorAll('.nav-links a').forEach(a=>{
-  a.addEventListener('click', ()=> document.querySelector('.nav-links').classList.remove('open'));
-});
-
 /* ================================================================
    PORTFOLIO — AJOUTEZ VOS CRÉATIONS ICI
    Pour chaque projet : titre, catégorie (une de la liste CATS),
@@ -555,59 +516,63 @@ const PORTFOLIO = [
   {titre:"Vue aérienne — Domaine viticole", cat:"Drone", img:""},
 ];
 
-/* -- illustrations SVG par catégorie (utilisées quand aucune photo n'est fournie) -- */
+/* -- illustrations SVG claires par catégorie -- */
+const CAT_COLOR = {
+  "Logo":"#FF5A1F", "Print":"#2563EB", "Vidéo":"#7C3AED",
+  "Photo":"#0D9488", "Réseaux sociaux":"#DB2777", "Drone":"#0891B2"
+};
 function illustration(cat, seed){
-  const bg = ["#122A4D","#0F2140","#16345E","#0C1B36","#1A3A6B","#0E2444"][seed%6];
-  const O="#FF6B2C", L="#9FB0C8", W="#EAF0F8", g="illg"+seed;
+  const C = CAT_COLOR[cat] || "#FF5A1F";
+  const N = "#0A1A33", g = "illg"+seed;
   const frame = inner => `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
     <defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="${bg}"/><stop offset="1" stop-color="#060F20"/></linearGradient></defs>
-    <rect width="400" height="300" fill="url(#${g})"/>${inner}</svg>`;
+      <stop offset="0" stop-color="${C}" stop-opacity=".10"/><stop offset="1" stop-color="${C}" stop-opacity=".02"/></linearGradient></defs>
+    <rect width="400" height="300" fill="#FFFFFF"/><rect width="400" height="300" fill="url(#${g})"/>${inner}</svg>`;
   const art = {
-    "Logo": `<circle cx="200" cy="130" r="62" fill="none" stroke="${O}" stroke-width="4"/>
-      <circle cx="200" cy="130" r="38" fill="${O}" opacity=".16"/>
-      <path d="M172 130 l20 20 38 -42" fill="none" stroke="${W}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="286" cy="70" r="6" fill="${O}"/><circle cx="110" cy="188" r="4" fill="${L}"/>
-      <rect x="150" y="212" width="100" height="7" rx="3.5" fill="${L}" opacity=".5"/>`,
-    "Print": `<rect x="140" y="52" width="120" height="160" rx="6" fill="${W}" opacity=".08" stroke="${L}" stroke-width="1.5"/>
-      <path d="M232 52 h28 v28 z" fill="${O}"/>
-      <rect x="158" y="78" width="56" height="10" rx="3" fill="${O}"/>
-      <rect x="158" y="100" width="84" height="5" rx="2.5" fill="${L}" opacity=".6"/>
-      <rect x="158" y="112" width="84" height="5" rx="2.5" fill="${L}" opacity=".5"/>
-      <rect x="158" y="124" width="60" height="5" rx="2.5" fill="${L}" opacity=".5"/>
-      <rect x="158" y="150" width="84" height="44" rx="4" fill="${O}" opacity=".22"/>
-      <text x="168" y="182" font-family="Syne,sans-serif" font-weight="800" font-size="30" fill="${O}">Aa</text>`,
-    "Vidéo": `<rect x="112" y="86" width="176" height="108" rx="10" fill="none" stroke="${L}" stroke-width="2" opacity=".7"/>
-      <circle cx="200" cy="140" r="30" fill="${O}"/>
-      <path d="M192 126 l20 14 -20 14 z" fill="#060F20"/>
-      <g fill="${L}" opacity=".5">
-        <rect x="112" y="70" width="10" height="10" rx="2"/><rect x="138" y="70" width="10" height="10" rx="2"/>
-        <rect x="164" y="70" width="10" height="10" rx="2"/><rect x="190" y="70" width="10" height="10" rx="2"/>
-        <rect x="216" y="70" width="10" height="10" rx="2"/><rect x="242" y="70" width="10" height="10" rx="2"/>
-        <rect x="268" y="70" width="10" height="10" rx="2"/></g>
-      <rect x="112" y="210" width="176" height="4" rx="2" fill="${L}" opacity=".4"/>
-      <rect x="112" y="210" width="104" height="4" rx="2" fill="${O}"/><circle cx="216" cy="212" r="6" fill="${O}"/>`,
-    "Photo": `<rect x="120" y="92" width="160" height="120" rx="12" fill="none" stroke="${L}" stroke-width="2" opacity=".7"/>
-      <rect x="168" y="80" width="64" height="18" rx="5" fill="${L}" opacity=".5"/>
-      <circle cx="200" cy="152" r="36" fill="none" stroke="${O}" stroke-width="4"/>
-      <circle cx="200" cy="152" r="20" fill="${O}" opacity=".2"/>
-      <g stroke="${O}" stroke-width="3"><path d="M200 116 v22"/><path d="M231 134 l-19 11"/><path d="M231 170 l-19 -11"/><path d="M200 188 v-22"/><path d="M169 170 l19 -11"/><path d="M169 134 l19 11"/></g>
-      <circle cx="256" cy="110" r="5" fill="${O}"/>`,
-    "Réseaux sociaux": `<rect x="150" y="56" width="100" height="188" rx="16" fill="${W}" opacity=".06" stroke="${L}" stroke-width="1.5"/>
-      <rect x="164" y="80" width="72" height="72" rx="8" fill="${O}" opacity=".18"/>
-      <path d="M200 138 c-14 -12 -30 -2 -24 14 c4 10 24 20 24 20 c0 0 20 -10 24 -20 c6 -16 -10 -26 -24 -14 z" fill="${O}"/>
-      <rect x="164" y="168" width="46" height="7" rx="3.5" fill="${L}" opacity=".6"/>
-      <rect x="164" y="182" width="66" height="6" rx="3" fill="${L}" opacity=".4"/>
-      <circle cx="172" cy="210" r="7" fill="none" stroke="${O}" stroke-width="2.5"/>
-      <circle cx="198" cy="210" r="7" fill="none" stroke="${L}" stroke-width="2.5" opacity=".6"/>
-      <circle cx="224" cy="210" r="7" fill="none" stroke="${L}" stroke-width="2.5" opacity=".6"/>`,
-    "Drone": `<line x1="160" y1="98" x2="240" y2="170" stroke="${L}" stroke-width="4" opacity=".7"/>
-      <line x1="240" y1="98" x2="160" y2="170" stroke="${L}" stroke-width="4" opacity=".7"/>
-      <circle cx="160" cy="98" r="22" fill="none" stroke="${O}" stroke-width="3"/><circle cx="240" cy="98" r="22" fill="none" stroke="${O}" stroke-width="3"/>
-      <circle cx="160" cy="170" r="22" fill="none" stroke="${O}" stroke-width="3"/><circle cx="240" cy="170" r="22" fill="none" stroke="${O}" stroke-width="3"/>
-      <rect x="184" y="122" width="32" height="24" rx="5" fill="${O}"/>
-      <circle cx="200" cy="134" r="6" fill="#060F20"/>
-      <path d="M96 226 q60 -30 104 -6 q44 -24 104 6" fill="none" stroke="${L}" stroke-width="2" opacity=".4"/>`,
+    "Logo": `<circle cx="200" cy="128" r="60" fill="none" stroke="${C}" stroke-width="4"/>
+      <circle cx="200" cy="128" r="36" fill="${C}" opacity=".12"/>
+      <path d="M174 128 l18 18 36 -40" fill="none" stroke="${N}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="284" cy="70" r="6" fill="${C}"/><circle cx="112" cy="186" r="4" fill="${N}" opacity=".4"/>
+      <rect x="152" y="208" width="96" height="7" rx="3.5" fill="${N}" opacity=".18"/>`,
+    "Print": `<rect x="142" y="52" width="116" height="156" rx="6" fill="#fff" stroke="${N}" stroke-width="1.5" opacity=".9"/>
+      <path d="M232 52 h26 v26 z" fill="${C}"/>
+      <rect x="160" y="78" width="52" height="10" rx="3" fill="${C}"/>
+      <rect x="160" y="100" width="80" height="5" rx="2.5" fill="${N}" opacity=".22"/>
+      <rect x="160" y="112" width="80" height="5" rx="2.5" fill="${N}" opacity=".18"/>
+      <rect x="160" y="124" width="56" height="5" rx="2.5" fill="${N}" opacity=".18"/>
+      <rect x="160" y="150" width="80" height="42" rx="4" fill="${C}" opacity=".14"/>
+      <text x="170" y="181" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="28" fill="${C}">Aa</text>`,
+    "Vidéo": `<rect x="114" y="86" width="172" height="104" rx="10" fill="none" stroke="${N}" stroke-width="2" opacity=".35"/>
+      <circle cx="200" cy="138" r="28" fill="${C}"/>
+      <path d="M193 125 l18 13 -18 13 z" fill="#fff"/>
+      <g fill="${N}" opacity=".22">
+        <rect x="114" y="70" width="10" height="10" rx="2"/><rect x="140" y="70" width="10" height="10" rx="2"/>
+        <rect x="166" y="70" width="10" height="10" rx="2"/><rect x="192" y="70" width="10" height="10" rx="2"/>
+        <rect x="218" y="70" width="10" height="10" rx="2"/><rect x="244" y="70" width="10" height="10" rx="2"/>
+        <rect x="270" y="70" width="10" height="10" rx="2"/></g>
+      <rect x="114" y="206" width="172" height="4" rx="2" fill="${N}" opacity=".15"/>
+      <rect x="114" y="206" width="100" height="4" rx="2" fill="${C}"/><circle cx="214" cy="208" r="6" fill="${C}"/>`,
+    "Photo": `<rect x="122" y="92" width="156" height="116" rx="12" fill="none" stroke="${N}" stroke-width="2" opacity=".35"/>
+      <rect x="170" y="80" width="60" height="18" rx="5" fill="${N}" opacity=".18"/>
+      <circle cx="200" cy="150" r="34" fill="none" stroke="${C}" stroke-width="4"/>
+      <circle cx="200" cy="150" r="18" fill="${C}" opacity=".14"/>
+      <g stroke="${C}" stroke-width="3"><path d="M200 116 v20"/><path d="M229 133 l-17 10"/><path d="M229 167 l-17 -10"/><path d="M200 184 v-20"/><path d="M171 167 l17 -10"/><path d="M171 133 l17 10"/></g>
+      <circle cx="254" cy="112" r="5" fill="${C}"/>`,
+    "Réseaux sociaux": `<rect x="152" y="56" width="96" height="184" rx="16" fill="#fff" stroke="${N}" stroke-width="1.5" opacity=".9"/>
+      <rect x="166" y="80" width="68" height="68" rx="8" fill="${C}" opacity=".12"/>
+      <path d="M200 134 c-13 -11 -28 -2 -22 13 c4 9 22 19 22 19 c0 0 18 -10 22 -19 c6 -15 -9 -24 -22 -13 z" fill="${C}"/>
+      <rect x="166" y="164" width="44" height="7" rx="3.5" fill="${N}" opacity=".22"/>
+      <rect x="166" y="178" width="62" height="6" rx="3" fill="${N}" opacity=".15"/>
+      <circle cx="174" cy="206" r="7" fill="none" stroke="${C}" stroke-width="2.5"/>
+      <circle cx="200" cy="206" r="7" fill="none" stroke="${N}" stroke-width="2.5" opacity=".3"/>
+      <circle cx="226" cy="206" r="7" fill="none" stroke="${N}" stroke-width="2.5" opacity=".3"/>`,
+    "Drone": `<line x1="162" y1="98" x2="238" y2="168" stroke="${N}" stroke-width="4" opacity=".4"/>
+      <line x1="238" y1="98" x2="162" y2="168" stroke="${N}" stroke-width="4" opacity=".4"/>
+      <circle cx="162" cy="98" r="21" fill="none" stroke="${C}" stroke-width="3"/><circle cx="238" cy="98" r="21" fill="none" stroke="${C}" stroke-width="3"/>
+      <circle cx="162" cy="168" r="21" fill="none" stroke="${C}" stroke-width="3"/><circle cx="238" cy="168" r="21" fill="none" stroke="${C}" stroke-width="3"/>
+      <rect x="184" y="121" width="32" height="24" rx="5" fill="${C}"/>
+      <circle cx="200" cy="133" r="6" fill="#fff"/>
+      <path d="M98 224 q60 -28 102 -6 q42 -22 102 6" fill="none" stroke="${N}" stroke-width="2" opacity=".22"/>`,
   };
   return frame(art[cat] || art["Logo"]);
 }
@@ -885,6 +850,7 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
   targets.forEach(el=>io.observe(el));
 }
+
 </script>
 </body>
 </html>
