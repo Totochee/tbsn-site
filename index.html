@@ -817,7 +817,7 @@ document.getElementById('send-devis').addEventListener('click', ()=>{
   const email = document.getElementById('cl-email').value.trim() || "Non renseigné";
   const msg = document.getElementById('cl-msg').value.trim();
   const s = lastSummary;
-  let body = "DEMANDE DE DEVIS — TBSN Studio\n";
+  let body = "DEMANDE DE DEVIS — TBSN groupe\n";
   body += "================================\n\n";
   body += "Client : " + nom + "\nEmail : " + email + "\n\nPrestations demandées :\n";
   s.lines.forEach(l=>{
