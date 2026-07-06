@@ -78,17 +78,41 @@
     .btn:hover{transform:none}
   }
 
+  /* ---------- HERO TRUST BAR ---------- */
+  .hero-trust{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px}
+  .hero-trust div{flex:1;min-width:92px;background:rgba(6,15,32,.5);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .hero-trust b{display:block;font-family:var(--display);font-weight:800;font-size:1.5rem;color:var(--orange);line-height:1}
+  .hero-trust span{display:block;font-size:.76rem;color:var(--muted);margin-top:5px}
+
   /* ---------- SERVICES ---------- */
   #services{background:var(--navy)}
   .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .service{background:var(--navy-soft);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:transform .2s,border-color .2s}
-  .service:hover{transform:translateY(-5px);border-color:rgba(255,107,44,.5)}
-  .service .ico{width:48px;height:48px;border-radius:12px;background:rgba(255,107,44,.14);display:grid;place-items:center;margin-bottom:18px;color:var(--orange)}
+  .service{position:relative;display:flex;flex-direction:column;background:var(--navy-soft);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;overflow:hidden;transition:transform .2s,border-color .2s}
+  .service::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),transparent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .service:hover{transform:translateY(-6px);border-color:rgba(255,107,44,.5)}
+  .service:hover::before{transform:scaleX(1)}
+  .service .ico{width:48px;height:48px;border-radius:12px;background:rgba(255,107,44,.14);display:grid;place-items:center;margin-bottom:18px;color:var(--orange);font-size:1.15rem}
   .service h3{font-family:var(--display);font-weight:700;font-size:1.12rem;margin-bottom:8px}
-  .service p{font-size:.92rem;color:var(--muted)}
+  .service>p{font-size:.92rem;color:var(--muted);margin-bottom:16px}
+  .deliver{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-direction:column;gap:9px}
+  .deliver li{position:relative;padding-left:24px;font-size:.86rem;color:var(--ink)}
+  .deliver li::before{content:"";position:absolute;left:0;top:6px;width:12px;height:8px;border-left:2px solid var(--orange);border-bottom:2px solid var(--orange);transform:rotate(-45deg)}
+  .svc-price{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:.98rem;color:var(--orange);padding-top:6px;transition:gap .2s}
+  .svc-price span{transition:transform .2s;display:inline-block}
+  .service:hover .svc-price span{transform:translateX(4px)}
+
+  /* ---------- PROCESS ---------- */
+  #process{background:var(--navy-deep);position:relative;overflow:hidden}
+  #process::before{content:"";position:absolute;bottom:-160px;left:-120px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,44,.10),transparent 70%);pointer-events:none}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+  .step{background:var(--navy-soft);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;transition:transform .2s,border-color .2s}
+  .step:hover{transform:translateY(-4px);border-color:rgba(255,107,44,.4)}
+  .step-n{font-family:var(--display);font-weight:800;font-size:1.9rem;color:var(--orange);opacity:.85;letter-spacing:-.02em}
+  .step h3{font-family:var(--display);font-weight:700;font-size:1.05rem;margin:12px 0 8px}
+  .step p{font-size:.88rem;color:var(--muted)}
 
   /* ---------- A PROPOS ---------- */
-  #apropos{background:var(--navy-deep)}
+  #apropos{background:var(--navy)}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
   .about-copy .eyebrow{margin-bottom:14px}
   .about-copy h2{margin-bottom:18px}
@@ -105,7 +129,7 @@
   .value p{font-size:.88rem;color:var(--muted)}
 
   /* ---------- PORTFOLIO ---------- */
-  #portfolio{background:var(--navy)}
+  #portfolio{background:var(--navy-deep)}
   .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
   .filter{font-family:var(--body);font-weight:600;font-size:.86rem;padding:9px 20px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
   .filter:hover{color:#fff;border-color:var(--muted)}
@@ -119,8 +143,6 @@
   .pf-item:hover .overlay,.pf-item:focus-within .overlay{opacity:1}
   .overlay .cat{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange)}
   .overlay .ttl{font-family:var(--display);font-weight:700;font-size:1.05rem}
-  .pf-note{margin-top:30px;font-size:.86rem;color:var(--muted);border:1px dashed var(--line);border-radius:14px;padding:16px 20px}
-  .pf-note code{color:var(--orange-soft);background:rgba(255,107,44,.1);padding:2px 6px;border-radius:6px;font-size:.82rem}
 
   /* ---------- DEVIS ---------- */
   #devis{background:var(--navy);position:relative;overflow:hidden}
@@ -184,6 +206,7 @@
     .hero .wrap{grid-template-columns:1fr}
     .hero-visual{max-width:420px;margin:0 auto}
     .services-grid{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
     .pf-grid{grid-template-columns:repeat(2,1fr)}
     .about-grid{grid-template-columns:1fr;gap:40px}
     .devis-layout{grid-template-columns:1fr}
@@ -200,6 +223,10 @@
     .section{padding:64px 0}
     .section-head{margin-bottom:34px}
     .services-grid,.pf-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .hero-trust{gap:10px}
+    .hero-trust div{min-width:calc(50% - 5px);flex:1 1 calc(50% - 5px)}
+    .hero-trust b{font-size:1.3rem}
     .float-chip{display:none}
     .hero{padding:120px 0 70px;min-height:auto}
     .hero-cta{flex-direction:column;align-items:stretch}
@@ -240,6 +267,7 @@
     <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <nav class="nav-links">
       <a href="#services">Services</a>
+      <a href="#process">Étapes</a>
       <a href="#apropos">À propos</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#devis">Devis</a>
@@ -253,20 +281,18 @@
 <section class="hero">
   <div class="wrap">
     <div>
-      <div class="eyebrow">Studio créatif · Print · Vidéo · Drone</div>
-      <h1>Votre communication mérite mieux qu'un <em>modèle tout fait.</em></h1>
-      <p class="lead">TBSN conçoit vos identités visuelles, supports de communication, vidéos, photos et prises de vues drone. Une seule équipe, de l'idée à la diffusion sur vos réseaux.</p>
+      <div class="eyebrow">Studio créatif · Occitanie</div>
+      <h1>Une image pro, sans jongler entre <em>dix prestataires.</em></h1>
+      <p class="lead">TBSN réunit sous un même toit votre logo, vos supports imprimés, vos vidéos, vos photos, vos réseaux sociaux et vos prises de vues drone. Vous expliquez votre projet une fois, on s'occupe de tout.</p>
       <div class="hero-cta">
-        <a href="#devis" class="btn">Simuler mon devis</a>
-        <a href="#portfolio" class="btn btn-ghost">Voir le portfolio</a>
+        <a href="#devis" class="btn">Estimer mon projet en 2 min</a>
+        <a href="#portfolio" class="btn btn-ghost">Voir nos réalisations</a>
       </div>
-      <div class="hero-tags">
-        <span class="tag">Logo & identité</span>
-        <span class="tag">Affiches & print</span>
-        <span class="tag">Vidéo & motion</span>
-        <span class="tag">Photo</span>
-        <span class="tag">Réseaux sociaux</span>
-        <span class="tag">Drone</span>
+      <div class="hero-trust">
+        <div><b>6</b><span>métiers réunis</span></div>
+        <div><b>4K</b><span>vidéo &amp; drone</span></div>
+        <div><b>0 €</b><span>1er échange</span></div>
+        <div><b>DGAC</b><span>drone déclaré</span></div>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
@@ -290,40 +316,116 @@
 <section id="services" class="section">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Nos services</div>
-      <h2>Tout ce qu'il faut pour exister visuellement</h2>
-      <p>De la création de votre logo à l'animation quotidienne de vos réseaux, en passant par les images aériennes qui font la différence.</p>
+      <div class="eyebrow">Ce que nous faisons</div>
+      <h2>Six façons de rendre votre marque visible</h2>
+      <p>Pour chaque prestation, vous savez exactement ce que vous recevez et à partir de quel prix. Pas de devis opaque, pas de mauvaise surprise.</p>
     </div>
     <div class="services-grid">
-      <div class="service">
+
+      <article class="service">
         <div class="ico">◆</div>
-        <h3>Logo & identité visuelle</h3>
-        <p>Logo, charte graphique, déclinaisons : une identité cohérente et mémorable sur tous vos supports.</p>
-      </div>
-      <div class="service">
+        <h3>Logo &amp; identité visuelle</h3>
+        <p>On crée l'image de votre marque, pensée pour durer et se décliner partout.</p>
+        <ul class="deliver">
+          <li>Logo original + fichiers vectoriels sources</li>
+          <li>Palette de couleurs &amp; typographies</li>
+          <li>Déclinaisons (fond clair/foncé, favicon)</li>
+        </ul>
+        <a class="svc-price" href="#devis">dès 490 € <span>→</span></a>
+      </article>
+
+      <article class="service">
         <div class="ico">▤</div>
         <h3>Supports de communication</h3>
-        <p>Affiches, flyers, cartes de visite, plaquettes, kakémonos : du print qui attire l'œil, prêt à imprimer.</p>
-      </div>
-      <div class="service">
+        <p>Vos affiches, flyers et cartes prêtes à imprimer, qui donnent envie de s'arrêter.</p>
+        <ul class="deliver">
+          <li>Affiches, flyers, cartes, plaquettes</li>
+          <li>Fichiers d'impression HD (CMJN, fonds perdus)</li>
+          <li>Déclinaisons print &amp; web</li>
+        </ul>
+        <a class="svc-price" href="#devis">dès 120 € <span>→</span></a>
+      </article>
+
+      <article class="service">
         <div class="ico">▶</div>
-        <h3>Vidéo & motion design</h3>
-        <p>Films d'entreprise, publicités, formats courts pour les réseaux, habillage et motion design.</p>
-      </div>
-      <div class="service">
+        <h3>Vidéo &amp; motion design</h3>
+        <p>Du film qui raconte votre histoire au format court qui cartonne sur les réseaux.</p>
+        <ul class="deliver">
+          <li>Tournage, montage &amp; étalonnage 4K</li>
+          <li>Motion design &amp; habillage graphique</li>
+          <li>Versions verticales pour les réseaux</li>
+        </ul>
+        <a class="svc-price" href="#devis">dès 590 € <span>→</span></a>
+      </article>
+
+      <article class="service">
         <div class="ico">◉</div>
         <h3>Photographie</h3>
-        <p>Reportages, portraits professionnels, produits, événements. Des images retouchées, prêtes à publier.</p>
-      </div>
-      <div class="service">
+        <p>Des images nettes et lumineuses, retouchées et prêtes à publier.</p>
+        <ul class="deliver">
+          <li>Portraits, produits, événements, locaux</li>
+          <li>Photos retouchées haute définition</li>
+          <li>Formats web &amp; impression fournis</li>
+        </ul>
+        <a class="svc-price" href="#devis">dès 320 € <span>→</span></a>
+      </article>
+
+      <article class="service">
         <div class="ico">✦</div>
         <h3>Animation des réseaux sociaux</h3>
-        <p>Création de contenus, calendrier éditorial, publication et community management pour rester visible.</p>
-      </div>
-      <div class="service">
+        <p>On fait vivre vos comptes pour rester présent, sans y passer vos soirées.</p>
+        <ul class="deliver">
+          <li>Calendrier éditorial &amp; visuels sur mesure</li>
+          <li>Publication régulière (8 à 16 posts/mois)</li>
+          <li>Community management en option</li>
+        </ul>
+        <a class="svc-price" href="#devis">dès 279 € / mois <span>→</span></a>
+      </article>
+
+      <article class="service">
         <div class="ico">✈</div>
-        <h3>Vidéo & photo par drone</h3>
-        <p>Prises de vues aériennes en 4K pour l'immobilier, l'événementiel, le tourisme et vos films d'entreprise.</p>
+        <h3>Vidéo &amp; photo par drone</h3>
+        <p>Des images aériennes spectaculaires, réalisées par un télépilote déclaré.</p>
+        <ul class="deliver">
+          <li>Prises de vues aériennes 4K</li>
+          <li>Immobilier, événementiel, tourisme, chantiers</li>
+          <li>Montage &amp; pack photos HD en option</li>
+        </ul>
+        <a class="svc-price" href="#devis">dès 380 € <span>→</span></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Comment ça se passe</div>
+      <h2>De votre idée au fichier livré, en 4 étapes</h2>
+      <p>Un seul interlocuteur du début à la fin. Vous savez toujours où en est votre projet.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-n">01</span>
+        <h3>On échange</h3>
+        <p>Un premier contact pour comprendre votre activité, vos objectifs et votre budget. Gratuit et sans engagement.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">02</span>
+        <h3>On crée</h3>
+        <p>On vous présente des propositions concrètes, pensées pour votre marque et votre cible — jamais un modèle recyclé.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">03</span>
+        <h3>On ajuste</h3>
+        <p>Vous nous faites vos retours, on affine ensemble jusqu'à ce que le rendu vous corresponde vraiment.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">04</span>
+        <h3>On livre &amp; on diffuse</h3>
+        <p>Vous recevez tous les fichiers exploitables. On peut aussi vous aider à les publier au bon endroit.</p>
       </div>
     </div>
   </div>
@@ -375,9 +477,6 @@
     </div>
     <div class="filters" id="filters"></div>
     <div class="pf-grid" id="pf-grid"></div>
-    <div class="pf-note">
-      💡 <b>Pour ajouter une création :</b> ouvrez le fichier du site et ajoutez une ligne dans la liste <code>PORTFOLIO</code> tout en haut du script (titre, catégorie, et le lien de votre image). Elle apparaîtra automatiquement dans la bonne catégorie.
-    </div>
   </div>
 </section>
 
@@ -770,6 +869,22 @@ document.getElementById('send-devis').addEventListener('click', ()=>{
   const subject = "Demande de devis — " + nom + " — " + fmt(s.total);
   window.location.href = "mailto:tbsngroupe@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
 });
+
+/* -- apparition douce au défilement (désactivée si l'utilisateur réduit les animations) -- */
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const targets = document.querySelectorAll('.service, .step, .value, .pf-item, .section-head');
+  targets.forEach(el=>{ el.style.opacity = 0; el.style.transform = 'translateY(18px)'; el.style.transition = 'opacity .6s ease, transform .6s ease'; });
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        const el = e.target;
+        setTimeout(()=>{ el.style.opacity = 1; el.style.transform = 'none'; }, Math.min(i*60,180));
+        io.unobserve(el);
+      }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  targets.forEach(el=>io.observe(el));
+}
 </script>
 </body>
 </html>
