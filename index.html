@@ -144,6 +144,19 @@
   .overlay .pf-link{margin-top:8px;font-family:var(--body);font-size:.82rem;font-weight:600;color:#fff;display:inline-flex;align-items:center;gap:6px}
   .pf-item.linked::after{content:"↗";position:absolute;top:14px;right:14px;width:32px;height:32px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:50%;color:#fff;font-size:.95rem;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s;z-index:2}
   .pf-item.linked:hover::after,.pf-item.linked:focus-visible::after{opacity:1;transform:translateY(0)}
+  .pf-item.zoomable{cursor:zoom-in}
+  .pf-item.zoomable::after{content:"⤢";position:absolute;top:14px;right:14px;width:32px;height:32px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:50%;color:#fff;font-size:1rem;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s;z-index:2}
+  .pf-item.zoomable:hover::after,.pf-item.zoomable:focus-visible::after{opacity:1;transform:translateY(0)}
+
+  /* ---------- LIGHTBOX (agrandissement image) ---------- */
+  .lightbox{position:fixed;inset:0;z-index:1000;background:rgba(6,12,26,.93);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:28px;cursor:zoom-out}
+  .lightbox.open{display:flex;animation:lbfade .2s ease}
+  @keyframes lbfade{from{opacity:0}to{opacity:1}}
+  .lightbox figure{margin:0;max-width:min(1100px,94vw);display:flex;flex-direction:column;gap:14px;align-items:center}
+  .lightbox img{max-width:100%;max-height:82vh;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+  .lightbox figcaption{color:#EAF0F8;font-family:var(--body);font-size:.9rem;text-align:center;opacity:.9}
+  .lb-close{position:absolute;top:20px;right:24px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:1.3rem;cursor:pointer;display:grid;place-items:center;transition:background .2s,transform .15s}
+  .lb-close:hover{background:rgba(255,255,255,.24);transform:rotate(90deg)}
 
   /* ---------- DEVIS ---------- */
   #devis{background:var(--bg-2);position:relative}
@@ -508,6 +521,15 @@
   </div>
 </footer>
 
+<!-- Visionneuse d'image (lightbox) -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Aperçu de l'image">
+  <button class="lb-close" id="lb-close" aria-label="Fermer l'aperçu">✕</button>
+  <figure>
+    <img id="lb-img" src="" alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+</div>
+
 <script>
 /* ================================================================
    PORTFOLIO — AJOUTEZ VOS CRÉATIONS ICI
@@ -587,6 +609,28 @@ function illustration(cat, seed){
   return frame(art[cat] || art["Logo"]);
 }
 
+/* -- visionneuse d'image (lightbox) -- */
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+const lbCap = document.getElementById('lb-cap');
+function openLightbox(src, cap){
+  lbImg.src = src;
+  lbImg.alt = cap || "";
+  lbCap.textContent = cap || "";
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  lbImg.src = "";
+  document.body.style.overflow = "";
+}
+lightbox.addEventListener('click', closeLightbox);
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
+document.addEventListener('keydown', e=>{
+  if(e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+});
+
 /* -- rendu portfolio + filtres -- */
 const grid = document.getElementById('pf-grid');
 const filtersBox = document.getElementById('filters');
@@ -595,20 +639,32 @@ function renderPortfolio(filter){
   grid.innerHTML = "";
   PORTFOLIO.filter(p => filter==="Tous" || p.cat===filter).forEach((p,i)=>{
     const linked = !!(p.href && p.href.trim());
+    const hasImg = !!(p.img && p.img.trim());
+    const zoomable = !linked && hasImg;           // image sans lien externe → agrandissement
     const el = document.createElement(linked ? 'a' : 'div');
-    el.className = 'pf-item' + (linked ? ' linked' : '');
+    el.className = 'pf-item' + (linked ? ' linked' : '') + (zoomable ? ' zoomable' : '');
     if(linked){
       el.href = p.href;
       el.target = '_blank';
       el.rel = 'noopener noreferrer';
       el.setAttribute('aria-label', p.titre + ' — ouvrir dans un nouvel onglet');
+    } else if(zoomable){
+      el.tabIndex = 0;
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-label', p.titre + " — agrandir l'image");
+      el.addEventListener('click', ()=> openLightbox(p.img, p.titre));
+      el.addEventListener('keydown', e=>{
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openLightbox(p.img, p.titre); }
+      });
     } else {
       el.tabIndex = 0;
     }
     const visual = p.img
       ? `<img src="${p.img}" alt="${p.titre}" loading="lazy">`
       : `<div class="illus" role="img" aria-label="${p.titre}">${illustration(p.cat, i)}</div>`;
-    el.innerHTML = `${visual}<div class="overlay"><span class="cat">${p.cat}</span><span class="ttl">${p.titre}</span>${linked?'<span class="pf-link">Voir le projet ↗</span>':''}</div>`;
+    const cta = linked ? '<span class="pf-link">Voir le projet ↗</span>'
+              : zoomable ? '<span class="pf-link">Agrandir ⤢</span>' : '';
+    el.innerHTML = `${visual}<div class="overlay"><span class="cat">${p.cat}</span><span class="ttl">${p.titre}</span>${cta}</div>`;
     grid.appendChild(el);
   });
 }
