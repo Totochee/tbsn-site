@@ -133,7 +133,7 @@
   .filter:hover{color:var(--navy);border-color:var(--muted)}
   .filter.active{background:var(--navy);border-color:var(--navy);color:#fff}
   .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .pf-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line);cursor:pointer;background:#fff}
+  .pf-item{display:block;position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line);cursor:pointer;background:#fff}
   .pf-item .illus{position:absolute;inset:0}
   .pf-item .illus svg{width:100%;height:100%;display:block}
   .pf-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -141,6 +141,9 @@
   .pf-item:hover .overlay,.pf-item:focus-within .overlay{opacity:1}
   .overlay .cat{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff;opacity:.85}
   .overlay .ttl{font-family:var(--display);font-weight:600;font-size:1.05rem;color:#fff}
+  .overlay .pf-link{margin-top:8px;font-family:var(--body);font-size:.82rem;font-weight:600;color:#fff;display:inline-flex;align-items:center;gap:6px}
+  .pf-item.linked::after{content:"↗";position:absolute;top:14px;right:14px;width:32px;height:32px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:50%;color:#fff;font-size:.95rem;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s;z-index:2}
+  .pf-item.linked:hover::after,.pf-item.linked:focus-visible::after{opacity:1;transform:translateY(0)}
 
   /* ---------- DEVIS ---------- */
   #devis{background:var(--bg-2);position:relative}
@@ -509,7 +512,8 @@
 /* ================================================================
    PORTFOLIO — AJOUTEZ VOS CRÉATIONS ICI
    Pour chaque projet : titre, catégorie (une de la liste CATS),
-   et img = lien vers votre image (ex: "images/mon-logo.jpg").
+   img = lien vers votre image (ex: "images/mon-logo.jpg"),
+   href = lien à ouvrir au clic (optionnel, ex: page Instagram).
    Laissez img vide ("") pour un visuel de remplacement.
 ================================================================ */
 const CATS = ["Logo","Print","Vidéo","Photo","Réseaux sociaux","Drone"];
@@ -590,13 +594,21 @@ const filtersBox = document.getElementById('filters');
 function renderPortfolio(filter){
   grid.innerHTML = "";
   PORTFOLIO.filter(p => filter==="Tous" || p.cat===filter).forEach((p,i)=>{
-    const el = document.createElement('div');
-    el.className = 'pf-item';
-    el.tabIndex = 0;
+    const linked = !!(p.href && p.href.trim());
+    const el = document.createElement(linked ? 'a' : 'div');
+    el.className = 'pf-item' + (linked ? ' linked' : '');
+    if(linked){
+      el.href = p.href;
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
+      el.setAttribute('aria-label', p.titre + ' — ouvrir dans un nouvel onglet');
+    } else {
+      el.tabIndex = 0;
+    }
     const visual = p.img
       ? `<img src="${p.img}" alt="${p.titre}" loading="lazy">`
       : `<div class="illus" role="img" aria-label="${p.titre}">${illustration(p.cat, i)}</div>`;
-    el.innerHTML = `${visual}<div class="overlay"><span class="cat">${p.cat}</span><span class="ttl">${p.titre}</span></div>`;
+    el.innerHTML = `${visual}<div class="overlay"><span class="cat">${p.cat}</span><span class="ttl">${p.titre}</span>${linked?'<span class="pf-link">Voir le projet ↗</span>':''}</div>`;
     grid.appendChild(el);
   });
 }
