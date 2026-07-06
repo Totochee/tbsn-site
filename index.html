@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TBSN Studio — Création graphique, vidéo, photo & drone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1A33;
+    --navy-deep:#060F20;
+    --navy-soft:#122A4D;
+    --orange:#FF6B2C;
+    --orange-soft:#FF8F5E;
+    --paper:#F4F6FA;
+    --ink:#EAF0F8;
+    --muted:#9FB0C8;
+    --line:rgba(159,176,200,.18);
+    --radius:18px;
+    --display:'Syne',sans-serif;
+    --body:'Inter',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--navy);color:var(--ink);line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--orange);color:#fff}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:var(--display);font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+  h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin-bottom:16px}
+  .section{padding:96px 0}
+  .section-head{max-width:640px;margin-bottom:48px}
+  .section-head p{color:var(--muted)}
+
+  /* ---------- HEADER ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,15,32,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:.02em}
+  .logo span{color:var(--orange)}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:.92rem;font-weight:500;color:var(--muted);transition:color .2s}
+  .nav-links a:hover,.nav-links a:focus-visible{color:#fff}
+  .btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:.92rem;padding:13px 26px;border-radius:999px;background:var(--orange);color:#fff;border:none;cursor:pointer;transition:transform .15s,background .2s}
+  .btn:hover{background:var(--orange-soft);transform:translateY(-2px)}
+  .btn:focus-visible{outline:3px solid var(--orange-soft);outline-offset:3px}
+  .btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{background:var(--navy-soft);border-color:var(--muted)}
+  .burger{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:140px 0 90px;overflow:hidden;
+    background:
+      radial-gradient(900px 500px at 85% 15%, rgba(255,107,44,.16), transparent 60%),
+      radial-gradient(700px 600px at 10% 90%, rgba(18,42,77,.9), transparent 70%),
+      var(--navy-deep)}
+  .hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(700px 500px at 70% 40%,black,transparent);pointer-events:none}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5.6vw,4rem);line-height:1.08;letter-spacing:-.01em}
+  h1 em{font-style:normal;color:var(--orange);position:relative;white-space:nowrap}
+  .hero p.lead{margin:22px 0 34px;font-size:1.08rem;color:var(--muted);max-width:520px}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-tags{margin-top:44px;display:flex;flex-wrap:wrap;gap:10px}
+  .tag{font-size:.8rem;font-weight:600;padding:8px 16px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+
+  .hero-visual{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,var(--navy-soft),var(--navy-deep));border:1px solid var(--line);display:grid;place-items:center}
+  .hero-visual svg{width:78%;height:auto}
+  .float-chip{position:absolute;background:rgba(6,15,32,.88);border:1px solid var(--line);border-radius:14px;padding:12px 18px;font-size:.85rem;font-weight:600;backdrop-filter:blur(8px);animation:float 5s ease-in-out infinite}
+  .float-chip b{color:var(--orange);font-family:var(--display)}
+  .chip-1{top:9%;left:-4%}
+  .chip-2{bottom:14%;right:-3%;animation-delay:2.2s}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .float-chip{animation:none}
+    .btn:hover{transform:none}
+  }
+
+  /* ---------- SERVICES ---------- */
+  #services{background:var(--navy)}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .service{background:var(--navy-soft);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:transform .2s,border-color .2s}
+  .service:hover{transform:translateY(-5px);border-color:rgba(255,107,44,.5)}
+  .service .ico{width:48px;height:48px;border-radius:12px;background:rgba(255,107,44,.14);display:grid;place-items:center;margin-bottom:18px;color:var(--orange)}
+  .service h3{font-family:var(--display);font-weight:700;font-size:1.12rem;margin-bottom:8px}
+  .service p{font-size:.92rem;color:var(--muted)}
+
+  /* ---------- PORTFOLIO ---------- */
+  #portfolio{background:var(--navy-deep)}
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+  .filter{font-family:var(--body);font-weight:600;font-size:.86rem;padding:9px 20px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
+  .filter:hover{color:#fff;border-color:var(--muted)}
+  .filter.active{background:var(--orange);border-color:var(--orange);color:#fff}
+  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .pf-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line);cursor:pointer}
+  .pf-item .ph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1rem;color:rgba(234,240,248,.85);text-align:center;padding:20px}
+  .pf-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .pf-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,32,.92) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;opacity:0;transition:opacity .25s}
+  .pf-item:hover .overlay,.pf-item:focus-within .overlay{opacity:1}
+  .overlay .cat{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange)}
+  .overlay .ttl{font-family:var(--display);font-weight:700;font-size:1.05rem}
+  .pf-note{margin-top:30px;font-size:.86rem;color:var(--muted);border:1px dashed var(--line);border-radius:14px;padding:16px 20px}
+  .pf-note code{color:var(--orange-soft);background:rgba(255,107,44,.1);padding:2px 6px;border-radius:6px;font-size:.82rem}
+
+  /* ---------- DEVIS ---------- */
+  #devis{background:var(--navy);position:relative;overflow:hidden}
+  #devis::before{content:"";position:absolute;top:-200px;right:-200px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,44,.12),transparent 70%);pointer-events:none}
+  .devis-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:start}
+  .cards{display:flex;flex-direction:column;gap:16px}
+  .svc-card{background:var(--navy-soft);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .2s}
+  .svc-card.on{border-color:var(--orange)}
+  .svc-head{display:flex;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;user-select:none}
+  .svc-head input{width:20px;height:20px;accent-color:var(--orange);cursor:pointer;flex-shrink:0}
+  .svc-head .t{flex:1}
+  .svc-head .t b{font-family:var(--display);font-size:1.02rem;font-weight:700;display:block}
+  .svc-head .t small{color:var(--muted);font-size:.82rem}
+  .svc-head .base{font-family:var(--display);font-weight:700;color:var(--orange);white-space:nowrap;font-size:.95rem}
+  .svc-body{display:none;padding:0 22px 22px;border-top:1px solid var(--line)}
+  .svc-card.on .svc-body{display:block}
+  .opt-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  .opt-row:last-child{border-bottom:none}
+  .opt-row label{display:flex;align-items:center;gap:10px;cursor:pointer;color:var(--ink)}
+  .opt-row input[type=checkbox]{width:17px;height:17px;accent-color:var(--orange);cursor:pointer}
+  .opt-row .price{color:var(--muted);font-weight:600;white-space:nowrap;font-size:.85rem}
+  select,.qty input{background:var(--navy-deep);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 12px;font-family:var(--body);font-size:.88rem}
+  select:focus,.qty input:focus,input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--orange);outline-offset:1px}
+  .qty{display:flex;align-items:center;gap:8px}
+  .qty input{width:64px;text-align:center}
+
+  .summary{position:sticky;top:92px;background:var(--navy-deep);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .summary h3{font-family:var(--display);font-weight:800;font-size:1.25rem;margin-bottom:18px}
+  #sum-lines{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;min-height:40px}
+  .sum-line{display:flex;justify-content:space-between;gap:12px;font-size:.88rem}
+  .sum-line span:first-child{color:var(--muted)}
+  .sum-line.sub{padding-left:14px;font-size:.82rem}
+  .sum-empty{color:var(--muted);font-size:.88rem;font-style:italic}
+  .sum-discount{color:var(--orange-soft);font-weight:600}
+  .total-row{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+  .total-row .lbl{font-weight:600;color:var(--muted);font-size:.9rem}
+  #total{font-family:var(--display);font-weight:800;font-size:2.2rem;color:var(--orange);transition:transform .15s}
+  #total.pulse{transform:scale(1.06)}
+  .monthly-note{font-size:.78rem;color:var(--muted);margin-bottom:18px}
+  .summary .fields{display:flex;flex-direction:column;gap:10px;margin:14px 0 16px}
+  .summary .fields input{background:var(--navy-soft);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:11px 14px;font-size:.9rem;width:100%}
+  #send-devis{width:100%;text-align:center}
+  #send-devis:disabled{opacity:.45;cursor:not-allowed;transform:none}
+  .legal{font-size:.72rem;color:var(--muted);margin-top:12px;text-align:center}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  #contact{background:var(--navy-deep);border-top:1px solid var(--line)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .contact-grid .big{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.2}
+  .contact-grid .big span{color:var(--orange)}
+  .contact-list{display:flex;flex-direction:column;gap:14px;font-size:.95rem}
+  .contact-list a{display:flex;align-items:center;gap:12px;color:var(--muted);transition:color .2s}
+  .contact-list a:hover{color:var(--orange)}
+  footer{background:var(--navy-deep);border-top:1px solid var(--line);padding:26px 0;font-size:.82rem;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:960px){
+    .hero .wrap{grid-template-columns:1fr}
+    .hero-visual{max-width:420px;margin:0 auto}
+    .services-grid{grid-template-columns:repeat(2,1fr)}
+    .pf-grid{grid-template-columns:repeat(2,1fr)}
+    .devis-layout{grid-template-columns:1fr}
+    .summary{position:static}
+    .contact-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--navy-deep);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    .services-grid,.pf-grid{grid-template-columns:1fr}
+    .section{padding:72px 0}
+    .float-chip{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">TBSN<span>.</span></a>
+    <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#devis">Devis</a>
+      <a href="#contact">Contact</a>
+      <a href="#devis" class="btn">Estimer mon projet</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Studio créatif · Print · Vidéo · Drone</div>
+      <h1>Votre communication mérite mieux qu'un <em>modèle tout fait.</em></h1>
+      <p class="lead">TBSN conçoit vos identités visuelles, supports de communication, vidéos, photos et prises de vues drone. Une seule équipe, de l'idée à la diffusion sur vos réseaux.</p>
+      <div class="hero-cta">
+        <a href="#devis" class="btn">Simuler mon devis</a>
+        <a href="#portfolio" class="btn btn-ghost">Voir le portfolio</a>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">Logo & identité</span>
+        <span class="tag">Affiches & print</span>
+        <span class="tag">Vidéo & motion</span>
+        <span class="tag">Photo</span>
+        <span class="tag">Réseaux sociaux</span>
+        <span class="tag">Drone</span>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="150" cy="110" r="78" fill="none" stroke="#FF6B2C" stroke-width="3"/>
+        <circle cx="150" cy="110" r="52" fill="#FF6B2C" opacity=".15"/>
+        <rect x="60" y="215" width="180" height="10" rx="5" fill="#9FB0C8" opacity=".5"/>
+        <rect x="60" y="240" width="130" height="10" rx="5" fill="#9FB0C8" opacity=".3"/>
+        <rect x="60" y="265" width="155" height="10" rx="5" fill="#FF6B2C"/>
+        <path d="M115 110 l25 25 45 -50" fill="none" stroke="#EAF0F8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="243" cy="52" r="6" fill="#FF6B2C"/>
+        <circle cx="52" cy="180" r="4" fill="#9FB0C8"/>
+      </svg>
+      <div class="float-chip chip-1">🎬 Vidéo livrée en <b>4K</b></div>
+      <div class="float-chip chip-2">🚁 Drone <b>certifié</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Nos services</div>
+      <h2>Tout ce qu'il faut pour exister visuellement</h2>
+      <p>De la création de votre logo à l'animation quotidienne de vos réseaux, en passant par les images aériennes qui font la différence.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service">
+        <div class="ico">◆</div>
+        <h3>Logo & identité visuelle</h3>
+        <p>Logo, charte graphique, déclinaisons : une identité cohérente et mémorable sur tous vos supports.</p>
+      </div>
+      <div class="service">
+        <div class="ico">▤</div>
+        <h3>Supports de communication</h3>
+        <p>Affiches, flyers, cartes de visite, plaquettes, kakémonos : du print qui attire l'œil, prêt à imprimer.</p>
+      </div>
+      <div class="service">
+        <div class="ico">▶</div>
+        <h3>Vidéo & motion design</h3>
+        <p>Films d'entreprise, publicités, formats courts pour les réseaux, habillage et motion design.</p>
+      </div>
+      <div class="service">
+        <div class="ico">◉</div>
+        <h3>Photographie</h3>
+        <p>Reportages, portraits professionnels, produits, événements. Des images retouchées, prêtes à publier.</p>
+      </div>
+      <div class="service">
+        <div class="ico">✦</div>
+        <h3>Animation des réseaux sociaux</h3>
+        <p>Création de contenus, calendrier éditorial, publication et community management pour rester visible.</p>
+      </div>
+      <div class="service">
+        <div class="ico">✈</div>
+        <h3>Vidéo & photo par drone</h3>
+        <p>Prises de vues aériennes en 4K pour l'immobilier, l'événementiel, le tourisme et vos films d'entreprise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section id="portfolio" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Portfolio</div>
+      <h2>Nos dernières créations</h2>
+      <p>Un aperçu de nos réalisations. Filtrez par type de projet.</p>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="pf-grid" id="pf-grid"></div>
+    <div class="pf-note">
+      💡 <b>Pour ajouter une création :</b> ouvrez le fichier du site et ajoutez une ligne dans la liste <code>PORTFOLIO</code> tout en haut du script (titre, catégorie, et le lien de votre image). Elle apparaîtra automatiquement dans la bonne catégorie.
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEVIS ============ -->
+<section id="devis" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Simulateur de devis</div>
+      <h2>Estimez votre projet en 2 minutes</h2>
+      <p>Cochez les prestations qui vous intéressent, ajustez les options : le prix s'actualise en direct. Envoyez ensuite votre demande en un clic.</p>
+    </div>
+    <div class="devis-layout">
+      <div class="cards" id="devis-cards"></div>
+
+      <aside class="summary" aria-live="polite">
+        <h3>Votre estimation</h3>
+        <div id="sum-lines"><div class="sum-empty">Sélectionnez au moins une prestation pour voir votre estimation.</div></div>
+        <div class="total-row">
+          <span class="lbl">Total estimé</span>
+          <span id="total">0 €</span>
+        </div>
+        <div class="monthly-note" id="monthly-note" hidden></div>
+        <div class="fields">
+          <input type="text" id="cl-name" placeholder="Votre nom / entreprise">
+          <input type="email" id="cl-email" placeholder="Votre email">
+          <input type="text" id="cl-msg" placeholder="Précisions sur votre projet (optionnel)">
+        </div>
+        <button class="btn" id="send-devis" disabled>📩 Envoyer ma demande de devis</button>
+        <p class="legal">Estimation indicative, hors taxes. Un devis définitif vous sera confirmé après échange. L'envoi ouvre votre messagerie avec le récapitulatif pré-rempli.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Contact</div>
+      <p class="big">Un projet en tête ?<br>Parlons-en <span>dès aujourd'hui.</span></p>
+    </div>
+    <div class="contact-list">
+      <a href="mailto:tbsngroupe@gmail.com">✉ tbsngroupe@gmail.com</a>
+      <a href="#devis">🧮 Simuler mon devis en ligne</a>
+      <a href="#">📍 Basés en Occitanie — interventions partout en France</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 TBSN Studio — Création graphique, vidéo, photo & drone</span>
+    <span>Mentions légales · Télépilote drone déclaré DGAC</span>
+  </div>
+</footer>
+
+<script>
+/* ================================================================
+   PORTFOLIO — AJOUTEZ VOS CRÉATIONS ICI
+   Pour chaque projet : titre, catégorie (une de la liste CATS),
+   et img = lien vers votre image (ex: "images/mon-logo.jpg").
+   Laissez img vide ("") pour un visuel de remplacement.
+================================================================ */
+const CATS = ["Logo","Print","Vidéo","Photo","Réseaux sociaux","Drone"];
+const PORTFOLIO = [
+  {titre:"Identité visuelle — Boulangerie Maison Blé", cat:"Logo", img:""},
+  {titre:"Affiche festival — Nuits d'Été", cat:"Print", img:""},
+  {titre:"Film d'entreprise — BTP Occitan", cat:"Vidéo", img:""},
+  {titre:"Shooting produit — Gamme cosmétique", cat:"Photo", img:""},
+  {titre:"Pack contenus Instagram — Restaurant Le 12", cat:"Réseaux sociaux", img:""},
+  {titre:"Vue aérienne — Domaine viticole", cat:"Drone", img:""},
+];
+
+/* -- rendu portfolio + filtres -- */
+const grid = document.getElementById('pf-grid');
+const filtersBox = document.getElementById('filters');
+const palette = ["#122A4D","#16345E","#0F2140","#1A3A6B","#0C1B36","#204577"];
+
+function renderPortfolio(filter){
+  grid.innerHTML = "";
+  PORTFOLIO.filter(p => filter==="Tous" || p.cat===filter).forEach((p,i)=>{
+    const el = document.createElement('div');
+    el.className = 'pf-item';
+    el.tabIndex = 0;
+    const visual = p.img
+      ? `<img src="${p.img}" alt="${p.titre}" loading="lazy">`
+      : `<div class="ph" style="background:linear-gradient(145deg,${palette[i%palette.length]},#060F20)">${p.titre}</div>`;
+    el.innerHTML = `${visual}<div class="overlay"><span class="cat">${p.cat}</span><span class="ttl">${p.titre}</span></div>`;
+    grid.appendChild(el);
+  });
+}
+["Tous",...CATS].forEach((c,i)=>{
+  const b = document.createElement('button');
+  b.className = 'filter' + (i===0?' active':'');
+  b.textContent = c;
+  b.onclick = ()=>{
+    document.querySelectorAll('.filter').forEach(f=>f.classList.remove('active'));
+    b.classList.add('active');
+    renderPortfolio(c);
+  };
+  filtersBox.appendChild(b);
+});
+renderPortfolio("Tous");
+
+/* ================================================================
+   SIMULATEUR DE DEVIS
+   Modifiez librement les prix ci-dessous.
+================================================================ */
+const SERVICES = [
+  {
+    id:"logo", nom:"Logo & identité visuelle", desc:"Création de logo sur mesure, fichiers sources inclus",
+    base:450,
+    options:[
+      {id:"charte", label:"Charte graphique complète (couleurs, typos, usages)", prix:250},
+      {id:"variantes", label:"Variantes du logo (monochrome, icône, favicon)", prix:120},
+      {id:"cartes", label:"Cartes de visite (maquette prête à imprimer)", prix:90},
+    ]
+  },
+  {
+    id:"print", nom:"Supports print (affiche, flyer…)", desc:"Création graphique prête à imprimer",
+    base:150, qty:{label:"Nombre de supports", min:1, max:20, def:1},
+    options:[
+      {id:"formats", label:"Déclinaison multi-formats (A4/A3/web) par support", prix:60, parQty:true},
+      {id:"express", label:"Livraison express sous 72h", prix:80},
+    ]
+  },
+  {
+    id:"video", nom:"Vidéo & motion design", desc:"Tournage, montage et étalonnage inclus",
+    base:600,
+    select:{label:"Durée du film", opts:[
+      {label:"Format court ≤ 30 s (réseaux)", coef:1},
+      {label:"Environ 1 minute", coef:1.4},
+      {label:"2 minutes et plus", coef:1.9},
+    ]},
+    options:[
+      {id:"motion", label:"Motion design / animations graphiques", prix:250},
+      {id:"soustitres", label:"Sous-titres intégrés", prix:80},
+      {id:"declinaisons", label:"Déclinaisons verticales pour réseaux", prix:120},
+    ]
+  },
+  {
+    id:"photo", nom:"Photographie", desc:"Reportage, portraits ou produits — photos retouchées",
+    base:350,
+    select:{label:"Durée de la séance", opts:[
+      {label:"Demi-journée", coef:1},
+      {label:"Journée complète", coef:1.7},
+    ]},
+    options:[
+      {id:"retouche", label:"Retouches avancées (détourage, packshots)", prix:100},
+    ]
+  },
+  {
+    id:"social", nom:"Animation des réseaux sociaux", desc:"Abonnement mensuel, sans engagement", mensuel:true,
+    base:290,
+    select:{label:"Formule", opts:[
+      {label:"Pack 8 publications / mois", coef:1},
+      {label:"Pack 16 publications / mois", coef:1.7},
+    ]},
+    options:[
+      {id:"cm", label:"Community management (réponses, modération)", prix:200},
+      {id:"stories", label:"Stories & reels supplémentaires", prix:90},
+    ]
+  },
+  {
+    id:"drone", nom:"Vidéo & photo par drone", desc:"Prises de vues aériennes 4K, télépilote déclaré",
+    base:400,
+    options:[
+      {id:"montagedrone", label:"Montage vidéo des images drone inclus", prix:200},
+      {id:"photosaero", label:"Pack photos aériennes HD (20 clichés)", prix:120},
+    ]
+  },
+];
+
+const cardsBox = document.getElementById('devis-cards');
+SERVICES.forEach(s=>{
+  const card = document.createElement('div');
+  card.className = 'svc-card';
+  card.id = 'card-'+s.id;
+  let body = "";
+  if(s.select){
+    body += `<div class="opt-row"><label for="sel-${s.id}">${s.select.label}</label>
+      <select id="sel-${s.id}" data-svc="${s.id}">
+        ${s.select.opts.map((o,i)=>`<option value="${i}">${o.label}</option>`).join("")}
+      </select></div>`;
+  }
+  if(s.qty){
+    body += `<div class="opt-row"><label for="qty-${s.id}">${s.qty.label}</label>
+      <span class="qty"><input type="number" id="qty-${s.id}" data-svc="${s.id}" min="${s.qty.min}" max="${s.qty.max}" value="${s.qty.def}"></span></div>`;
+  }
+  s.options.forEach(o=>{
+    body += `<div class="opt-row">
+      <label><input type="checkbox" id="opt-${s.id}-${o.id}" data-svc="${s.id}"> ${o.label}</label>
+      <span class="price">+ ${o.prix} €${o.parQty?" / support":""}${s.mensuel?" / mois":""}</span></div>`;
+  });
+  card.innerHTML = `
+    <div class="svc-head">
+      <input type="checkbox" id="svc-${s.id}" aria-label="Sélectionner ${s.nom}">
+      <div class="t"><b>${s.nom}</b><small>${s.desc}</small></div>
+      <span class="base">dès ${s.base} €${s.mensuel?"/mois":""}</span>
+    </div>
+    <div class="svc-body">${body}</div>`;
+  cardsBox.appendChild(card);
+
+  const head = card.querySelector('.svc-head');
+  const check = card.querySelector('#svc-'+s.id);
+  head.addEventListener('click', e=>{
+    if(e.target.tagName!=='INPUT') check.checked = !check.checked;
+    card.classList.toggle('on', check.checked);
+    compute();
+  });
+  check.addEventListener('change', ()=>{ card.classList.toggle('on', check.checked); compute(); });
+});
+cardsBox.addEventListener('input', compute);
+
+const fmt = n => n.toLocaleString('fr-FR') + " €";
+let lastSummary = null;
+
+function compute(){
+  const lines = [];
+  let oneShot = 0, monthly = 0, nbServices = 0;
+
+  SERVICES.forEach(s=>{
+    if(!document.getElementById('svc-'+s.id).checked) return;
+    nbServices++;
+    let coef = 1, selLabel = "";
+    if(s.select){
+      const sel = document.getElementById('sel-'+s.id);
+      coef = s.select.opts[sel.value].coef;
+      selLabel = s.select.opts[sel.value].label;
+    }
+    let qty = 1;
+    if(s.qty){
+      const q = document.getElementById('qty-'+s.id);
+      qty = Math.min(s.qty.max, Math.max(s.qty.min, parseInt(q.value)||1));
+    }
+    let sub = Math.round(s.base * coef) * qty;
+    const details = [];
+    if(selLabel) details.push(selLabel);
+    if(s.qty && qty>1) details.push(qty + " supports");
+    s.options.forEach(o=>{
+      if(document.getElementById(`opt-${s.id}-${o.id}`).checked){
+        const p = o.parQty ? o.prix*qty : o.prix;
+        sub += p;
+        details.push(o.label);
+      }
+    });
+    if(s.mensuel) monthly += sub; else oneShot += sub;
+    lines.push({nom:s.nom, sub, mensuel:!!s.mensuel, details});
+  });
+
+  // Remise multi-services
+  let remise = 0;
+  if(nbServices>=3) remise = .10;
+  else if(nbServices===2) remise = .05;
+  const remiseMontant = Math.round((oneShot+monthly)*remise);
+  const total = oneShot + monthly - remiseMontant;
+
+  // Rendu
+  const box = document.getElementById('sum-lines');
+  if(lines.length===0){
+    box.innerHTML = '<div class="sum-empty">Sélectionnez au moins une prestation pour voir votre estimation.</div>';
+  } else {
+    box.innerHTML = lines.map(l=>`
+      <div class="sum-line"><span>${l.nom}${l.mensuel?" (mensuel)":""}</span><span>${fmt(l.sub)}</span></div>
+      ${l.details.map(d=>`<div class="sum-line sub"><span>· ${d}</span><span></span></div>`).join("")}
+    `).join("") + (remise>0?`<div class="sum-line sum-discount"><span>Remise multi-services (−${remise*100} %)</span><span>−${fmt(remiseMontant)}</span></div>`:"");
+  }
+  const totalEl = document.getElementById('total');
+  totalEl.textContent = fmt(total);
+  totalEl.classList.add('pulse');
+  setTimeout(()=>totalEl.classList.remove('pulse'),160);
+
+  const mn = document.getElementById('monthly-note');
+  if(monthly>0){
+    mn.hidden = false;
+    mn.textContent = `dont ${fmt(monthly)} / mois pour l'animation des réseaux (premier mois inclus dans le total).`;
+  } else mn.hidden = true;
+
+  document.getElementById('send-devis').disabled = lines.length===0;
+  lastSummary = lines.length ? {lines, oneShot, monthly, remise, remiseMontant, total} : null;
+}
+compute();
+
+/* -- envoi du récapitulatif par email -- */
+document.getElementById('send-devis').addEventListener('click', ()=>{
+  if(!lastSummary) return;
+  const nom = document.getElementById('cl-name').value.trim() || "Non renseigné";
+  const email = document.getElementById('cl-email').value.trim() || "Non renseigné";
+  const msg = document.getElementById('cl-msg').value.trim();
+  const s = lastSummary;
+  let body = "DEMANDE DE DEVIS — TBSN Studio\n";
+  body += "================================\n\n";
+  body += "Client : " + nom + "\nEmail : " + email + "\n\nPrestations demandées :\n";
+  s.lines.forEach(l=>{
+    body += "\n• " + l.nom + (l.mensuel?" (mensuel)":"") + " — " + fmt(l.sub) + "\n";
+    l.details.forEach(d=> body += "   - " + d + "\n");
+  });
+  if(s.remise>0) body += "\nRemise multi-services (−"+(s.remise*100)+" %) : −" + fmt(s.remiseMontant) + "\n";
+  body += "\nTOTAL ESTIMÉ : " + fmt(s.total);
+  if(s.monthly>0) body += " (dont " + fmt(s.monthly) + " /mois)";
+  body += "\n\n";
+  if(msg) body += "Précisions du client :\n" + msg + "\n\n";
+  body += "— Devis généré depuis le simulateur du site TBSN";
+  const subject = "Demande de devis — " + nom + " — " + fmt(s.total);
+  window.location.href = "mailto:tbsngroupe@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
