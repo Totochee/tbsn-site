@@ -112,7 +112,8 @@
   .filter.active{background:var(--orange);border-color:var(--orange);color:#fff}
   .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .pf-item{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line);cursor:pointer}
-  .pf-item .ph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1rem;color:rgba(234,240,248,.85);text-align:center;padding:20px}
+  .pf-item .illus{position:absolute;inset:0}
+  .pf-item .illus svg{width:100%;height:100%;display:block}
   .pf-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .pf-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,32,.92) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;opacity:0;transition:opacity .25s}
   .pf-item:hover .overlay,.pf-item:focus-within .overlay{opacity:1}
@@ -141,6 +142,8 @@
   .opt-row label{display:flex;align-items:center;gap:10px;cursor:pointer;color:var(--ink)}
   .opt-row input[type=checkbox]{width:17px;height:17px;accent-color:var(--orange);cursor:pointer}
   .opt-row .price{color:var(--muted);font-weight:600;white-space:nowrap;font-size:.85rem}
+  .opt-row.km-note{padding-top:4px;font-size:.82rem}
+  .opt-row.km-note span:first-child{color:var(--muted)}
   select,.qty input{background:var(--navy-deep);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 12px;font-family:var(--body);font-size:.88rem}
   select:focus,.qty input:focus,input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--orange);outline-offset:1px}
   .qty{display:flex;align-items:center;gap:8px}
@@ -453,10 +456,66 @@ const PORTFOLIO = [
   {titre:"Vue aérienne — Domaine viticole", cat:"Drone", img:""},
 ];
 
+/* -- illustrations SVG par catégorie (utilisées quand aucune photo n'est fournie) -- */
+function illustration(cat, seed){
+  const bg = ["#122A4D","#0F2140","#16345E","#0C1B36","#1A3A6B","#0E2444"][seed%6];
+  const O="#FF6B2C", L="#9FB0C8", W="#EAF0F8", g="illg"+seed;
+  const frame = inner => `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="${bg}"/><stop offset="1" stop-color="#060F20"/></linearGradient></defs>
+    <rect width="400" height="300" fill="url(#${g})"/>${inner}</svg>`;
+  const art = {
+    "Logo": `<circle cx="200" cy="130" r="62" fill="none" stroke="${O}" stroke-width="4"/>
+      <circle cx="200" cy="130" r="38" fill="${O}" opacity=".16"/>
+      <path d="M172 130 l20 20 38 -42" fill="none" stroke="${W}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="286" cy="70" r="6" fill="${O}"/><circle cx="110" cy="188" r="4" fill="${L}"/>
+      <rect x="150" y="212" width="100" height="7" rx="3.5" fill="${L}" opacity=".5"/>`,
+    "Print": `<rect x="140" y="52" width="120" height="160" rx="6" fill="${W}" opacity=".08" stroke="${L}" stroke-width="1.5"/>
+      <path d="M232 52 h28 v28 z" fill="${O}"/>
+      <rect x="158" y="78" width="56" height="10" rx="3" fill="${O}"/>
+      <rect x="158" y="100" width="84" height="5" rx="2.5" fill="${L}" opacity=".6"/>
+      <rect x="158" y="112" width="84" height="5" rx="2.5" fill="${L}" opacity=".5"/>
+      <rect x="158" y="124" width="60" height="5" rx="2.5" fill="${L}" opacity=".5"/>
+      <rect x="158" y="150" width="84" height="44" rx="4" fill="${O}" opacity=".22"/>
+      <text x="168" y="182" font-family="Syne,sans-serif" font-weight="800" font-size="30" fill="${O}">Aa</text>`,
+    "Vidéo": `<rect x="112" y="86" width="176" height="108" rx="10" fill="none" stroke="${L}" stroke-width="2" opacity=".7"/>
+      <circle cx="200" cy="140" r="30" fill="${O}"/>
+      <path d="M192 126 l20 14 -20 14 z" fill="#060F20"/>
+      <g fill="${L}" opacity=".5">
+        <rect x="112" y="70" width="10" height="10" rx="2"/><rect x="138" y="70" width="10" height="10" rx="2"/>
+        <rect x="164" y="70" width="10" height="10" rx="2"/><rect x="190" y="70" width="10" height="10" rx="2"/>
+        <rect x="216" y="70" width="10" height="10" rx="2"/><rect x="242" y="70" width="10" height="10" rx="2"/>
+        <rect x="268" y="70" width="10" height="10" rx="2"/></g>
+      <rect x="112" y="210" width="176" height="4" rx="2" fill="${L}" opacity=".4"/>
+      <rect x="112" y="210" width="104" height="4" rx="2" fill="${O}"/><circle cx="216" cy="212" r="6" fill="${O}"/>`,
+    "Photo": `<rect x="120" y="92" width="160" height="120" rx="12" fill="none" stroke="${L}" stroke-width="2" opacity=".7"/>
+      <rect x="168" y="80" width="64" height="18" rx="5" fill="${L}" opacity=".5"/>
+      <circle cx="200" cy="152" r="36" fill="none" stroke="${O}" stroke-width="4"/>
+      <circle cx="200" cy="152" r="20" fill="${O}" opacity=".2"/>
+      <g stroke="${O}" stroke-width="3"><path d="M200 116 v22"/><path d="M231 134 l-19 11"/><path d="M231 170 l-19 -11"/><path d="M200 188 v-22"/><path d="M169 170 l19 -11"/><path d="M169 134 l19 11"/></g>
+      <circle cx="256" cy="110" r="5" fill="${O}"/>`,
+    "Réseaux sociaux": `<rect x="150" y="56" width="100" height="188" rx="16" fill="${W}" opacity=".06" stroke="${L}" stroke-width="1.5"/>
+      <rect x="164" y="80" width="72" height="72" rx="8" fill="${O}" opacity=".18"/>
+      <path d="M200 138 c-14 -12 -30 -2 -24 14 c4 10 24 20 24 20 c0 0 20 -10 24 -20 c6 -16 -10 -26 -24 -14 z" fill="${O}"/>
+      <rect x="164" y="168" width="46" height="7" rx="3.5" fill="${L}" opacity=".6"/>
+      <rect x="164" y="182" width="66" height="6" rx="3" fill="${L}" opacity=".4"/>
+      <circle cx="172" cy="210" r="7" fill="none" stroke="${O}" stroke-width="2.5"/>
+      <circle cx="198" cy="210" r="7" fill="none" stroke="${L}" stroke-width="2.5" opacity=".6"/>
+      <circle cx="224" cy="210" r="7" fill="none" stroke="${L}" stroke-width="2.5" opacity=".6"/>`,
+    "Drone": `<line x1="160" y1="98" x2="240" y2="170" stroke="${L}" stroke-width="4" opacity=".7"/>
+      <line x1="240" y1="98" x2="160" y2="170" stroke="${L}" stroke-width="4" opacity=".7"/>
+      <circle cx="160" cy="98" r="22" fill="none" stroke="${O}" stroke-width="3"/><circle cx="240" cy="98" r="22" fill="none" stroke="${O}" stroke-width="3"/>
+      <circle cx="160" cy="170" r="22" fill="none" stroke="${O}" stroke-width="3"/><circle cx="240" cy="170" r="22" fill="none" stroke="${O}" stroke-width="3"/>
+      <rect x="184" y="122" width="32" height="24" rx="5" fill="${O}"/>
+      <circle cx="200" cy="134" r="6" fill="#060F20"/>
+      <path d="M96 226 q60 -30 104 -6 q44 -24 104 6" fill="none" stroke="${L}" stroke-width="2" opacity=".4"/>`,
+  };
+  return frame(art[cat] || art["Logo"]);
+}
+
 /* -- rendu portfolio + filtres -- */
 const grid = document.getElementById('pf-grid');
 const filtersBox = document.getElementById('filters');
-const palette = ["#122A4D","#16345E","#0F2140","#1A3A6B","#0C1B36","#204577"];
 
 function renderPortfolio(filter){
   grid.innerHTML = "";
@@ -466,7 +525,7 @@ function renderPortfolio(filter){
     el.tabIndex = 0;
     const visual = p.img
       ? `<img src="${p.img}" alt="${p.titre}" loading="lazy">`
-      : `<div class="ph" style="background:linear-gradient(145deg,${palette[i%palette.length]},#060F20)">${p.titre}</div>`;
+      : `<div class="illus" role="img" aria-label="${p.titre}">${illustration(p.cat, i)}</div>`;
     el.innerHTML = `${visual}<div class="overlay"><span class="cat">${p.cat}</span><span class="ttl">${p.titre}</span></div>`;
     grid.appendChild(el);
   });
@@ -488,27 +547,29 @@ renderPortfolio("Tous");
    SIMULATEUR DE DEVIS
    Modifiez librement les prix ci-dessous.
 ================================================================ */
+/* Tarifs HT positionnés légèrement sous les fourchettes basses
+   du marché français 2026 (freelance / petit studio). */
 const SERVICES = [
   {
-    id:"logo", nom:"Logo & identité visuelle", desc:"Création de logo sur mesure, fichiers sources inclus",
-    base:450,
+    id:"logo", nom:"Logo & identité visuelle", desc:"Logo sur mesure, fichiers vectoriels sources inclus",
+    base:490,
     options:[
-      {id:"charte", label:"Charte graphique complète (couleurs, typos, usages)", prix:250},
-      {id:"variantes", label:"Variantes du logo (monochrome, icône, favicon)", prix:120},
+      {id:"charte", label:"Charte graphique complète (couleurs, typos, règles d'usage)", prix:350},
+      {id:"variantes", label:"Déclinaisons du logo (monochrome, icône, favicon)", prix:130},
       {id:"cartes", label:"Cartes de visite (maquette prête à imprimer)", prix:90},
     ]
   },
   {
     id:"print", nom:"Supports print (affiche, flyer…)", desc:"Création graphique prête à imprimer",
-    base:150, qty:{label:"Nombre de supports", min:1, max:20, def:1},
+    base:120, qty:{label:"Nombre de supports", min:1, max:20, def:1},
     options:[
-      {id:"formats", label:"Déclinaison multi-formats (A4/A3/web) par support", prix:60, parQty:true},
-      {id:"express", label:"Livraison express sous 72h", prix:80},
+      {id:"formats", label:"Déclinaison multi-formats (A4/A3/web) par support", prix:50, parQty:true},
+      {id:"express", label:"Livraison express sous 72h", prix:70},
     ]
   },
   {
     id:"video", nom:"Vidéo & motion design", desc:"Tournage, montage et étalonnage inclus",
-    base:600,
+    base:590,
     select:{label:"Durée du film", opts:[
       {label:"Format court ≤ 30 s (réseaux)", coef:1},
       {label:"Environ 1 minute", coef:1.4},
@@ -516,42 +577,47 @@ const SERVICES = [
     ]},
     options:[
       {id:"motion", label:"Motion design / animations graphiques", prix:250},
-      {id:"soustitres", label:"Sous-titres intégrés", prix:80},
-      {id:"declinaisons", label:"Déclinaisons verticales pour réseaux", prix:120},
-    ]
+      {id:"soustitres", label:"Sous-titres intégrés", prix:70},
+      {id:"declinaisons", label:"Déclinaisons verticales pour réseaux", prix:110},
+    ],
+    km:true
   },
   {
     id:"photo", nom:"Photographie", desc:"Reportage, portraits ou produits — photos retouchées",
-    base:350,
+    base:320,
     select:{label:"Durée de la séance", opts:[
       {label:"Demi-journée", coef:1},
       {label:"Journée complète", coef:1.7},
     ]},
     options:[
-      {id:"retouche", label:"Retouches avancées (détourage, packshots)", prix:100},
+      {id:"retouche", label:"Retouches avancées (détourage, packshots)", prix:90},
     ]
   },
   {
     id:"social", nom:"Animation des réseaux sociaux", desc:"Abonnement mensuel, sans engagement", mensuel:true,
-    base:290,
+    base:279,
     select:{label:"Formule", opts:[
       {label:"Pack 8 publications / mois", coef:1},
       {label:"Pack 16 publications / mois", coef:1.7},
     ]},
     options:[
-      {id:"cm", label:"Community management (réponses, modération)", prix:200},
-      {id:"stories", label:"Stories & reels supplémentaires", prix:90},
+      {id:"cm", label:"Community management (réponses, modération)", prix:180},
+      {id:"stories", label:"Stories & reels supplémentaires", prix:80},
     ]
   },
   {
     id:"drone", nom:"Vidéo & photo par drone", desc:"Prises de vues aériennes 4K, télépilote déclaré",
-    base:400,
+    base:380,
     options:[
-      {id:"montagedrone", label:"Montage vidéo des images drone inclus", prix:200},
-      {id:"photosaero", label:"Pack photos aériennes HD (20 clichés)", prix:120},
-    ]
+      {id:"montagedrone", label:"Montage vidéo des images drone inclus", prix:190},
+      {id:"photosaero", label:"Pack photos aériennes HD (20 clichés)", prix:110},
+    ],
+    km:true
   },
 ];
+
+/* Frais de déplacement facturés au kilomètre (aller-retour), en €/km */
+const PRIX_KM = 0.50;
 
 const cardsBox = document.getElementById('devis-cards');
 SERVICES.forEach(s=>{
@@ -568,6 +634,12 @@ SERVICES.forEach(s=>{
   if(s.qty){
     body += `<div class="opt-row"><label for="qty-${s.id}">${s.qty.label}</label>
       <span class="qty"><input type="number" id="qty-${s.id}" data-svc="${s.id}" min="${s.qty.min}" max="${s.qty.max}" value="${s.qty.def}"></span></div>`;
+  }
+  if(s.km){
+    body += `<div class="opt-row">
+      <label for="km-${s.id}">Déplacement (km aller-retour)</label>
+      <span class="qty"><input type="number" id="km-${s.id}" data-svc="${s.id}" min="0" max="2000" step="5" value="0" placeholder="0"></span></div>
+      <div class="opt-row km-note"><span>Frais de déplacement</span><span class="price">${PRIX_KM.toFixed(2).replace('.',',')} € / km</span></div>`;
   }
   s.options.forEach(o=>{
     body += `<div class="opt-row">
@@ -599,7 +671,7 @@ let lastSummary = null;
 
 function compute(){
   const lines = [];
-  let oneShot = 0, monthly = 0, nbServices = 0;
+  let oneShot = 0, monthly = 0, travel = 0, nbServices = 0;
 
   SERVICES.forEach(s=>{
     if(!document.getElementById('svc-'+s.id).checked) return;
@@ -626,16 +698,25 @@ function compute(){
         details.push(o.label);
       }
     });
+    // frais de déplacement au kilomètre (non soumis à la remise)
+    let km = 0, kmCost = 0;
+    if(s.km){
+      const kmEl = document.getElementById('km-'+s.id);
+      km = Math.min(2000, Math.max(0, parseInt(kmEl.value)||0));
+      kmCost = Math.round(km * PRIX_KM);
+      if(km>0) details.push(km + " km de déplacement (" + fmt(kmCost) + ")");
+    }
     if(s.mensuel) monthly += sub; else oneShot += sub;
-    lines.push({nom:s.nom, sub, mensuel:!!s.mensuel, details});
+    travel += kmCost;
+    lines.push({nom:s.nom, sub, mensuel:!!s.mensuel, details, kmCost});
   });
 
-  // Remise multi-services
+  // Remise multi-services (sur les prestations uniquement, pas le déplacement)
   let remise = 0;
   if(nbServices>=3) remise = .10;
   else if(nbServices===2) remise = .05;
   const remiseMontant = Math.round((oneShot+monthly)*remise);
-  const total = oneShot + monthly - remiseMontant;
+  const total = oneShot + monthly - remiseMontant + travel;
 
   // Rendu
   const box = document.getElementById('sum-lines');
@@ -645,7 +726,9 @@ function compute(){
     box.innerHTML = lines.map(l=>`
       <div class="sum-line"><span>${l.nom}${l.mensuel?" (mensuel)":""}</span><span>${fmt(l.sub)}</span></div>
       ${l.details.map(d=>`<div class="sum-line sub"><span>· ${d}</span><span></span></div>`).join("")}
-    `).join("") + (remise>0?`<div class="sum-line sum-discount"><span>Remise multi-services (−${remise*100} %)</span><span>−${fmt(remiseMontant)}</span></div>`:"");
+    `).join("")
+      + (remise>0?`<div class="sum-line sum-discount"><span>Remise multi-services (−${remise*100} %)</span><span>−${fmt(remiseMontant)}</span></div>`:"")
+      + (travel>0?`<div class="sum-line"><span>Frais de déplacement</span><span>${fmt(travel)}</span></div>`:"");
   }
   const totalEl = document.getElementById('total');
   totalEl.textContent = fmt(total);
@@ -659,7 +742,7 @@ function compute(){
   } else mn.hidden = true;
 
   document.getElementById('send-devis').disabled = lines.length===0;
-  lastSummary = lines.length ? {lines, oneShot, monthly, remise, remiseMontant, total} : null;
+  lastSummary = lines.length ? {lines, oneShot, monthly, remise, remiseMontant, travel, total} : null;
 }
 compute();
 
@@ -678,6 +761,7 @@ document.getElementById('send-devis').addEventListener('click', ()=>{
     l.details.forEach(d=> body += "   - " + d + "\n");
   });
   if(s.remise>0) body += "\nRemise multi-services (−"+(s.remise*100)+" %) : −" + fmt(s.remiseMontant) + "\n";
+  if(s.travel>0) body += (s.remise>0?"":"\n") + "Frais de déplacement : " + fmt(s.travel) + "\n";
   body += "\nTOTAL ESTIMÉ : " + fmt(s.total);
   if(s.monthly>0) body += " (dont " + fmt(s.monthly) + " /mois)";
   body += "\n\n";
