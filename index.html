@@ -87,8 +87,25 @@
   .service h3{font-family:var(--display);font-weight:700;font-size:1.12rem;margin-bottom:8px}
   .service p{font-size:.92rem;color:var(--muted)}
 
+  /* ---------- A PROPOS ---------- */
+  #apropos{background:var(--navy-deep)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .about-copy .eyebrow{margin-bottom:14px}
+  .about-copy h2{margin-bottom:18px}
+  .about-copy p{color:var(--muted);margin-bottom:16px}
+  .about-copy p strong{color:var(--ink);font-weight:600}
+  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+  .stat{background:var(--navy-soft);border:1px solid var(--line);border-radius:14px;padding:18px 16px;text-align:center}
+  .stat b{display:block;font-family:var(--display);font-weight:800;font-size:1.7rem;color:var(--orange);line-height:1}
+  .stat small{color:var(--muted);font-size:.78rem;display:block;margin-top:6px}
+  .about-values{display:flex;flex-direction:column;gap:14px}
+  .value{display:flex;gap:16px;background:var(--navy-soft);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+  .value .vico{flex-shrink:0;width:42px;height:42px;border-radius:11px;background:rgba(255,107,44,.14);display:grid;place-items:center;color:var(--orange);font-size:1.1rem}
+  .value h4{font-family:var(--display);font-weight:700;font-size:1rem;margin-bottom:4px}
+  .value p{font-size:.88rem;color:var(--muted)}
+
   /* ---------- PORTFOLIO ---------- */
-  #portfolio{background:var(--navy-deep)}
+  #portfolio{background:var(--navy)}
   .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
   .filter{font-family:var(--body);font-weight:600;font-size:.86rem;padding:9px 20px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
   .filter:hover{color:#fff;border-color:var(--muted)}
@@ -165,17 +182,50 @@
     .hero-visual{max-width:420px;margin:0 auto}
     .services-grid{grid-template-columns:repeat(2,1fr)}
     .pf-grid{grid-template-columns:repeat(2,1fr)}
+    .about-grid{grid-template-columns:1fr;gap:40px}
     .devis-layout{grid-template-columns:1fr}
     .summary{position:static}
     .contact-grid{grid-template-columns:1fr}
   }
   @media(max-width:640px){
-    .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--navy-deep);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid var(--line)}
+    .wrap{padding:0 18px}
+    .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--navy-deep);flex-direction:column;padding:22px;gap:18px;border-bottom:1px solid var(--line)}
     .nav-links.open{display:flex}
+    .nav-links a{font-size:1rem}
+    .nav-links .btn{text-align:center}
     .burger{display:block}
+    .section{padding:64px 0}
+    .section-head{margin-bottom:34px}
     .services-grid,.pf-grid{grid-template-columns:1fr}
-    .section{padding:72px 0}
     .float-chip{display:none}
+    .hero{padding:120px 0 70px;min-height:auto}
+    .hero-cta{flex-direction:column;align-items:stretch}
+    .hero-cta .btn{text-align:center}
+    .about-stats{gap:10px}
+    .stat b{font-size:1.4rem}
+    .stat small{font-size:.72rem}
+    /* devis : options plus lisibles au pouce */
+    .svc-head{padding:16px}
+    .svc-body{padding:0 16px 18px}
+    .opt-row{flex-wrap:wrap;align-items:flex-start;gap:8px}
+    .opt-row .price{font-size:.8rem}
+    select,.qty input{width:100%}
+    .qty{width:100%}
+    .summary{padding:22px 18px}
+    #total{font-size:1.9rem}
+    .contact-list a{font-size:.9rem}
+    footer .wrap{flex-direction:column;text-align:left}
+  }
+  @media(max-width:380px){
+    .about-stats{grid-template-columns:1fr;gap:8px}
+    .stat{display:flex;align-items:center;justify-content:center;gap:8px}
+    .stat b{font-size:1.3rem}
+    .stat small{margin-top:0}
+  }
+  /* zones tactiles confortables sur tactile */
+  @media(hover:none){
+    .filter,.btn,.svc-head,.opt-row label{min-height:44px}
+    .opt-row label{align-items:center}
   }
 </style>
 </head>
@@ -187,6 +237,7 @@
     <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <nav class="nav-links">
       <a href="#services">Services</a>
+      <a href="#apropos">À propos</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#devis">Devis</a>
       <a href="#contact">Contact</a>
@@ -275,6 +326,42 @@
   </div>
 </section>
 
+<!-- ============ A PROPOS ============ -->
+<section id="apropos" class="section">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <div class="eyebrow">À propos</div>
+      <h2>Un studio, tous vos supports au même endroit</h2>
+      <p><strong>TBSN</strong> est né d'une idée simple : réunir sous un même toit tout ce qui fait votre image — du logo à la vidéo, de l'affiche au drone. Fini de jongler entre plusieurs prestataires.</p>
+      <p>Nous accompagnons artisans, commerçants, entreprises et associations qui veulent une communication soignée, cohérente et prête à diffuser. Chaque projet est traité avec la même exigence, quel que soit son budget.</p>
+      <p>Notre différence : la <strong>polyvalence</strong>. Une seule équipe pense votre identité graphique, la met en mouvement en vidéo, la capture en photo et la fait vivre sur vos réseaux.</p>
+      <div class="about-stats">
+        <div class="stat"><b>6</b><small>domaines maîtrisés</small></div>
+        <div class="stat"><b>4K</b><small>vidéo & drone</small></div>
+        <div class="stat"><b>100%</b><small>sur mesure</small></div>
+      </div>
+    </div>
+    <div class="about-values">
+      <div class="value">
+        <div class="vico">◆</div>
+        <div><h4>Une identité qui vous ressemble</h4><p>Pas de modèle recyclé. On part de votre univers pour créer quelque chose d'unique.</p></div>
+      </div>
+      <div class="value">
+        <div class="vico">⚡</div>
+        <div><h4>Réactivité & délais tenus</h4><p>Des échanges directs, des retours rapides et des livraisons dans les temps.</p></div>
+      </div>
+      <div class="value">
+        <div class="vico">✈</div>
+        <div><h4>Télépilote drone déclaré</h4><p>Prises de vues aériennes réalisées dans le respect de la réglementation DGAC.</p></div>
+      </div>
+      <div class="value">
+        <div class="vico">◉</div>
+        <div><h4>De l'idée à la diffusion</h4><p>On ne s'arrête pas au fichier livré : on vous aide à le publier au bon endroit.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PORTFOLIO ============ -->
 <section id="portfolio" class="section">
   <div class="wrap">
@@ -345,6 +432,11 @@
 </footer>
 
 <script>
+/* -- fermeture du menu mobile au clic sur un lien -- */
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click', ()=> document.querySelector('.nav-links').classList.remove('open'));
+});
+
 /* ================================================================
    PORTFOLIO — AJOUTEZ VOS CRÉATIONS ICI
    Pour chaque projet : titre, catégorie (une de la liste CATS),
