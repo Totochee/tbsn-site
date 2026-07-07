@@ -212,25 +212,28 @@
   #devis{background:var(--bg-2);position:relative}
   .devis-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:start}
   .cards{display:flex;flex-direction:column;gap:14px}
-  .svc-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .2s,box-shadow .2s}
-  .svc-card.on{border-color:var(--orange);box-shadow:0 8px 26px rgba(255,90,31,.10)}
+  .svc-card{background:var(--sc);border:1px solid var(--sc);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s;--sc:var(--orange)}
+  .svc-card.on{box-shadow:0 12px 30px color-mix(in srgb, var(--sc) 42%, transparent)}
   .svc-head{display:flex;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;user-select:none}
-  .svc-head input{width:20px;height:20px;accent-color:var(--orange);cursor:pointer;flex-shrink:0}
+  .svc-head input{width:20px;height:20px;accent-color:#fff;cursor:pointer;flex-shrink:0}
   .svc-head .t{flex:1}
-  .svc-head .t b{font-family:var(--display);font-size:1.02rem;font-weight:600;display:block;color:var(--navy)}
-  .svc-head .t small{color:var(--muted);font-size:.82rem}
-  .svc-head .base{font-family:var(--display);font-weight:600;color:var(--orange);white-space:nowrap;font-size:.95rem}
-  .svc-body{display:none;padding:0 22px 20px;border-top:1px solid var(--line)}
+  .svc-head .t b{font-family:var(--display);font-size:1.02rem;font-weight:600;display:block;color:#fff}
+  .svc-head .t small{color:rgba(255,255,255,.85);font-size:.82rem}
+  .svc-head .base{font-family:var(--display);font-weight:700;color:#fff;white-space:nowrap;font-size:.95rem}
+  .svc-body{display:none;padding:0 22px 20px;border-top:1px solid rgba(255,255,255,.3)}
   .svc-card.on .svc-body{display:block}
-  .opt-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  .opt-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.22);font-size:.9rem}
   .opt-row:last-child{border-bottom:none}
   .opt-row.km-note{padding-top:4px;font-size:.82rem}
-  .opt-row.km-note span:first-child{color:var(--muted)}
-  .opt-row label{display:flex;align-items:center;gap:10px;cursor:pointer;color:var(--ink)}
-  .opt-row input[type=checkbox]{width:17px;height:17px;accent-color:var(--orange);cursor:pointer}
-  .opt-row .price{color:var(--muted);font-weight:500;white-space:nowrap;font-size:.85rem}
-  select,.qty input{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 12px;font-family:var(--body);font-size:.88rem}
-  select:focus,.qty input:focus,input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--orange);outline-offset:1px}
+  .opt-row.km-note span:first-child{color:rgba(255,255,255,.85)}
+  .opt-row label{display:flex;align-items:center;gap:10px;cursor:pointer;color:#fff}
+  .opt-row input[type=checkbox]{width:17px;height:17px;accent-color:#fff;cursor:pointer}
+  .opt-row .price{color:rgba(255,255,255,.88);font-weight:500;white-space:nowrap;font-size:.85rem}
+  select,.qty input{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.42);color:#fff;border-radius:10px;padding:8px 12px;font-family:var(--body);font-size:.88rem}
+  select option{color:#111}
+  .qty input::placeholder{color:rgba(255,255,255,.6)}
+  select:focus,.qty input:focus{outline:2px solid #fff;outline-offset:1px}
+  input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--orange);outline-offset:1px}
   .qty{display:flex;align-items:center;gap:8px}
   .qty input{width:70px;text-align:center}
 
@@ -368,14 +371,6 @@
     <div class="hero-cta">
       <a href="#devis" class="btn">Estimer mon projet en 2 min</a>
       <a href="#portfolio" class="btn btn-ghost">Voir nos réalisations</a>
-    </div>
-    <div class="spectrum" aria-hidden="true">
-      <div class="spec"><b>Logo</b><span>Identité</span></div>
-      <div class="spec"><b>Print</b><span>Supports</span></div>
-      <div class="spec"><b>Vidéo</b><span>Motion</span></div>
-      <div class="spec"><b>Photo</b><span>Retouche</span></div>
-      <div class="spec"><b>Réseaux</b><span>Contenus</span></div>
-      <div class="spec"><b>Drone</b><span>Aérien 4K</span></div>
     </div>
   </div>
 </section>
@@ -821,7 +816,7 @@ renderPortfolio("Tous");
 const SERVICES = [
   {
     id:"logo", nom:"Logo & identité visuelle", desc:"Logo sur mesure, fichiers vectoriels sources inclus",
-    base:490,
+    base:490, couleur:"#FF5A1F",
     options:[
       {id:"charte", label:"Charte graphique complète (couleurs, typos, règles d'usage)", prix:350},
       {id:"variantes", label:"Déclinaisons du logo (monochrome, icône, favicon)", prix:130},
@@ -830,7 +825,7 @@ const SERVICES = [
   },
   {
     id:"print", nom:"Supports print (affiche, flyer…)", desc:"Création graphique prête à imprimer",
-    base:120, qty:{label:"Nombre de supports", min:1, max:20, def:1},
+    base:120, couleur:"#2563EB", qty:{label:"Nombre de supports", min:1, max:20, def:1},
     options:[
       {id:"formats", label:"Déclinaison multi-formats (A4/A3/web) par support", prix:50, parQty:true},
       {id:"express", label:"Livraison express sous 72h", prix:70},
@@ -838,7 +833,7 @@ const SERVICES = [
   },
   {
     id:"video", nom:"Vidéo & motion design", desc:"Tournage, montage et étalonnage inclus",
-    base:590,
+    base:590, couleur:"#7C3AED",
     select:{label:"Durée du film", opts:[
       {label:"Format court ≤ 30 s (réseaux)", coef:1},
       {label:"Environ 1 minute", coef:1.4},
@@ -853,7 +848,7 @@ const SERVICES = [
   },
   {
     id:"photo", nom:"Photographie", desc:"Reportage, portraits ou produits — photos retouchées",
-    base:320,
+    base:320, couleur:"#0D9488",
     select:{label:"Durée de la séance", opts:[
       {label:"Demi-journée", coef:1},
       {label:"Journée complète", coef:1.7},
@@ -864,7 +859,7 @@ const SERVICES = [
   },
   {
     id:"social", nom:"Animation des réseaux sociaux", desc:"Abonnement mensuel, sans engagement", mensuel:true,
-    base:279,
+    base:279, couleur:"#DB2777",
     select:{label:"Formule", opts:[
       {label:"Pack 8 publications / mois", coef:1},
       {label:"Pack 16 publications / mois", coef:1.7},
@@ -876,7 +871,7 @@ const SERVICES = [
   },
   {
     id:"drone", nom:"Vidéo & photo par drone", desc:"Prises de vues aériennes 4K, télépilote déclaré",
-    base:380,
+    base:380, couleur:"#0891B2",
     options:[
       {id:"montagedrone", label:"Montage vidéo des images drone inclus", prix:190},
       {id:"photosaero", label:"Pack photos aériennes HD (20 clichés)", prix:110},
@@ -893,6 +888,7 @@ SERVICES.forEach(s=>{
   const card = document.createElement('div');
   card.className = 'svc-card';
   card.id = 'card-'+s.id;
+  if(s.couleur) card.style.setProperty('--sc', s.couleur);
   let body = "";
   if(s.select){
     body += `<div class="opt-row"><label for="sel-${s.id}">${s.select.label}</label>
@@ -986,7 +982,7 @@ function compute(){
     }
     if(s.mensuel) monthly += sub; else oneShot += sub;
     travel += kmCost;
-    lines.push({nom:s.nom, sub, mensuel:!!s.mensuel, details, kmCost});
+    lines.push({nom:s.nom, sub, mensuel:!!s.mensuel, details, kmCost, couleur:s.couleur||'var(--navy)'});
   });
 
   let remise = 0;
@@ -1000,7 +996,7 @@ function compute(){
     box.innerHTML = '<div class="sum-empty">Sélectionnez au moins une prestation pour voir votre estimation.</div>';
   } else {
     box.innerHTML = lines.map(l=>`
-      <div class="sum-line"><span>${l.nom}${l.mensuel?" (mensuel)":""}</span><span>${fmt(l.sub)}</span></div>
+      <div class="sum-line"><span style="color:${l.couleur};font-weight:600">${l.nom}${l.mensuel?" (mensuel)":""}</span><span>${fmt(l.sub)}</span></div>
       ${l.details.map(d=>`<div class="sum-line sub"><span>· ${d}</span><span></span></div>`).join("")}
     `).join("")
       + (remise>0?`<div class="sum-line sum-discount"><span>Remise multi-services (−${remise*100} %)</span><span>−${fmt(remiseMontant)}</span></div>`:"")
