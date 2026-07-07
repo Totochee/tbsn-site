@@ -36,8 +36,8 @@
     --bg:#FFFFFF;
     --bg-2:#F6F7F9;
     --orange:#FF5A1F;
-    /* couleurs par métier */
-    --c-logo:#FF5A1F;
+    /* couleurs par métier (l'orange reste réservé à l'identité du site) */
+    --c-logo:#DC2626;
     --c-print:#2563EB;
     --c-video:#7C3AED;
     --c-photo:#0D9488;
@@ -647,11 +647,11 @@ const PORTFOLIO = [
 
 /* -- illustrations SVG claires par catégorie -- */
 const CAT_COLOR = {
-  "Logo":"#FF5A1F", "Print":"#2563EB", "Vidéo":"#7C3AED",
+  "Logo":"#DC2626", "Print":"#2563EB", "Vidéo":"#7C3AED",
   "Photo":"#0D9488", "Réseaux sociaux":"#DB2777", "Drone":"#0891B2"
 };
 function illustration(cat, seed){
-  const C = CAT_COLOR[cat] || "#FF5A1F";
+  const C = CAT_COLOR[cat] || "#0A1A33";
   const N = "#0A1A33", g = "illg"+seed;
   const frame = inner => `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
     <defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1">
@@ -816,7 +816,7 @@ renderPortfolio("Tous");
 const SERVICES = [
   {
     id:"logo", nom:"Logo & identité visuelle", desc:"Logo sur mesure, fichiers vectoriels sources inclus",
-    base:490, couleur:"#FF5A1F",
+    base:490, couleur:"#DC2626",
     options:[
       {id:"charte", label:"Charte graphique complète (couleurs, typos, règles d'usage)", prix:350},
       {id:"variantes", label:"Déclinaisons du logo (monochrome, icône, favicon)", prix:130},
