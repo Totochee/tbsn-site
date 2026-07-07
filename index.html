@@ -147,6 +147,24 @@
   .value h4{font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:4px;color:var(--navy)}
   .value p{font-size:.88rem;color:var(--muted)}
 
+  /* ---------- QUI JE SUIS ---------- */
+  #quijesuis{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  #quijesuis::before{content:"";position:absolute;top:-140px;right:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,90,31,.16),transparent 70%);pointer-events:none}
+  #quijesuis .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+  #quijesuis .eyebrow{color:var(--orange)}
+  #quijesuis h2{color:#fff}
+  #quijesuis h2 em{font-style:normal;color:var(--orange)}
+  .qjs-text p{color:#C4CEDE;margin-bottom:16px;font-size:1.05rem}
+  .qjs-text p strong{color:#fff;font-weight:600}
+  .qjs-sign{margin-top:24px;font-family:var(--display);font-weight:600;color:#fff;font-size:1.05rem}
+  .qjs-sign span{color:var(--orange)}
+  .qjs-photo{position:relative;max-width:360px;margin:0 auto;width:100%}
+  .qjs-photo::before{content:"";position:absolute;left:-20px;bottom:-20px;width:78%;height:66%;border:2px solid rgba(255,90,31,.45);border-radius:26px;z-index:0}
+  .qjs-frame{position:relative;z-index:1;border-radius:26px;overflow:hidden;background:#F5A200}
+  .qjs-frame img{width:100%;display:block;-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,#000 70%,transparent 100%)}
+  .qjs-tag{position:absolute;left:-14px;bottom:26px;z-index:2;background:#fff;color:var(--navy);font-family:var(--display);font-weight:600;font-size:.82rem;padding:9px 15px;border-radius:11px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+  .qjs-tag span{color:var(--orange)}
+
   /* ---------- PORTFOLIO ---------- */
   #portfolio{background:var(--bg)}
   .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
@@ -265,6 +283,8 @@
     .step,.step + .step{padding-left:0;padding-right:20px}
     .pf-grid{grid-template-columns:repeat(2,1fr)}
     .about-grid{grid-template-columns:1fr;gap:38px}
+    #quijesuis .wrap{grid-template-columns:1fr;gap:44px}
+    .qjs-photo{max-width:320px;order:-1}
     .devis-layout{grid-template-columns:1fr}
     .summary{position:static}
     .contact-grid{grid-template-columns:1fr}
@@ -481,6 +501,26 @@
         <h3>On livre &amp; on diffuse</h3>
         <p>Vous recevez tous les fichiers exploitables. On peut aussi vous aider à les publier au bon endroit.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUI JE SUIS ============ -->
+<section id="quijesuis" class="section">
+  <div class="wrap">
+    <div class="qjs-text">
+      <div class="eyebrow">Qui je suis</div>
+      <h2>Moi, c'est <em>Théo.</em></h2>
+      <p>Derrière TBSN, il n'y a pas une grosse agence anonyme : il y a une personne, moi. Après un <strong>master en communication digitale</strong> à l'université Paul Sabatier de Toulouse, j'ai fait mes armes en alternance chez Thibal Distribution, avant d'y poursuivre en CDI comme <strong>responsable communication et marketing 360°</strong>.</p>
+      <p>J'y ai appris à penser une marque dans son ensemble — de l'image à la diffusion, du print à la vidéo, des réseaux au terrain. C'est cette vision complète que je mets aujourd'hui au service des entreprises qui veulent une communication qui leur ressemble, sans se disperser entre dix prestataires.</p>
+      <p>Ce qui me motive vraiment : transformer une idée encore floue en quelque chose qu'on a <strong>envie de regarder — et de partager</strong>.</p>
+      <p class="qjs-sign">— Théo Bestion, <span>fondateur de TBSN groupe</span></p>
+    </div>
+    <div class="qjs-photo">
+      <div class="qjs-frame">
+        <img src="moi.jpg" alt="Théo Bestion, fondateur de TBSN groupe" loading="lazy">
+      </div>
+      <div class="qjs-tag">Fondateur · <span>TBSN groupe</span></div>
     </div>
   </div>
 </section>
