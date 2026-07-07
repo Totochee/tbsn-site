@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — Théo Bestion & TBSN groupe</title>
+<meta name="description" content="TBSN Groupe accompagne les entreprises dans leur communication : création graphique, logo, print, vidéo, photo, réseaux sociaux et drone. Une agence créative pour valoriser votre image.">
+<link rel="canonical" href="https://tbsngroupe.fr/a-propos.html">
+
+<!-- Aperçu de partage (Open Graph — Facebook, WhatsApp, LinkedIn…) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tbsngroupe.fr/a-propos.html">
+<meta property="og:site_name" content="TBSN groupe">
+<meta property="og:title" content="À propos — Théo Bestion & TBSN groupe">
+<meta property="og:description" content="Logo, print, vidéo, photo, réseaux sociaux et drone. Une seule équipe pour toute votre communication, du premier trait à la diffusion.">
+<meta property="og:image" content="https://tbsngroupe.fr/favicon.jpeg">
+<meta property="og:image:alt" content="TBSN groupe">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Aperçu de partage (Twitter / X) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="À propos — Théo Bestion & TBSN groupe">
+<meta name="twitter:description" content="Logo, print, vidéo, photo, réseaux sociaux et drone. Une seule équipe pour toute votre communication.">
+<meta name="twitter:image" content="https://tbsngroupe.fr/favicon.jpeg">
+
+<link rel="icon" href="favicon.jpeg" type="image/jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1A33;
+    --navy-2:#16305A;
+    --ink:#111826;
+    --muted:#5B6678;
+    --line:#E7E9EF;
+    --bg:#FFFFFF;
+    --bg-2:#F6F7F9;
+    --orange:#FF5A1F;
+    /* couleurs par métier */
+    --c-logo:#FF5A1F;
+    --c-print:#2563EB;
+    --c-video:#7C3AED;
+    --c-photo:#0D9488;
+    --c-social:#DB2777;
+    --c-drone:#0891B2;
+    --radius:16px;
+    --display:'Space Grotesk',sans-serif;
+    --body:'Inter',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--orange);color:#fff}
+
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:var(--display);font-weight:600;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+  h2{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.12;letter-spacing:-.015em;color:var(--navy)}
+  .section{padding:104px 0}
+  .section-head{max-width:620px;margin-bottom:52px}
+  .section-head p{color:var(--muted);margin-top:14px;font-size:1.02rem}
+
+  /* ---------- HEADER ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:1.3rem;
+  letter-spacing:.02em;
+  color:#121A31;
+}  .logo span{color:var(--orange)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:.92rem;font-weight:500;color:var(--muted);transition:color .2s}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--navy)}
+  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:.92rem;padding:12px 24px;border-radius:999px;background:var(--orange);color:#fff;border:none;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s}
+  .btn:hover{background:#e94e15;transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,90,31,.28)}
+  .btn:focus-visible{outline:3px solid rgba(255,90,31,.4);outline-offset:3px}
+  .btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--navy)}
+  .btn-ghost:hover{background:var(--bg-2);border-color:var(--muted);box-shadow:none}
+  .burger{display:none;background:none;border:none;color:var(--navy);font-size:1.6rem;cursor:pointer}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:150px 0 70px;overflow:hidden}
+  .hero .wrap{position:relative;z-index:2}
+  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,6.4vw,4.6rem);line-height:1.04;letter-spacing:-.03em;color:var(--navy);max-width:15ch}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .hero .lead{margin:26px 0 34px;font-size:1.14rem;color:var(--muted);max-width:56ch}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* signature : spectre des 6 métiers */
+  .spectrum{margin-top:64px;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .spec{position:relative;padding-top:18px}
+  .spec::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;border-radius:2px;background:var(--sc)}
+  .spec b{display:block;font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--navy);margin-bottom:2px}
+  .spec span{font-size:.8rem;color:var(--muted)}
+  .spec:nth-child(1){--sc:var(--c-logo)} .spec:nth-child(2){--sc:var(--c-print)}
+  .spec:nth-child(3){--sc:var(--c-video)} .spec:nth-child(4){--sc:var(--c-photo)}
+  .spec:nth-child(5){--sc:var(--c-social)} .spec:nth-child(6){--sc:var(--c-drone)}
+
+  /* ---------- SERVICES ---------- */
+  #services{background:var(--bg-2)}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .service{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .service:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(16,24,38,.08);border-color:transparent}
+  .service .dot{width:11px;height:11px;border-radius:50%;background:var(--sc);margin-bottom:20px}
+  .svc-badge{position:absolute;top:20px;right:20px;background:var(--sc);color:#fff;font-family:var(--display);font-weight:600;font-size:.8rem;line-height:1;padding:6px 11px;border-radius:999px;letter-spacing:.01em}
+  .service h3{font-family:var(--display);font-weight:600;font-size:1.12rem;margin-bottom:8px;color:var(--navy)}
+  .service>p{font-size:.92rem;color:var(--muted);margin-bottom:18px}
+  .deliver{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:9px}
+  .deliver li{position:relative;padding-left:24px;font-size:.86rem;color:var(--ink)}
+  .deliver li::before{content:"";position:absolute;left:0;top:6px;width:11px;height:7px;border-left:2px solid var(--sc);border-bottom:2px solid var(--sc);transform:rotate(-45deg)}
+  .svc-price{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:.98rem;color:var(--navy);transition:gap .2s}
+  .svc-price .ar{color:var(--sc);transition:transform .2s;display:inline-block}
+  .service:hover .svc-price .ar{transform:translateX(4px)}
+  .service:nth-child(1){--sc:var(--c-logo)} .service:nth-child(2){--sc:var(--c-print)}
+  .service:nth-child(3){--sc:var(--c-video)} .service:nth-child(4){--sc:var(--c-photo)}
+  .service:nth-child(5){--sc:var(--c-social)} .service:nth-child(6){--sc:var(--c-drone)}
+
+  /* ---------- PROCESS ---------- */
+  #process{background:var(--bg)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .step{padding:28px 26px 28px 0;border-top:2px solid var(--navy)}
+  .step + .step{padding-left:26px}
+  .step-n{font-family:var(--display);font-weight:700;font-size:1rem;color:var(--orange);letter-spacing:.05em}
+  .step h3{font-family:var(--display);font-weight:600;font-size:1.08rem;margin:14px 0 8px;color:var(--navy)}
+  .step p{font-size:.88rem;color:var(--muted)}
+
+  /* ---------- A PROPOS ---------- */
+  #apropos{background:var(--bg-2)}
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .about-copy .eyebrow{margin-bottom:14px}
+  .about-copy h2{margin-bottom:18px}
+  .about-copy p{color:var(--muted);margin-bottom:16px}
+  .about-copy p strong{color:var(--ink);font-weight:600}
+  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+  .stat b{display:block;font-family:var(--display);font-weight:700;font-size:1.7rem;color:var(--orange);line-height:1}
+  .stat small{color:var(--muted);font-size:.78rem;display:block;margin-top:6px}
+  .about-values{display:flex;flex-direction:column;gap:12px}
+  .value{display:flex;gap:16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+  .value .vico{flex-shrink:0;width:34px;height:34px;display:grid;place-items:center}
+  .value .vico svg{width:28px;height:28px}
+  .value:nth-child(1) .vico{color:var(--c-logo)} .value:nth-child(2) .vico{color:var(--c-print)}
+  .value:nth-child(3) .vico{color:var(--c-drone)} .value:nth-child(4) .vico{color:var(--c-photo)}
+  .value h4{font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:4px;color:var(--navy)}
+  .value p{font-size:.88rem;color:var(--muted)}
+
+  /* ---------- QUI JE SUIS ---------- */
+  #quijesuis{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  #quijesuis::before{content:"";position:absolute;top:-140px;right:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,90,31,.16),transparent 70%);pointer-events:none}
+  #quijesuis .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+  #quijesuis .eyebrow{color:var(--orange)}
+  #quijesuis h2{color:#fff}
+  #quijesuis h2 em{font-style:normal;color:var(--orange)}
+  .qjs-text p{color:#C4CEDE;margin-bottom:16px;font-size:1.05rem}
+  .qjs-text p strong{color:#fff;font-weight:600}
+  .qjs-sign{margin-top:24px;font-family:var(--display);font-weight:600;color:#fff;font-size:1.05rem}
+  .qjs-sign span{color:var(--orange)}
+  .qjs-photo{position:relative;max-width:360px;margin:0 auto;width:100%}
+  .qjs-photo::before{content:"";position:absolute;left:-20px;bottom:-20px;width:78%;height:66%;border:2px solid rgba(255,90,31,.45);border-radius:26px;z-index:0}
+  .qjs-frame{position:relative;z-index:1;border-radius:26px;overflow:hidden;background:#F5A200;aspect-ratio:4/5}
+  .qjs-frame img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:118%;max-width:none;height:auto;display:block;-webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent 100%);mask-image:linear-gradient(to bottom,#000 82%,transparent 100%)}
+  .qjs-tag{position:absolute;left:-14px;bottom:26px;z-index:2;background:#fff;color:var(--navy);font-family:var(--display);font-weight:600;font-size:.82rem;padding:9px 15px;border-radius:11px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+  .qjs-tag span{color:var(--orange)}
+
+  /* ---------- PORTFOLIO ---------- */
+  #portfolio{background:var(--bg)}
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+  .filter{font-family:var(--body);font-weight:500;font-size:.86rem;padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;transition:all .2s}
+  .filter:hover{color:var(--navy);border-color:var(--muted)}
+  .filter.active{background:var(--navy);border-color:var(--navy);color:#fff}
+  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .pf-item{display:block;position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line);cursor:pointer;background:#fff}
+  .pf-item .illus{position:absolute;inset:0}
+  .pf-item .illus svg{width:100%;height:100%;display:block}
+  .pf-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,center)}
+  .pf-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,26,51,.92) 0%,rgba(10,26,51,.05) 60%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;opacity:0;transition:opacity .25s}
+  .pf-item:hover .overlay,.pf-item:focus-within .overlay{opacity:1}
+  .overlay .cat{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff;opacity:.85}
+  .overlay .ttl{font-family:var(--display);font-weight:600;font-size:1.05rem;color:#fff}
+  .overlay .pf-link{margin-top:8px;font-family:var(--body);font-size:.82rem;font-weight:600;color:#fff;display:inline-flex;align-items:center;gap:6px}
+  .pf-item.linked::after{content:"↗";position:absolute;top:14px;right:14px;width:32px;height:32px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:50%;color:#fff;font-size:.95rem;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s;z-index:2}
+  .pf-item.linked:hover::after,.pf-item.linked:focus-visible::after{opacity:1;transform:translateY(0)}
+  .pf-item.zoomable{cursor:zoom-in}
+  .pf-item.zoomable::after{content:"⤢";position:absolute;top:14px;right:14px;width:32px;height:32px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:50%;color:#fff;font-size:1rem;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s;z-index:2}
+  .pf-item.zoomable:hover::after,.pf-item.zoomable:focus-visible::after{opacity:1;transform:translateY(0)}
+
+  /* ---------- LIGHTBOX (agrandissement image) ---------- */
+  .lightbox{position:fixed;inset:0;z-index:1000;background:rgba(6,12,26,.93);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:28px;cursor:zoom-out}
+  .lightbox.open{display:flex;animation:lbfade .2s ease}
+  @keyframes lbfade{from{opacity:0}to{opacity:1}}
+  .lightbox figure{margin:0;max-width:min(1100px,94vw);display:flex;flex-direction:column;gap:14px;align-items:center}
+  .lightbox img{max-width:100%;max-height:82vh;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+  .lightbox figcaption{color:#EAF0F8;font-family:var(--body);font-size:.9rem;text-align:center;opacity:.9}
+  .lb-close{position:absolute;top:20px;right:24px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:1.3rem;cursor:pointer;display:grid;place-items:center;transition:background .2s,transform .15s;z-index:3}
+  .lb-close:hover{background:rgba(255,255,255,.24);transform:rotate(90deg)}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:2rem;line-height:1;cursor:pointer;display:none;place-items:center;transition:background .2s;z-index:3;padding-bottom:4px}
+  .lb-nav:hover{background:rgba(255,255,255,.26)}
+  .lb-prev{left:20px}
+  .lb-next{right:20px}
+  .lightbox.has-gallery .lb-nav{display:grid}
+  .lb-dots{display:none;justify-content:center;gap:9px;margin-top:4px}
+  .lightbox.has-gallery .lb-dots{display:flex}
+  .lb-dots button{width:9px;height:9px;padding:0;border-radius:50%;border:none;background:rgba(255,255,255,.32);cursor:pointer;transition:background .2s,transform .2s}
+  .lb-dots button.on{background:var(--orange);transform:scale(1.25)}
+  .pf-item.gallery::after{content:"⧉";position:absolute;top:14px;right:14px;width:32px;height:32px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:50%;color:#fff;font-size:1rem;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s;z-index:2}
+  .pf-item.gallery:hover::after,.pf-item.gallery:focus-visible::after{opacity:1;transform:translateY(0)}
+
+  /* ---------- DEVIS ---------- */
+  #devis{background:var(--bg-2);position:relative}
+  .devis-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:start}
+  .cards{display:flex;flex-direction:column;gap:14px}
+  .svc-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .2s,box-shadow .2s}
+  .svc-card.on{border-color:var(--orange);box-shadow:0 8px 26px rgba(255,90,31,.10)}
+  .svc-head{display:flex;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;user-select:none}
+  .svc-head input{width:20px;height:20px;accent-color:var(--orange);cursor:pointer;flex-shrink:0}
+  .svc-head .t{flex:1}
+  .svc-head .t b{font-family:var(--display);font-size:1.02rem;font-weight:600;display:block;color:var(--navy)}
+  .svc-head .t small{color:var(--muted);font-size:.82rem}
+  .svc-head .base{font-family:var(--display);font-weight:600;color:var(--orange);white-space:nowrap;font-size:.95rem}
+  .svc-body{display:none;padding:0 22px 20px;border-top:1px solid var(--line)}
+  .svc-card.on .svc-body{display:block}
+  .opt-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  .opt-row:last-child{border-bottom:none}
+  .opt-row.km-note{padding-top:4px;font-size:.82rem}
+  .opt-row.km-note span:first-child{color:var(--muted)}
+  .opt-row label{display:flex;align-items:center;gap:10px;cursor:pointer;color:var(--ink)}
+  .opt-row input[type=checkbox]{width:17px;height:17px;accent-color:var(--orange);cursor:pointer}
+  .opt-row .price{color:var(--muted);font-weight:500;white-space:nowrap;font-size:.85rem}
+  select,.qty input{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:8px 12px;font-family:var(--body);font-size:.88rem}
+  select:focus,.qty input:focus,input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--orange);outline-offset:1px}
+  .qty{display:flex;align-items:center;gap:8px}
+  .qty input{width:70px;text-align:center}
+
+  .summary{position:sticky;top:92px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 40px rgba(16,24,38,.06)}
+  .summary h3{font-family:var(--display);font-weight:700;font-size:1.2rem;margin-bottom:18px;color:var(--navy)}
+  #sum-lines{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;min-height:40px}
+  .sum-line{display:flex;justify-content:space-between;gap:12px;font-size:.88rem}
+  .sum-line span:first-child{color:var(--muted)}
+  .sum-line.sub{padding-left:14px;font-size:.82rem}
+  .sum-empty{color:var(--muted);font-size:.88rem;font-style:italic}
+  .sum-discount{color:var(--orange);font-weight:600}
+  .total-row{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+  .total-row .lbl{font-weight:500;color:var(--muted);font-size:.9rem}
+  #total{font-family:var(--display);font-weight:700;font-size:2.1rem;color:var(--navy);transition:transform .15s}
+  #total.pulse{transform:scale(1.05)}
+  .monthly-note{font-size:.78rem;color:var(--muted);margin-bottom:18px}
+  .summary .fields{display:flex;flex-direction:column;gap:10px;margin:14px 0 16px}
+  .summary .fields input{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:11px 14px;font-size:.9rem;width:100%}
+  #send-devis{width:100%;text-align:center}
+  #send-devis:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+  .legal{font-size:.72rem;color:var(--muted);margin-top:12px;text-align:center}
+  .devis-status{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;font-size:.86rem;line-height:1.5}
+  .devis-status.ok{display:block;background:rgba(13,148,136,.10);border:1px solid rgba(13,148,136,.35);color:#0B7A6F}
+  .devis-status.err{display:block;background:rgba(255,90,31,.08);border:1px solid rgba(255,90,31,.4);color:#C23D0E}
+  .devis-status a{color:var(--orange);font-weight:600;text-decoration:underline}
+
+  /* ---------- CONTACT (bande marine) ---------- */
+  #contact{background:var(--navy)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .contact-grid .eyebrow{color:#FF8A5E}
+  .contact-grid .big{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.6vw,2.4rem);line-height:1.15;color:#fff;letter-spacing:-.01em}
+  .contact-grid .big span{color:var(--orange)}
+  .contact-list{display:flex;flex-direction:column;gap:14px;font-size:.98rem}
+  .contact-list a{display:flex;align-items:center;gap:13px;color:#B9C4D6;transition:color .2s}
+  .contact-list a:hover{color:#fff}
+  .contact-list a svg{width:20px;height:20px;flex-shrink:0}
+  footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.08);padding:26px 0;font-size:.82rem;color:#8A99B2}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  .footer-social{display:flex;gap:14px;align-items:center}
+  .footer-social a{color:#8A99B2;transition:color .2s,transform .15s;display:grid;place-items:center}
+  .footer-social a:hover{color:var(--orange);transform:translateY(-2px)}
+  .footer-social svg{width:20px;height:20px}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:960px){
+    .services-grid{grid-template-columns:repeat(2,1fr)}
+    .spectrum{grid-template-columns:repeat(3,1fr);gap:18px 14px}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .step{border-top:2px solid var(--navy)}
+    .step,.step + .step{padding-left:0;padding-right:20px}
+    .pf-grid{grid-template-columns:repeat(2,1fr)}
+    .about-grid{grid-template-columns:1fr;gap:38px}
+    #quijesuis .wrap{grid-template-columns:1fr;gap:44px}
+    .qjs-photo{max-width:320px;order:-1}
+    .devis-layout{grid-template-columns:1fr}
+    .summary{position:static}
+    .contact-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .wrap{padding:0 18px}
+    .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;flex-direction:column;padding:22px;gap:18px;border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .nav-links a{font-size:1rem}
+    .nav-links .btn{text-align:center}
+    .burger{display:block}
+    .section{padding:70px 0}
+    .section-head{margin-bottom:34px}
+    .hero{padding:120px 0 60px}
+    .services-grid,.pf-grid,.steps{grid-template-columns:1fr}
+    .spectrum{grid-template-columns:repeat(2,1fr)}
+    .hero-cta{flex-direction:column;align-items:stretch}
+    .hero-cta .btn{text-align:center}
+    .about-stats{gap:10px}
+    .stat b{font-size:1.4rem}
+    .svc-head{padding:16px}
+    .svc-body{padding:0 16px 18px}
+    .opt-row{flex-wrap:wrap;align-items:flex-start;gap:8px}
+    select,.qty input{width:100%}
+    .qty{width:100%}
+    .summary{padding:22px 18px}
+    #total{font-size:1.9rem}
+    footer .wrap{flex-direction:column;text-align:left}
+  }
+  @media(hover:none){
+    .filter,.btn,.svc-head,.opt-row label{min-height:44px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .btn:hover,.service:hover{transform:none}
+  }
+
+  /* ---------- BOUTON DE CONTACT FLOTTANT ---------- */
+  .fab{position:fixed;right:18px;bottom:18px;z-index:900;display:flex;flex-direction:column;gap:12px;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+  .fab.show{opacity:1;transform:none;pointer-events:auto}
+  .fab a{position:relative;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 8px 24px rgba(10,26,51,.22);transition:transform .15s,box-shadow .2s}
+  .fab a:hover{transform:scale(1.08);box-shadow:0 12px 30px rgba(10,26,51,.30)}
+  .fab a:active{transform:scale(.96)}
+  .fab .wa{background:#25D366}
+  .fab .call{background:var(--navy)}
+  .fab .devis{background:var(--orange)}
+  .fab svg{width:27px;height:27px}
+  .fab a .tip{position:absolute;right:66px;top:50%;transform:translateY(-50%);white-space:nowrap;background:var(--navy);color:#fff;font-family:var(--body);font-weight:500;font-size:.8rem;padding:7px 12px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .2s}
+  .fab a:hover .tip{opacity:1}
+  @media(max-width:640px){
+    .fab{right:14px;bottom:14px;gap:10px}
+    .fab a{width:52px;height:52px}
+    .fab a .tip{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){ .fab a:hover{transform:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">TBSN <span style="color:#FF5A1F;">groupe.</span></a>
+    <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <nav class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#process">Étapes</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#devis" class="btn" style="color: #fff;" >Estimer mon projet</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ QUI JE SUIS ============ -->
+<section id="quijesuis" class="section">
+  <div class="wrap">
+    <div class="qjs-text">
+      <div class="eyebrow">Qui je suis</div>
+      <h2>Moi, c'est <em>Théo.</em></h2>
+      <p>Pas de grosse agence derrière TBSN : juste moi, et une conviction — une bonne communication, ça ne se sous-traite pas en pièces détachées.</p>
+      <p>J'ai un master en communication digitale (Paul Sabatier, Toulouse), et j'ai vraiment appris le métier sur le terrain : d'abord en alternance chez Thibal Distribution, puis en CDI comme responsable communication et marketing 360°. Concrètement, j'ai géré une marque de A à Z — le print, la vidéo, les réseaux, les campagnes — au lieu de me spécialiser dans une seule case.</p>
+      <p>C'est exactement ce que je propose avec TBSN : un seul interlocuteur qui comprend votre projet en entier, et qui le porte du premier trait jusqu'au jour où vos clients le voient passer.</p>
+      <p>Le drone, le montage, une identité qui claque… ce qui me fait vibrer, c'est de prendre une idée un peu floue et d'en sortir quelque chose dont on est fier.</p>
+      <p class="qjs-sign">— Théo Bestion, <span>fondateur de TBSN groupe</span></p>
+    </div>
+    <div class="qjs-photo">
+      <div class="qjs-frame">
+        <img src="moi.jpg" alt="Théo Bestion, fondateur de TBSN groupe" loading="lazy">
+      </div>
+      <div class="qjs-tag">Fondateur · <span>TBSN groupe</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ A PROPOS ============ -->
+<section id="apropos" class="section">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <div class="eyebrow">À propos</div>
+      <h2>Un studio, tous vos supports</h2>
+      <p><strong>TBSN</strong> réunit sous un même toit tout ce qui fait votre image — du logo à la vidéo, de l'affiche au drone. Fini de jongler entre plusieurs prestataires.</p>
+      <p>Nous accompagnons artisans, commerçants, entreprises et associations qui veulent une communication soignée, cohérente et prête à diffuser. Chaque projet est traité avec la même exigence, quel que soit son budget.</p>
+      <p>Notre différence : la <strong>polyvalence</strong>. Une seule équipe pense votre identité, la met en mouvement, la capture et la fait vivre sur vos réseaux.</p>
+      <div class="about-stats">
+        <div class="stat"><b>6</b><small>métiers réunis</small></div>
+        <div class="stat"><b>4K</b><small>vidéo &amp; drone</small></div>
+        <div class="stat"><b>100%</b><small>sur mesure</small></div>
+      </div>
+    </div>
+    <div class="about-values">
+      <div class="value">
+        <div class="vico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg></div>
+        <div><h4>Une identité qui vous ressemble</h4><p>Pas de modèle recyclé. On part de votre univers pour créer quelque chose d'unique.</p></div>
+      </div>
+      <div class="value">
+        <div class="vico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div><h4>Réactivité &amp; délais tenus</h4><p>Des échanges directs, des retours rapides et des livraisons dans les temps.</p></div>
+      </div>
+      <div class="value">
+        <div class="vico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><h4>Télépilote de drone certifié (Catégorie Ouverte A1/A3)</h4><p>Prises de vues aériennes réalisées dans le respect de la réglementation DGAC.</p></div>
+      </div>
+      <div class="value">
+        <div class="vico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></div>
+        <div><h4>De l'idée à la diffusion</h4><p>On ne s'arrête pas au fichier livré : on vous aide à le publier au bon endroit.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 TBSN — Création graphique, vidéo, photo &amp; drone</span>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/theo-bestion/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/tbsngroupe/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="tel:+33633108532" aria-label="Téléphone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a href="mailto:tbsngroupe@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      </a>
+    </div>
+    <span><a href="mentions-legales.html" style="color:#B9C4D6">Mentions légales</a> · Télépilote de drone certifié (Catégorie Ouverte A1/A3)</span>
+  </div>
+</footer>
+
+<!-- Bouton de contact flottant -->
+<div class="fab" id="fab" aria-label="Contact rapide">
+  <a class="devis" href="index.html#devis" aria-label="Estimer mon projet">
+    <span class="tip">Estimer mon projet</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
+  </a>
+  <a class="wa" href="https://wa.me/33633108532?text=Bonjour%2C%20je%20vous%20contacte%20via%20votre%20site%20TBSN%20pour%20un%20projet." target="_blank" rel="noopener noreferrer" aria-label="Contacter par WhatsApp">
+    <span class="tip">Écrire sur WhatsApp</span>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.06L2 22l5.05-1.32A10 10 0 1 0 12 2zm0 18.2c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3 .78.8-2.92-.2-.31A8.2 8.2 0 1 1 12 20.2z"/><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+  </a>
+  <a class="call" href="tel:+33633108532" aria-label="Appeler">
+    <span class="tip">Appeler : 06 33 10 85 32</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+</div>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click', ()=> document.querySelector('.nav-links').classList.remove('open'));
+});
+const fab = document.getElementById('fab');
+function toggleFab(){ fab.classList.toggle('show', window.scrollY > 300); }
+window.addEventListener('scroll', toggleFab, {passive:true}); toggleFab();
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const t = document.querySelectorAll('.qjs-text, .qjs-photo, .value, .about-copy, .section-head');
+  t.forEach(el=>{ el.style.opacity=0; el.style.transform='translateY(18px)'; el.style.transition='opacity .6s ease, transform .6s ease'; });
+  const io = new IntersectionObserver((es)=>{ es.forEach((e,i)=>{ if(e.isIntersecting){ const el=e.target; setTimeout(()=>{el.style.opacity=1;el.style.transform='none';}, Math.min(i*60,180)); io.unobserve(el);} }); }, {threshold:.1, rootMargin:'0px 0px -40px 0px'});
+  t.forEach(el=>io.observe(el));
+}
+</script>
+</body>
+</html>
