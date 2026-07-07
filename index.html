@@ -203,6 +203,10 @@
   #send-devis{width:100%;text-align:center}
   #send-devis:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
   .legal{font-size:.72rem;color:var(--muted);margin-top:12px;text-align:center}
+  .devis-status{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;font-size:.86rem;line-height:1.5}
+  .devis-status.ok{display:block;background:rgba(13,148,136,.10);border:1px solid rgba(13,148,136,.35);color:#0B7A6F}
+  .devis-status.err{display:block;background:rgba(255,90,31,.08);border:1px solid rgba(255,90,31,.4);color:#C23D0E}
+  .devis-status a{color:var(--orange);font-weight:600;text-decoration:underline}
 
   /* ---------- CONTACT (bande marine) ---------- */
   #contact{background:var(--navy)}
@@ -492,9 +496,11 @@
           <input type="text" id="cl-name" placeholder="Votre nom / entreprise">
           <input type="email" id="cl-email" placeholder="Votre email">
           <input type="text" id="cl-msg" placeholder="Précisions sur votre projet (optionnel)">
+          <input type="text" id="hp" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         </div>
         <button class="btn" id="send-devis" disabled>📩 Envoyer ma demande de devis</button>
-        <p class="legal">Estimation indicative, hors taxes. Un devis définitif vous sera confirmé après échange. L'envoi ouvre votre messagerie avec le récapitulatif pré-rempli.</p>
+        <div class="devis-status" id="devis-status" role="status" aria-live="polite"></div>
+        <p class="legal">Estimation indicative, hors taxes. Un devis définitif vous sera confirmé après échange. Votre demande est envoyée directement à notre équipe.</p>
       </aside>
     </div>
   </div>
@@ -808,6 +814,16 @@ cardsBox.addEventListener('input', compute);
 const fmt = n => n.toLocaleString('fr-FR') + " €";
 let lastSummary = null;
 
+/* -- éléments & constantes de l'envoi automatique -- */
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnjkrloa";
+const SEND_LABEL = "📩 Envoyer ma demande de devis";
+const sendBtnEl = document.getElementById('send-devis');
+const devisStatus = document.getElementById('devis-status');
+function showStatus(type, html){
+  devisStatus.className = 'devis-status' + (type ? ' '+type : '');
+  devisStatus.innerHTML = html || "";
+}
+
 function compute(){
   const lines = [];
   let oneShot = 0, monthly = 0, travel = 0, nbServices = 0;
@@ -880,18 +896,14 @@ function compute(){
     mn.textContent = `dont ${fmt(monthly)} / mois pour l'animation des réseaux (premier mois inclus dans le total).`;
   } else mn.hidden = true;
 
-  document.getElementById('send-devis').disabled = lines.length===0;
+  sendBtnEl.disabled = lines.length===0;
+  if(lines.length){ sendBtnEl.innerHTML = SEND_LABEL; showStatus('', ''); }
   lastSummary = lines.length ? {lines, oneShot, monthly, remise, remiseMontant, travel, total} : null;
 }
 compute();
 
-/* -- envoi du récapitulatif par email -- */
-document.getElementById('send-devis').addEventListener('click', ()=>{
-  if(!lastSummary) return;
-  const nom = document.getElementById('cl-name').value.trim() || "Non renseigné";
-  const email = document.getElementById('cl-email').value.trim() || "Non renseigné";
-  const msg = document.getElementById('cl-msg').value.trim();
-  const s = lastSummary;
+/* -- construction du récapitulatif texte -- */
+function buildRecap(s, nom, email, msg){
   let body = "DEMANDE DE DEVIS — TBSN groupe\n";
   body += "================================\n\n";
   body += "Client : " + nom + "\nEmail : " + email + "\n\nPrestations demandées :\n";
@@ -906,8 +918,56 @@ document.getElementById('send-devis').addEventListener('click', ()=>{
   body += "\n\n";
   if(msg) body += "Précisions du client :\n" + msg + "\n\n";
   body += "— Devis généré depuis le simulateur du site TBSN";
+  return body;
+}
+
+/* -- envoi automatique du devis via Formspree -- */
+sendBtnEl.addEventListener('click', async ()=>{
+  if(!lastSummary) return;
+  const nom = document.getElementById('cl-name').value.trim();
+  const email = document.getElementById('cl-email').value.trim();
+  const msg = document.getElementById('cl-msg').value.trim();
+  const hp = document.getElementById('hp').value; // piège anti-spam
+
+  // validations
+  if(!nom){ showStatus('err', "Merci d'indiquer votre nom ou celui de votre entreprise."); return; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showStatus('err', "Merci d'indiquer un email valide pour recevoir votre devis."); return; }
+
+  const s = lastSummary;
+  const recap = buildRecap(s, nom, email, msg);
   const subject = "Demande de devis — " + nom + " — " + fmt(s.total);
-  window.location.href = "mailto:tbsngroupe@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+  sendBtnEl.disabled = true;
+  sendBtnEl.textContent = "Envoi en cours…";
+  showStatus('', '');
+
+  try{
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+      body: JSON.stringify({
+        nom: nom,
+        email: email,
+        _replyto: email,
+        _subject: subject,
+        _gotcha: hp,
+        total: fmt(s.total),
+        message: recap
+      })
+    });
+    if(res.ok){
+      showStatus('ok', "✅ Votre demande a bien été envoyée ! Nous revenons vers vous très vite, à l'adresse indiquée.");
+      sendBtnEl.textContent = "Demande envoyée ✓";
+    } else {
+      let data = null; try{ data = await res.json(); }catch(e){}
+      throw new Error((data && data.error) || "Réponse inattendue");
+    }
+  } catch(err){
+    sendBtnEl.disabled = false;
+    sendBtnEl.innerHTML = SEND_LABEL;
+    const mailtoHref = "mailto:tbsngroupe@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(recap);
+    showStatus('err', 'L\'envoi automatique n\'a pas fonctionné. <a href="' + mailtoHref + '">Cliquez ici pour envoyer via votre messagerie</a>.');
+  }
 });
 
 /* -- apparition douce au défilement (désactivée si l'utilisateur réduit les animations) -- */
