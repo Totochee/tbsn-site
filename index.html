@@ -366,7 +366,7 @@
       <a href="a-propos.html">À propos</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
-      <a href="#devis" class="btn" style="color: #fff;" >Estimer mon projet</a>
+      <a href="prestations.html#devis" class="btn" style="color: #fff;" >Estimer mon projet</a>
     </nav>
   </div>
 </header>
@@ -378,7 +378,7 @@
     <h1>Toute votre image, <em>au même endroit.</em></h1>
     <p class="lead">Logo, supports imprimés, vidéo, photo, réseaux sociaux et prises de vues drone. Vous expliquez votre projet une fois — on s'occupe de tout, du premier trait à la diffusion.</p>
     <div class="hero-cta">
-      <a href="#devis" class="btn">Estimer mon projet en 2 min</a>
+      <a href="prestations.html#devis" class="btn">Estimer mon projet en 2 min</a>
       <a href="#portfolio" class="btn btn-ghost">Voir nos réalisations</a>
     </div>
   </div>
@@ -404,7 +404,7 @@
           <li>Palette de couleurs &amp; typographies</li>
           <li>Déclinaisons (fond clair/foncé, favicon)</li>
         </ul>
-        <a class="svc-price" href="#devis">Estimer mon devis <span class="ar">→</span></a>
+        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
       </article>
 
       <article class="service">
@@ -417,20 +417,20 @@
           <li>Fichiers d'impression HD (CMJN, fonds perdus)</li>
           <li>Déclinaisons print &amp; web</li>
         </ul>
-        <a class="svc-price" href="#devis">Estimer mon devis <span class="ar">→</span></a>
+        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
       </article>
 
       <article class="service">
         <span class="dot"></span>
-        <span class="svc-badge">dès 590 €</span>
-        <h3>Vidéo &amp; motion design</h3>
-        <p>Du film qui raconte votre histoire au format court qui cartonne sur les réseaux.</p>
+        <span class="svc-badge">dès 1 290 €</span>
+        <h3>Site internet</h3>
+        <p>Un site clair et rapide, pensé pour convertir vos visiteurs en clients.</p>
         <ul class="deliver">
-          <li>Tournage, montage &amp; étalonnage 4K</li>
-          <li>Motion design &amp; habillage graphique</li>
-          <li>Versions verticales pour les réseaux</li>
+          <li>Site responsive (mobile, tablette, ordinateur)</li>
+          <li>Design sur mesure aux couleurs de votre marque</li>
+          <li>Référencement Google (SEO) de base inclus</li>
         </ul>
-        <a class="svc-price" href="#devis">Estimer mon devis <span class="ar">→</span></a>
+        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
       </article>
 
       <article class="service">
@@ -443,7 +443,7 @@
           <li>Photos retouchées haute définition</li>
           <li>Formats web &amp; impression fournis</li>
         </ul>
-        <a class="svc-price" href="#devis">Estimer mon devis <span class="ar">→</span></a>
+        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
       </article>
 
       <article class="service">
@@ -456,7 +456,7 @@
           <li>Publication régulière (8 à 16 posts/mois)</li>
           <li>Community management en option</li>
         </ul>
-        <a class="svc-price" href="#devis">Estimer mon devis <span class="ar">→</span></a>
+        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
       </article>
 
       <article class="service">
@@ -469,7 +469,7 @@
           <li>Immobilier, événementiel, tourisme, chantiers</li>
           <li>Montage &amp; pack photos HD en option</li>
         </ul>
-        <a class="svc-price" href="#devis">Estimer mon devis <span class="ar">→</span></a>
+        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
       </article>
 
     </div>
@@ -521,38 +521,6 @@
     <div class="pf-grid" id="pf-grid"></div>
     <div class="pf-more">
       <a href="realisations.html" class="btn">Voir toutes les réalisations →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DEVIS ============ -->
-<section id="devis" class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Simulateur de devis</div>
-      <h2>Estimez votre projet en 2 minutes</h2>
-      <p>Cochez les prestations, ajustez les options : le prix s'actualise en direct. Envoyez ensuite votre demande en un clic.</p>
-    </div>
-    <div class="devis-layout">
-      <div class="cards" id="devis-cards"></div>
-      <aside class="summary" aria-live="polite">
-        <h3>Votre estimation</h3>
-        <div id="sum-lines"><div class="sum-empty">Sélectionnez au moins une prestation pour voir votre estimation.</div></div>
-        <div class="total-row">
-          <span class="lbl">Total estimé</span>
-          <span id="total">0 €</span>
-        </div>
-        <div class="monthly-note" id="monthly-note" hidden></div>
-        <div class="fields">
-          <input type="text" id="cl-name" placeholder="Votre nom / entreprise">
-          <input type="email" id="cl-email" placeholder="Votre email">
-          <input type="text" id="cl-msg" placeholder="Précisions sur votre projet (optionnel)">
-          <input type="text" id="hp" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-        </div>
-        <button class="btn" id="send-devis" disabled>📩 Envoyer ma demande de devis</button>
-        <div class="devis-status" id="devis-status" role="status" aria-live="polite"></div>
-        <p class="legal">Estimation indicative, hors taxes. Un devis définitif vous sera confirmé après échange. Votre demande est envoyée directement à notre équipe.</p>
-      </aside>
     </div>
   </div>
 </section>
@@ -612,7 +580,7 @@
 
 <!-- Bouton de contact flottant -->
 <div class="fab" id="fab" aria-label="Contact rapide">
-  <a class="devis" href="#devis" aria-label="Estimer mon projet">
+  <a class="devis" href="prestations.html#devis" aria-label="Estimer mon projet">
     <span class="tip">Estimer mon projet</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
   </a>
@@ -821,293 +789,6 @@ function renderPortfolio(filter){
   filtersBox.appendChild(b);
 });
 renderPortfolio("Tous");
-
-/* ================================================================
-   SIMULATEUR DE DEVIS
-================================================================ */
-/* Icônes par métier (repère visuel non basé sur la couleur, utile en daltonisme) */
-const ICONS = {
-  logo:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>`,
-  print:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>`,
-  video:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>`,
-  photo:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>`,
-  social:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>`,
-  drone:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10 7 7"/><path d="m14 10 3-3"/><path d="m14 14 3 3"/><path d="m10 14-3 3"/><rect x="10" y="10" width="4" height="4" rx="1"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>`,
-};
-
-const SERVICES = [
-  {
-    id:"logo", nom:"Logo & identité visuelle", desc:"Logo sur mesure, fichiers vectoriels sources inclus",
-    base:490, couleur:"#1D4ED8", icon:ICONS.logo,
-    options:[
-      {id:"charte", label:"Charte graphique complète (couleurs, typos, règles d'usage)", prix:350},
-      {id:"variantes", label:"Déclinaisons du logo (monochrome, icône, favicon)", prix:130},
-      {id:"cartes", label:"Cartes de visite (maquette prête à imprimer)", prix:90},
-    ]
-  },
-  {
-    id:"print", nom:"Supports print (affiche, flyer…)", desc:"Création graphique prête à imprimer",
-    base:120, couleur:"#0E7490", icon:ICONS.print, qty:{label:"Nombre de supports", min:1, max:20, def:1},
-    options:[
-      {id:"formats", label:"Déclinaison multi-formats (A4/A3/web) par support", prix:50, parQty:true},
-      {id:"express", label:"Livraison express sous 72h", prix:70},
-    ]
-  },
-  {
-    id:"video", nom:"Vidéo & motion design", desc:"Tournage, montage et étalonnage inclus",
-    base:590, couleur:"#7E22CE", icon:ICONS.video,
-    select:{label:"Durée du film", opts:[
-      {label:"Format court ≤ 30 s (réseaux)", coef:1},
-      {label:"Environ 1 minute", coef:1.4},
-      {label:"2 minutes et plus", coef:1.9},
-    ]},
-    options:[
-      {id:"motion", label:"Motion design / animations graphiques", prix:250},
-      {id:"soustitres", label:"Sous-titres intégrés", prix:70},
-      {id:"declinaisons", label:"Déclinaisons verticales pour réseaux", prix:110},
-    ],
-    km:true
-  },
-  {
-    id:"photo", nom:"Photographie", desc:"Reportage, portraits ou produits — photos retouchées",
-    base:320, couleur:"#A16207", icon:ICONS.photo,
-    select:{label:"Durée de la séance", opts:[
-      {label:"Demi-journée", coef:1},
-      {label:"Journée complète", coef:1.7},
-    ]},
-    options:[
-      {id:"retouche", label:"Retouches avancées (détourage, packshots)", prix:90},
-    ]
-  },
-  {
-    id:"social", nom:"Animation des réseaux sociaux", desc:"Abonnement mensuel, sans engagement", mensuel:true,
-    base:279, couleur:"#BE185D", icon:ICONS.social,
-    select:{label:"Formule", opts:[
-      {label:"Pack 8 publications / mois", coef:1},
-      {label:"Pack 16 publications / mois", coef:1.7},
-    ]},
-    options:[
-      {id:"cm", label:"Community management (réponses, modération)", prix:180},
-      {id:"stories", label:"Stories & reels supplémentaires", prix:80},
-    ]
-  },
-  {
-    id:"drone", nom:"Vidéo & photo par drone", desc:"Prises de vues aériennes 4K, télépilote déclaré",
-    base:380, couleur:"#334155", icon:ICONS.drone,
-    options:[
-      {id:"montagedrone", label:"Montage vidéo des images drone inclus", prix:190},
-      {id:"photosaero", label:"Pack photos aériennes HD (20 clichés)", prix:110},
-    ],
-    km:true
-  },
-];
-
-/* Frais de déplacement facturés au kilomètre (aller-retour), en €/km */
-const PRIX_KM = 0.50;
-
-const cardsBox = document.getElementById('devis-cards');
-SERVICES.forEach(s=>{
-  const card = document.createElement('div');
-  card.className = 'svc-card';
-  card.id = 'card-'+s.id;
-  if(s.couleur) card.style.setProperty('--sc', s.couleur);
-  let body = "";
-  if(s.select){
-    body += `<div class="opt-row"><label for="sel-${s.id}">${s.select.label}</label>
-      <select id="sel-${s.id}" data-svc="${s.id}">
-        ${s.select.opts.map((o,i)=>`<option value="${i}">${o.label}</option>`).join("")}
-      </select></div>`;
-  }
-  if(s.qty){
-    body += `<div class="opt-row"><label for="qty-${s.id}">${s.qty.label}</label>
-      <span class="qty"><input type="number" id="qty-${s.id}" data-svc="${s.id}" min="${s.qty.min}" max="${s.qty.max}" value="${s.qty.def}"></span></div>`;
-  }
-  if(s.km){
-    body += `<div class="opt-row">
-      <label for="km-${s.id}">Déplacement (km aller-retour)</label>
-      <span class="qty"><input type="number" id="km-${s.id}" data-svc="${s.id}" min="0" max="2000" step="5" value="0" placeholder="0"></span></div>
-      <div class="opt-row km-note"><span>Frais de déplacement</span><span class="price">${PRIX_KM.toFixed(2).replace('.',',')} € / km</span></div>`;
-  }
-  s.options.forEach(o=>{
-    body += `<div class="opt-row">
-      <label><input type="checkbox" id="opt-${s.id}-${o.id}" data-svc="${s.id}"> ${o.label}</label>
-      <span class="price">+ ${o.prix} €${o.parQty?" / support":""}${s.mensuel?" / mois":""}</span></div>`;
-  });
-  card.innerHTML = `
-    <div class="svc-head">
-      <input type="checkbox" id="svc-${s.id}" aria-label="Sélectionner ${s.nom}">
-      <span class="svc-ico" aria-hidden="true">${s.icon||''}</span>
-      <div class="t"><b>${s.nom}</b><small>${s.desc}</small></div>
-      <span class="base">dès ${s.base} €${s.mensuel?"/mois":""}</span>
-    </div>
-    <div class="svc-body">${body}</div>`;
-  cardsBox.appendChild(card);
-
-  const head = card.querySelector('.svc-head');
-  const check = card.querySelector('#svc-'+s.id);
-  head.addEventListener('click', e=>{
-    if(e.target.tagName!=='INPUT') check.checked = !check.checked;
-    card.classList.toggle('on', check.checked);
-    compute();
-  });
-  check.addEventListener('change', ()=>{ card.classList.toggle('on', check.checked); compute(); });
-});
-cardsBox.addEventListener('input', compute);
-
-const fmt = n => n.toLocaleString('fr-FR') + " €";
-let lastSummary = null;
-
-/* -- éléments & constantes de l'envoi automatique -- */
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnjkrloa";
-const SEND_LABEL = "📩 Envoyer ma demande de devis";
-const sendBtnEl = document.getElementById('send-devis');
-const devisStatus = document.getElementById('devis-status');
-function showStatus(type, html){
-  devisStatus.className = 'devis-status' + (type ? ' '+type : '');
-  devisStatus.innerHTML = html || "";
-}
-
-function compute(){
-  const lines = [];
-  let oneShot = 0, monthly = 0, travel = 0, nbServices = 0;
-
-  SERVICES.forEach(s=>{
-    if(!document.getElementById('svc-'+s.id).checked) return;
-    nbServices++;
-    let coef = 1, selLabel = "";
-    if(s.select){
-      const sel = document.getElementById('sel-'+s.id);
-      coef = s.select.opts[sel.value].coef;
-      selLabel = s.select.opts[sel.value].label;
-    }
-    let qty = 1;
-    if(s.qty){
-      const q = document.getElementById('qty-'+s.id);
-      qty = Math.min(s.qty.max, Math.max(s.qty.min, parseInt(q.value)||1));
-    }
-    let sub = Math.round(s.base * coef) * qty;
-    const details = [];
-    if(selLabel) details.push(selLabel);
-    if(s.qty && qty>1) details.push(qty + " supports");
-    s.options.forEach(o=>{
-      if(document.getElementById(`opt-${s.id}-${o.id}`).checked){
-        const p = o.parQty ? o.prix*qty : o.prix;
-        sub += p;
-        details.push(o.label);
-      }
-    });
-    let km = 0, kmCost = 0;
-    if(s.km){
-      const kmEl = document.getElementById('km-'+s.id);
-      km = Math.min(2000, Math.max(0, parseInt(kmEl.value)||0));
-      kmCost = Math.round(km * PRIX_KM);
-      if(km>0) details.push(km + " km de déplacement (" + fmt(kmCost) + ")");
-    }
-    if(s.mensuel) monthly += sub; else oneShot += sub;
-    travel += kmCost;
-    lines.push({nom:s.nom, sub, mensuel:!!s.mensuel, details, kmCost, couleur:s.couleur||'var(--navy)', icon:s.icon||''});
-  });
-
-  let remise = 0;
-  if(nbServices>=3) remise = .10;
-  else if(nbServices===2) remise = .05;
-  const remiseMontant = Math.round((oneShot+monthly)*remise);
-  const total = oneShot + monthly - remiseMontant + travel;
-
-  const box = document.getElementById('sum-lines');
-  if(lines.length===0){
-    box.innerHTML = '<div class="sum-empty">Sélectionnez au moins une prestation pour voir votre estimation.</div>';
-  } else {
-    box.innerHTML = lines.map(l=>`
-      <div class="sum-line"><span class="sum-name" style="color:${l.couleur};font-weight:600"><span class="sum-ico">${l.icon}</span>${l.nom}${l.mensuel?" (mensuel)":""}</span><span>${fmt(l.sub)}</span></div>
-      ${l.details.map(d=>`<div class="sum-line sub"><span>· ${d}</span><span></span></div>`).join("")}
-    `).join("")
-      + (remise>0?`<div class="sum-line sum-discount"><span>Remise multi-services (−${remise*100} %)</span><span>−${fmt(remiseMontant)}</span></div>`:"")
-      + (travel>0?`<div class="sum-line"><span>Frais de déplacement</span><span>${fmt(travel)}</span></div>`:"");
-  }
-  const totalEl = document.getElementById('total');
-  totalEl.textContent = fmt(total);
-  totalEl.classList.add('pulse');
-  setTimeout(()=>totalEl.classList.remove('pulse'),160);
-
-  const mn = document.getElementById('monthly-note');
-  if(monthly>0){
-    mn.hidden = false;
-    mn.textContent = `dont ${fmt(monthly)} / mois pour l'animation des réseaux (premier mois inclus dans le total).`;
-  } else mn.hidden = true;
-
-  sendBtnEl.disabled = lines.length===0;
-  if(lines.length){ sendBtnEl.innerHTML = SEND_LABEL; showStatus('', ''); }
-  lastSummary = lines.length ? {lines, oneShot, monthly, remise, remiseMontant, travel, total} : null;
-}
-compute();
-
-/* -- construction du récapitulatif texte -- */
-function buildRecap(s, nom, email, msg){
-  let body = "DEMANDE DE DEVIS — TBSN groupe\n";
-  body += "================================\n\n";
-  body += "Client : " + nom + "\nEmail : " + email + "\n\nPrestations demandées :\n";
-  s.lines.forEach(l=>{
-    body += "\n• " + l.nom + (l.mensuel?" (mensuel)":"") + " — " + fmt(l.sub) + "\n";
-    l.details.forEach(d=> body += "   - " + d + "\n");
-  });
-  if(s.remise>0) body += "\nRemise multi-services (−"+(s.remise*100)+" %) : −" + fmt(s.remiseMontant) + "\n";
-  if(s.travel>0) body += (s.remise>0?"":"\n") + "Frais de déplacement : " + fmt(s.travel) + "\n";
-  body += "\nTOTAL ESTIMÉ : " + fmt(s.total);
-  if(s.monthly>0) body += " (dont " + fmt(s.monthly) + " /mois)";
-  body += "\n\n";
-  if(msg) body += "Précisions du client :\n" + msg + "\n\n";
-  body += "— Devis généré depuis le simulateur du site TBSN";
-  return body;
-}
-
-/* -- envoi automatique du devis via Formspree -- */
-sendBtnEl.addEventListener('click', async ()=>{
-  if(!lastSummary) return;
-  const nom = document.getElementById('cl-name').value.trim();
-  const email = document.getElementById('cl-email').value.trim();
-  const msg = document.getElementById('cl-msg').value.trim();
-  const hp = document.getElementById('hp').value;
-
-  if(!nom){ showStatus('err', "Merci d'indiquer votre nom ou celui de votre entreprise."); return; }
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showStatus('err', "Merci d'indiquer un email valide pour recevoir votre devis."); return; }
-
-  const s = lastSummary;
-  const recap = buildRecap(s, nom, email, msg);
-  const subject = "Demande de devis — " + nom + " — " + fmt(s.total);
-
-  sendBtnEl.disabled = true;
-  sendBtnEl.textContent = "Envoi en cours…";
-  showStatus('', '');
-
-  try{
-    const res = await fetch(FORMSPREE_ENDPOINT, {
-      method: 'POST',
-      headers: {'Content-Type':'application/json', 'Accept':'application/json'},
-      body: JSON.stringify({
-        nom: nom,
-        email: email,
-        _replyto: email,
-        _subject: subject,
-        _gotcha: hp,
-        total: fmt(s.total),
-        message: recap
-      })
-    });
-    if(res.ok){
-      showStatus('ok', "✅ Votre demande a bien été envoyée ! Nous revenons vers vous très vite, à l'adresse indiquée.");
-      sendBtnEl.textContent = "Demande envoyée ✓";
-    } else {
-      let data = null; try{ data = await res.json(); }catch(e){}
-      throw new Error((data && data.error) || "Réponse inattendue");
-    }
-  } catch(err){
-    sendBtnEl.disabled = false;
-    sendBtnEl.innerHTML = SEND_LABEL;
-    const mailtoHref = "mailto:tbsngroupe@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(recap);
-    showStatus('err', 'L\'envoi automatique n\'a pas fonctionné. <a href="' + mailtoHref + '">Cliquez ici pour envoyer via votre messagerie</a>.');
-  }
-});
 
 /* -- bouton de contact flottant : apparaît après avoir défilé -- */
 const fab = document.getElementById('fab');
