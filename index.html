@@ -84,12 +84,33 @@
   .burger{display:none;background:none;border:none;color:var(--navy);font-size:1.6rem;cursor:pointer}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative;padding:150px 0 70px;overflow:hidden}
-  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center}
-  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.04;letter-spacing:-.03em;color:var(--navy);max-width:15ch}
+  .hero{position:relative;padding:130px 0 90px;overflow:hidden;background:var(--navy);min-height:92vh;display:flex;align-items:center}
+  .hero::before{content:"";position:absolute;top:-15%;right:-8%;width:56%;height:92%;background:radial-gradient(circle at 60% 40%,rgba(255,90,31,.20),transparent 62%);pointer-events:none;z-index:0}
+  .hero::after{content:"";position:absolute;left:-12%;bottom:-25%;width:44%;height:75%;background:radial-gradient(circle,rgba(22,48,90,.65),transparent 66%);pointer-events:none;z-index:0}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center;width:100%}
+  .hero .eyebrow{color:#FF8A5E}
+  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,5.6vw,4.7rem);line-height:1.02;letter-spacing:-.03em;color:#fff;max-width:15ch}
   .hero h1 em{font-style:normal;color:var(--orange)}
-  .hero .lead{margin:26px 0 34px;font-size:1.14rem;color:var(--muted);max-width:52ch}
+  .hero .rotator{color:var(--orange);display:inline-block;transition:opacity .35s ease,transform .35s ease}
+  .hero .rotator.out{opacity:0;transform:translateY(-12px)}
+  .hero .lead{margin:26px 0 34px;font-size:1.14rem;color:#B9C4D6;max-width:52ch}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero .btn-ghost{background:transparent;border:1.5px solid rgba(255,255,255,.28);color:#fff}
+  .hero .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6);box-shadow:none}
+  /* menu transparent au-dessus du hero sombre, blanc une fois défilé */
+  body.has-dark-hero header.at-top{background:transparent;backdrop-filter:none;border-bottom-color:transparent}
+  body.has-dark-hero header.at-top .logo{color:#fff}
+  body.has-dark-hero header.at-top .burger{color:#fff}
+  @media(min-width:641px){
+    body.has-dark-hero header.at-top .nav-links a{color:#D4DCE8}
+    body.has-dark-hero header.at-top .nav-links a:hover{color:#fff}
+  }
+  @keyframes heroUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  .hero-text>.eyebrow{animation:heroUp .6s .05s both}
+  .hero-text>h1{animation:heroUp .7s .18s both}
+  .hero-text>.lead{animation:heroUp .7s .34s both}
+  .hero-text>.hero-cta{animation:heroUp .7s .5s both}
+  .hero-visual{animation:heroUp .9s .35s both}
   /* visuel du hero */
   .hero-visual{position:relative;min-height:440px}
   .hv-shape{position:absolute;top:-6%;right:-4%;width:64%;height:64%;border-radius:30px;background:linear-gradient(150deg,rgba(255,90,31,.16),rgba(255,90,31,.04));z-index:0}
@@ -383,6 +404,7 @@
     .fab a .tip{display:none}
   }
   @media (prefers-reduced-motion:reduce){ .fab a:hover{transform:none} }
+  @media (prefers-reduced-motion:reduce){ .hero-text>*,.hero-visual,.hv-1,.hv-2{animation:none} .hero .rotator{transition:none} }
 </style>
 <script type="application/ld+json">
 {
@@ -415,7 +437,7 @@
 }
 </script>
 </head>
-<body>
+<body class="has-dark-hero">
 
 <header>
   <div class="wrap nav">
@@ -438,7 +460,7 @@
   <div class="wrap">
     <div class="hero-text">
       <div class="eyebrow">Agence de communication · Millau &amp; Aveyron</div>
-      <h1>Toute votre image, <em>au même endroit.</em></h1>
+      <h1>Toute votre <span class="rotator" id="rotator">image</span>,<br>au même endroit.</h1>
       <p class="lead">Logo, supports imprimés, vidéo, photo, réseaux sociaux et prises de vues drone. Vous expliquez votre projet une fois — on s'occupe de tout, du premier trait à la diffusion.</p>
       <div class="hero-cta">
         <a href="prestations.html#devis" class="btn">Estimer mon projet en 2 min</a>
@@ -823,6 +845,36 @@ function renderPortfolio(filter){
   filtersBox.appendChild(b);
 });
 renderPortfolio("Tous");
+
+/* -- menu transparent au-dessus du hero, plein au défilement -- */
+(function headerScroll(){
+  const header = document.querySelector('header');
+  const hero = document.querySelector('.hero');
+  if(!header || !document.body.classList.contains('has-dark-hero')) return;
+  function upd(){
+    const limit = hero ? hero.offsetHeight - 90 : 60;
+    header.classList.toggle('at-top', window.scrollY < limit);
+  }
+  window.addEventListener('scroll', upd, {passive:true});
+  window.addEventListener('resize', upd);
+  upd();
+})();
+
+/* -- mot animé du hero -- */
+(function rotator(){
+  const el = document.getElementById('rotator');
+  if(!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const mots = ["image","vidéo","présence","identité","com'"];
+  let i = 0;
+  setInterval(()=>{
+    el.classList.add('out');
+    setTimeout(()=>{
+      i = (i+1) % mots.length;
+      el.textContent = mots[i];
+      el.classList.remove('out');
+    }, 350);
+  }, 2400);
+})();
 
 /* -- bouton de contact flottant : apparaît après avoir défilé -- */
 const fab = document.getElementById('fab');
