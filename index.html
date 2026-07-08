@@ -85,11 +85,21 @@
 
   /* ---------- HERO ---------- */
   .hero{position:relative;padding:150px 0 70px;overflow:hidden}
-  .hero .wrap{position:relative;z-index:2}
-  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,6.4vw,4.6rem);line-height:1.04;letter-spacing:-.03em;color:var(--navy);max-width:15ch}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center}
+  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.04;letter-spacing:-.03em;color:var(--navy);max-width:15ch}
   .hero h1 em{font-style:normal;color:var(--orange)}
-  .hero .lead{margin:26px 0 34px;font-size:1.14rem;color:var(--muted);max-width:56ch}
+  .hero .lead{margin:26px 0 34px;font-size:1.14rem;color:var(--muted);max-width:52ch}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  /* visuel du hero */
+  .hero-visual{position:relative;min-height:440px}
+  .hv-shape{position:absolute;top:-6%;right:-4%;width:64%;height:64%;border-radius:30px;background:linear-gradient(150deg,rgba(255,90,31,.16),rgba(255,90,31,.04));z-index:0}
+  .hv-card{position:absolute;border-radius:20px;overflow:hidden;background-color:var(--navy);background-size:cover;background-position:center;box-shadow:0 20px 50px rgba(16,24,38,.20);border:5px solid #fff;z-index:1}
+  .hv-1{width:74%;height:66%;top:2%;right:0;animation:hvfloat 7s ease-in-out infinite}
+  .hv-2{width:50%;height:48%;bottom:0;left:0;z-index:2;animation:hvfloat 7s ease-in-out infinite;animation-delay:-3.5s}
+  @keyframes hvfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .hv-badge{position:absolute;bottom:14%;right:-2%;z-index:3;display:flex;align-items:center;gap:9px;background:#fff;border-radius:12px;padding:11px 15px;box-shadow:0 12px 30px rgba(16,24,38,.18);font-family:var(--display);font-weight:600;font-size:.82rem;color:var(--navy)}
+  .hv-badge .b-ico{width:26px;height:26px;border-radius:7px;background:var(--orange);color:#fff;display:grid;place-items:center;flex-shrink:0}
+  .hv-badge .b-ico svg{width:16px;height:16px}
 
   /* signature : spectre des 6 métiers */
   .spectrum{margin-top:64px;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
@@ -329,6 +339,9 @@
     .section{padding:70px 0}
     .section-head{margin-bottom:34px}
     .hero{padding:120px 0 60px}
+    .hero .wrap{grid-template-columns:1fr;gap:40px}
+    .hero h1{max-width:none}
+    .hero-visual{min-height:340px;max-width:440px;margin:0 auto;width:100%}
     .services-grid,.pf-grid,.steps{grid-template-columns:1fr}
     .spectrum{grid-template-columns:repeat(2,1fr)}
     .hero-cta{flex-direction:column;align-items:stretch}
@@ -393,12 +406,23 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <div class="eyebrow">Studio créatif · Occitanie</div>
-    <h1>Toute votre image, <em>au même endroit.</em></h1>
-    <p class="lead">Logo, supports imprimés, vidéo, photo, réseaux sociaux et prises de vues drone. Vous expliquez votre projet une fois — on s'occupe de tout, du premier trait à la diffusion.</p>
-    <div class="hero-cta">
-      <a href="prestations.html#devis" class="btn">Estimer mon projet en 2 min</a>
-      <a href="#portfolio" class="btn btn-ghost">Voir nos réalisations</a>
+    <div class="hero-text">
+      <div class="eyebrow">Studio créatif · Occitanie</div>
+      <h1>Toute votre image, <em>au même endroit.</em></h1>
+      <p class="lead">Logo, supports imprimés, vidéo, photo, réseaux sociaux et prises de vues drone. Vous expliquez votre projet une fois — on s'occupe de tout, du premier trait à la diffusion.</p>
+      <div class="hero-cta">
+        <a href="prestations.html#devis" class="btn">Estimer mon projet en 2 min</a>
+        <a href="#portfolio" class="btn btn-ghost">Voir nos réalisations</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hv-shape"></div>
+      <div class="hv-card hv-1" style="background-image:url('DJI_0143.JPG')"></div>
+      <div class="hv-card hv-2" style="background-image:url('videoliquiere.png')"></div>
+      <div class="hv-badge">
+        <span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        Télépilote drone certifié
+      </div>
     </div>
   </div>
 </section>
