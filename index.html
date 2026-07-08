@@ -210,36 +210,7 @@
   .pf-item.gallery::after{content:"⧉";position:absolute;top:14px;right:14px;width:32px;height:32px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:50%;color:#fff;font-size:1rem;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s;z-index:2}
   .pf-item.gallery:hover::after,.pf-item.gallery:focus-visible::after{opacity:1;transform:translateY(0)}
 
-  /* ---------- ECOSYSTEME (outils qui gravitent) ---------- */
-  #eco{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-  #eco .section-head{margin:0 auto 10px;text-align:center;max-width:640px}
-  #eco .eyebrow{color:var(--orange)}
-  #eco h2{color:#fff}
-  #eco h2 em{font-style:normal;color:var(--orange)}
-  #eco .section-head p{color:#B9C4D6}
-  .eco-stage{position:relative;width:100%;max-width:760px;aspect-ratio:1/1;margin:20px auto 0}
-  .eco-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-  .eco-lines line{stroke:rgba(255,255,255,.18);stroke-width:1;stroke-dasharray:4 5}
-  .eco-center{position:absolute;top:50%;left:50%;width:118px;height:118px;transform:translate(-50%,-50%);border-radius:26px;background:var(--navy-2);border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;z-index:3;box-shadow:0 0 0 8px rgba(255,90,31,.10),0 18px 50px rgba(0,0,0,.4)}
-  .eco-center img{width:74%;height:74%;object-fit:contain;border-radius:14px}
-  .eco-center::after{content:"";position:absolute;inset:-14px;border-radius:32px;border:1.5px solid rgba(255,90,31,.35);animation:ecopulse 3s ease-in-out infinite}
-  @keyframes ecopulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.08);opacity:.15}}
-  .eco-node{position:absolute;top:50%;left:50%;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;width:112px;text-align:center;transform:translate(-50%,-50%) translate(var(--x),var(--y));animation:ecofloat 6s ease-in-out infinite;animation-delay:var(--d,0s)}
-  .eco-node .ic{width:62px;height:62px;border-radius:16px;background:#fff;display:grid;place-items:center;box-shadow:0 10px 28px rgba(0,0,0,.28)}
-  .eco-node .ic img{width:66%;height:66%;object-fit:contain}
-  .eco-node .ic .ph{font-family:var(--display);font-weight:700;font-size:.8rem;color:var(--muted)}
-  .eco-node span{font-size:.78rem;color:#C4CEDE;line-height:1.25}
-  @keyframes ecofloat{0%,100%{translate:0 0}50%{translate:0 -10px}}
-  @media(max-width:640px){
-    .eco-stage{max-width:340px}
-    .eco-center{width:86px;height:86px;border-radius:20px}
-    .eco-node{width:82px;gap:5px}
-    .eco-node .ic{width:48px;height:48px;border-radius:13px}
-    .eco-node span{font-size:.68rem}
-  }
-  @media (prefers-reduced-motion:reduce){
-    .eco-node,.eco-center::after{animation:none}
-  }
+  .pf-more{margin-top:38px;text-align:center}
 
   /* ---------- DEVIS ---------- */
   #devis{background:var(--bg-2);position:relative}
@@ -548,22 +519,8 @@
     </div>
     <div class="filters" id="filters"></div>
     <div class="pf-grid" id="pf-grid"></div>
-  </div>
-</section>
-
-<!-- ============ ECOSYSTEME ============ -->
-<section id="eco" class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Mes outils</div>
-      <h2>Une expertise, <em>les meilleurs outils.</em></h2>
-      <p>Je maîtrise la suite créative professionnelle, du montage vidéo à la retouche, en passant par le pilotage de drone.</p>
-    </div>
-    <div class="eco-stage" id="eco-stage" aria-hidden="true">
-      <svg class="eco-lines" id="eco-lines" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
-      <div class="eco-center">
-        <img src="favicon.png" alt="Logo TBSN groupe">
-      </div>
+    <div class="pf-more">
+      <a href="realisations.html" class="btn">Voir toutes les réalisations →</a>
     </div>
   </div>
 </section>
@@ -1151,52 +1108,6 @@ sendBtnEl.addEventListener('click', async ()=>{
     showStatus('err', 'L\'envoi automatique n\'a pas fonctionné. <a href="' + mailtoHref + '">Cliquez ici pour envoyer via votre messagerie</a>.');
   }
 });
-
-/* ================================================================
-   ECOSYSTEME — VOS OUTILS AUTOUR DU LOGO
-   Déposez vos vrais fichiers de logos dans le dossier du site
-   sous les noms indiqués (img). Laissez img vide ("") pour
-   afficher un emplacement provisoire avec le nom.
-================================================================ */
-const OUTILS = [
-  {nom:"Photoshop",     img:"photoshop.png"},
-  {nom:"Illustrator",   img:"illustrator.png"},
-  {nom:"Premiere Pro",  img:"premiere.png"},
-  {nom:"After Effects", img:"aftereffects.png"},
-  {nom:"Lightroom",     img:"lightroom.png"},
-  {nom:"DJI",           img:"dji.png"},
-  {nom:"Claude",        img:"claude.png"},
-  {nom:"GitHub",        img:"github.png"},
-];
-
-(function buildEco(){
-  const stage = document.getElementById('eco-stage');
-  const lines = document.getElementById('eco-lines');
-  if(!stage || !lines) return;
-  const n = OUTILS.length;
-  const R = 40; // rayon en % du cadre
-  OUTILS.forEach((o,i)=>{
-    const angle = (-90 + i*(360/n)) * Math.PI/180;   // départ en haut, sens horaire
-    const dx = Math.cos(angle), dy = Math.sin(angle);
-    // ligne pointillée du centre vers l'outil
-    const ln = document.createElementNS('http://www.w3.org/2000/svg','line');
-    ln.setAttribute('x1','50'); ln.setAttribute('y1','50');
-    ln.setAttribute('x2', (50 + dx*R).toFixed(2));
-    ln.setAttribute('y2', (50 + dy*R).toFixed(2));
-    lines.appendChild(ln);
-    // noeud outil
-    const node = document.createElement('div');
-    node.className = 'eco-node';
-    node.style.setProperty('--x', (dx*R)+'%');
-    node.style.setProperty('--y', (dy*R)+'%');
-    node.style.setProperty('--d', (i*0.5)+'s');
-    const inner = o.img
-      ? `<img src="${o.img}" alt="${o.nom}" loading="lazy">`
-      : `<span class="ph">${o.nom}</span>`;
-    node.innerHTML = `<div class="ic">${inner}</div><span>${o.nom}</span>`;
-    stage.appendChild(node);
-  });
-})();
 
 /* -- bouton de contact flottant : apparaît après avoir défilé -- */
 const fab = document.getElementById('fab');
