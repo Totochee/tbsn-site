@@ -120,6 +120,20 @@
   .service:nth-child(3){--sc:var(--c-video)} .service:nth-child(4){--sc:var(--c-photo)}
   .service:nth-child(5){--sc:var(--c-social)} .service:nth-child(6){--sc:var(--c-drone)}
 
+  /* ---------- POUR QUI ---------- */
+  #pourqui{background:var(--bg-2)}
+  .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .aud-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .aud-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(16,24,38,.08);border-color:transparent}
+  .aud-ico{width:52px;height:52px;border-radius:14px;background:var(--navy);color:#fff;display:grid;place-items:center;margin-bottom:18px}
+  .aud-ico svg{width:28px;height:28px}
+  .aud-card:nth-child(odd) .aud-ico{background:var(--navy)}
+  .aud-card:nth-child(even) .aud-ico{background:var(--orange)}
+  .aud-card h3{font-family:var(--display);font-weight:600;font-size:1.12rem;margin-bottom:8px;color:var(--navy)}
+  .aud-card p{font-size:.9rem;color:var(--muted)}
+  @media(max-width:960px){ .aud-grid{grid-template-columns:repeat(2,1fr)} }
+  @media(max-width:640px){ .aud-grid{grid-template-columns:1fr} }
+
   /* ---------- PROCESS ---------- */
   #process{background:var(--bg)}
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
@@ -361,7 +375,7 @@
     <a href="#" class="logo">TBSN <span style="color:#FF5A1F;">groupe.</span></a>
     <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <nav class="nav-links">
-      <a href="#services">Services</a>
+      <a href="#pourqui">Pour qui</a>
       <a href="prestations.html#presta-intro">Prestations</a>
       <a href="#process">Étapes</a>
       <a href="a-propos.html">À propos</a>
@@ -385,94 +399,55 @@
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section id="services" class="section">
+<!-- ============ POUR QUI ============ -->
+<section id="pourqui" class="section">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Ce que nous faisons</div>
-      <h2>Six façons de rendre votre marque visible</h2>
-      <p>Pour chaque prestation, vous savez ce que vous recevez et à partir de quel prix. Pas de devis opaque.</p>
+      <div class="eyebrow">Pour qui je travaille</div>
+      <h2>Une communication pensée pour votre réalité</h2>
+      <p>Que vous soyez seul derrière votre commerce ou à la tête d'une équipe, on adapte le ton, le budget et les supports à votre situation.</p>
     </div>
-    <div class="services-grid">
+    <div class="aud-grid">
 
-      <article class="service">
-        <span class="dot"></span>
-        <span class="svc-badge">dès 490 €</span>
-        <h3>Logo &amp; identité visuelle</h3>
-        <p>On crée l'image de votre marque, pensée pour durer et se décliner partout.</p>
-        <ul class="deliver">
-          <li>Logo original + fichiers vectoriels sources</li>
-          <li>Palette de couleurs &amp; typographies</li>
-          <li>Déclinaisons (fond clair/foncé, favicon)</li>
-        </ul>
-        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
+      <article class="aud-card">
+        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M3 9h18"/><path d="M8 9v0a2 2 0 0 1-4 0M12 9a2 2 0 0 1-4 0M16 9a2 2 0 0 1-4 0M20 9a2 2 0 0 1-4 0"/></svg></div>
+        <h3>Artisans &amp; commerçants</h3>
+        <p>Boulangerie, garage, salon, restaurant… on vous donne une image à la hauteur de votre savoir-faire, pour attirer et fidéliser près de chez vous.</p>
       </article>
 
-      <article class="service">
-        <span class="dot"></span>
-        <span class="svc-badge">dès 120 €</span>
-        <h3>Supports de communication</h3>
-        <p>Vos affiches, flyers et cartes prêtes à imprimer, qui donnent envie de s'arrêter.</p>
-        <ul class="deliver">
-          <li>Affiches, flyers, cartes, plaquettes</li>
-          <li>Fichiers d'impression HD (CMJN, fonds perdus)</li>
-          <li>Déclinaisons print &amp; web</li>
-        </ul>
-        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
+      <article class="aud-card">
+        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0"/></svg></div>
+        <h3>TPE &amp; PME</h3>
+        <p>Votre activité tourne mais votre communication suit mal ? On structure votre image et tous vos supports, du logo au site internet.</p>
       </article>
 
-      <article class="service">
-        <span class="dot"></span>
-        <span class="svc-badge">dès 1 290 €</span>
-        <h3>Site internet</h3>
-        <p>Un site clair et rapide, pensé pour convertir vos visiteurs en clients.</p>
-        <ul class="deliver">
-          <li>Site responsive (mobile, tablette, ordinateur)</li>
-          <li>Design sur mesure aux couleurs de votre marque</li>
-          <li>Référencement Google (SEO) de base inclus</li>
-        </ul>
-        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
+      <article class="aud-card">
+        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Associations &amp; clubs</h3>
+        <p>Affiches d'événements, réseaux sociaux, vidéos… on rend visibles vos actions et vos rendez-vous, même avec un budget serré.</p>
       </article>
 
-      <article class="service">
-        <span class="dot"></span>
-        <span class="svc-badge">dès 320 €</span>
-        <h3>Photographie</h3>
-        <p>Des images nettes et lumineuses, retouchées et prêtes à publier.</p>
-        <ul class="deliver">
-          <li>Portraits, produits, événements, locaux</li>
-          <li>Photos retouchées haute définition</li>
-          <li>Formats web &amp; impression fournis</li>
-        </ul>
-        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
+      <article class="aud-card">
+        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/></svg></div>
+        <h3>Événementiel</h3>
+        <p>Mariages, festivals, compétitions : on capture l'instant en photo, vidéo et drone, et on en fait des contenus qui marquent les esprits.</p>
       </article>
 
-      <article class="service">
-        <span class="dot"></span>
-        <span class="svc-badge">dès 279 € / mois</span>
-        <h3>Animation des réseaux sociaux</h3>
-        <p>On fait vivre vos comptes pour rester présent, sans y passer vos soirées.</p>
-        <ul class="deliver">
-          <li>Calendrier éditorial &amp; visuels sur mesure</li>
-          <li>Publication régulière (8 à 16 posts/mois)</li>
-          <li>Community management en option</li>
-        </ul>
-        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
+      <article class="aud-card">
+        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>Immobilier &amp; tourisme</h3>
+        <p>Vues aériennes par drone, photos léchées, visites en vidéo : on met vos biens et vos lieux sous leur plus beau jour.</p>
       </article>
 
-      <article class="service">
-        <span class="dot"></span>
-        <span class="svc-badge">dès 380 €</span>
-        <h3>Vidéo &amp; photo par drone</h3>
-        <p>Des images aériennes spectaculaires, réalisées par un Télépilote de drone certifié (Catégorie Ouverte A1/A3).</p>
-        <ul class="deliver">
-          <li>Prises de vues aériennes 4K</li>
-          <li>Immobilier, événementiel, tourisme, chantiers</li>
-          <li>Montage &amp; pack photos HD en option</li>
-        </ul>
-        <a class="svc-price" href="prestations.html#devis">Estimer mon devis <span class="ar">→</span></a>
+      <article class="aud-card">
+        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3 0z"/><path d="M12 15l-3-3a11 11 0 0 1 7-8 11 11 0 0 1 3 3 11 11 0 0 1-8 7z"/><path d="M15 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg></div>
+        <h3>Créateurs &amp; nouvelles marques</h3>
+        <p>Vous lancez votre activité ? On construit votre identité de A à Z pour démarrer avec une image pro dès le premier jour.</p>
       </article>
 
+    </div>
+    <div class="pf-more" style="margin-top:40px;text-align:center">
+      <a href="prestations.html#presta-intro" class="btn">Découvrir mes prestations →</a>
     </div>
   </div>
 </section>
@@ -799,7 +774,7 @@ toggleFab();
 
 /* -- apparition douce au défilement -- */
 if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  const targets = document.querySelectorAll('.service, .step, .value, .pf-item, .section-head');
+  const targets = document.querySelectorAll('.service, .aud-card, .step, .value, .pf-item, .section-head');
   targets.forEach(el=>{ el.style.opacity = 0; el.style.transform = 'translateY(18px)'; el.style.transition = 'opacity .6s ease, transform .6s ease'; });
   const io = new IntersectionObserver((entries)=>{
     entries.forEach((e,i)=>{
