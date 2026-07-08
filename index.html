@@ -37,12 +37,12 @@
     --bg-2:#F6F7F9;
     --orange:#FF5A1F;
     /* couleurs par métier (l'orange reste réservé à l'identité du site) */
-    --c-logo:#DC2626;
-    --c-print:#2563EB;
-    --c-video:#7C3AED;
-    --c-photo:#0D9488;
-    --c-social:#DB2777;
-    --c-drone:#0891B2;
+    --c-logo:#1D4ED8;
+    --c-print:#0E7490;
+    --c-video:#7E22CE;
+    --c-photo:#A16207;
+    --c-social:#BE185D;
+    --c-drone:#334155;
     --radius:16px;
     --display:'Space Grotesk',sans-serif;
     --body:'Inter',sans-serif;
@@ -216,6 +216,8 @@
   .svc-card.on{box-shadow:0 12px 30px color-mix(in srgb, var(--sc) 42%, transparent)}
   .svc-head{display:flex;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;user-select:none}
   .svc-head input{width:20px;height:20px;accent-color:#fff;cursor:pointer;flex-shrink:0}
+  .svc-ico{flex-shrink:0;width:30px;height:30px;display:grid;place-items:center;color:#fff}
+  .svc-ico svg{width:26px;height:26px}
   .svc-head .t{flex:1}
   .svc-head .t b{font-family:var(--display);font-size:1.02rem;font-weight:600;display:block;color:#fff}
   .svc-head .t small{color:rgba(255,255,255,.85);font-size:.82rem}
@@ -242,6 +244,9 @@
   #sum-lines{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;min-height:40px}
   .sum-line{display:flex;justify-content:space-between;gap:12px;font-size:.88rem}
   .sum-line span:first-child{color:var(--muted)}
+  .sum-name{display:inline-flex;align-items:center;gap:7px}
+  .sum-ico{display:inline-flex;flex-shrink:0}
+  .sum-ico svg{width:17px;height:17px}
   .sum-line.sub{padding-left:14px;font-size:.82rem}
   .sum-empty{color:var(--muted);font-size:.88rem;font-style:italic}
   .sum-discount{color:var(--orange);font-weight:600}
@@ -647,8 +652,8 @@ const PORTFOLIO = [
 
 /* -- illustrations SVG claires par catégorie -- */
 const CAT_COLOR = {
-  "Logo":"#DC2626", "Print":"#2563EB", "Vidéo":"#7C3AED",
-  "Photo":"#0D9488", "Réseaux sociaux":"#DB2777", "Drone":"#0891B2"
+  "Logo":"#1D4ED8", "Print":"#0E7490", "Vidéo":"#7E22CE",
+  "Photo":"#A16207", "Réseaux sociaux":"#BE185D", "Drone":"#334155"
 };
 function illustration(cat, seed){
   const C = CAT_COLOR[cat] || "#0A1A33";
@@ -813,10 +818,20 @@ renderPortfolio("Tous");
 /* ================================================================
    SIMULATEUR DE DEVIS
 ================================================================ */
+/* Icônes par métier (repère visuel non basé sur la couleur, utile en daltonisme) */
+const ICONS = {
+  logo:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>`,
+  print:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>`,
+  video:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>`,
+  photo:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>`,
+  social:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>`,
+  drone:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10 7 7"/><path d="m14 10 3-3"/><path d="m14 14 3 3"/><path d="m10 14-3 3"/><rect x="10" y="10" width="4" height="4" rx="1"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>`,
+};
+
 const SERVICES = [
   {
     id:"logo", nom:"Logo & identité visuelle", desc:"Logo sur mesure, fichiers vectoriels sources inclus",
-    base:490, couleur:"#DC2626",
+    base:490, couleur:"#1D4ED8", icon:ICONS.logo,
     options:[
       {id:"charte", label:"Charte graphique complète (couleurs, typos, règles d'usage)", prix:350},
       {id:"variantes", label:"Déclinaisons du logo (monochrome, icône, favicon)", prix:130},
@@ -825,7 +840,7 @@ const SERVICES = [
   },
   {
     id:"print", nom:"Supports print (affiche, flyer…)", desc:"Création graphique prête à imprimer",
-    base:120, couleur:"#2563EB", qty:{label:"Nombre de supports", min:1, max:20, def:1},
+    base:120, couleur:"#0E7490", icon:ICONS.print, qty:{label:"Nombre de supports", min:1, max:20, def:1},
     options:[
       {id:"formats", label:"Déclinaison multi-formats (A4/A3/web) par support", prix:50, parQty:true},
       {id:"express", label:"Livraison express sous 72h", prix:70},
@@ -833,7 +848,7 @@ const SERVICES = [
   },
   {
     id:"video", nom:"Vidéo & motion design", desc:"Tournage, montage et étalonnage inclus",
-    base:590, couleur:"#7C3AED",
+    base:590, couleur:"#7E22CE", icon:ICONS.video,
     select:{label:"Durée du film", opts:[
       {label:"Format court ≤ 30 s (réseaux)", coef:1},
       {label:"Environ 1 minute", coef:1.4},
@@ -848,7 +863,7 @@ const SERVICES = [
   },
   {
     id:"photo", nom:"Photographie", desc:"Reportage, portraits ou produits — photos retouchées",
-    base:320, couleur:"#0D9488",
+    base:320, couleur:"#A16207", icon:ICONS.photo,
     select:{label:"Durée de la séance", opts:[
       {label:"Demi-journée", coef:1},
       {label:"Journée complète", coef:1.7},
@@ -859,7 +874,7 @@ const SERVICES = [
   },
   {
     id:"social", nom:"Animation des réseaux sociaux", desc:"Abonnement mensuel, sans engagement", mensuel:true,
-    base:279, couleur:"#DB2777",
+    base:279, couleur:"#BE185D", icon:ICONS.social,
     select:{label:"Formule", opts:[
       {label:"Pack 8 publications / mois", coef:1},
       {label:"Pack 16 publications / mois", coef:1.7},
@@ -871,7 +886,7 @@ const SERVICES = [
   },
   {
     id:"drone", nom:"Vidéo & photo par drone", desc:"Prises de vues aériennes 4K, télépilote déclaré",
-    base:380, couleur:"#0891B2",
+    base:380, couleur:"#334155", icon:ICONS.drone,
     options:[
       {id:"montagedrone", label:"Montage vidéo des images drone inclus", prix:190},
       {id:"photosaero", label:"Pack photos aériennes HD (20 clichés)", prix:110},
@@ -914,6 +929,7 @@ SERVICES.forEach(s=>{
   card.innerHTML = `
     <div class="svc-head">
       <input type="checkbox" id="svc-${s.id}" aria-label="Sélectionner ${s.nom}">
+      <span class="svc-ico" aria-hidden="true">${s.icon||''}</span>
       <div class="t"><b>${s.nom}</b><small>${s.desc}</small></div>
       <span class="base">dès ${s.base} €${s.mensuel?"/mois":""}</span>
     </div>
@@ -982,7 +998,7 @@ function compute(){
     }
     if(s.mensuel) monthly += sub; else oneShot += sub;
     travel += kmCost;
-    lines.push({nom:s.nom, sub, mensuel:!!s.mensuel, details, kmCost, couleur:s.couleur||'var(--navy)'});
+    lines.push({nom:s.nom, sub, mensuel:!!s.mensuel, details, kmCost, couleur:s.couleur||'var(--navy)', icon:s.icon||''});
   });
 
   let remise = 0;
@@ -996,7 +1012,7 @@ function compute(){
     box.innerHTML = '<div class="sum-empty">Sélectionnez au moins une prestation pour voir votre estimation.</div>';
   } else {
     box.innerHTML = lines.map(l=>`
-      <div class="sum-line"><span style="color:${l.couleur};font-weight:600">${l.nom}${l.mensuel?" (mensuel)":""}</span><span>${fmt(l.sub)}</span></div>
+      <div class="sum-line"><span class="sum-name" style="color:${l.couleur};font-weight:600"><span class="sum-ico">${l.icon}</span>${l.nom}${l.mensuel?" (mensuel)":""}</span><span>${fmt(l.sub)}</span></div>
       ${l.details.map(d=>`<div class="sum-line sub"><span>· ${d}</span><span></span></div>`).join("")}
     `).join("")
       + (remise>0?`<div class="sum-line sum-discount"><span>Remise multi-services (−${remise*100} %)</span><span>−${fmt(remiseMontant)}</span></div>`:"")
