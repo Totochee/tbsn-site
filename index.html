@@ -136,11 +136,16 @@
 
   /* ---------- PROCESS ---------- */
   #process{background:var(--bg)}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .step{padding:28px 26px 28px 0;border-top:2px solid var(--navy)}
-  .step + .step{padding-left:26px}
-  .step-n{font-family:var(--display);font-weight:700;font-size:1rem;color:var(--orange);letter-spacing:.05em}
-  .step h3{font-family:var(--display);font-weight:600;font-size:1.08rem;margin:14px 0 8px;color:var(--navy)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+  .steps::before{content:"";position:absolute;top:60px;left:13%;right:13%;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 7px,transparent 7px 15px);z-index:0}
+  .step{position:relative;z-index:1;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;text-align:center;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .step:hover{transform:translateY(-6px);box-shadow:0 16px 44px rgba(16,24,38,.10);border-color:transparent}
+  .step-ico{position:relative;width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;transition:background .25s,transform .25s}
+  .step:hover .step-ico{background:var(--orange);transform:scale(1.06) rotate(-4deg)}
+  .step-ico svg{width:30px;height:30px}
+  .step-n{position:absolute;top:-5px;right:-5px;width:26px;height:26px;border-radius:50%;background:var(--orange);color:#fff;font-family:var(--display);font-weight:700;font-size:.78rem;display:grid;place-items:center;border:2px solid #fff;transition:background .25s}
+  .step:hover .step-n{background:var(--navy)}
+  .step h3{font-family:var(--display);font-weight:600;font-size:1.08rem;margin:0 0 8px;color:var(--navy)}
   .step p{font-size:.88rem;color:var(--muted)}
 
   /* ---------- A PROPOS ---------- */
@@ -305,8 +310,7 @@
     .services-grid{grid-template-columns:repeat(2,1fr)}
     .spectrum{grid-template-columns:repeat(3,1fr);gap:18px 14px}
     .steps{grid-template-columns:repeat(2,1fr)}
-    .step{border-top:2px solid var(--navy)}
-    .step,.step + .step{padding-left:0;padding-right:20px}
+    .steps::before{display:none}
     .pf-grid{grid-template-columns:repeat(2,1fr)}
     .about-grid{grid-template-columns:1fr;gap:38px}
     #quijesuis .wrap{grid-template-columns:1fr;gap:44px}
@@ -462,22 +466,22 @@
     </div>
     <div class="steps">
       <div class="step">
-        <span class="step-n">01</span>
+        <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg><span class="step-n">1</span></div>
         <h3>On échange</h3>
         <p>Un premier contact pour comprendre votre activité, vos objectifs et votre budget. Gratuit et sans engagement.</p>
       </div>
       <div class="step">
-        <span class="step-n">02</span>
+        <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.5.4.9 1 1 1.6h6c.1-.6.5-1.2 1-1.6A7 7 0 0 0 12 2z"/></svg><span class="step-n">2</span></div>
         <h3>On crée</h3>
         <p>On vous présente des propositions concrètes, pensées pour votre marque et votre cible — jamais un modèle recyclé.</p>
       </div>
       <div class="step">
-        <span class="step-n">03</span>
+        <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><path d="M1 14h6M9 8h6M17 16h6"/></svg><span class="step-n">3</span></div>
         <h3>On ajuste</h3>
         <p>Vous nous faites vos retours, on affine ensemble jusqu'à ce que le rendu vous corresponde vraiment.</p>
       </div>
       <div class="step">
-        <span class="step-n">04</span>
+        <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3 0z"/><path d="M12 15l-3-3a11 11 0 0 1 7-8 11 11 0 0 1 3 3 11 11 0 0 1-8 7z"/><path d="M15 9h.01"/></svg><span class="step-n">4</span></div>
         <h3>On livre &amp; on diffuse</h3>
         <p>Vous recevez tous les fichiers exploitables. On peut aussi vous aider à les publier au bon endroit.</p>
       </div>
