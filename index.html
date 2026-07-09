@@ -155,14 +155,14 @@
   #clients{background:var(--bg-2);padding:56px 0;overflow:hidden}
   .clients-title{text-align:center;font-family:var(--display);font-weight:600;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
   .marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-  .marquee-track{display:flex;gap:70px;width:max-content;animation:scrollx 32s linear infinite}
+  .marquee-track{display:flex;align-items:center;gap:34px;width:max-content;animation:scrollx 32s linear infinite}
   .marquee:hover .marquee-track{animation-play-state:paused}
   @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  .client-logo{flex-shrink:0;height:56px;display:grid;place-items:center;opacity:.62;filter:grayscale(1);transition:opacity .25s,filter .25s,transform .25s}
-  .client-logo:hover{opacity:1;filter:grayscale(0);transform:scale(1.06)}
-  .client-logo img{max-height:56px;width:auto;object-fit:contain}
-  .client-logo .ph{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--navy);white-space:nowrap;padding:12px 22px;border:1.5px dashed var(--line);border-radius:12px}
-  @media(max-width:640px){ .marquee-track{gap:44px} .client-logo{height:44px} .client-logo img{max-height:44px} }
+  .client-logo{flex-shrink:0;width:170px;height:88px;padding:14px 18px;background:#fff;border:1px solid var(--line);border-radius:14px;display:grid;place-items:center;opacity:.72;filter:grayscale(1);transition:opacity .25s,filter .25s,transform .25s,box-shadow .25s}
+  .client-logo:hover{opacity:1;filter:grayscale(0);transform:translateY(-3px);box-shadow:0 12px 28px rgba(16,24,38,.10)}
+  .client-logo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+  .client-logo .ph{font-family:var(--display);font-weight:700;font-size:.95rem;color:var(--navy);white-space:nowrap}
+  @media(max-width:640px){ .marquee-track{gap:18px} .client-logo{width:130px;height:70px;padding:10px 12px} .client-logo .ph{font-size:.78rem;white-space:normal;text-align:center;line-height:1.2} }
   @media (prefers-reduced-motion:reduce){ .marquee-track{animation:none} }
 
   /* ---------- COMPTEURS ---------- */
@@ -938,26 +938,35 @@ renderPortfolio("Tous");
 })();
 
 /* ================================================================
-   LOGOS CLIENTS — AJOUTEZ VOS CLIENTS ICI
-   img = fichier du logo (ex: "logo-thibal.png"), laissez "" pour
-   afficher simplement le nom en attendant.
+   LOGOS CLIENTS — MODIFIEZ CETTE LISTE
+     nom   = nom affiché (obligatoire)
+     img   = fichier du logo, "" pour afficher le nom en attendant
+     href  = lien vers leur site (optionnel)
+     scale = taille du logo dans sa boîte, ex: 0.8 pour le réduire,
+             1.15 pour l'agrandir (optionnel, 1 par défaut)
 ================================================================ */
 const CLIENTS = [
-  {nom:"Thibal Distribution", img:"logothibal.jpeg"},
-  {nom:"Liquière Hygiène",    img:"lo.jpg"},
-  {nom:"Club des Nageurs",    img:"cnsa.png"},
-  {nom:"Ferrailles de Louis",      img:"fdl.png"},
-  {nom:"GreenFish",      img:"gf.jpg"},
-  {nom:"MEL immobilier",      img:"mel.jpg"},
-  {nom:"MEL immobilier",      img:"LOGOAFFng.png"},
+  {nom:"Thibal Distribution", img:"logothibal.jpeg", href:""},
+  {nom:"Liquière Hygiène",    img:"lo.jpg",          href:""},
+  {nom:"Club des Nageurs",    img:"cnsa.png",        href:""},
+  {nom:"Ferrailles de Louis", img:"fdl.png",         href:""},
+  {nom:"GreenFish",           img:"gf.jpg",          href:""},
+  {nom:"MEL immobilier",      img:"mel.jpg",         href:""},
+  {nom:"MEL immobilier",      img:"LOGOAFFng.png",   href:""},   /* ← nom en double, à corriger */
 ];
 
 (function buildClients(){
   const track = document.getElementById('marquee-track');
   if(!track) return;
-  const item = c => c.img
-    ? `<div class="client-logo"><img src="${c.img}" alt="${c.nom}" loading="lazy"></div>`
-    : `<div class="client-logo"><span class="ph">${c.nom}</span></div>`;
+  const item = c => {
+    const st = c.scale ? ` style="transform:scale(${c.scale})"` : '';
+    const inner = c.img
+      ? `<img src="${c.img}" alt="${c.nom}" loading="lazy"${st}>`
+      : `<span class="ph">${c.nom}</span>`;
+    return (c.href && c.href.trim())
+      ? `<a class="client-logo" href="${c.href}" target="_blank" rel="noopener noreferrer" aria-label="${c.nom}">${inner}</a>`
+      : `<div class="client-logo">${inner}</div>`;
+  };
   // doublé pour un défilement en boucle sans coupure
   track.innerHTML = CLIENTS.map(item).join('') + CLIENTS.map(item).join('');
 })();
