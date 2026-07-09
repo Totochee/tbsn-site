@@ -161,7 +161,8 @@
   .client-logo:hover{opacity:1;filter:grayscale(0);transform:scale(1.06)}
   .client-logo img{max-height:84px;max-width:none;width:auto;height:auto;object-fit:contain}
   .client-logo .ph{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--navy);white-space:nowrap;padding:12px 22px;border:1.5px dashed var(--line);border-radius:12px}
-  @media(max-width:640px){ .marquee-track{gap:40px} .client-logo{height:58px} .client-logo img{max-height:58px} .client-logo .ph{font-size:.9rem;padding:10px 16px} }
+  @media(max-width:640px){ .marquee-track{gap:40px;animation-duration:22s} .client-logo{height:58px} .client-logo img{max-height:58px} .client-logo .ph{font-size:.9rem;padding:10px 16px} }
+  @media(min-width:641px) and (max-width:960px){ .marquee-track{animation-duration:30s} }
   @media (prefers-reduced-motion:reduce){ .marquee-track{animation:none} }
 
   /* ---------- COMPTEURS ---------- */
@@ -951,9 +952,7 @@ const CLIENTS = [
   {nom:"Ferrailles de Louis", img:"fdl.png",         href:""},
   {nom:"GreenFish",           img:"gf.jpg",          href:""},
   {nom:"MEL immobilier",      img:"mel.jpg",         href:""},
-  {nom:"Sound Festival",      img:"LOGOAFFng.png",   href:""}, 
-  {nom:"Killian CORREDOR",      img:"",   href:""}, 
-
+  {nom:"MEL immobilier",      img:"LOGOAFFng.png",   href:""},   /* ← nom en double, à corriger */
 ];
 
 (function buildClients(){
