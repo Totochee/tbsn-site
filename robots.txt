@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Page sans intérêt pour la recherche
+Disallow: /mentions-legales.html
+
 Sitemap: https://tbsngroupe.fr/sitemap.xml
