@@ -151,6 +151,33 @@
   .service:nth-child(3){--sc:var(--c-video)} .service:nth-child(4){--sc:var(--c-photo)}
   .service:nth-child(5){--sc:var(--c-social)} .service:nth-child(6){--sc:var(--c-drone)}
 
+  /* ---------- LOGOS CLIENTS ---------- */
+  #clients{background:var(--bg-2);padding:56px 0;overflow:hidden}
+  .clients-title{text-align:center;font-family:var(--display);font-weight:600;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+  .marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+  .marquee-track{display:flex;gap:70px;width:max-content;animation:scrollx 32s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .client-logo{flex-shrink:0;height:56px;display:grid;place-items:center;opacity:.62;filter:grayscale(1);transition:opacity .25s,filter .25s,transform .25s}
+  .client-logo:hover{opacity:1;filter:grayscale(0);transform:scale(1.06)}
+  .client-logo img{max-height:56px;width:auto;object-fit:contain}
+  .client-logo .ph{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--navy);white-space:nowrap;padding:12px 22px;border:1.5px dashed var(--line);border-radius:12px}
+  @media(max-width:640px){ .marquee-track{gap:44px} .client-logo{height:44px} .client-logo img{max-height:44px} }
+  @media (prefers-reduced-motion:reduce){ .marquee-track{animation:none} }
+
+  /* ---------- COMPTEURS ---------- */
+  #stats{background:var(--bg);border-bottom:1px solid var(--line);padding:52px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .stat-item{text-align:center;position:relative}
+  .stat-item + .stat-item::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:1px;height:52px;background:var(--line)}
+  .stat-num{font-family:var(--display);font-weight:700;font-size:clamp(2rem,3.6vw,2.9rem);color:var(--navy);line-height:1;letter-spacing:-.02em}
+  .stat-num .suf{color:var(--orange)}
+  .stat-lbl{margin-top:8px;font-size:.86rem;color:var(--muted)}
+  @media(max-width:760px){
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:32px 16px}
+    .stat-item:nth-child(3)::before{display:none}
+  }
+
   /* ---------- POUR QUI ---------- */
   #pourqui{background:var(--bg-2)}
   .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -223,8 +250,14 @@
   .filter{font-family:var(--body);font-weight:500;font-size:.86rem;padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;transition:all .2s}
   .filter:hover{color:var(--navy);border-color:var(--muted)}
   .filter.active{background:var(--navy);border-color:var(--navy);color:#fff}
-  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .pf-item{display:block;position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line);cursor:pointer;background:#fff}
+  .pf-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:230px;gap:20px}
+  .pf-item{display:block;position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);cursor:pointer;background:#fff;grid-column:span 2;grid-row:span 1}
+  /* mosaïque : 1er et 6e en grand, 2e haut */
+  .pf-item:nth-child(6n+1){grid-column:span 4;grid-row:span 2}
+  .pf-item:nth-child(6n+2){grid-column:span 2;grid-row:span 2}
+  .pf-item:nth-child(6n+3),.pf-item:nth-child(6n+4){grid-column:span 3;grid-row:span 1}
+  .pf-item:nth-child(6n+5){grid-column:span 2;grid-row:span 1}
+  .pf-item:nth-child(6n+6){grid-column:span 4;grid-row:span 1}
   .pf-item .illus{position:absolute;inset:0}
   .pf-item .illus svg{width:100%;height:100%;display:block}
   .pf-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,center)}
@@ -238,6 +271,12 @@
   .pf-item.zoomable{cursor:zoom-in}
   .pf-item.zoomable::after{content:"⤢";position:absolute;top:14px;right:14px;width:32px;height:32px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:50%;color:#fff;font-size:1rem;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s;z-index:2}
   .pf-item.zoomable:hover::after,.pf-item.zoomable:focus-visible::after{opacity:1;transform:translateY(0)}
+
+  /* ---------- CURSEUR PERSONNALISÉ (portfolio) ---------- */
+  .pf-cursor{position:fixed;top:0;left:0;z-index:950;width:82px;height:82px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:.8rem;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.5);transition:opacity .2s ease,transform .2s ease;box-shadow:0 10px 30px rgba(255,90,31,.35)}
+  .pf-cursor.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  @media(hover:none),(max-width:900px){ .pf-cursor{display:none} }
+  @media (prefers-reduced-motion:reduce){ .pf-cursor{transition:opacity .2s} }
 
   /* ---------- LIGHTBOX (agrandissement image) ---------- */
   .lightbox{position:fixed;inset:0;z-index:1000;background:rgba(6,12,26,.93);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:28px;cursor:zoom-out}
@@ -342,7 +381,9 @@
     .spectrum{grid-template-columns:repeat(3,1fr);gap:18px 14px}
     .steps{grid-template-columns:repeat(2,1fr)}
     .steps::before{display:none}
-    .pf-grid{grid-template-columns:repeat(2,1fr)}
+    .pf-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:200px}
+    .pf-item,.pf-item:nth-child(6n+1),.pf-item:nth-child(6n+2),.pf-item:nth-child(6n+3),.pf-item:nth-child(6n+4),.pf-item:nth-child(6n+5),.pf-item:nth-child(6n+6){grid-column:span 2;grid-row:span 1}
+    .pf-item:nth-child(6n+1){grid-column:span 4;grid-row:span 2}
     .about-grid{grid-template-columns:1fr;gap:38px}
     #quijesuis .wrap{grid-template-columns:1fr;gap:44px}
     .qjs-photo{max-width:320px;order:-1}
@@ -363,7 +404,9 @@
     .hero .wrap{grid-template-columns:1fr;gap:40px}
     .hero h1{max-width:none}
     .hero-visual{min-height:340px;max-width:440px;margin:0 auto;width:100%}
-    .services-grid,.pf-grid,.steps{grid-template-columns:1fr}
+    .services-grid,.steps{grid-template-columns:1fr}
+    .pf-grid{grid-template-columns:1fr;grid-auto-rows:auto}
+    .pf-item,.pf-item:nth-child(6n+1),.pf-item:nth-child(6n+2),.pf-item:nth-child(6n+3),.pf-item:nth-child(6n+4),.pf-item:nth-child(6n+5),.pf-item:nth-child(6n+6){grid-column:span 1;grid-row:span 1;aspect-ratio:4/3}
     .spectrum{grid-template-columns:repeat(2,1fr)}
     .hero-cta{flex-direction:column;align-items:stretch}
     .hero-cta .btn{text-align:center}
@@ -476,6 +519,40 @@
         6 métiers · 1 seul studio
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ COMPTEURS ============ -->
+<section id="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num" data-to="6">0</div>
+        <div class="stat-lbl">métiers réunis</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-to="4"><span class="suf">K</span></div>
+        <div class="stat-lbl">vidéo &amp; drone</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-to="100"><span class="suf">%</span></div>
+        <div class="stat-lbl">sur mesure</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-to="1"><span class="suf"></span></div>
+        <div class="stat-lbl">seul interlocuteur</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGOS CLIENTS ============ -->
+<section id="clients">
+  <div class="wrap">
+    <p class="clients-title">Ils m'ont fait confiance</p>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track" id="marquee-track"></div>
   </div>
 </section>
 
@@ -858,6 +935,76 @@ renderPortfolio("Tous");
   window.addEventListener('scroll', upd, {passive:true});
   window.addEventListener('resize', upd);
   upd();
+})();
+
+/* ================================================================
+   LOGOS CLIENTS — AJOUTEZ VOS CLIENTS ICI
+   img = fichier du logo (ex: "logo-thibal.png"), laissez "" pour
+   afficher simplement le nom en attendant.
+================================================================ */
+const CLIENTS = [
+  {nom:"Thibal Distribution", img:""},
+  {nom:"Liquière Hygiène",    img:""},
+  {nom:"Club des Nageurs",    img:""},
+  {nom:"Festival Sound",      img:""},
+  {nom:"Puncho d'Agast",      img:""},
+];
+
+(function buildClients(){
+  const track = document.getElementById('marquee-track');
+  if(!track) return;
+  const item = c => c.img
+    ? `<div class="client-logo"><img src="${c.img}" alt="${c.nom}" loading="lazy"></div>`
+    : `<div class="client-logo"><span class="ph">${c.nom}</span></div>`;
+  // doublé pour un défilement en boucle sans coupure
+  track.innerHTML = CLIENTS.map(item).join('') + CLIENTS.map(item).join('');
+})();
+
+/* -- compteurs animés -- */
+(function counters(){
+  const nums = document.querySelectorAll('.stat-num');
+  if(!nums.length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const run = el => {
+    const to = parseInt(el.dataset.to, 10) || 0;
+    const suf = el.querySelector('.suf');
+    const sufTxt = suf ? suf.outerHTML : '';
+    if(reduce){ el.innerHTML = to + sufTxt; return; }
+    const dur = 1400, t0 = performance.now();
+    const step = now => {
+      const p = Math.min((now - t0) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);      // ralentit à la fin
+      el.innerHTML = Math.round(to * eased) + sufTxt;
+      if(p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ run(e.target); io.unobserve(e.target); } });
+  }, {threshold:.5});
+  nums.forEach(n=>io.observe(n));
+})();
+
+/* -- curseur personnalisé sur le portfolio -- */
+(function pfCursor(){
+  const grid = document.getElementById('pf-grid');
+  if(!grid || window.matchMedia('(hover: none)').matches) return;
+  const cur = document.createElement('div');
+  cur.className = 'pf-cursor';
+  cur.textContent = 'Voir';
+  document.body.appendChild(cur);
+  const move = e => { cur.style.left = e.clientX + 'px'; cur.style.top = e.clientY + 'px'; };
+  grid.addEventListener('mousemove', e=>{
+    const item = e.target.closest('.pf-item');
+    if(item){
+      cur.textContent = item.classList.contains('linked') ? 'Ouvrir'
+                      : item.classList.contains('gallery') ? 'Galerie' : 'Voir';
+      cur.classList.add('on');
+      move(e);
+    } else cur.classList.remove('on');
+  });
+  grid.addEventListener('mouseleave', ()=> cur.classList.remove('on'));
+  window.addEventListener('scroll', ()=> cur.classList.remove('on'), {passive:true});
 })();
 
 /* -- mot animé du hero -- */
