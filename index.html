@@ -158,14 +158,22 @@
   .marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:12%;z-index:2;pointer-events:none}
   .marquee::before{left:0;background:linear-gradient(90deg,var(--bg-2),transparent)}
   .marquee::after{right:0;background:linear-gradient(270deg,var(--bg-2),transparent)}
-  .marquee-track{display:flex;align-items:center;gap:64px;width:max-content;animation:scrollx 32s linear infinite;will-change:transform;backface-visibility:hidden}
+  .marquee-track{display:flex;align-items:center;gap:64px;width:max-content;animation:scrollx 32s linear infinite;animation-play-state:paused}
+  .marquee.run .marquee-track{animation-play-state:running}
   @keyframes scrollx{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
   .client-logo{flex-shrink:0;height:84px;display:grid;place-items:center;transition:transform .25s}
   .client-logo:hover{transform:scale(1.06)}
   .client-logo img{max-height:84px;max-width:none;width:auto;height:auto;object-fit:contain}
   .client-logo .ph{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--navy);white-space:nowrap;padding:12px 22px;border:1.5px dashed var(--line);border-radius:12px}
-  @media(max-width:640px){ .marquee-track{gap:36px;animation:scrollx 13s linear infinite} .client-logo{height:58px} .client-logo img{max-height:58px} .client-logo .ph{font-size:.9rem;padding:10px 16px} }
-  @media(min-width:641px) and (max-width:960px){ .marquee-track{animation:scrollx 22s linear infinite} }
+  /* Sur téléphone : aucune animation (zéro saccade), on fait glisser au doigt */
+  @media(max-width:900px){
+    .marquee{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-snap-type:x proximity}
+    .marquee::-webkit-scrollbar{display:none}
+    .marquee::before,.marquee::after{display:none}
+    .marquee-track,.marquee.run .marquee-track{animation:none;gap:44px;padding:0 20px}
+    .client-logo{scroll-snap-align:center}
+  }
+  @media(max-width:640px){ .client-logo{height:58px} .client-logo img{max-height:58px} .client-logo .ph{font-size:.9rem;padding:10px 16px} }
   @media (prefers-reduced-motion:reduce){ .marquee-track{animation:none} }
 
   /* ---------- COMPTEURS ---------- */
@@ -961,6 +969,7 @@ const CLIENTS = [
 
 (function buildClients(){
   const track = document.getElementById('marquee-track');
+  const marquee = track && track.parentElement;
   if(!track) return;
   const item = c => {
     const st = c.scale ? ` style="transform:scale(${c.scale})"` : '';
@@ -971,8 +980,21 @@ const CLIENTS = [
       ? `<a class="client-logo" href="${c.href}" target="_blank" rel="noopener noreferrer" aria-label="${c.nom}">${inner}</a>`
       : `<div class="client-logo">${inner}</div>`;
   };
-  // doublé pour un défilement en boucle sans coupure
-  track.innerHTML = CLIENTS.map(item).join('') + CLIENTS.map(item).join('');
+  // sur téléphone : une seule série (on fait glisser). Sinon : doublée pour la boucle.
+  const anime = window.matchMedia('(min-width: 901px)').matches
+             && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const html = CLIENTS.map(item).join('');
+  track.innerHTML = anime ? html + html : html;
+
+  // l'animation ne tourne que lorsque la section est à l'écran
+  if(anime && marquee && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver(es=>{
+      es.forEach(e=> marquee.classList.toggle('run', e.isIntersecting));
+    }, {threshold:0});
+    io.observe(marquee);
+  } else if(marquee && anime){
+    marquee.classList.add('run');
+  }
 })();
 
 /* -- compteurs animés -- */
