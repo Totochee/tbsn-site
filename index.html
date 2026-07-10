@@ -152,29 +152,23 @@
   .service:nth-child(5){--sc:var(--c-social)} .service:nth-child(6){--sc:var(--c-drone)}
 
   /* ---------- LOGOS CLIENTS ---------- */
-  #clients{background:var(--bg-2);padding:56px 0;overflow:hidden}
   .clients-title{text-align:center;font-family:var(--display);font-weight:600;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+  #clients{background:var(--bg-2);padding:56px 0;overflow:hidden;contain:content}
   .marquee{position:relative;overflow:hidden}
   .marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:12%;z-index:2;pointer-events:none}
   .marquee::before{left:0;background:linear-gradient(90deg,var(--bg-2),transparent)}
   .marquee::after{right:0;background:linear-gradient(270deg,var(--bg-2),transparent)}
-  .marquee-track{display:flex;align-items:center;gap:64px;width:max-content;animation:scrollx 32s linear infinite;animation-play-state:paused}
-  .marquee.run .marquee-track{animation-play-state:running}
+  .marquee-track{display:flex;align-items:center;gap:64px;width:max-content;transform:translateZ(0);animation:scrollx 32s linear infinite;animation-play-state:paused}
+  .marquee.run .marquee-track{animation-play-state:running;will-change:transform}
   @keyframes scrollx{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
   .client-logo{flex-shrink:0;height:84px;display:grid;place-items:center;transition:transform .25s}
   .client-logo:hover{transform:scale(1.06)}
   .client-logo img{max-height:84px;max-width:none;width:auto;height:auto;object-fit:contain}
   .client-logo .ph{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--navy);white-space:nowrap;padding:12px 22px;border:1.5px dashed var(--line);border-radius:12px}
-  /* Sur téléphone : aucune animation (zéro saccade), on fait glisser au doigt */
-  @media(max-width:900px){
-    .marquee{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-snap-type:x proximity}
-    .marquee::-webkit-scrollbar{display:none}
-    .marquee::before,.marquee::after{display:none}
-    .marquee-track,.marquee.run .marquee-track{animation:none;gap:44px;padding:0 20px}
-    .client-logo{scroll-snap-align:center}
-  }
+  /* Téléphone : logos plus petits, boucle plus rapide (piste plus courte) */
+  @media(max-width:900px){ .marquee-track{gap:44px;animation-duration:20s} }
   @media(max-width:640px){ .client-logo{height:58px} .client-logo img{max-height:58px} .client-logo .ph{font-size:.9rem;padding:10px 16px} }
-  @media (prefers-reduced-motion:reduce){ .marquee-track{animation:none} }
+  @media (prefers-reduced-motion:reduce){ .marquee-track,.marquee.run .marquee-track{animation:none} }
 
   /* ---------- COMPTEURS ---------- */
   #stats{background:var(--bg);border-bottom:1px solid var(--line);padding:52px 0}
@@ -974,25 +968,23 @@ const CLIENTS = [
   const item = c => {
     const st = c.scale ? ` style="transform:scale(${c.scale})"` : '';
     const inner = c.img
-      ? `<img src="${c.img}" alt="${c.nom}" loading="lazy"${st}>`
+      ? `<img src="${c.img}" alt="${c.nom}" loading="lazy" decoding="async"${st}>`
       : `<span class="ph">${c.nom}</span>`;
     return (c.href && c.href.trim())
       ? `<a class="client-logo" href="${c.href}" target="_blank" rel="noopener noreferrer" aria-label="${c.nom}">${inner}</a>`
       : `<div class="client-logo">${inner}</div>`;
   };
-  // sur téléphone : une seule série (on fait glisser). Sinon : doublée pour la boucle.
-  const anime = window.matchMedia('(min-width: 901px)').matches
-             && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const anime = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const html = CLIENTS.map(item).join('');
-  track.innerHTML = anime ? html + html : html;
+  track.innerHTML = anime ? html + html : html;   // doublé pour une boucle sans coupure
 
-  // l'animation ne tourne que lorsque la section est à l'écran
+  // l'animation ne tourne QUE lorsque la bande est visible à l'écran
   if(anime && marquee && 'IntersectionObserver' in window){
     const io = new IntersectionObserver(es=>{
       es.forEach(e=> marquee.classList.toggle('run', e.isIntersecting));
     }, {threshold:0});
     io.observe(marquee);
-  } else if(marquee && anime){
+  } else if(anime && marquee){
     marquee.classList.add('run');
   }
 })();
