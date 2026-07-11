@@ -61,8 +61,8 @@
   #rdv{background:var(--bg-2);position:relative;overflow:hidden}
   #rdv::before{content:"";position:absolute;top:-12%;right:-6%;width:44%;height:75%;background:radial-gradient(circle,rgba(255,90,31,.10),transparent 65%);pointer-events:none;z-index:0}
   #rdv .wrap{position:relative;z-index:1}
-  .rdv-embed{margin-top:34px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--card);min-height:640px}
-  .rdv-embed iframe{width:100%;min-height:640px;border:0;display:block}
+  .rdv-embed{margin-top:34px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:transparent;min-height:640px}
+  .rdv-embed #cal-inline{width:100%;min-height:640px;overflow:hidden}
   .rdv-fallback{padding:60px 24px;text-align:center}
   .rdv-fallback p{color:var(--muted);margin-bottom:20px}
 
@@ -717,19 +717,16 @@
       <p>Choisissez le créneau qui vous arrange pour un premier échange, par téléphone ou en visio. On parle de votre projet, sans engagement.</p>
     </div>
 
-    <div class="rdv-embed" id="rdv-embed">
+    <div class="rdv-embed">
       <!-- ============================================================
-           CALENDRIER À CONNECTER
-           1. Créez un compte gratuit sur https://cal.com (ou Calendly)
-           2. Créez un type d'événement "Appel découverte" (15-30 min)
-           3. Récupérez votre lien, ex : https://cal.com/theo-bestion/appel
-           4. Remplacez ci-dessous VOTRE-LIEN par ce lien
+           CALENDRIER — À CONNECTER (une seule ligne à changer)
+           1. Compte gratuit sur https://cal.com
+           2. Créez un événement "Appel découverte" (15-30 min)
+           3. Votre lien ressemble à : cal.com/theo-bestion/appel
+           4. Ci-dessous, remplacez  VOTRE-LIEN  par  theo-bestion/appel
+              (juste la partie APRÈS cal.com/ )
            ============================================================ -->
-      <iframe
-        src="https://cal.com/tbsngroupe/appel-decouverte?embed=true&theme=dark"
-        title="Réserver un rendez-vous avec TBSN groupe"
-        loading="lazy">
-      </iframe>
+      <div id="cal-inline"></div>
     </div>
 
   </div>
@@ -1163,6 +1160,34 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
 })();
 
 </script>
+<!-- ============================================================
+     CALENDRIER Cal.com — thème sombre + accent orange TBSN
+     Remplacez  VOTRE-LIEN  (2 lignes plus bas) par votre identifiant,
+     ex: "theo-bestion/appel". Tant que ce n'est pas fait, le
+     calendrier ne s'affiche pas (aucun bug).
+     ============================================================ -->
+<script type="text/javascript">
+(function(){
+  var CAL_LINK = "VOTRE-LIEN";                 // <-- ex: "theo-bestion/appel"
+  if (CAL_LINK === "VOTRE-LIEN") return;        // pas encore configuré
+
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", {origin:"https://cal.com"});
+  Cal("inline", {
+    elementOrSelector: "#cal-inline",
+    calLink: CAL_LINK,
+    layout: "month_view"
+  });
+  Cal("ui", {
+    theme: "dark",
+    cssVarsPerTheme: { dark: { "cal-brand": "#FF5A1F" } },
+    hideEventTypeDetails: false,
+    layout: "month_view"
+  });
+})();
+</script>
+
 <!-- ============================================================
      WIDGET DE CHAT (Tawk.to — 100% gratuit)
      1. Créez un compte sur https://www.tawk.to
