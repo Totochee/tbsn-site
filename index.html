@@ -497,7 +497,7 @@ header{background:rgba(7,13,26,.72);border-color:rgba(255,255,255,.08)}
 .btn{position:relative;overflow:hidden}.btn::before{content:"";position:absolute;inset:-70%;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.42),transparent 62%);transform:translateX(-65%) rotate(12deg);transition:transform .7s cubic-bezier(.2,.8,.2,1)}.btn:hover::before{transform:translateX(65%) rotate(12deg)}
 .hero-visual{min-height:560px;perspective:1100px}.hv-shape{inset:5% 3% 9%;border-radius:45% 55% 38% 62%/58% 38% 62% 42%;background:radial-gradient(circle at 35% 30%,#ff865a,#ff5a1f 42%,#a82d08);box-shadow:0 40px 100px rgba(255,90,31,.28);animation:morph 9s ease-in-out infinite alternate}
 @keyframes morph{0%{border-radius:45% 55% 38% 62%/58% 38% 62% 42%;transform:rotate(-4deg) scale(.96)}100%{border-radius:62% 38% 57% 43%/39% 60% 40% 61%;transform:rotate(5deg) scale(1.03)}}
-.hv-card{border:1px solid rgba(255,255,255,.22);box-shadow:0 32px 70px rgba(0,0,0,.42);transition:transform .2s ease-out;will-change:transform}.hv-1{width:56%;height:66%;left:3%;top:4%;transform:rotate(-8deg)}.hv-2{width:55%;height:67%;right:1%;bottom:1%;transform:rotate(8deg)}
+.hv-card{border:1px solid rgba(255,255,255,.22);box-shadow:0 32px 70px rgba(0,0,0,.42);transition:transform .2s ease-out;will-change:transform}.hv-1{width:47%;height:72%;left:1%;right:auto;top:2%;transform:rotate(-4deg)}.hv-2{width:47%;height:72%;right:1%;left:auto;bottom:2%;transform:rotate(4deg)}
 .hv-badge{background:rgba(16,27,48,.82);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(18px);animation:badgeFloat 4s ease-in-out infinite}@keyframes badgeFloat{50%{transform:translateY(-14px) rotate(1deg)}}
 #stats{position:relative;background:rgba(16,27,48,.62);backdrop-filter:blur(14px);border-color:rgba(255,255,255,.08)}.stat-item{position:relative}.stat-item:not(:last-child)::after{content:"";position:absolute;right:0;top:20%;height:60%;width:1px;background:linear-gradient(transparent,rgba(255,255,255,.17),transparent)}.stat-num{font-size:clamp(2.5rem,4.2vw,4rem);color:#fff}
 #clients{background:#070D1A;padding:58px 0}.marquee::before,.marquee::after{width:18vw;background:linear-gradient(90deg,#070D1A,transparent)}.marquee::after{background:linear-gradient(-90deg,#070D1A,transparent)}
@@ -1171,8 +1171,8 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       root.style.setProperty('--mx',`${e.clientX}px`);root.style.setProperty('--my',`${e.clientY}px`);
       const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
       if(visual)visual.style.transform=`translate3d(${x*12}px,${y*10}px,0) rotateY(${x*3}deg)`;
-      if(c1)c1.style.transform=`rotate(${-8+x*3}deg) translate3d(${x*-18}px,${y*-14}px,28px)`;
-      if(c2)c2.style.transform=`rotate(${8+x*3}deg) translate3d(${x*20}px,${y*16}px,48px)`;
+      if(c1)c1.style.transform=`rotate(${-4+x*2}deg) translate3d(${x*-10}px,${y*-10}px,28px)`;
+      if(c2)c2.style.transform=`rotate(${4+x*2}deg) translate3d(${x*10}px,${y*10}px,48px)`;
     },{passive:true});
     const tilt=card=>{
       card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(850px) rotateX(${-y*7}deg) rotateY(${x*8}deg) translateY(-5px)`;card.style.setProperty('--cx',`${(x+.5)*100}%`);card.style.setProperty('--cy',`${(y+.5)*100}%`);});
