@@ -57,6 +57,15 @@
   a{color:inherit;text-decoration:none}
   ::selection{background:var(--orange);color:#fff}
 
+  /* ---------- PRISE DE RENDEZ-VOUS ---------- */
+  #rdv{background:var(--bg-2);position:relative;overflow:hidden}
+  #rdv::before{content:"";position:absolute;top:-12%;right:-6%;width:44%;height:75%;background:radial-gradient(circle,rgba(255,90,31,.10),transparent 65%);pointer-events:none;z-index:0}
+  #rdv .wrap{position:relative;z-index:1}
+  .rdv-embed{margin-top:34px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--card);min-height:640px}
+  .rdv-embed iframe{width:100%;min-height:640px;border:0;display:block}
+  .rdv-fallback{padding:60px 24px;text-align:center}
+  .rdv-fallback p{color:var(--muted);margin-bottom:20px}
+
   /* ===== ANIMATIONS MODERNES ===== */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
@@ -532,6 +541,7 @@
       <a href="#process">Étapes</a>
       <a href="a-propos.html">À propos</a>
       <a href="#portfolio">Portfolio</a>
+      <a href="#rdv">Rendez-vous</a>
       <a href="#contact">Contact</a>
       <a href="prestations.html#devis" class="btn" style="color: #fff;" >Estimer mon projet</a>
     </nav>
@@ -695,6 +705,33 @@
     <div class="pf-more">
       <a href="realisations.html" class="btn">Voir toutes les réalisations →</a>
     </div>
+  </div>
+</section>
+
+<!-- ============ PRISE DE RENDEZ-VOUS ============ -->
+<section id="rdv" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Prenons rendez-vous</div>
+      <h2>Réservez un appel gratuit</h2>
+      <p>Choisissez le créneau qui vous arrange pour un premier échange, par téléphone ou en visio. On parle de votre projet, sans engagement.</p>
+    </div>
+
+    <div class="rdv-embed" id="rdv-embed">
+      <!-- ============================================================
+           CALENDRIER À CONNECTER
+           1. Créez un compte gratuit sur https://cal.com (ou Calendly)
+           2. Créez un type d'événement "Appel découverte" (15-30 min)
+           3. Récupérez votre lien, ex : https://cal.com/theo-bestion/appel
+           4. Remplacez ci-dessous VOTRE-LIEN par ce lien
+           ============================================================ -->
+      <iframe
+        src="https://cal.com/VOTRE-LIEN?embed=true&theme=dark"
+        title="Réserver un rendez-vous avec TBSN groupe"
+        loading="lazy">
+      </iframe>
+    </div>
+
   </div>
 </section>
 
@@ -1125,6 +1162,25 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   hero.addEventListener('mouseleave', ()=> v.style.transform = 'translate3d(0,0,0)');
 })();
 
+</script>
+<!-- ============================================================
+     WIDGET DE CHAT (Tawk.to — 100% gratuit)
+     1. Créez un compte sur https://www.tawk.to
+     2. Dans Administration > Chat Widget, copiez votre "Widget Code"
+     3. Il ressemble à : https://embed.tawk.to/XXXXXXXX/YYYYYYYY
+     4. Remplacez VOTRE-ID-TAWK ci-dessous par XXXXXXXX/YYYYYYYY
+     5. Installez l'appli Tawk.to sur votre téléphone pour répondre
+     Tant que ce n'est pas fait, le chat ne s'affiche pas (aucun bug).
+     ============================================================ -->
+<script type="text/javascript">
+(function(){
+  var TAWK_ID = "VOTRE-ID-TAWK";           // <-- collez votre ID ici
+  if (TAWK_ID === "VOTRE-ID-TAWK") return;  // pas encore configuré : on n'affiche rien
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true; s1.src="https://embed.tawk.to/"+TAWK_ID;
+  s1.charset="UTF-8"; s1.setAttribute("crossorigin","*");
+  s0.parentNode.insertBefore(s1,s0);
+})();
 </script>
 </body>
 </html>
