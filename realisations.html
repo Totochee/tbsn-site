@@ -381,7 +381,7 @@ header{background:rgba(8,15,30,.74);border-color:rgba(255,255,255,.09)}
 .work-stage{padding-top:90px}.section-head h2{color:#EAF0F8}.section-head p{color:#8D9BB2}
 .filters{position:sticky;top:86px;z-index:20;padding:12px;width:max-content;max-width:100%;background:rgba(16,27,48,.72);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.09);border-radius:999px}
 .filter{background:transparent;border-color:transparent;color:#8D9BB2}.filter:hover{color:#fff;border-color:rgba(255,255,255,.12)}.filter.active{background:#FF5A1F;border-color:#FF5A1F;color:#fff;box-shadow:0 8px 24px rgba(255,90,31,.25)}
-.pf-grid{gap:24px;perspective:1400px}.pf-item{background:#101B30;border-color:rgba(255,255,255,.09);border-radius:20px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .4s,filter .4s,box-shadow .55s}
+.pf-grid{gap:24px;perspective:1400px;grid-auto-flow:dense;grid-auto-rows:8px;align-items:start}.pf-item{background:#101B30;border-color:rgba(255,255,255,.09);border-radius:20px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .4s,filter .4s,box-shadow .55s}
 .pf-item:nth-child(5n+1),.pf-item:nth-child(5n+4){grid-column:span 2;aspect-ratio:16/9}.pf-item:hover{box-shadow:0 30px 70px rgba(0,0,0,.38);z-index:2}.pf-item .overlay{opacity:1;background:linear-gradient(to top,rgba(8,15,30,.94),rgba(8,15,30,.06) 68%);transform:translateZ(30px)}
 .pf-item .illus,.pf-item>img{transition:transform .9s cubic-bezier(.2,.8,.2,1),filter .5s}.pf-item:hover .illus,.pf-item:hover>img{transform:scale(1.065);filter:saturate(1.12)}
 .overlay .ttl{font-size:clamp(1rem,1.8vw,1.3rem)}.overlay .cat{color:#FF8A5E;opacity:1}.pf-more{padding:30px 0 40px}
@@ -693,6 +693,21 @@ window.addEventListener('scroll', toggleFab, {passive:true}); toggleFab();
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
   const grid = document.getElementById('pf-grid');
+  const layoutMasonry = () => {
+    const styles = getComputedStyle(grid);
+    const row = parseFloat(styles.gridAutoRows) || 8;
+    const gap = parseFloat(styles.rowGap) || 24;
+    [...grid.children].forEach(card => {
+      card.style.gridRowEnd = 'auto';
+      const height = card.getBoundingClientRect().height;
+      card.style.gridRowEnd = `span ${Math.ceil((height + gap) / (row + gap))}`;
+    });
+  };
+  let layoutTimer;
+  const scheduleLayout = () => {
+    clearTimeout(layoutTimer);
+    layoutTimer = setTimeout(layoutMasonry, 60);
+  };
   const animateCards = () => {
     [...grid.children].forEach((card, i) => {
       card.animate([
@@ -708,9 +723,14 @@ window.addEventListener('scroll', toggleFab, {passive:true}); toggleFab();
       });
       card.addEventListener('pointerleave', () => card.style.transform = '');
     });
+    requestAnimationFrame(scheduleLayout);
+    grid.querySelectorAll('img').forEach(img => {
+      if(!img.complete) img.addEventListener('load', scheduleLayout, {once:true});
+    });
   };
   new MutationObserver(animateCards).observe(grid,{childList:true});
   animateCards();
+  addEventListener('resize', scheduleLayout, {passive:true});
 
   if(!reduced){
     const orbit = document.querySelector('.hero-orbit');
