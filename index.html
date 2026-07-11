@@ -63,6 +63,11 @@
   #rdv .wrap{position:relative;z-index:1}
   .rdv-embed{margin-top:34px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:transparent;min-height:640px}
   .rdv-embed #cal-inline{width:100%;min-height:640px;overflow:hidden}
+  @media(max-width:760px){
+    .rdv-embed{min-height:0;max-height:78vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+    .rdv-embed #cal-inline{min-height:0}
+    .rdv-embed #cal-inline iframe{max-height:none!important}
+  }
   .rdv-fallback{padding:60px 24px;text-align:center}
   .rdv-fallback p{color:var(--muted);margin-bottom:20px}
 
