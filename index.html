@@ -1181,7 +1181,16 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   });
   Cal("ui", {
     theme: "dark",
-    cssVarsPerTheme: { dark: { "cal-brand": "#FF5A1F" } },
+    cssVarsPerTheme: { dark: {
+      "cal-brand": "#FF5A1F",
+      "cal-bg": "#0C1526",
+      "cal-bg-emphasis": "#101B30",
+      "cal-bg-subtle": "#16233c",
+      "cal-bg-muted": "#0C1526",
+      "cal-border": "rgba(255,255,255,.10)",
+      "cal-border-subtle": "rgba(255,255,255,.07)",
+      "cal-border-emphasis": "rgba(255,255,255,.18)"
+    } },
     hideEventTypeDetails: false,
     layout: "month_view"
   });
