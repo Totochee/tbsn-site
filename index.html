@@ -511,6 +511,22 @@ header{background:rgba(7,13,26,.72);border-color:rgba(255,255,255,.08)}
 @media(max-width:960px){.hero .wrap{grid-template-columns:1fr}.hero-visual{min-height:480px;max-width:620px;width:100%;margin:auto}.steps::before{display:none}}
 @media(max-width:640px){.hero{padding-top:102px;min-height:auto}.hero h1{font-size:clamp(3rem,16vw,5rem)}.hero-visual{min-height:380px}.section{padding:88px 0}.stat-item:not(:last-child)::after{display:none}.aud-card{min-height:auto}.nav-links{background:#101B30}}
 @media(prefers-reduced-motion:reduce){.hv-shape,.hv-badge,.hero h1 .rotator,.hero h1 .rotator::after,#contact::after{animation:none}.reveal-modern{opacity:1;transform:none;filter:none}.aud-card,.pf-item{transition:none}}
+
+/* ===== POUR QUI — design original enrichi ===== */
+#pourqui{background:transparent}
+#pourqui::before{display:none}
+#pourqui .aud-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+#pourqui .aud-card{--accent:#FF5A1F;position:relative;min-height:245px;padding:30px;background:#101B30;border:1px solid rgba(255,255,255,.09);border-radius:18px;overflow:hidden;display:block;transform:none;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,background .35s}
+#pourqui .aud-card:nth-child(2){--accent:#2563EB}#pourqui .aud-card:nth-child(3){--accent:#7C3AED}#pourqui .aud-card:nth-child(4){--accent:#0D9488}#pourqui .aud-card:nth-child(5){--accent:#DB2777}#pourqui .aud-card:nth-child(6){--accent:#0891B2}
+#pourqui .aud-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+#pourqui .aud-card:hover{transform:translateY(-5px);background:#132039;border-color:rgba(255,255,255,.16);box-shadow:none}
+#pourqui .aud-card:hover::before{transform:scaleY(1)}
+#pourqui .aud-card>*{position:relative;z-index:1;transform:none}
+#pourqui .aud-ico{width:54px;height:54px;margin-bottom:20px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);color:var(--accent);transition:transform .4s cubic-bezier(.2,.8,.2,1),background .3s,color .3s}
+#pourqui .aud-card:hover .aud-ico{transform:translateY(-3px) rotate(-5deg);background:var(--accent);color:#fff}
+#pourqui .aud-card h3{font-size:1.18rem;color:#EAF0F8;margin-bottom:9px}
+#pourqui .aud-card p{font-size:.91rem;line-height:1.68;color:#8D9BB2}
+@media(max-width:700px){#pourqui .aud-grid{grid-template-columns:1fr;gap:15px}#pourqui .aud-card{min-height:auto;padding:26px}}
 </style>
 <script type="application/ld+json">
 {
