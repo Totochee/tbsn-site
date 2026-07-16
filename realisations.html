@@ -498,8 +498,11 @@ footer{background:#080F1E}
    href = lien à ouvrir au clic (optionnel, ex: page Instagram)
    pos  = cadrage de la vignette : "top", "center" ou "bottom" (optionnel)
 ================================================================ */
-const CATS = ["Logo","Print","Vidéo","Photo","Réseaux sociaux","Drone"];
+const CATS = ["Sites web","Logo","Print","Vidéo","Photo","Réseaux sociaux","Drone"];
 const PORTFOLIO = [
+  {titre:"Site web — Studio Claire Martin", cat:"Sites web", img:"apercu-studio-claire.png", href:"https://totochee.github.io/studioclaire/", pos:"top"},
+  {titre:"Site web — TBSN groupe", cat:"Sites web", img:"apercu-tbsn-groupe.png", href:"https://tbsngroupe.fr/", pos:"top"},
+  {titre:"Site web — Ferrailles de Louis", cat:"Sites web", img:"apercu-ferrailles-louis.png", href:"https://totochee.github.io/ferraillesdelouis/", pos:"top"},
   {titre:"Vidéo d'entreprise — Liquiere Hygiene", cat:"Vidéo", img:"videoliquiere.png", href:"https://www.instagram.com/p/DWgNBWnkYjL/"},
   {titre:"Animation réseaux sociaux — Thibal distribution", cat:"Réseaux sociaux", img:"carré thibal.jpg", href:"https://www.facebook.com/thibaldistribution/?locale=fr_FR"},
   {titre:"Création logo — Festival Sound", cat:"Logo", img:"sound.png"},
@@ -513,6 +516,7 @@ const PORTFOLIO = [
 
 /* -- illustrations SVG claires par catégorie -- */
 const CAT_COLOR = {
+  "Sites web":"#FF5A1F",
   "Logo":"#1D4ED8", "Print":"#0E7490", "Vidéo":"#7E22CE",
   "Photo":"#A16207", "Réseaux sociaux":"#BE185D", "Drone":"#334155"
 };
