@@ -1,1207 +1,1601 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agence de communication à Millau & en Aveyron — TBSN groupe</title>
-<meta name="description" content="Agence de communication à Millau et en Aveyron : logo, print, site internet, vidéo, photo, réseaux sociaux et drone. Depuis Séverac-le-Château, TBSN accompagne les entreprises de tout le Millavois et de l'Aveyron.">
-<link rel="canonical" href="https://tbsngroupe.fr/">
-
-<!-- Aperçu de partage (Open Graph — Facebook, WhatsApp, LinkedIn…) -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://tbsngroupe.fr/">
-<meta property="og:site_name" content="TBSN groupe">
-<meta property="og:title" content="Agence de communication à Millau & en Aveyron — TBSN groupe">
-<meta property="og:description" content="Logo, print, site web, vidéo, photo, réseaux et drone — pour les entreprises de Millau et de l'Aveyron. Une seule équipe, du premier trait à la diffusion.">
-<meta property="og:image" content="https://tbsngroupe.fr/favicon.png">
-<meta property="og:image:width" content="500">
-<meta property="og:image:height" content="500">
-<meta property="og:image:alt" content="TBSN groupe">
-<meta property="og:locale" content="fr_FR">
-
-<!-- Aperçu de partage (Twitter / X) -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Agence de communication à Millau & en Aveyron — TBSN groupe">
-<meta name="twitter:description" content="Logo, print, vidéo, photo, réseaux sociaux et drone. Une seule équipe pour toute votre communication.">
-<meta name="twitter:image" content="https://tbsngroupe.fr/favicon.png">
-
-<link rel="icon" href="favicon.png" type="image/png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tribune RAF — Réservation des places · Saison 2026-2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy:#0A1A33;
-    --navy-2:#16305A;
-    --ink:#EAF0F8;
-    --muted:#8D9BB2;
-    --line:rgba(255,255,255,.09);
-    --bg:#080F1E;
-    --bg-2:#0C1526;
-    --card:#101B30;
-    --orange:#FF5A1F;
-    /* couleurs par métier (l'orange reste réservé à l'identité du site) */
-    --c-logo:#1D4ED8;
-    --c-print:#0E7490;
-    --c-video:#7E22CE;
-    --c-photo:#A16207;
-    --c-social:#BE185D;
-    --c-drone:#334155;
-    --radius:16px;
-    --display:'Space Grotesk',sans-serif;
-    --body:'Inter',sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
-  img{max-width:100%;display:block}
-  a{color:inherit;text-decoration:none}
-  ::selection{background:var(--orange);color:#fff}
-  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
-  /* ===== ANIMATIONS MODERNES ===== */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1;transform:none}
-  @media(min-width:901px){
-    .reveal{filter:blur(10px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),filter .8s cubic-bezier(.2,.7,.2,1)}
-    .reveal.in{filter:blur(0)}
-  }
-  h2{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.12;letter-spacing:-.015em;color:var(--ink)}
-  .section{padding:104px 0}
-  .eyebrow{font-family:var(--display);font-weight:600;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
-  .section-head{max-width:620px;margin-bottom:52px}
-  .section-head p{color:var(--muted);margin-top:14px;font-size:1.02rem}
-  .section-head h2{margin-bottom:14px}
-  .aud-card,.step,.service{transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease,border-color .3s ease}
-  .aud-card:hover,.step:hover,.service:hover{border-color:rgba(255,90,31,.35);box-shadow:0 20px 55px rgba(255,90,31,.14),0 6px 20px rgba(0,0,0,.25)}
-  .pf-item{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease}
-  .pf-item:hover{transform:translateY(-4px);box-shadow:0 22px 55px rgba(255,90,31,.16)}
-  .btn{position:relative;overflow:hidden}
-  .btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.38),transparent);transform:skewX(-20deg);pointer-events:none}
-  .btn:hover::after{animation:btnshine .7s ease}
-  @keyframes btnshine{to{left:140%}}
-  @media (prefers-reduced-motion:reduce){
-    .reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none}
-    .btn::after{display:none}
-  }
+<!-- ==========================================================================
+     ▄▄▄  ▄▄▄  ▄▄▄▄    TRIBUNE RAF
+     █▄▄▀ █▄▄█ █▄▄     Plateforme privée de réservation — Rodez Aveyron Football
+     ▀ ▀▀ ▀  ▀ ▀       Saison 2026-2027 · fichier unique, 100% gratuit
 
-  /* ---------- HEADER ---------- */
-  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,15,30,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-.logo{
-  font-family:var(--display);
-  font-weight:700;
-  font-size:1.3rem;
-  letter-spacing:.02em;
-  color:#EAF0F8;
-}  .logo span{color:var(--orange)}
-  .nav-links{display:flex;gap:30px;align-items:center}
-  .nav-links a{font-size:.92rem;font-weight:500;color:var(--muted);transition:color .2s}
-  .nav-links a:hover,.nav-links a:focus-visible{color:var(--ink)}
-  .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:.92rem;padding:12px 24px;border-radius:999px;background:var(--orange);color:#fff;border:none;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s}
-  .btn:hover{background:#e94e15;transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,90,31,.28)}
-  .btn:focus-visible{outline:3px solid rgba(255,90,31,.4);outline-offset:3px}
-  .btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
-  .btn-ghost:hover{background:var(--bg-2);border-color:var(--muted);box-shadow:none}
-  .burger{display:none;background:none;border:none;color:var(--ink);font-size:1.6rem;cursor:pointer}
-
-  /* ---------- HERO ---------- */
-  .hero{position:relative;padding:130px 0 90px;overflow:hidden;background:var(--navy);min-height:92vh;display:flex;align-items:center}
-  .hero::before{content:"";position:absolute;top:-15%;right:-8%;width:56%;height:92%;background:radial-gradient(circle at 60% 40%,rgba(255,90,31,.20),transparent 62%);pointer-events:none;z-index:0}
-  .hero::after{content:"";position:absolute;left:-12%;bottom:-25%;width:44%;height:75%;background:radial-gradient(circle,rgba(22,48,90,.65),transparent 66%);pointer-events:none;z-index:0}
-  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center;width:100%}
-  .hero .eyebrow{color:#FF8A5E}
-  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,5.6vw,4.7rem);line-height:1.02;letter-spacing:-.03em;color:#fff;max-width:15ch}
-  .hero h1 em{font-style:normal;color:var(--orange)}
-  .hero .rotator{color:var(--orange);display:inline-block;transition:opacity .35s ease,transform .35s ease}
-  .hero .rotator.out{opacity:0;transform:translateY(-12px)}
-  .hero .lead{margin:26px 0 34px;font-size:1.14rem;color:#B9C4D6;max-width:52ch}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-  .hero .btn-ghost{background:transparent;border:1.5px solid rgba(255,255,255,.28);color:#fff}
-  .hero .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6);box-shadow:none}
-  /* menu transparent au-dessus du hero sombre, blanc une fois défilé */
-  body.has-dark-hero header.at-top{background:transparent;backdrop-filter:none;border-bottom-color:transparent}
-  body.has-dark-hero header.at-top .logo{color:#fff}
-  body.has-dark-hero header.at-top .burger{color:#fff}
-  @media(min-width:641px){
-    body.has-dark-hero header.at-top .nav-links a{color:#D4DCE8}
-    body.has-dark-hero header.at-top .nav-links a:hover{color:#fff}
-  }
-  @keyframes heroUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-  .hero-text>.eyebrow{animation:heroUp .6s .05s both}
-  .hero-text>h1{animation:heroUp .7s .18s both}
-  .hero-text>.lead{animation:heroUp .7s .34s both}
-  .hero-text>.hero-cta{animation:heroUp .7s .5s both}
-  .hero-visual{animation:heroUp .9s .35s both}
-  /* visuel du hero */
-  .hero-visual{position:relative;min-height:440px}
-  .hv-shape{position:absolute;top:-6%;right:-4%;width:64%;height:64%;border-radius:30px;background:linear-gradient(150deg,rgba(255,90,31,.16),rgba(255,90,31,.04));z-index:0}
-  .hv-card{position:absolute;border-radius:20px;overflow:hidden;background-color:var(--ink);background-size:cover;background-position:center;box-shadow:0 20px 50px rgba(16,24,38,.20);border:5px solid #fff;z-index:1}
-  .hv-1{width:74%;height:66%;top:2%;right:0;animation:hvfloat 7s ease-in-out infinite}
-  .hv-2{width:50%;height:48%;bottom:0;left:0;z-index:2;animation:hvfloat 7s ease-in-out infinite;animation-delay:-3.5s}
-  @keyframes hvfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-  .hv-badge{position:absolute;bottom:14%;right:-2%;z-index:3;display:flex;align-items:center;gap:9px;background:var(--card);border-radius:12px;padding:11px 15px;box-shadow:0 12px 30px rgba(16,24,38,.18);font-family:var(--display);font-weight:600;font-size:.82rem;color:var(--ink)}
-  .hv-badge .b-ico{width:26px;height:26px;border-radius:7px;background:var(--orange);color:#fff;display:grid;place-items:center;flex-shrink:0}
-  .hv-badge .b-ico svg{width:16px;height:16px}
-
-  /* signature : spectre des 6 métiers */
-  .spectrum{margin-top:64px;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-  .spec{position:relative;padding-top:18px}
-  .spec::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;border-radius:2px;background:var(--sc)}
-  .spec b{display:block;font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--ink);margin-bottom:2px}
-  .spec span{font-size:.8rem;color:var(--muted)}
-  .spec:nth-child(1){--sc:var(--c-logo)} .spec:nth-child(2){--sc:var(--c-print)}
-  .spec:nth-child(3){--sc:var(--c-video)} .spec:nth-child(4){--sc:var(--c-photo)}
-  .spec:nth-child(5){--sc:var(--c-social)} .spec:nth-child(6){--sc:var(--c-drone)}
-
-  /* ---------- SERVICES ---------- */
-  #services{background:var(--bg-2)}
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .service{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;transition:transform .2s,box-shadow .2s,border-color .2s}
-  .service:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(16,24,38,.08);border-color:transparent}
-  .service .dot{width:11px;height:11px;border-radius:50%;background:var(--sc);margin-bottom:20px}
-  .svc-badge{position:absolute;top:20px;right:20px;background:var(--sc);color:#fff;font-family:var(--display);font-weight:600;font-size:.8rem;line-height:1;padding:6px 11px;border-radius:999px;letter-spacing:.01em}
-  .service h3{font-family:var(--display);font-weight:600;font-size:1.12rem;margin-bottom:8px;color:var(--ink)}
-  .service>p{font-size:.92rem;color:var(--muted);margin-bottom:18px}
-  .deliver{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:9px}
-  .deliver li{position:relative;padding-left:24px;font-size:.86rem;color:var(--ink)}
-  .deliver li::before{content:"";position:absolute;left:0;top:6px;width:11px;height:7px;border-left:2px solid var(--sc);border-bottom:2px solid var(--sc);transform:rotate(-45deg)}
-  .svc-price{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:.98rem;color:var(--ink);transition:gap .2s}
-  .svc-price .ar{color:var(--sc);transition:transform .2s;display:inline-block}
-  .service:hover .svc-price .ar{transform:translateX(4px)}
-  .service:nth-child(1){--sc:var(--c-logo)} .service:nth-child(2){--sc:var(--c-print)}
-  .service:nth-child(3){--sc:var(--c-video)} .service:nth-child(4){--sc:var(--c-photo)}
-  .service:nth-child(5){--sc:var(--c-social)} .service:nth-child(6){--sc:var(--c-drone)}
-
-  /* ---------- LOGOS CLIENTS ---------- */
-  .clients-title{text-align:center;font-family:var(--display);font-weight:600;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
-  #clients{background:var(--bg-2);padding:56px 0;overflow:hidden;contain:content}
-  .marquee{position:relative;overflow:hidden}
-  .marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:12%;z-index:2;pointer-events:none}
-  .marquee::before{left:0;background:linear-gradient(90deg,var(--bg-2),transparent)}
-  .marquee::after{right:0;background:linear-gradient(270deg,var(--bg-2),transparent)}
-  .marquee-track{display:flex;align-items:center;gap:64px;width:max-content;transform:translateZ(0);animation:scrollx 32s linear infinite;animation-play-state:paused}
-  .marquee.run .marquee-track{animation-play-state:running;will-change:transform}
-  @keyframes scrollx{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
-  .client-logo{flex-shrink:0;height:60px;display:grid;place-items:center;transition:opacity .25s,transform .25s;opacity:.75}
-  .client-logo:hover{opacity:1;transform:scale(1.05)}
-  .client-logo img{max-height:60px;max-width:none;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1)}
-  .client-logo .ph{font-family:var(--display);font-weight:700;font-size:1.05rem;color:#fff;white-space:nowrap}
-  /* Téléphone : logos plus petits, boucle plus rapide (piste plus courte) */
-  @media(max-width:900px){ .marquee-track{gap:56px;animation-duration:20s} }
-  @media(max-width:640px){ .client-logo{height:46px} .client-logo img{max-height:46px} .client-logo .ph{font-size:.9rem} }
-  @media (prefers-reduced-motion:reduce){ .marquee-track,.marquee.run .marquee-track{animation:none} }
-
-  /* ---------- COMPTEURS ---------- */
-  #stats{background:var(--bg);border-bottom:1px solid var(--line);padding:52px 0}
-  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-  .stat-item{text-align:center;position:relative}
-  .stat-item + .stat-item::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:1px;height:52px;background:var(--line)}
-  .stat-num{font-family:var(--display);font-weight:700;font-size:clamp(2rem,3.6vw,2.9rem);color:var(--ink);line-height:1;letter-spacing:-.02em}
-  .stat-num .suf{color:var(--orange)}
-  .stat-lbl{margin-top:8px;font-size:.86rem;color:var(--muted)}
-  @media(max-width:760px){
-    .stats-grid{grid-template-columns:repeat(2,1fr);gap:32px 16px}
-    .stat-item:nth-child(3)::before{display:none}
-  }
-
-  /* ---------- POUR QUI ---------- */
-  #pourqui{background:var(--bg-2);position:relative;overflow:hidden}
-  #pourqui::before{content:"";position:absolute;top:-10%;left:-8%;width:45%;height:70%;background:radial-gradient(circle,rgba(255,90,31,.10),transparent 65%);pointer-events:none;z-index:0}
-  #pourqui .wrap{position:relative;z-index:1}
-  .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .aud-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;transition:transform .2s,box-shadow .2s,border-color .2s}
-  .aud-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(16,24,38,.08);border-color:transparent}
-  .aud-ico{width:52px;height:52px;border-radius:14px;background:var(--navy);color:#fff;display:grid;place-items:center;margin-bottom:18px}
-  .aud-ico svg{width:28px;height:28px}
-  .aud-card:nth-child(odd) .aud-ico{background:var(--navy-2)}
-  .aud-card:nth-child(even) .aud-ico{background:var(--orange)}
-  .aud-card h3{font-family:var(--display);font-weight:600;font-size:1.12rem;margin-bottom:8px;color:var(--ink)}
-  .aud-card p{font-size:.9rem;color:var(--muted)}
-  @media(max-width:960px){ .aud-grid{grid-template-columns:repeat(2,1fr)} }
-  @media(max-width:640px){ .aud-grid{grid-template-columns:1fr} }
-
-  /* ---------- PROCESS ---------- */
-  #process{background:var(--bg)}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
-  .steps::before{content:"";position:absolute;top:60px;left:13%;right:13%;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 7px,transparent 7px 15px);z-index:0}
-  .step{position:relative;z-index:1;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;text-align:center;transition:transform .25s,box-shadow .25s,border-color .25s}
-  .step:hover{transform:translateY(-6px);box-shadow:0 16px 44px rgba(16,24,38,.10);border-color:transparent}
-  .step-ico{position:relative;width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:var(--navy-2);color:#fff;display:grid;place-items:center;transition:background .25s,transform .25s}
-  .step:hover .step-ico{background:var(--orange);transform:scale(1.06) rotate(-4deg)}
-  .step-ico svg{width:30px;height:30px}
-  .step-n{position:absolute;top:-5px;right:-5px;width:26px;height:26px;border-radius:50%;background:var(--orange);color:#fff;font-family:var(--display);font-weight:700;font-size:.78rem;display:grid;place-items:center;border:2px solid #fff;transition:background .25s}
-  .step:hover .step-n{background:var(--navy)}
-  .step h3{font-family:var(--display);font-weight:600;font-size:1.08rem;margin:0 0 8px;color:var(--ink)}
-  .step p{font-size:.88rem;color:var(--muted)}
-
-  /* ---------- A PROPOS ---------- */
-  #apropos{background:var(--bg-2)}
-  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-  .about-copy .eyebrow{margin-bottom:14px}
-  .about-copy h2{margin-bottom:18px}
-  .about-copy p{color:var(--muted);margin-bottom:16px}
-  .about-copy p strong{color:var(--ink);font-weight:600}
-  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
-  .stat b{display:block;font-family:var(--display);font-weight:700;font-size:1.7rem;color:var(--orange);line-height:1}
-  .stat small{color:var(--muted);font-size:.78rem;display:block;margin-top:6px}
-  .about-values{display:flex;flex-direction:column;gap:12px}
-  .value{display:flex;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
-  .value .vico{flex-shrink:0;width:34px;height:34px;display:grid;place-items:center}
-  .value .vico svg{width:28px;height:28px}
-  .value:nth-child(1) .vico{color:var(--c-logo)} .value:nth-child(2) .vico{color:var(--c-print)}
-  .value:nth-child(3) .vico{color:var(--c-drone)} .value:nth-child(4) .vico{color:var(--c-photo)}
-  .value h4{font-family:var(--display);font-weight:600;font-size:1rem;margin-bottom:4px;color:var(--ink)}
-  .value p{font-size:.88rem;color:var(--muted)}
-
-  /* ---------- QUI JE SUIS ---------- */
-  #quijesuis{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-  #quijesuis::before{content:"";position:absolute;top:-140px;right:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,90,31,.16),transparent 70%);pointer-events:none}
-  #quijesuis .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
-  #quijesuis .eyebrow{color:var(--orange)}
-  #quijesuis h2{color:#fff}
-  #quijesuis h2 em{font-style:normal;color:var(--orange)}
-  .qjs-text p{color:#C4CEDE;margin-bottom:16px;font-size:1.05rem}
-  .qjs-text p strong{color:#fff;font-weight:600}
-  .qjs-sign{margin-top:24px;font-family:var(--display);font-weight:600;color:#fff;font-size:1.05rem}
-  .qjs-sign span{color:var(--orange)}
-  .qjs-photo{position:relative;max-width:360px;margin:0 auto;width:100%}
-  .qjs-photo::before{content:"";position:absolute;left:-20px;bottom:-20px;width:78%;height:66%;border:2px solid rgba(255,90,31,.45);border-radius:26px;z-index:0}
-  .qjs-frame{position:relative;z-index:1;border-radius:26px;overflow:hidden;background:#F5A200;aspect-ratio:4/5}
-  .qjs-frame img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:118%;max-width:none;height:auto;display:block;-webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent 100%);mask-image:linear-gradient(to bottom,#000 82%,transparent 100%)}
-  .qjs-tag{position:absolute;left:-14px;bottom:26px;z-index:2;background:var(--card);color:var(--ink);font-family:var(--display);font-weight:600;font-size:.82rem;padding:9px 15px;border-radius:11px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
-  .qjs-tag span{color:var(--orange)}
-
-  /* ---------- PORTFOLIO ---------- */
-  #portfolio{background:var(--bg);position:relative;overflow:hidden}
-  #portfolio::before{content:"";position:absolute;top:6%;right:-8%;width:42%;height:60%;background:radial-gradient(circle,rgba(126,34,206,.10),transparent 66%);pointer-events:none;z-index:0}
-  #portfolio .wrap{position:relative;z-index:1}
-  .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
-  .filter{font-family:var(--body);font-weight:500;font-size:.86rem;padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer;transition:all .2s}
-  .filter:hover{color:var(--ink);border-color:var(--muted)}
-  .filter.active{background:var(--orange);border-color:var(--orange);color:#fff}
-  .pf-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:230px;gap:20px}
-  .pf-item{display:block;position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);cursor:pointer;background:var(--card);grid-column:span 2;grid-row:span 1}
-  /* mosaïque : 1er et 6e en grand, 2e haut */
-  .pf-item:nth-child(6n+1){grid-column:span 4;grid-row:span 2}
-  .pf-item:nth-child(6n+2){grid-column:span 2;grid-row:span 2}
-  .pf-item:nth-child(6n+3),.pf-item:nth-child(6n+4){grid-column:span 3;grid-row:span 1}
-  .pf-item:nth-child(6n+5){grid-column:span 2;grid-row:span 1}
-  .pf-item:nth-child(6n+6){grid-column:span 4;grid-row:span 1}
-  .pf-item .illus{position:absolute;inset:0}
-  .pf-item .illus svg{width:100%;height:100%;display:block}
-  .pf-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,center)}
-  .pf-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,26,51,.92) 0%,rgba(10,26,51,.05) 60%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;opacity:0;transition:opacity .25s}
-  .pf-item:hover .overlay,.pf-item:focus-within .overlay{opacity:1}
-  .overlay .cat{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff;opacity:.85}
-  .overlay .ttl{font-family:var(--display);font-weight:600;font-size:1.05rem;color:#fff}
-  .overlay .pf-link{margin-top:8px;font-family:var(--body);font-size:.82rem;font-weight:600;color:#fff;display:inline-flex;align-items:center;gap:6px}
-  .pf-item.linked::after{content:"↗";position:absolute;top:14px;right:14px;width:32px;height:32px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:50%;color:#fff;font-size:.95rem;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s;z-index:2}
-  .pf-item.linked:hover::after,.pf-item.linked:focus-visible::after{opacity:1;transform:translateY(0)}
-  .pf-item.zoomable{cursor:zoom-in}
-  .pf-item.zoomable::after{content:"⤢";position:absolute;top:14px;right:14px;width:32px;height:32px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:50%;color:#fff;font-size:1rem;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s;z-index:2}
-  .pf-item.zoomable:hover::after,.pf-item.zoomable:focus-visible::after{opacity:1;transform:translateY(0)}
-
-  /* ---------- CURSEUR PERSONNALISÉ (portfolio) ---------- */
-  .pf-cursor{position:fixed;top:0;left:0;z-index:950;width:82px;height:82px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:.8rem;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.5);transition:opacity .2s ease,transform .2s ease;box-shadow:0 10px 30px rgba(255,90,31,.35)}
-  .pf-cursor.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
-  @media(hover:none),(max-width:900px){ .pf-cursor{display:none} }
-  @media (prefers-reduced-motion:reduce){ .pf-cursor{transition:opacity .2s} }
-
-  /* ---------- LIGHTBOX (agrandissement image) ---------- */
-  .lightbox{position:fixed;inset:0;z-index:1000;background:rgba(6,12,26,.93);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:28px;cursor:zoom-out}
-  .lightbox.open{display:flex;animation:lbfade .2s ease}
-  @keyframes lbfade{from{opacity:0}to{opacity:1}}
-  .lightbox figure{margin:0;max-width:min(1100px,94vw);display:flex;flex-direction:column;gap:14px;align-items:center}
-  .lightbox img{max-width:100%;max-height:82vh;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.55)}
-  .lightbox figcaption{color:#EAF0F8;font-family:var(--body);font-size:.9rem;text-align:center;opacity:.9}
-  .lb-close{position:absolute;top:20px;right:24px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:1.3rem;cursor:pointer;display:grid;place-items:center;transition:background .2s,transform .15s;z-index:3}
-  .lb-close:hover{background:rgba(255,255,255,.24);transform:rotate(90deg)}
-  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:2rem;line-height:1;cursor:pointer;display:none;place-items:center;transition:background .2s;z-index:3;padding-bottom:4px}
-  .lb-nav:hover{background:rgba(255,255,255,.26)}
-  .lb-prev{left:20px}
-  .lb-next{right:20px}
-  .lightbox.has-gallery .lb-nav{display:grid}
-  .lb-dots{display:none;justify-content:center;gap:9px;margin-top:4px}
-  .lightbox.has-gallery .lb-dots{display:flex}
-  .lb-dots button{width:9px;height:9px;padding:0;border-radius:50%;border:none;background:rgba(255,255,255,.32);cursor:pointer;transition:background .2s,transform .2s}
-  .lb-dots button.on{background:var(--orange);transform:scale(1.25)}
-  .pf-item.gallery::after{content:"⧉";position:absolute;top:14px;right:14px;width:32px;height:32px;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);border-radius:50%;color:#fff;font-size:1rem;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s;z-index:2}
-  .pf-item.gallery:hover::after,.pf-item.gallery:focus-visible::after{opacity:1;transform:translateY(0)}
-
-  .pf-more{margin-top:38px;text-align:center}
-
-  /* ---------- DEVIS ---------- */
-  #devis{background:var(--bg-2);position:relative}
-  .devis-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:start}
-  .cards{display:flex;flex-direction:column;gap:14px}
-  .svc-card{background:var(--sc);border:1px solid var(--sc);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s;--sc:var(--orange)}
-  .svc-card.on{box-shadow:0 12px 30px color-mix(in srgb, var(--sc) 42%, transparent)}
-  .svc-head{display:flex;align-items:center;gap:16px;padding:20px 22px;cursor:pointer;user-select:none}
-  .svc-head input{width:20px;height:20px;accent-color:#fff;cursor:pointer;flex-shrink:0}
-  .svc-ico{flex-shrink:0;width:30px;height:30px;display:grid;place-items:center;color:#fff}
-  .svc-ico svg{width:26px;height:26px}
-  .svc-head .t{flex:1}
-  .svc-head .t b{font-family:var(--display);font-size:1.02rem;font-weight:600;display:block;color:#fff}
-  .svc-head .t small{color:rgba(255,255,255,.85);font-size:.82rem}
-  .svc-head .base{font-family:var(--display);font-weight:700;color:#fff;white-space:nowrap;font-size:.95rem}
-  .svc-body{display:none;padding:0 22px 20px;border-top:1px solid rgba(255,255,255,.3)}
-  .svc-card.on .svc-body{display:block}
-  .opt-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.22);font-size:.9rem}
-  .opt-row:last-child{border-bottom:none}
-  .opt-row.km-note{padding-top:4px;font-size:.82rem}
-  .opt-row.km-note span:first-child{color:rgba(255,255,255,.85)}
-  .opt-row label{display:flex;align-items:center;gap:10px;cursor:pointer;color:#fff}
-  .opt-row input[type=checkbox]{width:17px;height:17px;accent-color:#fff;cursor:pointer}
-  .opt-row .price{color:rgba(255,255,255,.88);font-weight:500;white-space:nowrap;font-size:.85rem}
-  select,.qty input{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.42);color:#fff;border-radius:10px;padding:8px 12px;font-family:var(--body);font-size:.88rem}
-  select option{color:#111}
-  .qty input::placeholder{color:rgba(255,255,255,.6)}
-  select:focus,.qty input:focus{outline:2px solid #fff;outline-offset:1px}
-  input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--orange);outline-offset:1px}
-  .qty{display:flex;align-items:center;gap:8px}
-  .qty input{width:70px;text-align:center}
-
-  .summary{position:sticky;top:92px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 40px rgba(16,24,38,.06)}
-  .summary h3{font-family:var(--display);font-weight:700;font-size:1.2rem;margin-bottom:18px;color:var(--ink)}
-  #sum-lines{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;min-height:40px}
-  .sum-line{display:flex;justify-content:space-between;gap:12px;font-size:.88rem}
-  .sum-line span:first-child{color:var(--muted)}
-  .sum-name{display:inline-flex;align-items:center;gap:7px}
-  .sum-ico{display:inline-flex;flex-shrink:0}
-  .sum-ico svg{width:17px;height:17px}
-  .sum-line.sub{padding-left:14px;font-size:.82rem}
-  .sum-empty{color:var(--muted);font-size:.88rem;font-style:italic}
-  .sum-discount{color:var(--orange);font-weight:600}
-  .total-row{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
-  .total-row .lbl{font-weight:500;color:var(--muted);font-size:.9rem}
-  #total{font-family:var(--display);font-weight:700;font-size:2.1rem;color:var(--ink);transition:transform .15s}
-  #total.pulse{transform:scale(1.05)}
-  .monthly-note{font-size:.78rem;color:var(--muted);margin-bottom:18px}
-  .summary .fields{display:flex;flex-direction:column;gap:10px;margin:14px 0 16px}
-  .summary .fields input{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:11px 14px;font-size:.9rem;width:100%}
-  #send-devis{width:100%;text-align:center}
-  #send-devis:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
-  .legal{font-size:.72rem;color:var(--muted);margin-top:12px;text-align:center}
-  .devis-status{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;font-size:.86rem;line-height:1.5}
-  .devis-status.ok{display:block;background:rgba(13,148,136,.10);border:1px solid rgba(13,148,136,.35);color:#0B7A6F}
-  .devis-status.err{display:block;background:rgba(255,90,31,.08);border:1px solid rgba(255,90,31,.4);color:#C23D0E}
-  .devis-status a{color:var(--orange);font-weight:600;text-decoration:underline}
-
-  /* ---------- CONTACT (bande marine) ---------- */
-  #contact{background:var(--navy);position:relative;overflow:hidden;border-top:1px solid var(--line)}
-  #contact::before{content:"";position:absolute;bottom:-30%;right:-6%;width:48%;height:120%;background:radial-gradient(circle,rgba(255,90,31,.14),transparent 62%);pointer-events:none;z-index:0}
-  #contact .wrap{position:relative;z-index:1}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-  .contact-grid .eyebrow{color:#FF8A5E}
-  .contact-grid .big{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.6vw,2.4rem);line-height:1.15;color:#fff;letter-spacing:-.01em}
-  .contact-grid .big span{color:var(--orange)}
-  .contact-list{display:flex;flex-direction:column;gap:14px;font-size:.98rem}
-  .contact-list a{display:flex;align-items:center;gap:13px;color:#B9C4D6;transition:color .2s}
-  .contact-list a:hover{color:#fff}
-  .contact-list a svg{width:20px;height:20px;flex-shrink:0}
-  footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.08);padding:26px 0;font-size:.82rem;color:#8A99B2}
-  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-  .footer-social{display:flex;gap:14px;align-items:center}
-  .footer-social a{color:#8A99B2;transition:color .2s,transform .15s;display:grid;place-items:center}
-  .footer-social a:hover{color:var(--orange);transform:translateY(-2px)}
-  .footer-social svg{width:20px;height:20px}
-
-  /* ---------- RESPONSIVE ---------- */
-  @media(max-width:960px){
-    .services-grid{grid-template-columns:repeat(2,1fr)}
-    .spectrum{grid-template-columns:repeat(3,1fr);gap:18px 14px}
-    .steps{grid-template-columns:repeat(2,1fr)}
-    .steps::before{display:none}
-    .pf-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:200px}
-    .pf-item,.pf-item:nth-child(6n+1),.pf-item:nth-child(6n+2),.pf-item:nth-child(6n+3),.pf-item:nth-child(6n+4),.pf-item:nth-child(6n+5),.pf-item:nth-child(6n+6){grid-column:span 2;grid-row:span 1}
-    .pf-item:nth-child(6n+1){grid-column:span 4;grid-row:span 2}
-    .about-grid{grid-template-columns:1fr;gap:38px}
-    #quijesuis .wrap{grid-template-columns:1fr;gap:44px}
-    .qjs-photo{max-width:320px;order:-1}
-    .devis-layout{grid-template-columns:1fr}
-    .summary{position:static}
-    .contact-grid{grid-template-columns:1fr}
-  }
-  @media(max-width:640px){
-    .wrap{padding:0 18px}
-    header{backdrop-filter:none;background:rgba(8,15,30,.94)}
-    .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--card);flex-direction:column;padding:22px;gap:18px;border-bottom:1px solid var(--line)}
-    .nav-links.open{display:flex}
-    .nav-links a{font-size:1rem}
-    .nav-links .btn{text-align:center}
-    .burger{display:block}
-    .section{padding:70px 0}
-    .section-head{margin-bottom:34px}
-    .hero{padding:120px 0 60px}
-    .hero .wrap{grid-template-columns:1fr;gap:40px}
-    .hero h1{max-width:none}
-    .hero-visual{min-height:340px;max-width:440px;margin:0 auto;width:100%}
-    .services-grid,.steps{grid-template-columns:1fr}
-    .pf-grid{grid-template-columns:1fr;grid-auto-rows:auto}
-    .pf-item,.pf-item:nth-child(6n+1),.pf-item:nth-child(6n+2),.pf-item:nth-child(6n+3),.pf-item:nth-child(6n+4),.pf-item:nth-child(6n+5),.pf-item:nth-child(6n+6){grid-column:span 1;grid-row:span 1;aspect-ratio:4/3}
-    .spectrum{grid-template-columns:repeat(2,1fr)}
-    .hero-cta{flex-direction:column;align-items:stretch}
-    .hero-cta .btn{text-align:center}
-    .about-stats{gap:10px}
-    .stat b{font-size:1.4rem}
-    .svc-head{padding:16px}
-    .svc-body{padding:0 16px 18px}
-    .opt-row{flex-wrap:wrap;align-items:flex-start;gap:8px}
-    select,.qty input{width:100%}
-    .qty{width:100%}
-    .summary{padding:22px 18px}
-    #total{font-size:1.9rem}
-    footer .wrap{flex-direction:column;text-align:left}
-  }
-  @media(hover:none){
-    .filter,.btn,.svc-head,.opt-row label{min-height:44px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    .btn:hover,.service:hover{transform:none}
-  }
-
-  /* ---------- BOUTON DE CONTACT FLOTTANT ---------- */
-  .fab{position:fixed;right:18px;bottom:18px;z-index:900;display:flex;flex-direction:column;gap:12px;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
-  .fab.show{opacity:1;transform:none;pointer-events:auto}
-  .fab a{position:relative;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 8px 24px rgba(10,26,51,.22);transition:transform .15s,box-shadow .2s}
-  .fab a:hover{transform:scale(1.08);box-shadow:0 12px 30px rgba(10,26,51,.30)}
-  .fab a:active{transform:scale(.96)}
-  .fab .wa{background:#25D366}
-  .fab .call{background:var(--navy)}
-  .fab .devis{background:var(--orange)}
-  .fab svg{width:27px;height:27px}
-  .fab a .tip{position:absolute;right:66px;top:50%;transform:translateY(-50%);white-space:nowrap;background:var(--navy);color:#fff;font-family:var(--body);font-weight:500;font-size:.8rem;padding:7px 12px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .2s}
-  .fab a:hover .tip{opacity:1}
-  @media(max-width:640px){
-    .fab{right:14px;bottom:14px;gap:10px}
-    .fab a{width:52px;height:52px}
-    .fab a .tip{display:none}
-  }
-  @media (prefers-reduced-motion:reduce){ .fab a:hover{transform:none} }
-  @media (prefers-reduced-motion:reduce){ .hero-text>*,.hero-visual,.hv-1,.hv-2{animation:none} .hero .rotator{transition:none} }
-/* ===== REFONTE IMMERSIVE 2026 ===== */
-body{overflow-x:hidden;background:#070D1A}
-.ambient{position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(700px circle at var(--mx,75%) var(--my,18%),rgba(255,90,31,.11),transparent 55%),radial-gradient(620px circle at 12% 60%,rgba(37,99,235,.09),transparent 58%),#070D1A}
-.ambient::after{content:"";position:absolute;inset:0;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
-header{background:rgba(7,13,26,.72);border-color:rgba(255,255,255,.08)}
-.hero{min-height:100svh;padding:108px 0 72px;display:grid;align-items:center;isolation:isolate;background:transparent}
-.hero::before{content:"";position:absolute;inset:70px 0 0;z-index:-2;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,#000,transparent 88%)}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent)}
-.hero .wrap{grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);gap:76px}
-.hero-text{position:relative;z-index:4}.hero .eyebrow{display:flex;align-items:center;gap:12px}.hero .eyebrow::before{content:"";width:38px;height:1px;background:var(--orange)}
-.hero h1{font-size:clamp(3.3rem,6.6vw,6.8rem);line-height:.91;max-width:11ch;text-wrap:balance}.hero h1 .rotator{display:inline-block;position:relative;color:transparent;background:linear-gradient(100deg,#FF5A1F,#ff9a72,#FF5A1F);background-size:200%;-webkit-background-clip:text;background-clip:text;animation:gradientRun 4s linear infinite}.hero h1 .rotator::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:3px;background:var(--orange);transform-origin:left;animation:lineBreath 3s ease-in-out infinite}
-@keyframes gradientRun{to{background-position:200%}}@keyframes lineBreath{50%{transform:scaleX(.28);opacity:.45}}
-.hero .lead{font-size:1.08rem;color:#9EACC2;max-width:59ch}.hero-cta{margin-top:36px}.hero-cta .btn{padding:15px 26px}
-.btn{position:relative;overflow:hidden}.btn::before{content:"";position:absolute;inset:-70%;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.42),transparent 62%);transform:translateX(-65%) rotate(12deg);transition:transform .7s cubic-bezier(.2,.8,.2,1)}.btn:hover::before{transform:translateX(65%) rotate(12deg)}
-.hero-visual{min-height:560px;perspective:1100px}.hv-shape{inset:5% 3% 9%;border-radius:45% 55% 38% 62%/58% 38% 62% 42%;background:radial-gradient(circle at 35% 30%,#ff865a,#ff5a1f 42%,#a82d08);box-shadow:0 40px 100px rgba(255,90,31,.28);animation:morph 9s ease-in-out infinite alternate}
-@keyframes morph{0%{border-radius:45% 55% 38% 62%/58% 38% 62% 42%;transform:rotate(-4deg) scale(.96)}100%{border-radius:62% 38% 57% 43%/39% 60% 40% 61%;transform:rotate(5deg) scale(1.03)}}
-.hv-card{border:1px solid rgba(255,255,255,.22);box-shadow:0 32px 70px rgba(0,0,0,.42);transition:transform .2s ease-out;will-change:transform}.hv-1{width:47%;height:72%;left:1%;right:auto;top:2%;transform:rotate(-4deg)}.hv-2{width:47%;height:72%;right:1%;left:auto;bottom:2%;transform:rotate(4deg)}
-.hv-badge{background:rgba(16,27,48,.82);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(18px);animation:badgeFloat 4s ease-in-out infinite}@keyframes badgeFloat{50%{transform:translateY(-14px) rotate(1deg)}}
-#stats{position:relative;background:rgba(16,27,48,.62);backdrop-filter:blur(14px);border-color:rgba(255,255,255,.08)}.stat-item{position:relative}.stat-item:not(:last-child)::after{content:"";position:absolute;right:0;top:20%;height:60%;width:1px;background:linear-gradient(transparent,rgba(255,255,255,.17),transparent)}.stat-num{font-size:clamp(2.5rem,4.2vw,4rem);color:#fff}
-#clients{background:#070D1A;padding:58px 0}.marquee::before,.marquee::after{width:18vw;background:linear-gradient(90deg,#070D1A,transparent)}.marquee::after{background:linear-gradient(-90deg,#070D1A,transparent)}
-.section{position:relative;padding:132px 0}.section::before{content:"";position:absolute;top:0;left:50%;width:min(1092px,calc(100% - 48px));height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(255,255,255,.11),transparent)}
-.section-head{max-width:760px}.section-head h2{font-size:clamp(2.25rem,4.5vw,4.35rem);letter-spacing:-.045em;text-wrap:balance}.section-head p{max-width:62ch}
-#pourqui{background:transparent}.aud-grid{gap:20px}.aud-card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(19,33,57,.96),rgba(12,21,39,.96));border-color:rgba(255,255,255,.09);min-height:290px;padding:34px;transform-style:preserve-3d;transition:box-shadow .45s,border-color .45s}.aud-card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--cx,50%) var(--cy,50%),rgba(255,90,31,.13),transparent 45%);opacity:0;transition:opacity .35s}.aud-card:hover::before{opacity:1}.aud-card:hover{border-color:rgba(255,90,31,.38);box-shadow:0 28px 70px rgba(0,0,0,.32)}.aud-card>*{position:relative;z-index:1;transform:translateZ(24px)}.aud-ico{width:58px;height:58px;border:1px solid rgba(255,90,31,.24);border-radius:18px;background:rgba(255,90,31,.08)}
-#process{background:#0A1222}.steps{position:relative;gap:20px}.steps::before{content:"";position:absolute;left:6%;right:6%;top:48px;height:1px;background:linear-gradient(90deg,var(--orange),#7C3AED,#0D9488);transform-origin:left;transform:scaleX(var(--progress,0));transition:transform .15s linear}.step{position:relative;padding:0 18px}.step-ico{background:#101B30;border-color:rgba(255,255,255,.11);box-shadow:0 0 0 9px #0A1222;transition:transform .45s,background .45s}.step:hover .step-ico{transform:translateY(-8px) rotate(-5deg);background:var(--orange);color:#fff}
-#portfolio{background:#070D1A}.pf-grid{gap:22px;perspective:1400px}.pf-item{border-color:rgba(255,255,255,.1);border-radius:22px;transform-style:preserve-3d;transition:transform .25s ease-out,box-shadow .4s}.pf-item:hover{box-shadow:0 30px 70px rgba(0,0,0,.45)}.pf-item img,.pf-item .illus{transition:transform .8s cubic-bezier(.2,.8,.2,1)}.pf-item:hover img,.pf-item:hover .illus{transform:scale(1.07)}
-#contact{background:linear-gradient(135deg,#0A1A33,#111B32 55%,#30150D);overflow:hidden}#contact::after{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(255,90,31,.22);border-radius:50%;right:-140px;top:-220px;box-shadow:0 0 0 70px rgba(255,90,31,.035),0 0 0 140px rgba(255,90,31,.02);animation:contactOrbit 12s linear infinite}@keyframes contactOrbit{to{transform:rotate(360deg)}}
-.reveal-modern{opacity:0;transform:translateY(54px);filter:blur(9px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1),filter .9s}.reveal-modern.is-visible{opacity:1;transform:none;filter:none}
-@media(max-width:960px){.hero .wrap{grid-template-columns:1fr}.hero-visual{min-height:480px;max-width:620px;width:100%;margin:auto}.steps::before{display:none}}
-@media(max-width:640px){.hero{padding-top:102px;min-height:auto}.hero h1{font-size:clamp(3rem,16vw,5rem)}.hero-visual{min-height:380px}.section{padding:88px 0}.stat-item:not(:last-child)::after{display:none}.aud-card{min-height:auto}.nav-links{background:#101B30}}
-@media(prefers-reduced-motion:reduce){.hv-shape,.hv-badge,.hero h1 .rotator,.hero h1 .rotator::after,#contact::after{animation:none}.reveal-modern{opacity:1;transform:none;filter:none}.aud-card,.pf-item{transition:none}}
-
-/* ===== POUR QUI — design original enrichi ===== */
-#pourqui{background:transparent}
-#pourqui::before{display:none}
-#pourqui .aud-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-#pourqui .aud-card{--accent:#FF5A1F;position:relative;min-height:245px;padding:30px;background:#101B30;border:1px solid rgba(255,255,255,.09);border-radius:18px;overflow:hidden;display:block;transform:none;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,background .35s}
-#pourqui .aud-card:nth-child(2){--accent:#2563EB}#pourqui .aud-card:nth-child(3){--accent:#7C3AED}#pourqui .aud-card:nth-child(4){--accent:#0D9488}#pourqui .aud-card:nth-child(5){--accent:#DB2777}#pourqui .aud-card:nth-child(6){--accent:#0891B2}
-#pourqui .aud-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-#pourqui .aud-card:hover{transform:translateY(-5px);background:#132039;border-color:rgba(255,255,255,.16);box-shadow:none}
-#pourqui .aud-card:hover::before{transform:scaleY(1)}
-#pourqui .aud-card>*{position:relative;z-index:1;transform:none}
-#pourqui .aud-ico{width:54px;height:54px;margin-bottom:20px;border-radius:16px;background:rgba(255,255,255,.045);border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);color:var(--accent);transition:transform .4s cubic-bezier(.2,.8,.2,1),background .3s,color .3s}
-#pourqui .aud-card:hover .aud-ico{transform:translateY(-3px) rotate(-5deg);background:var(--accent);color:#fff}
-#pourqui .aud-card h3{font-size:1.18rem;color:#EAF0F8;margin-bottom:9px}
-#pourqui .aud-card p{font-size:.91rem;line-height:1.68;color:#8D9BB2}
-@media(max-width:700px){#pourqui .aud-grid{grid-template-columns:1fr;gap:15px}#pourqui .aud-card{min-height:auto;padding:26px}}
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "TBSN groupe",
-  "description": "Agence de communication à Millau et en Aveyron : logo, print, site internet, vidéo, photo, réseaux sociaux et drone.",
-  "url": "https://tbsngroupe.fr/",
-  "image": "https://tbsngroupe.fr/og-image.png",
-  "email": "tbsngroupe@gmail.com",
-  "telephone": "+33633108532",
-  "priceRange": "€€",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Séverac-le-Château",
-    "postalCode": "12150",
-    "addressRegion": "Aveyron",
-    "addressCountry": "FR"
-  },
-  "areaServed": [
-    {"@type": "City", "name": "Millau"},
-    {"@type": "City", "name": "Séverac-le-Château"},
-    {"@type": "City", "name": "Rodez"},
-    {"@type": "AdministrativeArea", "name": "Aveyron"}
-  ],
-  "sameAs": [
-    "https://www.instagram.com/tbsngroupe/",
-    "https://www.linkedin.com/in/theo-bestion/"
-  ]
-}
-</script>
+     ┌────────────────────────────────────────────────────────────────────┐
+     │ TOUT SE CONFIGURE DANS LE BLOC « CONFIG » CI-DESSOUS (ligne ~30).  │
+     │ Rien d'autre à modifier.                                           │
+     └────────────────────────────────────────────────────────────────────┘
+     ========================================================================== -->
 </head>
-<body class="has-dark-hero">
-<div class="ambient" aria-hidden="true"></div>
-
-<header>
-  <div class="wrap nav">
-    <a href="#" class="logo">TBSN <span style="color:#FF5A1F;">groupe.</span></a>
-    <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-    <nav class="nav-links">
-      <a href="#pourqui">Pour qui</a>
-      <a href="prestations.html#presta-intro">Prestations</a>
-      <a href="#process">Étapes</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-      <a href="prestations.html#devis" class="btn" style="color: #fff;" >Estimer mon projet</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-text">
-      <div class="eyebrow">Agence de communication · Millau &amp; Aveyron</div>
-      <h1>Toute votre <span class="rotator" id="rotator">identité</span>,<br>au même endroit.</h1>
-      <p class="lead">Logo, supports imprimés, vidéo, photo, réseaux sociaux et prises de vues drone. Vous expliquez votre projet une fois — on s'occupe de tout, du premier trait à la diffusion.</p>
-      <div class="hero-cta">
-        <a href="prestations.html#devis" class="btn">Estimer mon projet en 2 min</a>
-        <a href="#portfolio" class="btn btn-ghost">Voir nos réalisations</a>
-      </div>
-    </div>
-    <div class="hero-visual" aria-hidden="true">
-      <div class="hv-shape"></div>
-      <div class="hv-card hv-1" style="background-image:url('storynico.jpg')"></div>
-      <div class="hv-card hv-2" style="background-image:url('DJI_0143.JPG')"></div>
-      <div class="hv-badge">
-        <span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-        6 métiers · 1 seul studio
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ COMPTEURS ============ -->
-<section id="stats">
-  <div class="wrap">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-num" data-to="6">0</div>
-        <div class="stat-lbl">métiers réunis</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-to="48"><span class="suf">h</span></div>
-        <div class="stat-lbl">de délai de réponse</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-to="100"><span class="suf">%</span></div>
-        <div class="stat-lbl">sur mesure</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-to="1"><span class="suf"></span></div>
-        <div class="stat-lbl">seul interlocuteur</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LOGOS CLIENTS ============ -->
-<section id="clients">
-  <div class="wrap">
-    <p class="clients-title">Ils m'ont fait confiance</p>
-  </div>
-  <div class="marquee">
-    <div class="marquee-track" id="marquee-track"></div>
-  </div>
-</section>
-
-<!-- ============ POUR QUI ============ -->
-<section id="pourqui" class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Pour qui je travaille</div>
-      <h2>Une communication pensée pour votre réalité</h2>
-      <p>Depuis Séverac-le-Château, j'accompagne les entreprises, commerçants et associations de <strong>Millau, de l'Aveyron</strong> et des environs. On adapte le ton, le budget et les supports à votre réalité.</p>
-    </div>
-    <div class="aud-grid">
-
-      <article class="aud-card">
-        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M3 9h18"/><path d="M8 9v0a2 2 0 0 1-4 0M12 9a2 2 0 0 1-4 0M16 9a2 2 0 0 1-4 0M20 9a2 2 0 0 1-4 0"/></svg></div>
-        <h3>Artisans &amp; commerçants</h3>
-        <p>Boulangerie, garage, salon, restaurant… on vous donne une image à la hauteur de votre savoir-faire, pour attirer et fidéliser près de chez vous.</p>
-      </article>
-
-      <article class="aud-card">
-        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v0M9 12v0M9 15v0"/></svg></div>
-        <h3>TPE &amp; PME</h3>
-        <p>Votre activité tourne mais votre communication suit mal ? On structure votre image et tous vos supports, du logo au site internet.</p>
-      </article>
-
-      <article class="aud-card">
-        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Associations &amp; clubs</h3>
-        <p>Affiches d'événements, réseaux sociaux, vidéos… on rend visibles vos actions et vos rendez-vous, même avec un budget serré.</p>
-      </article>
-
-      <article class="aud-card">
-        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/></svg></div>
-        <h3>Événementiel</h3>
-        <p>Mariages, festivals, compétitions : on capture l'instant en photo, vidéo et drone, et on en fait des contenus qui marquent les esprits.</p>
-      </article>
-
-      <article class="aud-card">
-        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6"/></svg></div>
-        <h3>Immobilier &amp; tourisme</h3>
-        <p>Vues aériennes par drone, photos léchées, visites en vidéo : on met vos biens et vos lieux sous leur plus beau jour.</p>
-      </article>
-
-      <article class="aud-card">
-        <div class="aud-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3 0z"/><path d="M12 15l-3-3a11 11 0 0 1 7-8 11 11 0 0 1 3 3 11 11 0 0 1-8 7z"/><path d="M15 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg></div>
-        <h3>Créateurs &amp; nouvelles marques</h3>
-        <p>Vous lancez votre activité ? On construit votre identité de A à Z pour démarrer avec une image pro dès le premier jour.</p>
-      </article>
-
-    </div>
-    <div class="pf-more" style="margin-top:40px;text-align:center">
-      <a href="prestations.html#presta-intro" class="btn">Découvrir mes prestations →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROCESS ============ -->
-<section id="process" class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Comment ça se passe</div>
-      <h2>De votre idée au fichier livré, en 4 étapes</h2>
-      <p>Un seul interlocuteur du début à la fin. Vous savez toujours où en est votre projet.</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg><span class="step-n">1</span></div>
-        <h3>On échange</h3>
-        <p>Un premier contact pour comprendre votre activité, vos objectifs et votre budget. Gratuit et sans engagement.</p>
-      </div>
-      <div class="step">
-        <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.5.4.9 1 1 1.6h6c.1-.6.5-1.2 1-1.6A7 7 0 0 0 12 2z"/></svg><span class="step-n">2</span></div>
-        <h3>On crée</h3>
-        <p>On vous présente des propositions concrètes, pensées pour votre marque et votre cible — jamais un modèle recyclé.</p>
-      </div>
-      <div class="step">
-        <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><path d="M1 14h6M9 8h6M17 16h6"/></svg><span class="step-n">3</span></div>
-        <h3>On ajuste</h3>
-        <p>Vous nous faites vos retours, on affine ensemble jusqu'à ce que le rendu vous corresponde vraiment.</p>
-      </div>
-      <div class="step">
-        <div class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3 0z"/><path d="M12 15l-3-3a11 11 0 0 1 7-8 11 11 0 0 1 3 3 11 11 0 0 1-8 7z"/><path d="M15 9h.01"/></svg><span class="step-n">4</span></div>
-        <h3>On livre &amp; on diffuse</h3>
-        <p>Vous recevez tous les fichiers exploitables. On peut aussi vous aider à les publier au bon endroit.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PORTFOLIO ============ -->
-<section id="portfolio" class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Portfolio</div>
-      <h2>Nos dernières créations</h2>
-      <p>Un aperçu de nos réalisations. Filtrez par type de projet.</p>
-    </div>
-    <div class="filters" id="filters"></div>
-    <div class="pf-grid" id="pf-grid"></div>
-    <div class="pf-more">
-      <a href="realisations.html" class="btn">Voir toutes les réalisations →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section id="contact" class="section">
-  <div class="wrap contact-grid">
-    <div>
-      <div class="eyebrow">Contact</div>
-      <p class="big">Un projet en tête ?<br>Parlons-en <span>dès aujourd'hui.</span></p>
-    </div>
-    <div class="contact-list">
-      <a href="tel:+33633108532">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        06 33 10 85 32
-      </a>
-      <a href="mailto:tbsngroupe@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-        tbsngroupe@gmail.com
-      </a>
-      <a href="https://www.linkedin.com/in/theo-bestion/" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-       LinkedIn
-      </a>
-      <a href="https://www.instagram.com/tbsngroupe/" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
-        Instagram
-      </a>
-      <a href="#">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Séverac-le-Château · Millau · Rodez — dans tout l'Aveyron et au-delà
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <span>© 2026 TBSN — Création graphique, vidéo, photo &amp; drone</span>
-    <div class="footer-social">
-      <a href="https://www.linkedin.com/in/theo-bestion/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/tbsngroupe/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="tel:+33633108532" aria-label="Téléphone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      </a>
-      <a href="mailto:tbsngroupe@gmail.com" aria-label="Email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-      </a>
-    </div>
-    <span><a href="mentions-legales.html" style="color:#B9C4D6">Mentions légales</a> · Télépilote de drone certifié (Catégorie Ouverte A1/A3)</span>
-  </div>
-</footer>
-
-<!-- Bouton de contact flottant -->
-<div class="fab" id="fab" aria-label="Contact rapide">
-  <a class="devis" href="prestations.html#devis" aria-label="Estimer mon projet">
-    <span class="tip">Estimer mon projet</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
-  </a>
-  <a class="wa" href="https://wa.me/33633108532?text=Bonjour%2C%20je%20vous%20contacte%20via%20votre%20site%20TBSN%20pour%20un%20projet." target="_blank" rel="noopener noreferrer" aria-label="Contacter par WhatsApp">
-    <span class="tip">Écrire sur WhatsApp</span>
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.06L2 22l5.05-1.32A10 10 0 1 0 12 2zm0 18.2c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3 .78.8-2.92-.2-.31A8.2 8.2 0 1 1 12 20.2z"/><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
-  </a>
-  <a class="call" href="tel:+33633108532" aria-label="Appeler">
-    <span class="tip">Appeler : 06 33 10 85 32</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-  </a>
-</div>
-
-<!-- Visionneuse d'image (lightbox) -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Aperçu de l'image">
-  <button class="lb-close" id="lb-close" aria-label="Fermer l'aperçu">✕</button>
-  <button class="lb-nav lb-prev" id="lb-prev" aria-label="Image précédente">‹</button>
-  <button class="lb-nav lb-next" id="lb-next" aria-label="Image suivante">›</button>
-  <figure>
-    <img id="lb-img" src="" alt="">
-    <figcaption id="lb-cap"></figcaption>
-    <div class="lb-dots" id="lb-dots"></div>
-  </figure>
-</div>
+<body>
 
 <script>
-/* ================================================================
-   PORTFOLIO — AJOUTEZ VOS CRÉATIONS ICI
-   Pour chaque projet : titre, catégorie (une de la liste CATS),
-   img  = une seule image (ex: "monlogo.jpg")
-   imgs = plusieurs images / galerie (ex: ["a.jpg","b.jpg"])
-   href = lien à ouvrir au clic (optionnel, ex: page Instagram)
-   pos  = cadrage de la vignette : "top", "center" ou "bottom" (optionnel)
-================================================================ */
-const CATS = ["Sites web","Logo","Print","Vidéo","Photo","Réseaux sociaux","Drone"];
-const PORTFOLIO = [
-  {titre:"Site web — Studio Claire Martin", cat:"Sites web", img:"apercu-studio-claire.png", href:"https://totochee.github.io/studioclaire/", pos:"top"},
-  {titre:"Site web — TBSN groupe", cat:"Sites web", img:"apercu-tbsn-groupe.png", href:"https://tbsngroupe.fr/", pos:"top"},
-  {titre:"Site web — Ferrailles de Louis", cat:"Sites web", img:"apercu-ferrailles-louis.png", href:"https://totochee.github.io/ferraillesdelouis/", pos:"top"},
-  {titre:"Vidéo d'entreprise — Liquiere Hygiene", cat:"Vidéo", img:"videoliquiere.png", href:"https://www.instagram.com/p/DWgNBWnkYjL/"},
-  {titre:"Pack contenus Instagram — Footballeurs", cat:"Réseaux sociaux", imgs:["storynico.jpg","storycorredor.jpg","storyines.jpg","storyrabiot.jpg"], pos:"center"},
-  {titre:"Animation réseaux sociaux — Thibal distribution", cat:"Réseaux sociaux", img:"carré thibal.jpg", href:"https://www.facebook.com/thibaldistribution/?locale=fr_FR"},
-];
+/* ==========================================================================
+   1. CONFIG — LE SEUL BLOC À MODIFIER
+   ========================================================================== */
+const CONFIG = {
 
-/* -- illustrations SVG claires par catégorie -- */
-const CAT_COLOR = {
-  "Sites web":"#FF5A1F",
-  "Logo":"#1D4ED8", "Print":"#0E7490", "Vidéo":"#7E22CE",
-  "Photo":"#A16207", "Réseaux sociaux":"#BE185D", "Drone":"#334155"
+  /* --- Les administrateurs --------------------------------------------- */
+  admins: [
+    { id: "thomas",    utilisateur: "thomas",    nom: "Thomas",    firebaseEmail: "tpoujol@thibal-distribution.fr" },
+    { id: "sebastien", utilisateur: "sebastien", nom: "Sébastien", firebaseEmail: "sdavid@thibal-distribution.fr" },
+    { id: "theo",      utilisateur: "theo",      nom: "Théo", firebaseEmail: "theobestion@gmail.com" },
+  ],
+
+  /* --- Les utilisateurs ------------------------------------------------- */
+  utilisateurs: [
+    { id: "sandrine", utilisateur: "sandrine", nom: "Sandrine" },
+    { id: "romain",   utilisateur: "romain",   nom: "Romain",   firebaseEmail: "rcadenet@thibal-distribution.fr" },
+    { id: "justin",   utilisateur: "justin",   nom: "Justin",   firebaseEmail: "jmignonnac@thibal-distribution.fr" },
+    { id: "mathieu",  utilisateur: "mathieu",  nom: "Mathieu",  firebaseEmail: "mtravers@thibal-distribution.fr" },
+    { id: "julien",   utilisateur: "julien",   nom: "Julien",   firebaseEmail: "commercial1@liquiere.fr" },
+    { id: "vincent",  utilisateur: "vincent",  nom: "Vincent",  firebaseEmail: "vliquiere@liquiere.fr" },
+    { id: "yannick",  utilisateur: "yannick",  nom: "Yannick",  firebaseEmail: "ysaussol@thibal-distribution.fr" },
+  ],
+
+  /* Compte propriétaire permanent : il ne peut pas être modifié dans le site. */
+  proprietaire: "theo",
+
+  /* --- Authentification Firebase : aucun mot de passe dans ce fichier --- */
+  firebase: {
+    apiKey: "AIzaSyCrNry-jCRHz1nxYkk82oCclfHWBhDquh0",
+    authDomain: "tbsn-facturation.firebaseapp.com",
+    projectId: "tbsn-facturation",
+    storageBucket: "tbsn-facturation.firebasestorage.app",
+    messagingSenderId: "880155707782",
+    appId: "1:880155707782:web:d2808553ca8445cab38407",
+  },
+  firebaseEmailDomain: "tbsn-facturation.firebaseapp.com",
+
+  /* --- Mode partagé (facultatif mais recommandé) ------------------------
+     Vide  → mode LOCAL : chaque navigateur a ses propres données (démo/test).
+     Rempli → mode PARTAGÉ : tous les comptes voient les mêmes réservations.
+     Voir la marche à suivre (5 min, gratuit) tout en bas du fichier.        */
+  supabaseUrl: "https://uekzzcsmhbcciiaepvit.supabase.co",
+  supabaseKey: "sb_publishable_fygy5V1K32tMCShlWdhk5g_Td284QsX",
+
+  /* --- Divers ----------------------------------------------------------- */
+  lieuParDefaut: "Stade Paul-Lignon, Rodez",
+  rafraichissementSecondes: 8,   // fréquence de synchro en mode partagé
+  seuilAlerte: 2,                // "il ne reste que X places" → alerte rouge
 };
-function illustration(cat, seed){
-  const C = CAT_COLOR[cat] || "#0A1A33";
-  const N = "#0A1A33", g = "illg"+seed;
-  const frame = inner => `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-    <defs><linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="${C}" stop-opacity=".10"/><stop offset="1" stop-color="${C}" stop-opacity=".02"/></linearGradient></defs>
-    <rect width="400" height="300" fill="#FFFFFF"/><rect width="400" height="300" fill="url(#${g})"/>${inner}</svg>`;
-  const art = {
-    "Logo": `<circle cx="200" cy="128" r="60" fill="none" stroke="${C}" stroke-width="4"/>
-      <circle cx="200" cy="128" r="36" fill="${C}" opacity=".12"/>
-      <path d="M174 128 l18 18 36 -40" fill="none" stroke="${N}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="284" cy="70" r="6" fill="${C}"/><circle cx="112" cy="186" r="4" fill="${N}" opacity=".4"/>
-      <rect x="152" y="208" width="96" height="7" rx="3.5" fill="${N}" opacity=".18"/>`,
-    "Print": `<rect x="142" y="52" width="116" height="156" rx="6" fill="#fff" stroke="${N}" stroke-width="1.5" opacity=".9"/>
-      <path d="M232 52 h26 v26 z" fill="${C}"/>
-      <rect x="160" y="78" width="52" height="10" rx="3" fill="${C}"/>
-      <rect x="160" y="100" width="80" height="5" rx="2.5" fill="${N}" opacity=".22"/>
-      <rect x="160" y="112" width="80" height="5" rx="2.5" fill="${N}" opacity=".18"/>
-      <rect x="160" y="124" width="56" height="5" rx="2.5" fill="${N}" opacity=".18"/>
-      <rect x="160" y="150" width="80" height="42" rx="4" fill="${C}" opacity=".14"/>
-      <text x="170" y="181" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="28" fill="${C}">Aa</text>`,
-    "Vidéo": `<rect x="114" y="86" width="172" height="104" rx="10" fill="none" stroke="${N}" stroke-width="2" opacity=".35"/>
-      <circle cx="200" cy="138" r="28" fill="${C}"/>
-      <path d="M193 125 l18 13 -18 13 z" fill="#fff"/>
-      <g fill="${N}" opacity=".22">
-        <rect x="114" y="70" width="10" height="10" rx="2"/><rect x="140" y="70" width="10" height="10" rx="2"/>
-        <rect x="166" y="70" width="10" height="10" rx="2"/><rect x="192" y="70" width="10" height="10" rx="2"/>
-        <rect x="218" y="70" width="10" height="10" rx="2"/><rect x="244" y="70" width="10" height="10" rx="2"/>
-        <rect x="270" y="70" width="10" height="10" rx="2"/></g>
-      <rect x="114" y="206" width="172" height="4" rx="2" fill="${N}" opacity=".15"/>
-      <rect x="114" y="206" width="100" height="4" rx="2" fill="${C}"/><circle cx="214" cy="208" r="6" fill="${C}"/>`,
-    "Photo": `<rect x="122" y="92" width="156" height="116" rx="12" fill="none" stroke="${N}" stroke-width="2" opacity=".35"/>
-      <rect x="170" y="80" width="60" height="18" rx="5" fill="${N}" opacity=".18"/>
-      <circle cx="200" cy="150" r="34" fill="none" stroke="${C}" stroke-width="4"/>
-      <circle cx="200" cy="150" r="18" fill="${C}" opacity=".14"/>
-      <g stroke="${C}" stroke-width="3"><path d="M200 116 v20"/><path d="M229 133 l-17 10"/><path d="M229 167 l-17 -10"/><path d="M200 184 v-20"/><path d="M171 167 l17 -10"/><path d="M171 133 l17 10"/></g>
-      <circle cx="254" cy="112" r="5" fill="${C}"/>`,
-    "Réseaux sociaux": `<rect x="152" y="56" width="96" height="184" rx="16" fill="#fff" stroke="${N}" stroke-width="1.5" opacity=".9"/>
-      <rect x="166" y="80" width="68" height="68" rx="8" fill="${C}" opacity=".12"/>
-      <path d="M200 134 c-13 -11 -28 -2 -22 13 c4 9 22 19 22 19 c0 0 18 -10 22 -19 c6 -15 -9 -24 -22 -13 z" fill="${C}"/>
-      <rect x="166" y="164" width="44" height="7" rx="3.5" fill="${N}" opacity=".22"/>
-      <rect x="166" y="178" width="62" height="6" rx="3" fill="${N}" opacity=".15"/>
-      <circle cx="174" cy="206" r="7" fill="none" stroke="${C}" stroke-width="2.5"/>
-      <circle cx="200" cy="206" r="7" fill="none" stroke="${N}" stroke-width="2.5" opacity=".3"/>
-      <circle cx="226" cy="206" r="7" fill="none" stroke="${N}" stroke-width="2.5" opacity=".3"/>`,
-    "Drone": `<line x1="162" y1="98" x2="238" y2="168" stroke="${N}" stroke-width="4" opacity=".4"/>
-      <line x1="238" y1="98" x2="162" y2="168" stroke="${N}" stroke-width="4" opacity=".4"/>
-      <circle cx="162" cy="98" r="21" fill="none" stroke="${C}" stroke-width="3"/><circle cx="238" cy="98" r="21" fill="none" stroke="${C}" stroke-width="3"/>
-      <circle cx="162" cy="168" r="21" fill="none" stroke="${C}" stroke-width="3"/><circle cx="238" cy="168" r="21" fill="none" stroke="${C}" stroke-width="3"/>
-      <rect x="184" y="121" width="32" height="24" rx="5" fill="${C}"/>
-      <circle cx="200" cy="133" r="6" fill="#fff"/>
-      <path d="M98 224 q60 -28 102 -6 q42 -22 102 6" fill="none" stroke="${N}" stroke-width="2" opacity=".22"/>`,
-  };
-  return frame(art[cat] || art["Logo"]);
-}
 
-/* -- visionneuse d'image (lightbox) avec galerie -- */
-const lightbox = document.getElementById('lightbox');
-const lbImg = document.getElementById('lb-img');
-const lbCap = document.getElementById('lb-cap');
-const lbDots = document.getElementById('lb-dots');
-let lbImages = [];
-let lbIndex = 0;
-let lbTitle = "";
-
-function lbShow(i){
-  lbIndex = (i + lbImages.length) % lbImages.length;
-  lbImg.src = lbImages[lbIndex];
-  const compteur = lbImages.length > 1 ? " (" + (lbIndex+1) + "/" + lbImages.length + ")" : "";
-  lbImg.alt = lbTitle + compteur;
-  lbCap.textContent = lbTitle + compteur;
-  lbDots.querySelectorAll('button').forEach((d,di)=> d.classList.toggle('on', di===lbIndex));
-}
-function openLightbox(images, cap){
-  lbImages = Array.isArray(images) ? images : [images];
-  lbTitle = cap || "";
-  lbDots.innerHTML = "";
-  lightbox.classList.toggle('has-gallery', lbImages.length > 1);
-  if(lbImages.length > 1){
-    lbImages.forEach((_,di)=>{
-      const dot = document.createElement('button');
-      dot.setAttribute('aria-label', 'Image ' + (di+1));
-      dot.addEventListener('click', ev=>{ ev.stopPropagation(); lbShow(di); });
-      lbDots.appendChild(dot);
-    });
-  }
-  lbShow(0);
-  lightbox.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox(){
-  lightbox.classList.remove('open');
-  lbImg.src = "";
-  document.body.style.overflow = "";
-}
-lightbox.addEventListener('click', closeLightbox);
-document.getElementById('lb-close').addEventListener('click', e=>{ e.stopPropagation(); closeLightbox(); });
-document.getElementById('lb-prev').addEventListener('click', e=>{ e.stopPropagation(); lbShow(lbIndex-1); });
-document.getElementById('lb-next').addEventListener('click', e=>{ e.stopPropagation(); lbShow(lbIndex+1); });
-document.querySelector('#lightbox figure').addEventListener('click', e=> e.stopPropagation());
-document.addEventListener('keydown', e=>{
-  if(!lightbox.classList.contains('open')) return;
-  if(e.key === 'Escape') closeLightbox();
-  else if(e.key === 'ArrowLeft' && lbImages.length>1) lbShow(lbIndex-1);
-  else if(e.key === 'ArrowRight' && lbImages.length>1) lbShow(lbIndex+1);
+/* Firebase Auth est chargé à la demande. Les mots de passe restent chez Firebase. */
+const firebasePret = Promise.all([
+  import("https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js"),
+  import("https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js"),
+]).then(([appSdk, authSdk]) => {
+  const firebaseApp = appSdk.initializeApp(CONFIG.firebase);
+  return { auth:authSdk.getAuth(firebaseApp), sdk:authSdk };
 });
+const emailFirebase = id => {
+  const compte = [...CONFIG.admins,...CONFIG.utilisateurs].find(c => c.id === id);
+  return compte?.firebaseEmail || `${id}@${CONFIG.firebaseEmailDomain}`;
+};
 
-/* -- rendu portfolio + filtres -- */
-const grid = document.getElementById('pf-grid');
-const filtersBox = document.getElementById('filters');
-
-function renderPortfolio(filter){
-  grid.innerHTML = "";
-  PORTFOLIO.filter(p => filter==="Tous" || p.cat===filter).forEach((p,i)=>{
-    const imgs = p.imgs && p.imgs.length ? p.imgs : (p.img && p.img.trim() ? [p.img] : []);
-    const cover = imgs[0] || "";
-    const isGallery = imgs.length > 1;
-    const linked = !!(p.href && p.href.trim());
-    const zoomable = !linked && imgs.length > 0;
-    const el = document.createElement(linked ? 'a' : 'div');
-    el.className = 'pf-item' + (linked ? ' linked' : '') + (zoomable ? ' zoomable' : '') + (isGallery ? ' gallery' : '');
-    if(linked){
-      el.href = p.href;
-      el.target = '_blank';
-      el.rel = 'noopener noreferrer';
-      el.setAttribute('aria-label', p.titre + ' — ouvrir dans un nouvel onglet');
-    } else if(zoomable){
-      el.tabIndex = 0;
-      el.setAttribute('role', 'button');
-      el.setAttribute('aria-label', p.titre + (isGallery ? " — voir la galerie" : " — agrandir l'image"));
-      el.addEventListener('click', ()=> openLightbox(imgs, p.titre));
-      el.addEventListener('keydown', e=>{
-        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openLightbox(imgs, p.titre); }
-      });
-    } else {
-      el.tabIndex = 0;
-    }
-    const visual = cover
-      ? `<img src="${cover}" alt="${p.titre}" loading="lazy" style="--pos:${p.pos || 'center'}">`
-      : `<div class="illus" role="img" aria-label="${p.titre}">${illustration(p.cat, i)}</div>`;
-    const cta = linked ? '<span class="pf-link">Voir le projet ↗</span>'
-              : isGallery ? '<span class="pf-link">Voir la galerie ⧉</span>'
-              : zoomable ? '<span class="pf-link">Agrandir ⤢</span>' : '';
-    el.innerHTML = `${visual}<div class="overlay"><span class="cat">${p.cat}</span><span class="ttl">${p.titre}</span>${cta}</div>`;
-    grid.appendChild(el);
-  });
-}
-["Tous",...CATS].forEach((c,i)=>{
-  const b = document.createElement('button');
-  b.className = 'filter' + (i===0?' active':'');
-  b.textContent = c;
-  b.onclick = ()=>{
-    document.querySelectorAll('.filter').forEach(f=>f.classList.remove('active'));
-    b.classList.add('active');
-    renderPortfolio(c);
-  };
-  filtersBox.appendChild(b);
-});
-renderPortfolio("Tous");
-
-/* -- menu transparent au-dessus du hero, plein au défilement -- */
-(function headerScroll(){
-  const header = document.querySelector('header');
-  const hero = document.querySelector('.hero');
-  if(!header || !document.body.classList.contains('has-dark-hero')) return;
-  function upd(){
-    const limit = hero ? hero.offsetHeight - 90 : 60;
-    header.classList.toggle('at-top', window.scrollY < limit);
-  }
-  window.addEventListener('scroll', upd, {passive:true});
-  window.addEventListener('resize', upd);
-  upd();
-})();
-
-/* ================================================================
-   LOGOS CLIENTS — MODIFIEZ CETTE LISTE
-     nom   = nom affiché (obligatoire)
-     img   = fichier du logo, "" pour afficher le nom en attendant
-     href  = lien vers leur site (optionnel)
-     scale = taille du logo dans sa boîte, ex: 0.8 pour le réduire,
-             1.15 pour l'agrandir (optionnel, 1 par défaut)
-================================================================ */
-const CLIENTS = [
-  {nom:"Thibal Distribution", img:"logothibal.png", href:""},
-  {nom:"Liquière Hygiène",    img:"lo.png",        href:""},
-  {nom:"Club des Nageurs",    img:"cnsa.png",      href:""},
-  {nom:"Ferrailles de Louis", img:"fdl.png",       href:""},
-  {nom:"GreenFish",           img:"gf.png",        href:""},
-  {nom:"MEL immobilier",      img:"mel.png",       href:""},
-  {nom:"Maison Viva",         img:"mv.png",        href:""},
-  {nom:"Sound Festival",      img:"LOGOAFFng.png", href:""},
+/* --- Calendrier officiel 2026-2027 : les 17 matchs à domicile ------------
+   Importés depuis le fichier Rodez.ics (FotMob), heures converties en heure
+   de Paris. Ouverture des réservations : 14 jours avant, 09h00.
+   Fermeture : la veille du match, 18h00. Modifiable depuis le tableau de bord. */
+const MATCHS_INITIAUX = [
+  { domicile:"Rodez", adverse:"Laval",           date:"2026-08-08", heure:"20:45", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2026-07-25T09:00", fermeture:"2026-08-07T18:00" },
+  { domicile:"Rodez", adverse:"Pau",             date:"2026-08-28", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2026-08-14T09:00", fermeture:"2026-08-27T18:00" },
+  { domicile:"Rodez", adverse:"Grenoble",        date:"2026-09-11", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2026-08-28T09:00", fermeture:"2026-09-10T18:00" },
+  { domicile:"Rodez", adverse:"Nancy",           date:"2026-09-18", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2026-09-04T09:00", fermeture:"2026-09-17T18:00" },
+  { domicile:"Rodez", adverse:"Montpellier",     date:"2026-10-16", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2026-10-02T09:00", fermeture:"2026-10-15T18:00" },
+  { domicile:"Rodez", adverse:"Dunkerque",       date:"2026-10-30", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2026-10-16T09:00", fermeture:"2026-10-29T18:00" },
+  { domicile:"Rodez", adverse:"Reims",           date:"2026-12-04", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2026-11-20T09:00", fermeture:"2026-12-03T18:00" },
+  { domicile:"Rodez", adverse:"Red Star",        date:"2027-01-02", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2026-12-19T09:00", fermeture:"2027-01-01T18:00" },
+  { domicile:"Rodez", adverse:"Annecy FC",       date:"2027-01-22", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2027-01-08T09:00", fermeture:"2027-01-21T18:00" },
+  { domicile:"Rodez", adverse:"Nantes",          date:"2027-02-05", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2027-01-22T09:00", fermeture:"2027-02-04T18:00" },
+  { domicile:"Rodez", adverse:"Guingamp",        date:"2027-02-12", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2027-01-29T09:00", fermeture:"2027-02-11T18:00" },
+  { domicile:"Rodez", adverse:"Boulogne",        date:"2027-02-26", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2027-02-12T09:00", fermeture:"2027-02-25T18:00" },
+  { domicile:"Rodez", adverse:"Sochaux",         date:"2027-03-12", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2027-02-26T09:00", fermeture:"2027-03-11T18:00" },
+  { domicile:"Rodez", adverse:"Dijon",           date:"2027-04-02", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2027-03-19T09:00", fermeture:"2027-04-01T18:00" },
+  { domicile:"Rodez", adverse:"Clermont Foot",   date:"2027-04-16", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2027-04-02T09:00", fermeture:"2027-04-15T18:00" },
+  { domicile:"Rodez", adverse:"Metz",            date:"2027-04-30", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2027-04-16T09:00", fermeture:"2027-04-29T18:00" },
+  { domicile:"Rodez", adverse:"Saint-Etienne",   date:"2027-05-14", heure:"20:00", lieu:CONFIG.lieuParDefaut, places:8, ouverture:"2027-04-30T09:00", fermeture:"2027-05-13T18:00" },
 ];
+</script>
 
-(function buildClients(){
-  const track = document.getElementById('marquee-track');
-  const marquee = track && track.parentElement;
-  if(!track) return;
-  const item = c => {
-    const st = c.scale ? ` style="transform:scale(${c.scale})"` : '';
-    const inner = c.img
-      ? `<img src="${c.img}" alt="${c.nom}" loading="lazy" decoding="async"${st}>`
-      : `<span class="ph">${c.nom}</span>`;
-    return (c.href && c.href.trim())
-      ? `<a class="client-logo" href="${c.href}" target="_blank" rel="noopener noreferrer" aria-label="${c.nom}">${inner}</a>`
-      : `<div class="client-logo">${inner}</div>`;
-  };
-  const anime = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const html = CLIENTS.map(item).join('');
-  track.innerHTML = anime ? html + html : html;   // doublé pour une boucle sans coupure
+<style>
+/* ==========================================================================
+   2. STYLE — Rouge Rodez / Blanc / Noir / Gris clair
+   ========================================================================== */
+:root{
+  --rouge:#D6001C;
+  --rouge-sombre:#9E0014;
+  --noir:#111214;
+  --anthracite:#2A2D33;
+  --gris:#6B7079;
+  --gris-clair:#F1F2F4;
+  --bord:#E1E3E7;
+  --blanc:#FFFFFF;
+  --vert:#1D7A4C;
+  --ambre:#C97A00;
 
-  // l'animation ne tourne QUE lorsque la bande est visible à l'écran
-  if(anime && marquee && 'IntersectionObserver' in window){
-    const io = new IntersectionObserver(es=>{
-      es.forEach(e=> marquee.classList.toggle('run', e.isIntersecting));
-    }, {threshold:0});
-    io.observe(marquee);
-  } else if(anime && marquee){
-    marquee.classList.add('run');
-  }
-})();
+  --display:"Oswald", "Arial Narrow", sans-serif;
+  --texte:"Source Sans 3", system-ui, sans-serif;
+  --data:"JetBrains Mono", ui-monospace, monospace;
 
-/* -- compteurs animés -- */
-(function counters(){
-  const nums = document.querySelectorAll('.stat-num');
-  if(!nums.length) return;
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const run = el => {
-    const to = parseInt(el.dataset.to, 10) || 0;
-    const suf = el.querySelector('.suf');
-    const sufTxt = suf ? suf.outerHTML : '';
-    if(reduce){ el.innerHTML = to + sufTxt; return; }
-    const dur = 1400, t0 = performance.now();
-    const step = now => {
-      const p = Math.min((now - t0) / dur, 1);
-      const eased = 1 - Math.pow(1 - p, 3);      // ralentit à la fin
-      el.innerHTML = Math.round(to * eased) + sufTxt;
-      if(p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-  const io = new IntersectionObserver(es=>{
-    es.forEach(e=>{ if(e.isIntersecting){ run(e.target); io.unobserve(e.target); } });
-  }, {threshold:.5});
-  nums.forEach(n=>io.observe(n));
-})();
+  --r:10px;
+  --ombre:0 1px 2px rgba(17,18,20,.06), 0 8px 24px -12px rgba(17,18,20,.25);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--texte);
+  background:var(--gris-clair);
+  color:var(--noir);
+  line-height:1.55;
+  min-height:100vh;
+}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:none;background:none}
+a{color:var(--rouge)}
 
-/* -- curseur personnalisé sur le portfolio -- */
-(function pfCursor(){
-  const grid = document.getElementById('pf-grid');
-  if(!grid || window.matchMedia('(hover: none)').matches) return;
-  const cur = document.createElement('div');
-  cur.className = 'pf-cursor';
-  cur.textContent = 'Voir';
-  document.body.appendChild(cur);
-  const move = e => { cur.style.left = e.clientX + 'px'; cur.style.top = e.clientY + 'px'; };
-  grid.addEventListener('mousemove', e=>{
-    const item = e.target.closest('.pf-item');
-    if(item){
-      cur.textContent = item.classList.contains('linked') ? 'Ouvrir'
-                      : item.classList.contains('gallery') ? 'Galerie' : 'Voir';
-      cur.classList.add('on');
-      move(e);
-    } else cur.classList.remove('on');
-  });
-  grid.addEventListener('mouseleave', ()=> cur.classList.remove('on'));
-  window.addEventListener('scroll', ()=> cur.classList.remove('on'), {passive:true});
-})();
-
-/* -- mot animé du hero -- */
-(function rotator(){
-  const el = document.getElementById('rotator');
-  if(!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const mots = ["identité","com'","visibilité"];
-  let i = 0;
-  setInterval(()=>{
-    el.classList.add('out');
-    setTimeout(()=>{
-      i = (i+1) % mots.length;
-      el.textContent = mots[i];
-      el.classList.remove('out');
-    }, 350);
-  }, 2400);
-})();
-
-/* -- bouton de contact flottant : apparaît après avoir défilé -- */
-const fab = document.getElementById('fab');
-function toggleFab(){ fab.classList.toggle('show', window.scrollY > 450); }
-window.addEventListener('scroll', toggleFab, {passive:true});
-toggleFab();
-
-/* -- apparition moderne au défilement (fade + blur + cascade) -- */
-if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  const targets = document.querySelectorAll('.section-head, .service, .aud-card, .stat-item, .step, .value, .pf-item, .clients-title');
-  targets.forEach(el=> el.classList.add('reveal'));
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach((e)=>{
-      if(e.isIntersecting){
-        const el = e.target;
-        const sibs = el.parentElement ? [...el.parentElement.children].filter(c=>c.classList.contains('reveal')) : [el];
-        const idx = Math.max(0, sibs.indexOf(el));
-        setTimeout(()=> el.classList.add('in'), Math.min(idx*90, 360));
-        io.unobserve(el);
-      }
-    });
-  }, {threshold:.12, rootMargin:'0px 0px -50px 0px'});
-  targets.forEach(el=>io.observe(el));
+/* --- Barres latérales rouge/noir : la signature « maillot » ------------- */
+.rayures{
+  height:6px;
+  background:repeating-linear-gradient(90deg,var(--rouge) 0 28px,var(--noir) 28px 56px);
 }
 
-/* -- parallaxe léger du visuel du hero (ordinateur seulement) -- */
-(function heroParallax(){
-  const v = document.querySelector('.hero-visual');
-  if(!v || window.matchMedia('(hover: none)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const hero = document.querySelector('.hero');
-  hero.addEventListener('mousemove', e=>{
-    const r = hero.getBoundingClientRect();
-    const x = (e.clientX - r.left)/r.width - .5;
-    const y = (e.clientY - r.top)/r.height - .5;
-    v.style.transform = `translate3d(${x*18}px, ${y*18}px, 0)`;
-  });
-  hero.addEventListener('mouseleave', ()=> v.style.transform = 'translate3d(0,0,0)');
-})();
+/* --- En-tête ----------------------------------------------------------- */
+.entete{background:var(--noir);color:var(--blanc);position:sticky;top:0;z-index:40}
+.entete-in{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:11px;margin-right:auto}
+.ecusson{
+  width:36px;height:40px;flex:none;
+  background:linear-gradient(160deg,var(--rouge),var(--rouge-sombre));
+  clip-path:polygon(0 0,100% 0,100% 66%,50% 100%,0 66%);
+  display:grid;place-items:center;
+  font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.5px;
+  padding-bottom:8px;
+}
+.logo b{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:1.5px;text-transform:uppercase;display:block;line-height:1.1}
+.logo span{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9AA0A9}
+.onglets{display:flex;gap:4px;background:#1D1F23;padding:4px;border-radius:8px}
+.onglets button{
+  font-family:var(--display);font-size:13px;letter-spacing:1px;text-transform:uppercase;
+  color:#9AA0A9;padding:7px 14px;border-radius:5px;transition:.15s;
+}
+.onglets button:hover{color:var(--blanc)}
+.onglets button[aria-current="true"]{background:var(--rouge);color:var(--blanc)}
+.qui{display:flex;align-items:center;gap:10px;font-size:13px}
+.qui em{font-style:normal;color:#9AA0A9}
+.badge-admin{
+  font-family:var(--data);font-size:10px;font-weight:700;letter-spacing:1px;
+  background:var(--rouge);padding:2px 6px;border-radius:3px;
+}
+.lien-quitter{color:#9AA0A9;font-size:13px;text-decoration:underline;text-underline-offset:3px}
+.lien-quitter:hover{color:var(--blanc)}
 
-</script>
+/* --- Layout ------------------------------------------------------------ */
+.page{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
+.titre-section{
+  font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gris);
+  display:flex;align-items:center;gap:14px;margin:34px 0 16px;
+}
+.titre-section::after{content:"";flex:1;height:1px;background:var(--bord)}
+.titre-section:first-child{margin-top:0}
+
+/* --- Carte match ------------------------------------------------------- */
+.grille{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+.match{
+  background:var(--blanc);border:1px solid var(--bord);border-radius:var(--r);
+  overflow:hidden;box-shadow:var(--ombre);
+  display:flex;flex-direction:column;
+  animation:monte .35s cubic-bezier(.2,.8,.3,1) backwards;
+}
+@keyframes monte{from{opacity:0;transform:translateY(10px)}}
+.match-haut{padding:16px 18px 14px;border-bottom:1px solid var(--bord);position:relative}
+.match-haut::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--bord)}
+.match.est-ouvert .match-haut::before{background:var(--rouge)}
+.match.est-complet .match-haut::before{background:var(--noir)}
+.rangee{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.affiche{font-family:var(--display);font-weight:600;font-size:22px;line-height:1.15;text-transform:uppercase;letter-spacing:.5px}
+.affiche i{font-style:normal;color:var(--rouge);margin:0 4px}
+.quand{font-family:var(--data);font-size:12px;color:var(--gris);margin-top:5px}
+.ou{font-size:12.5px;color:var(--gris);margin-top:2px}
+
+.etat{
+  font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;
+  padding:4px 9px;border-radius:4px;white-space:nowrap;flex:none;
+}
+.etat.ouvert{background:#E8F5EE;color:var(--vert)}
+.etat.avenir{background:var(--gris-clair);color:var(--gris)}
+.etat.ferme{background:var(--gris-clair);color:var(--anthracite)}
+.etat.complet{background:var(--noir);color:var(--blanc)}
+
+/* --- Compteur à segments : l'élément signature ------------------------- */
+.compteur{padding:16px 18px;background:#FAFAFB}
+.compteur-tete{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+.compteur-tete span{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gris);font-family:var(--display);font-weight:500}
+.chiffres{font-family:var(--data);font-weight:700;font-size:16px}
+.chiffres b{font-size:21px}
+.chiffres.plein{color:var(--noir)}
+.chiffres.alerte{color:var(--rouge)}
+.segments{display:flex;gap:3px}
+.seg{
+  flex:1;height:16px;border-radius:2px;background:var(--bord);
+  transition:background .3s ease, transform .3s ease;
+}
+.seg.libre{background:var(--rouge)}
+.seg.libre.chaud{background:var(--rouge);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.45}}
+.alerte-texte{
+  margin-top:10px;font-size:12.5px;font-weight:600;color:var(--rouge);
+  display:flex;align-items:center;gap:6px;
+}
+
+/* --- Liste des réservations -------------------------------------------- */
+.reservataires{padding:4px 18px 0;flex:1}
+.ligne-r{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed var(--bord);font-size:14px}
+.ligne-r:last-child{border-bottom:none}
+.ligne-r.moi{font-weight:700}
+.ligne-r.moi .nom::after{content:"vous";font-family:var(--data);font-size:9px;letter-spacing:1px;text-transform:uppercase;background:var(--rouge);color:#fff;padding:1px 5px;border-radius:3px;margin-left:7px;vertical-align:1px}
+.ligne-r .places{font-family:var(--data);font-size:13px;color:var(--gris)}
+.vide{padding:14px 0;font-size:13.5px;color:var(--gris);font-style:italic}
+
+.match-bas{padding:14px 18px 16px;display:flex;gap:8px}
+
+/* --- Boutons ----------------------------------------------------------- */
+.btn{
+  font-family:var(--display);font-weight:500;font-size:14px;letter-spacing:1.2px;text-transform:uppercase;
+  padding:11px 18px;border-radius:6px;transition:.15s;display:inline-flex;align-items:center;justify-content:center;gap:7px;
+}
+.btn:focus-visible{outline:3px solid var(--rouge);outline-offset:2px}
+.btn-plein{background:var(--rouge);color:#fff;flex:1}
+.btn-plein:hover{background:var(--rouge-sombre)}
+.btn-noir{background:var(--noir);color:#fff}
+.btn-noir:hover{background:var(--anthracite)}
+.btn-clair{background:var(--blanc);color:var(--noir);border:1px solid var(--bord)}
+.btn-clair:hover{border-color:var(--noir)}
+.btn-fantome{color:var(--gris);border:1px solid var(--bord)}
+.btn-fantome:hover{color:var(--rouge);border-color:var(--rouge)}
+.btn:disabled{background:var(--gris-clair);color:var(--gris);border-color:var(--bord);cursor:not-allowed}
+.btn-petit{padding:7px 12px;font-size:12px}
+
+/* --- Connexion --------------------------------------------------------- */
+.connexion{min-height:100vh;display:grid;place-items:center;padding:24px;background:var(--noir)}
+.connexion-boite{width:100%;max-width:400px;background:var(--blanc);border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.connexion-haut{background:var(--noir);color:#fff;padding:30px 28px 26px;text-align:center}
+.connexion-haut .ecusson{margin:0 auto 14px;width:50px;height:56px;font-size:20px;padding-bottom:11px}
+.connexion-haut h1{font-family:var(--display);font-weight:600;font-size:26px;letter-spacing:2px;text-transform:uppercase}
+.connexion-haut p{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#9AA0A9;margin-top:4px}
+.connexion-corps{padding:26px 28px 28px;display:grid;gap:14px}
+label{font-family:var(--display);font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gris);display:block;margin-bottom:6px}
+input,select,textarea{
+  width:100%;padding:11px 13px;border:1px solid var(--bord);border-radius:7px;background:var(--blanc);
+  transition:.15s;
+}
+input:focus,select:focus{outline:none;border-color:var(--rouge);box-shadow:0 0 0 3px rgba(214,0,28,.14)}
+.erreur{background:#FDECEE;color:var(--rouge-sombre);border-left:3px solid var(--rouge);padding:9px 12px;border-radius:5px;font-size:13.5px}
+.note{font-size:12px;color:var(--gris);line-height:1.5}
+
+/* --- Modale ------------------------------------------------------------ */
+.voile{position:fixed;inset:0;background:rgba(17,18,20,.62);backdrop-filter:blur(3px);z-index:60;display:grid;place-items:center;padding:20px;animation:fondu .2s}
+@keyframes fondu{from{opacity:0}}
+.modale{
+  background:var(--blanc);border-radius:14px;width:100%;max-width:480px;max-height:90vh;overflow:auto;
+  box-shadow:0 30px 70px -20px rgba(0,0,0,.5);animation:monte .28s cubic-bezier(.2,.8,.3,1);
+}
+.modale-haut{padding:20px 22px;border-bottom:1px solid var(--bord);display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.modale-haut h2{font-family:var(--display);font-weight:600;font-size:21px;text-transform:uppercase;letter-spacing:.6px}
+.modale-haut p{font-family:var(--data);font-size:12px;color:var(--gris);margin-top:3px}
+.fermer{font-size:26px;line-height:1;color:var(--gris);padding:0 4px}
+.fermer:hover{color:var(--noir)}
+.modale-corps{padding:22px}
+.modale-bas{padding:0 22px 22px;display:flex;gap:8px}
+
+/* --- Sélecteur de places ----------------------------------------------- */
+.choix{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:8px;margin-top:6px}
+.choix button{
+  border:1.5px solid var(--bord);border-radius:8px;padding:12px 4px;background:var(--blanc);
+  font-family:var(--data);font-weight:700;font-size:19px;transition:.13s;
+}
+.choix button small{display:block;font-family:var(--texte);font-weight:400;font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:var(--gris);margin-top:2px}
+.choix button:hover{border-color:var(--noir);transform:translateY(-2px)}
+.choix button[aria-pressed="true"]{background:var(--rouge);border-color:var(--rouge);color:#fff}
+.choix button[aria-pressed="true"] small{color:rgba(255,255,255,.8)}
+
+/* --- Formulaires ------------------------------------------------------- */
+.form-grille{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.form-grille .large{grid-column:1/-1}
+@media(max-width:560px){.form-grille{grid-template-columns:1fr}}
+
+/* --- Admin ------------------------------------------------------------- */
+.stats{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.stat{background:var(--blanc);border:1px solid var(--bord);border-radius:var(--r);padding:16px 18px}
+.stat b{display:block;font-family:var(--data);font-weight:700;font-size:28px;line-height:1.1}
+.stat span{font-family:var(--display);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gris)}
+.stat.accent{background:var(--noir);color:#fff}
+.stat.accent span{color:#9AA0A9}
+.stat.accent b{color:var(--rouge)}
+
+.tableau-boite{background:var(--blanc);border:1px solid var(--bord);border-radius:var(--r);overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
+th{
+  font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gris);
+  text-align:left;padding:11px 14px;border-bottom:1px solid var(--bord);background:#FAFAFB;white-space:nowrap;
+}
+td{padding:11px 14px;border-bottom:1px solid var(--bord);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+td.num{font-family:var(--data);font-weight:700}
+.actions-cellule{display:flex;gap:6px;flex-wrap:wrap}
+
+.barre-outils{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.barre-outils .pousse{margin-left:auto}
+
+/* --- Notifications ----------------------------------------------------- */
+#toasts{position:fixed;right:16px;bottom:16px;z-index:80;display:grid;gap:8px;max-width:min(340px,calc(100vw - 32px))}
+.toast{
+  background:var(--noir);color:#fff;padding:12px 15px;border-radius:8px;font-size:14px;
+  box-shadow:0 12px 30px -8px rgba(0,0,0,.5);border-left:3px solid var(--rouge);
+  animation:entre .3s cubic-bezier(.2,.8,.3,1);
+}
+.toast.ok{border-left-color:#3ECF7E}
+.toast.ko{border-left-color:#FF5A5A}
+@keyframes entre{from{opacity:0;transform:translateX(24px)}}
+
+/* --- Bandeau mode ------------------------------------------------------ */
+.bandeau{
+  background:#FFF8E6;border:1px solid #F0DCA8;border-radius:var(--r);
+  padding:12px 15px;font-size:13.5px;color:#6B4E00;margin-bottom:20px;line-height:1.5;
+}
+.bandeau b{color:#4A3600}
+
+.rien{text-align:center;padding:60px 20px;color:var(--gris)}
+.rien h3{font-family:var(--display);font-size:20px;text-transform:uppercase;letter-spacing:1px;color:var(--anthracite);margin-bottom:6px}
+
+@media(max-width:640px){
+  .entete-in{padding:12px 14px;gap:10px}
+  .logo{width:100%;margin-right:0}
+  .onglets{width:100%}
+  .onglets button{flex:1;padding:8px 4px}
+  .qui{width:100%;justify-content:space-between}
+  .page{padding:20px 14px 70px}
+  .affiche{font-size:19px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div id="app"></div>
+<div id="toasts" aria-live="polite"></div>
+
 <script>
-/* Orchestration des animations de la nouvelle page */
-(() => {
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const targets = document.querySelectorAll('.section-head,.aud-card,.step,.pf-item,.stat-item,.clients-title,.contact-grid');
-  targets.forEach((el,i) => { el.classList.add('reveal-modern'); el.style.transitionDelay=`${Math.min((i%6)*70,350)}ms`; });
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-    if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}
-  }),{threshold:.12,rootMargin:'0px 0px -45px'});
-  targets.forEach(el=>observer.observe(el));
+/* ==========================================================================
+   3. DONNÉES — pilote local ou pilote Supabase
+   ========================================================================== */
+/* --- Garde-fou : une CONFIG cassée ne doit jamais donner une page blanche --
+   Si le bloc CONFIG contient une erreur de syntaxe, le navigateur n'exécute pas
+   ce script-là et CONFIG n'existe pas. Ce script-ci, lui, tourne toujours :
+   on affiche donc un écran d'explication au lieu du néant.                   */
+(function garde(){
+  const souci = (() => {
+    if(typeof CONFIG === "undefined") return "Le bloc CONFIG n'a pas pu être lu : il contient une erreur de syntaxe.";
+    if(typeof MATCHS_INITIAUX === "undefined") return "La liste MATCHS_INITIAUX n'a pas pu être lue : erreur de syntaxe.";
+    if(!Array.isArray(CONFIG.admins) || !Array.isArray(CONFIG.utilisateurs)) return "CONFIG.admins et CONFIG.utilisateurs doivent être des listes entre crochets [ ].";
+    const tous = [...CONFIG.admins, ...CONFIG.utilisateurs];
+    if(!tous.length) return "Aucun compte n'est déclaré dans CONFIG.";
+    const mauvais = tous.find(c => !c || !c.id || !c.utilisateur || !c.nom);
+    if(mauvais) return "Un compte est incomplet : chaque ligne doit avoir id, utilisateur et nom. Vérifiez : " + JSON.stringify(mauvais);
+    const identifiants = tous.map(c => String(c.utilisateur).toLowerCase());
+    const doublon = identifiants.find((u,i) => identifiants.indexOf(u) !== i);
+    if(doublon) return "Le nom d'utilisateur " + doublon + " est déclaré deux fois. Chaque identifiant doit être unique.";
+    return null;
+  })();
 
-  const process=document.getElementById('process');
-  const progress=()=>{const r=process.getBoundingClientRect();process.style.setProperty('--progress',Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight+r.height*.45))).toFixed(3));};
-  addEventListener('scroll',progress,{passive:true});progress();
+  if(!souci) return;
+  document.getElementById("app").innerHTML = `
+    <div style="min-height:100vh;display:grid;place-items:center;padding:24px;background:#111214;font-family:system-ui,sans-serif">
+      <div style="max-width:560px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)">
+        <div style="height:6px;background:repeating-linear-gradient(90deg,#D6001C 0 28px,#111214 28px 56px)"></div>
+        <div style="padding:26px 28px">
+          <h1 style="font-family:Oswald,sans-serif;font-size:24px;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px">Le bloc CONFIG est cassé</h1>
+          <p style="background:#FDECEE;color:#7A0011;border-left:3px solid #D6001C;padding:10px 12px;border-radius:5px;font-size:14px;margin:0 0 16px">${String(souci).replace(/</g,"&lt;")}</p>
+          <p style="font-size:14.5px;line-height:1.6;color:#2A2D33;margin:0 0 12px">Rouvrez <code>index.html</code> dans un éditeur de texte et vérifiez les trois erreurs classiques :</p>
+          <ol style="font-size:14px;line-height:1.7;color:#2A2D33;padding-left:20px;margin:0 0 16px">
+            <li>Une <strong>virgule manquante</strong> à la fin d'une ligne de compte.</li>
+            <li>Un <strong>guillemet non refermé</strong> autour d'un identifiant ou d'un nom.</li>
+            <li>Des <strong>guillemets courbes</strong> (&#8220;&#8221;) au lieu des droits (&quot;&quot;) — typique d'un copier-coller depuis Word ou Notes.</li>
+          </ol>
+          <p style="font-size:13.5px;line-height:1.6;color:#6B7079;margin:0">Chaque ligne doit être exactement de cette forme, virgule finale comprise :</p>
+          <pre style="background:#F1F2F4;border:1px solid #E1E3E7;border-radius:6px;padding:11px 13px;font-size:12.5px;overflow:auto;margin:8px 0 0"><code>{ id: "pierre", utilisateur: "pierre", nom: "Pierre" },</code></pre>
+          <p style="font-size:13px;color:#6B7079;margin:16px 0 0">Détail technique dans la console du navigateur (F12 → Console) : la ligne fautive y est indiquée par son numéro.</p>
+        </div>
+      </div>
+    </div>`;
+  throw new Error("[Tribune RAF] CONFIG invalide : " + souci);
+})();
 
-  if(!reduced){
-    const root=document.documentElement,visual=document.querySelector('.hero-visual'),c1=document.querySelector('.hv-1'),c2=document.querySelector('.hv-2');
-    addEventListener('pointermove',e=>{
-      root.style.setProperty('--mx',`${e.clientX}px`);root.style.setProperty('--my',`${e.clientY}px`);
-      const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
-      if(visual)visual.style.transform=`translate3d(${x*12}px,${y*10}px,0) rotateY(${x*3}deg)`;
-      if(c1)c1.style.transform=`rotate(${-4+x*2}deg) translate3d(${x*-10}px,${y*-10}px,28px)`;
-      if(c2)c2.style.transform=`rotate(${4+x*2}deg) translate3d(${x*10}px,${y*10}px,48px)`;
-    },{passive:true});
-    const tilt=card=>{
-      card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(850px) rotateX(${-y*7}deg) rotateY(${x*8}deg) translateY(-5px)`;card.style.setProperty('--cx',`${(x+.5)*100}%`);card.style.setProperty('--cy',`${(y+.5)*100}%`);});
-      card.addEventListener('pointerleave',()=>card.style.transform='');
-    };
-    document.querySelectorAll('.aud-card').forEach(tilt);
-    const grid=document.getElementById('pf-grid');
-    const bind=()=>grid.querySelectorAll('.pf-item:not([data-tilt])').forEach(card=>{card.dataset.tilt='1';tilt(card)});
-    new MutationObserver(bind).observe(grid,{childList:true});bind();
-    document.querySelectorAll('.btn').forEach(btn=>{btn.addEventListener('pointermove',e=>{const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.08}px,${(e.clientY-r.top-r.height/2)*.12}px)`;});btn.addEventListener('pointerleave',()=>btn.style.transform='');});
+const MODE_PARTAGE = !!(CONFIG.supabaseUrl && CONFIG.supabaseKey);
+const CLE = "raf_2627_state";
+
+let etat = { matchs: [], reservations: [], comptes: {} };
+let session = null;
+let vue = "matchs";
+let modale = null;
+let memoire = {};   // secours si le navigateur bloque localStorage
+
+const stock = {
+  lire(k){ try{ return localStorage.getItem(k); }catch(e){ return memoire[k] ?? null; } },
+  ecrire(k,v){ try{ localStorage.setItem(k,v); }catch(e){ memoire[k]=v; } },
+  effacer(k){ try{ localStorage.removeItem(k); }catch(e){ delete memoire[k]; } },
+};
+
+let erreurReseau = "";   // dernier message d'erreur Supabase, affiché à l'écran
+
+// Les clés récentes (sb_publishable_...) ne sont pas des JWT : envoyées dans
+// "Authorization: Bearer", elles peuvent déclencher un 401 "invalid JWT".
+// On ne remplit cet en-tête que pour les anciennes clés anon (format JWT).
+const sbTete = () => {
+  const h = { apikey: CONFIG.supabaseKey, "Content-Type": "application/json" };
+  if(CONFIG.supabaseKey.startsWith("eyJ")) h.Authorization = "Bearer " + CONFIG.supabaseKey;
+  return h;
+};
+
+async function chargerEtat(){
+  if(MODE_PARTAGE){
+    try{
+      const r = await fetch(`${CONFIG.supabaseUrl}/rest/v1/raf_state?id=eq.1&select=data`, { headers: sbTete() });
+      if(!r.ok) throw new Error("HTTP " + r.status + " — " + (await r.text()));
+      const lignes = await r.json();
+      erreurReseau = "";
+      if(lignes.length && estInitialise(lignes[0].data)){ return await migrer(lignes[0].data); }
+      const depart = etatInitial();
+      await enregistrerEtat(depart);
+      return depart;
+    }catch(e){
+      erreurReseau = "Lecture : " + e.message;
+      toast("Supabase injoignable — données locales", "ko");
+      console.error("[Tribune RAF] Chargement impossible :", e);
+    }
   }
+  const brut = stock.lire(CLE);
+  if(brut){ try{ const d = JSON.parse(brut); if(estInitialise(d)) return await migrer(d); }catch(e){} }
+  const depart = etatInitial();
+  await enregistrerEtat(depart);
+  return depart;
+}
+
+// Version du calendrier livré dans ce fichier. Si la base contient une version
+// plus ancienne, les matchs sont remplacés et les réservations conservées.
+const CALENDRIER_VERSION = "2026-27-domicile-v1";
+
+// Une ligne existe peut-être déjà, mais totalement vide (créée par le script SQL) :
+// dans ce cas on la considère comme non initialisée et on sème les matchs de départ.
+function estInitialise(d){
+  return !!(d && d.init === true && Array.isArray(d.matchs) && Array.isArray(d.reservations));
+}
+
+// Les anciennes versions pouvaient enregistrer une réservation avec l'adresse
+// mail, puis une seconde avec le prénom. On rattache ces deux formes au même
+// compte et, pour un même match, on conserve uniquement la modification la plus
+// récente afin de ne pas compter deux fois la même personne.
+function normaliserReservations(d){
+  const comptes = [...CONFIG.admins, ...CONFIG.utilisateurs].map(c => ({
+    ...c,
+    utilisateur: d.comptes?.[c.id]?.utilisateur || c.utilisateur,
+    emails: [c.firebaseEmail, `${c.id}@${CONFIG.firebaseEmailDomain}`]
+      .filter(Boolean).map(v => String(v).trim().toLowerCase()),
+  }));
+  const cle = v => String(v || "").trim().toLowerCase();
+  const parIdentite = new Map();
+  let changees = false;
+  let doublons = 0;
+
+  d.reservations.forEach(originale => {
+    const r = { ...originale };
+    const identite = cle(r.utilisateur || r.email);
+    const compte = comptes.find(c => cle(c.utilisateur) === identite || c.emails.includes(identite));
+    if(compte){
+      if(r.utilisateur !== compte.utilisateur || Object.prototype.hasOwnProperty.call(r,"email")) changees = true;
+      r.utilisateur = compte.utilisateur;
+      r.nom = compte.nom;
+      delete r.email;
+    }
+
+    const identiteFinale = cle(r.utilisateur || r.email);
+    const k = `${r.matchId}::${identiteFinale}`;
+    const precedente = parIdentite.get(k);
+    if(!precedente){
+      parIdentite.set(k, r);
+      return;
+    }
+
+    doublons += 1;
+    changees = true;
+    const datePrecedente = Date.parse(precedente.majLe || precedente.creeLe || 0) || 0;
+    const dateCourante = Date.parse(r.majLe || r.creeLe || 0) || 0;
+    if(dateCourante >= datePrecedente) parIdentite.set(k, r);
+  });
+
+  if(changees) d.reservations = [...parIdentite.values()];
+  return { changees, doublons };
+}
+
+// Met à jour un état existant si le fichier apporte un calendrier plus récent.
+async function migrer(d){
+  let securise = false;
+  if(!d.comptes || typeof d.comptes !== "object" || Array.isArray(d.comptes)){
+    d.comptes = {};
+    securise = true;
+  }
+  Object.values(d.comptes).forEach(profil => {
+    if(profil && Object.prototype.hasOwnProperty.call(profil,"code")){
+      delete profil.code;
+      securise = true;
+    }
+  });
+  const nettoyage = normaliserReservations(d);
+  if(nettoyage.changees) securise = true;
+  if(d.version === CALENDRIER_VERSION){
+    if(securise) await enregistrerEtat(d);
+    if(nettoyage.doublons) console.info(`[Tribune RAF] ${nettoyage.doublons} réservation(s) en double supprimée(s).`);
+    return d;
+  }
+  const neuf = etatInitial();
+  const garde = d.reservations.filter(r => neuf.matchs.some(m => m.id === r.matchId));
+  const perdues = d.reservations.length - garde.length;
+  const migre = { ...neuf, reservations: garde, comptes:d.comptes || {} };
+  await enregistrerEtat(migre);
+  console.info("[Tribune RAF] Calendrier mis à jour → " + CALENDRIER_VERSION +
+    (perdues ? " (" + perdues + " réservation(s) sur des matchs disparus ont été écartées)" : ""));
+  return migre;
+}
+
+async function enregistrerEtat(e){
+  const data = e || etat;
+  stock.ecrire(CLE, JSON.stringify(data));
+  if(MODE_PARTAGE){
+    try{
+      const r = await fetch(`${CONFIG.supabaseUrl}/rest/v1/raf_state?on_conflict=id`, {
+        method: "POST",
+        headers: { ...sbTete(), Prefer: "resolution=merge-duplicates,return=minimal" },
+        body: JSON.stringify({ id: 1, data }),
+      });
+      if(!r.ok) throw new Error("HTTP " + r.status + " — " + (await r.text()));
+      erreurReseau = "";
+    }catch(e2){
+      erreurReseau = "Écriture : " + e2.message;
+      toast("Enregistrement en ligne impossible", "ko");
+      console.error("[Tribune RAF] Écriture impossible :", e2);
+    }
+  }
+}
+
+function etatInitial(){
+  return {
+    init: true,
+    version: CALENDRIER_VERSION,
+    matchs: MATCHS_INITIAUX.map((m,i)=>({ id:"m"+(i+1), ferme:false, ...m })),
+    reservations: [],
+    comptes: {},
+  };
+}
+
+/* ==========================================================================
+   4. RÈGLES MÉTIER
+   ========================================================================== */
+const compteAvecProfil = (c, role) => {
+  const modif = c.id === CONFIG.proprietaire ? null : etat.comptes?.[c.id];
+  const profil = modif?.utilisateur ? { utilisateur:modif.utilisateur } : {};
+  return { ...c, ...profil, role, proprietaire:c.id === CONFIG.proprietaire };
+};
+const tousLesComptes = () => [
+  ...CONFIG.admins.map(c=>compteAvecProfil(c,"admin")),
+  ...CONFIG.utilisateurs.map(c=>compteAvecProfil(c,"user")),
+];
+const compteDe = identifiant => tousLesComptes().find(c => c.utilisateur.toLowerCase() === String(identifiant).trim().toLowerCase());
+const estAdmin = () => session?.role === "admin";
+const estProprietaire = () => session?.compteId === CONFIG.proprietaire;
+const identiteResa = r => r.utilisateur || r.email || "";
+
+const resaDuMatch  = id => etat.reservations.filter(r => r.matchId === id);
+const prises       = id => resaDuMatch(id).reduce((s,r)=>s+r.places, 0);
+const restantes    = m  => Math.max(0, m.places - prises(m.id));
+const maResa       = id => etat.reservations.find(r => r.matchId === id && identiteResa(r) === session.utilisateur);
+
+function statut(m){
+  const now = new Date();
+  if(restantes(m) <= 0)                      return { cle:"complet", mot:"Complet" };
+  if(m.ferme)                                return { cle:"ferme",   mot:"Fermé" };
+  if(m.ouverture && now < new Date(m.ouverture)) return { cle:"avenir", mot:"À venir" };
+  if(m.fermeture && now > new Date(m.fermeture)) return { cle:"ferme",  mot:"Fermé" };
+  return { cle:"ouvert", mot:"Ouvert" };
+}
+const reservable = m => statut(m).cle === "ouvert";
+
+const matchsTries = () => [...etat.matchs].sort((a,b)=>
+  (a.date+"T"+(a.heure||"00:00")).localeCompare(b.date+"T"+(b.heure||"00:00")));
+
+/* --- Formats ----------------------------------------------------------- */
+const MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+const JOURS = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
+function dateLongue(iso){
+  const d = new Date(iso + "T12:00:00");
+  return `${JOURS[d.getDay()]} ${d.getDate()} ${MOIS[d.getMonth()]} ${d.getFullYear()}`;
+}
+function moisAnnee(iso){
+  const d = new Date(iso + "T12:00:00");
+  return `${MOIS[d.getMonth()]} ${d.getFullYear()}`;
+}
+const heureFr = h => h ? h.replace(":", "h") : "";
+function dateHeureCourte(iso){
+  if(!iso) return "—";
+  const d = new Date(iso);
+  return `${String(d.getDate()).padStart(2,"0")}/${String(d.getMonth()+1).padStart(2,"0")} à ${String(d.getHours()).padStart(2,"0")}h${String(d.getMinutes()).padStart(2,"0")}`;
+}
+const echap = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const motPlaces = n => n > 1 ? "places" : "place";
+
+/* ==========================================================================
+   5. NOTIFICATIONS
+   ========================================================================== */
+function toast(message, type){
+  const zone = document.getElementById("toasts");
+  const el = document.createElement("div");
+  el.className = "toast " + (type || "");
+  el.textContent = message;
+  zone.appendChild(el);
+  setTimeout(()=>{ el.style.transition="opacity .3s"; el.style.opacity="0"; setTimeout(()=>el.remove(),300); }, 3600);
+}
+
+/* ==========================================================================
+   6. RENDU
+   ========================================================================== */
+const app = document.getElementById("app");
+
+function rendre(){
+  if(!session){ app.innerHTML = vueConnexion(); return brancher(); }
+  app.innerHTML = `
+    <div class="rayures"></div>
+    ${entete()}
+    <main class="page">${ vue==="admin" && estAdmin() ? vueAdmin() : vue==="compte" ? vueCompte() : vue==="mesresas" ? vueMesResas() : vueMatchs() }</main>
+    ${ modale ? vueModale() : "" }
+  `;
+  brancher();
+}
+
+/* --- Connexion --------------------------------------------------------- */
+let erreurConnexion = "";
+function vueConnexion(){
+  return `
+  <div class="connexion">
+    <div class="connexion-boite">
+      <div class="rayures"></div>
+      <div class="connexion-haut">
+        <div class="ecusson ecusson-officiel"><img src="logoraf.svg" alt="Logo du Rodez Aveyron Football"></div>
+        <h1>Tribune RAF</h1>
+        <p>Saison 2026 · 2027</p>
+      </div>
+      <form class="connexion-corps" id="f-connexion">
+        ${ erreurConnexion ? `<div class="erreur">${echap(erreurConnexion)}</div>` : "" }
+        <div>
+          <label for="i-utilisateur">Nom d'utilisateur</label>
+          <input id="i-utilisateur" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="Votre identifiant" required>
+        </div>
+        <div>
+          <label for="i-code">Mot de passe</label>
+          <div class="champ-code">
+            <input id="i-code" type="password" inputmode="text" autocomplete="current-password" autocapitalize="none" spellcheck="false" placeholder="Votre mot de passe" required>
+            <button type="button" class="bascule-code" data-toggle-code="i-code" aria-label="Afficher le mot de passe" aria-pressed="false" title="Afficher le mot de passe"><span class="icone-oeil" aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <button class="btn btn-plein" type="submit">Entrer</button>
+        <p class="note">Connexion sécurisée par Firebase Authentication.</p>
+      </form>
+    </div>
+  </div>`;
+}
+
+/* --- En-tête ----------------------------------------------------------- */
+function entete(){
+  const onglet = (cle,txt) => `<button data-vue="${cle}" aria-current="${vue===cle}">${txt}</button>`;
+  return `
+  <header class="entete">
+    <div class="entete-in">
+      <div class="logo">
+        <div class="ecusson ecusson-officiel"><img src="logoraf.svg" alt="Logo du Rodez Aveyron Football"></div>
+        <div><b>Tribune RAF</b><span>Saison 2026-2027</span></div>
+      </div>
+      <nav class="onglets">
+        ${onglet("matchs","Matchs")}
+        ${onglet("mesresas","Mes réservations")}
+        ${onglet("compte","Mon compte")}
+        ${ estAdmin() ? onglet("admin","Tableau de bord") : "" }
+      </nav>
+      <div class="qui">
+        <em>${echap(session.nom)}</em>
+        ${ estProprietaire() ? '<span class="badge-admin">Propriétaire</span>' : estAdmin() ? '<span class="badge-admin">Admin</span>' : "" }
+        <button class="lien-quitter" id="b-quitter">Se déconnecter</button>
+      </div>
+    </div>
+  </header>`;
+}
+
+/* --- Compteur à segments ----------------------------------------------- */
+function compteur(m){
+  const libre = restantes(m), total = m.places;
+  const alerte = libre > 0 && libre <= CONFIG.seuilAlerte;
+  const segs = Array.from({length: total}, (_,i) =>
+    `<span class="seg ${ i < libre ? "libre" : "" } ${ alerte ? "chaud" : "" }"></span>`).join("");
+  return `
+  <div class="compteur">
+    <div class="compteur-tete">
+      <span>Places disponibles</span>
+      <div class="chiffres ${ libre===0 ? "plein" : alerte ? "alerte" : "" }"><b>${libre}</b> / ${total}</div>
+    </div>
+    <div class="segments" role="img" aria-label="${libre} ${motPlaces(libre)} restantes sur ${total}">${segs}</div>
+    ${ libre === 0
+        ? `<p class="alerte-texte">◼ Complet — plus aucune place</p>`
+        : alerte ? `<p class="alerte-texte">▲ Il ne reste que ${libre} ${motPlaces(libre)}</p>` : "" }
+  </div>`;
+}
+
+/* --- Liste des matchs -------------------------------------------------- */
+function vueMatchs(){
+  const liste = matchsTries();
+  if(!liste.length) return `<div class="rien"><h3>Aucun match au calendrier</h3><p>Un administrateur doit d'abord ajouter les rencontres de la saison.</p></div>`;
+
+  let html = `<section class="hero-raf">
+    <div class="hero-texte">
+      <span class="hero-surtitre">Saison 2026—2027</span>
+      <h1>Vivez chaque match<br><em>au cœur de la tribune.</em></h1>
+      <p>Réservez vos places pour les rencontres du Rodez Aveyron Football à Paul-Lignon.</p>
+    </div>
+    <div class="hero-score" aria-label="Rodez Aveyron Football">
+      <img class="hero-logo" src="logoraf.svg" alt="Logo du Rodez Aveyron Football">
+      <small>Fiers d'être Ruthénois</small>
+    </div>
+  </section>` + bandeauMode(), moisCourant = "";
+  liste.forEach((m, i) => {
+    const mois = moisAnnee(m.date);
+    if(mois !== moisCourant){
+      if(moisCourant) html += `</div>`;
+      html += `<h2 class="titre-section">${mois}</h2><div class="grille">`;
+      moisCourant = mois;
+    }
+    html += carteMatch(m, i);
+  });
+  return html + `</div>`;
+}
+
+function carteMatch(m, i){
+  const st = statut(m), libre = restantes(m), mienne = maResa(m.id);
+  const resas = resaDuMatch(m.id);
+
+  let bas;
+  if(mienne){
+    bas = `
+      <button class="btn btn-clair" data-reserver="${m.id}" ${ st.cle==="ouvert"||libre>0 ? "" : "disabled" }>Modifier</button>
+      <button class="btn btn-fantome" data-annuler="${m.id}">Annuler</button>`;
+  } else {
+    bas = `<button class="btn btn-plein" data-reserver="${m.id}" ${ reservable(m) ? "" : "disabled" }>
+        ${ st.cle==="complet" ? "Complet" : st.cle==="avenir" ? "Ouverture le " + dateHeureCourte(m.ouverture) : st.cle==="ferme" ? "Réservations fermées" : "Réserver" }
+      </button>`;
+  }
+
+  return `
+  <article class="match ${ st.cle==="ouvert" ? "est-ouvert" : "" } ${ st.cle==="complet" ? "est-complet" : "" }" style="animation-delay:${Math.min(i,8)*35}ms">
+    <div class="match-haut">
+      <div class="rangee">
+        <div>
+          <h3 class="affiche">${echap(m.domicile)} <i>—</i> ${echap(m.adverse)}</h3>
+          <p class="quand">${dateLongue(m.date)} · ${heureFr(m.heure)}</p>
+          <p class="ou">${echap(m.lieu || "")}</p>
+        </div>
+        <span class="etat ${st.cle}">${st.mot}</span>
+      </div>
+    </div>
+    ${compteur(m)}
+    <div class="reservataires">
+      ${ resas.length
+          ? resas.map(r=>`<div class="ligne-r ${ identiteResa(r)===session.utilisateur ? "moi" : "" }">
+                <span class="nom">${echap(r.nom)}</span>
+                <span class="places">${r.places} ${motPlaces(r.places)}</span>
+              </div>`).join("")
+          : `<p class="vide">Personne n'a encore réservé.</p>` }
+    </div>
+    <div class="match-bas">${bas}</div>
+  </article>`;
+}
+
+function bandeauMode(){
+  if(erreurReseau) return `<div class="bandeau" style="background:#FDECEE;border-color:#F3B8BF;color:#7A0011">
+    <b>Supabase répond une erreur.</b> Les données restent dans ce navigateur.<br>
+    <code style="font-family:var(--data);font-size:12px">${echap(erreurReseau)}</code>
+  </div>`;
+  if(MODE_PARTAGE) return "";
+  return `<div class="bandeau">
+    <b>Mode local.</b> Les réservations sont enregistrées dans ce navigateur uniquement : les ${tousLesComptes().length} comptes ne voient pas encore les mêmes données.
+    Pour activer le partage, renseignez <code>supabaseUrl</code> et <code>supabaseKey</code> dans le bloc CONFIG (marche à suivre en commentaire à la fin du fichier).
+  </div>`;
+}
+
+/* --- Mes réservations -------------------------------------------------- */
+function vueMesResas(){
+  const miennes = etat.reservations.filter(r => identiteResa(r) === session.utilisateur)
+    .map(r => ({ r, m: etat.matchs.find(m => m.id === r.matchId) }))
+    .filter(x => x.m)
+    .sort((a,b)=> a.m.date.localeCompare(b.m.date));
+
+  const total = miennes.reduce((s,x)=>s+x.r.places,0);
+  const aujourdhui = new Date().toISOString().slice(0,10);
+  const avenir = miennes.filter(x => x.m.date >= aujourdhui);
+  const passees = miennes.filter(x => x.m.date < aujourdhui);
+
+  if(!miennes.length) return `<div class="rien"><h3>Aucune réservation</h3><p>Rendez-vous dans l'onglet Matchs pour réserver vos places.</p></div>`;
+
+  const tableau = (lignes, avecActions) => `
+    <div class="tableau-boite"><table>
+      <thead><tr><th>Match</th><th>Date</th><th>Places</th><th>Réservé le</th>${ avecActions ? "<th></th>" : "" }</tr></thead>
+      <tbody>${ lignes.map(({r,m})=>`
+        <tr>
+          <td><strong>${echap(m.domicile)} — ${echap(m.adverse)}</strong></td>
+          <td>${dateLongue(m.date)} · ${heureFr(m.heure)}</td>
+          <td class="num">${r.places}</td>
+          <td>${dateHeureCourte(r.majLe || r.creeLe)}</td>
+          ${ avecActions ? `<td><div class="actions-cellule">
+              <button class="btn btn-clair btn-petit" data-reserver="${m.id}">Modifier</button>
+              <button class="btn btn-fantome btn-petit" data-annuler="${m.id}">Annuler</button>
+            </div></td>` : "" }
+        </tr>`).join("") }</tbody>
+    </table></div>`;
+
+  return `
+    <div class="stats">
+      <div class="stat accent"><b>${total}</b><span>Places réservées</span></div>
+      <div class="stat"><b>${avenir.length}</b><span>Matchs à venir</span></div>
+      <div class="stat"><b>${passees.length}</b><span>Matchs passés</span></div>
+    </div>
+    ${ avenir.length ? `<h2 class="titre-section">À venir</h2>${tableau(avenir, true)}` : "" }
+    ${ passees.length ? `<h2 class="titre-section">Historique</h2>${tableau(passees, false)}` : "" }`;
+}
+
+/* --- Mon compte -------------------------------------------------------- */
+function vueCompte(){
+  const c = tousLesComptes().find(x => x.id === session.compteId) || compteDe(session.utilisateur);
+  if(!c) return `<div class="rien"><h3>Compte introuvable</h3><p>Déconnectez-vous puis reconnectez-vous.</p></div>`;
+
+  return `
+    <section class="compte-carte ${estProprietaire() ? "compte-proprietaire" : ""}">
+      <span class="hero-surtitre">${estProprietaire() ? "Compte propriétaire" : `Profil de ${echap(c.nom)}`}</span>
+      <h1>Modifier mes accès</h1>
+      <p>Votre mot de passe est protégé par Firebase et n'est jamais enregistré dans le site. Pour le modifier, saisissez d'abord votre mot de passe actuel.</p>
+      <form id="f-compte" class="form-compte">
+        <div>
+          <label for="c-utilisateur">Nom d'utilisateur</label>
+          <input id="c-utilisateur" value="${echap(c.utilisateur)}" minlength="3" maxlength="24" autocomplete="username" autocapitalize="none" spellcheck="false" ${estProprietaire() ? "readonly" : ""} required>
+          <p class="note">${estProprietaire() ? "L'identifiant propriétaire reste permanent." : "3 à 24 caractères : lettres, chiffres, point, tiret ou tiret bas."}</p>
+        </div>
+        <div><label for="c-code-actuel">Mot de passe actuel</label><div class="champ-code"><input id="c-code-actuel" type="password" inputmode="text" autocomplete="current-password" autocapitalize="none" spellcheck="false" placeholder="Requis pour changer le mot de passe"><button type="button" class="bascule-code" data-toggle-code="c-code-actuel" aria-label="Afficher le mot de passe actuel" aria-pressed="false" title="Afficher le mot de passe"><span class="icone-oeil" aria-hidden="true"></span></button></div></div>
+        <div class="form-grille">
+          <div><label for="c-code">Nouveau mot de passe</label><div class="champ-code"><input id="c-code" type="password" inputmode="text" minlength="6" maxlength="64" autocomplete="new-password" autocapitalize="none" spellcheck="false" placeholder="6 caractères minimum"><button type="button" class="bascule-code" data-toggle-code="c-code" aria-label="Afficher le nouveau mot de passe" aria-pressed="false" title="Afficher le mot de passe"><span class="icone-oeil" aria-hidden="true"></span></button></div></div>
+          <div><label for="c-code2">Confirmer le mot de passe</label><div class="champ-code"><input id="c-code2" type="password" inputmode="text" minlength="6" maxlength="64" autocomplete="new-password" autocapitalize="none" spellcheck="false" placeholder="Répétez le nouveau mot de passe"><button type="button" class="bascule-code" data-toggle-code="c-code2" aria-label="Afficher la confirmation" aria-pressed="false" title="Afficher le mot de passe"><span class="icone-oeil" aria-hidden="true"></span></button></div></div>
+        </div>
+        <div id="c-erreur" class="erreur" hidden></div>
+        <button class="btn btn-plein" type="submit">Enregistrer mes nouveaux accès</button>
+      </form>
+    </section>`;
+}
+
+/* --- Gestion des comptes, visible uniquement par le propriétaire -------- */
+function vueGestionComptes(){
+  if(!estProprietaire()) return "";
+  const comptes = tousLesComptes();
+  return `
+    <h2 class="titre-section">Gestion des comptes</h2>
+    <div class="bandeau bandeau-proprietaire"><b>Espace privé de Théo.</b> Les mots de passe sont protégés par Firebase : personne ne peut les afficher. En cas d'oubli, réinitialisez le compte depuis la console Firebase Authentication.</div>
+    <div class="tableau-boite comptes-boite"><table>
+      <thead><tr><th>Personne</th><th>Rôle</th><th>Identifiant actuel</th><th>Sécurité</th><th>Actions</th></tr></thead>
+      <tbody>${comptes.map(c=>`
+        <tr>
+          <td><strong>${echap(c.nom)}</strong>${c.proprietaire ? '<br><span class="note">Compte propriétaire permanent</span>' : ""}</td>
+          <td><span class="etat ${c.proprietaire ? "avenir" : c.role === "admin" ? "ouvert" : "ferme"}">${c.proprietaire ? "Propriétaire" : c.role === "admin" ? "Admin" : "Utilisateur"}</span></td>
+          <td><code class="acces-code">${echap(c.utilisateur)}</code></td>
+          <td><span class="etat ouvert">Protégé par Firebase</span></td>
+          <td><div class="actions-cellule">
+            ${!c.proprietaire ? `<button class="btn btn-fantome btn-petit" data-reset-compte="${c.id}">Restaurer l'identifiant</button>` : '<span class="note">Compte permanent</span>'}
+          </div></td>
+        </tr>`).join("")}</tbody>
+    </table></div>`;
+}
+
+/* --- Tableau de bord admin --------------------------------------------- */
+function vueAdmin(){
+  const liste = matchsTries();
+  const totalPlaces = liste.reduce((s,m)=>s+m.places,0);
+  const totalPrises = etat.reservations.reduce((s,r)=>s+r.places,0);
+  const taux = totalPlaces ? Math.round(totalPrises/totalPlaces*100) : 0;
+  const actifs = new Set(etat.reservations.map(identiteResa)).size;
+
+  return `
+    ${bandeauMode()}
+    <div class="barre-outils">
+      <button class="btn btn-plein" id="b-nouveau" style="flex:none">+ Ajouter un match</button>
+      <button class="btn btn-clair" id="b-csv">Exporter en CSV</button>
+      <button class="btn btn-fantome pousse" id="b-reset-tout">Réinitialiser toutes les réservations</button>
+    </div>
+
+    <h2 class="titre-section">Statistiques</h2>
+    <div class="stats">
+      <div class="stat"><b>${liste.length}</b><span>Matchs</span></div>
+      <div class="stat"><b>${totalPlaces}</b><span>Places au total</span></div>
+      <div class="stat accent"><b>${totalPrises}</b><span>Places réservées</span></div>
+      <div class="stat"><b>${totalPlaces-totalPrises}</b><span>Places restantes</span></div>
+      <div class="stat"><b>${taux}%</b><span>Taux de remplissage</span></div>
+      <div class="stat"><b>${actifs}/${tousLesComptes().length}</b><span>Comptes actifs</span></div>
+    </div>
+
+    ${vueGestionComptes()}
+
+    <h2 class="titre-section">Gestion des matchs</h2>
+    <div class="tableau-boite"><table>
+      <thead><tr><th>Match</th><th>Date</th><th>Ouverture</th><th>Fermeture</th><th>Statut</th><th>Places</th><th>Actions</th></tr></thead>
+      <tbody>${ liste.length ? liste.map(m=>{
+        const st = statut(m);
+        return `<tr>
+          <td><strong>${echap(m.domicile)} — ${echap(m.adverse)}</strong><br><span class="note">${echap(m.lieu||"")}</span></td>
+          <td>${dateLongue(m.date)}<br><span class="note">${heureFr(m.heure)}</span></td>
+          <td class="note">${dateHeureCourte(m.ouverture)}</td>
+          <td class="note">${dateHeureCourte(m.fermeture)}</td>
+          <td><span class="etat ${st.cle}">${st.mot}</span></td>
+          <td class="num">${restantes(m)}/${m.places}</td>
+          <td><div class="actions-cellule">
+            <button class="btn btn-clair btn-petit" data-editer="${m.id}">Modifier</button>
+            <button class="btn btn-clair btn-petit" data-bascule="${m.id}">${ m.ferme ? "Ouvrir" : "Fermer" }</button>
+            <button class="btn btn-fantome btn-petit" data-vider="${m.id}">Vider</button>
+            <button class="btn btn-fantome btn-petit" data-supprimer="${m.id}">Supprimer</button>
+          </div></td>
+        </tr>`; }).join("")
+        : `<tr><td colspan="7"><p class="vide">Aucun match. Commencez par en ajouter un.</p></td></tr>` }
+      </tbody>
+    </table></div>
+
+    <h2 class="titre-section">Toutes les réservations</h2>
+    ${ liste.filter(m=>resaDuMatch(m.id).length).map(m=>`
+      <div class="tableau-boite" style="margin-bottom:14px">
+        <table>
+          <thead><tr><th>${echap(m.domicile)} — ${echap(m.adverse)} · ${dateLongue(m.date)}</th><th>Places</th><th>Modifié le</th><th></th></tr></thead>
+          <tbody>
+            ${ resaDuMatch(m.id).map(r=>`<tr>
+                <td>${echap(r.nom)}<br><span class="note">@${echap(identiteResa(r))}</span></td>
+                <td class="num">${r.places}</td>
+                <td class="note">${dateHeureCourte(r.majLe || r.creeLe)}</td>
+                <td><button class="btn btn-fantome btn-petit" data-suppr-resa="${r.id}">Retirer</button></td>
+              </tr>`).join("") }
+            <tr style="background:#FAFAFB">
+              <td><strong>Total</strong></td>
+              <td class="num">${prises(m.id)}</td>
+              <td colspan="2" class="note">Places restantes : <strong>${restantes(m)}</strong> sur ${m.places}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>`).join("") || `<div class="tableau-boite"><p class="vide" style="padding:20px">Aucune réservation enregistrée pour l'instant.</p></div>` }`;
+}
+
+/* ==========================================================================
+   7. MODALES
+   ========================================================================== */
+function vueModale(){
+  return `<div class="voile" data-voile>${ modale.type === "reserver" ? modaleReserver() : modaleMatch() }</div>`;
+}
+
+function modaleReserver(){
+  const m = etat.matchs.find(x=>x.id === modale.matchId);
+  const mienne = maResa(m.id);
+  const dejaAMoi = mienne ? mienne.places : 0;
+  const max = restantes(m) + dejaAMoi;
+  const choisi = modale.places ?? dejaAMoi ?? 1;
+
+  const boutons = Array.from({length:max}, (_,i)=> i+1).map(n=>`
+    <button data-places="${n}" aria-pressed="${n===choisi}">${n}<small>${motPlaces(n)}</small></button>`).join("");
+
+  return `
+  <div class="modale" role="dialog" aria-modal="true">
+    <div class="modale-haut">
+      <div>
+        <h2>${echap(m.domicile)} — ${echap(m.adverse)}</h2>
+        <p>${dateLongue(m.date)} · ${heureFr(m.heure)}</p>
+      </div>
+      <button class="fermer" data-fermer aria-label="Fermer">×</button>
+    </div>
+    <div class="modale-corps">
+      ${ max === 0
+        ? `<div class="erreur">Il n'y a plus de place disponible pour ce match.</div>`
+        : `<label>Combien de places ?</label>
+           <div class="choix">${boutons}</div>
+           <p class="note" style="margin-top:12px">${max} ${motPlaces(max)} au maximum${ dejaAMoi ? ` (dont ${dejaAMoi} déjà à votre nom)` : "" }.</p>` }
+    </div>
+    <div class="modale-bas">
+      <button class="btn btn-clair" data-fermer style="flex:1">Retour</button>
+      <button class="btn btn-plein" id="b-confirmer" ${ max===0 ? "disabled" : "" } style="flex:2">
+        ${ dejaAMoi ? "Modifier ma réservation" : "Confirmer la réservation" }
+      </button>
+    </div>
+  </div>`;
+}
+
+function modaleMatch(){
+  const m = modale.match || {};
+  const val = (k,d="") => echap(m[k] ?? d);
+  return `
+  <div class="modale" role="dialog" aria-modal="true">
+    <div class="modale-haut">
+      <div><h2>${ m.id ? "Modifier le match" : "Ajouter un match" }</h2></div>
+      <button class="fermer" data-fermer aria-label="Fermer">×</button>
+    </div>
+    <form class="modale-corps" id="f-match">
+      <div class="form-grille">
+        <div><label for="q-dom">Équipe à domicile</label><input id="q-dom" value="${val("domicile","Rodez")}" required></div>
+        <div><label for="q-adv">Équipe adverse</label><input id="q-adv" value="${val("adverse")}" required></div>
+        <div><label for="q-date">Date du match</label><input id="q-date" type="date" value="${val("date")}" required></div>
+        <div><label for="q-heure">Heure</label><input id="q-heure" type="time" value="${val("heure","20:00")}" required></div>
+        <div class="large"><label for="q-lieu">Lieu</label><input id="q-lieu" value="${val("lieu", CONFIG.lieuParDefaut)}"></div>
+        <div class="large"><label for="q-places">Nombre total de places</label><input id="q-places" type="number" min="1" max="60" value="${val("places",8)}" required></div>
+        <div><label for="q-ouv">Ouverture des réservations</label><input id="q-ouv" type="datetime-local" value="${val("ouverture")}"></div>
+        <div><label for="q-fer">Fermeture des réservations</label><input id="q-fer" type="datetime-local" value="${val("fermeture")}"></div>
+      </div>
+      <p class="note" style="margin-top:12px">Réduire le nombre de places en dessous des réservations déjà prises est refusé.</p>
+    </form>
+    <div class="modale-bas">
+      <button class="btn btn-clair" data-fermer style="flex:1">Annuler</button>
+      <button class="btn btn-plein" id="b-sauver-match" style="flex:2">Enregistrer</button>
+    </div>
+  </div>`;
+}
+
+/* ==========================================================================
+   8. ÉVÉNEMENTS
+   ========================================================================== */
+function brancher(){
+  const $ = s => app.querySelector(s);
+  const $$ = s => app.querySelectorAll(s);
+
+  /* afficher ou masquer les codes saisis */
+  $$("[data-toggle-code]").forEach(b => b.addEventListener("click", ()=>{
+    const champ = document.getElementById(b.dataset.toggleCode);
+    if(!champ) return;
+    const visible = champ.type === "text";
+    champ.type = visible ? "password" : "text";
+    b.classList.toggle("est-visible", !visible);
+    b.setAttribute("aria-pressed", String(!visible));
+    b.setAttribute("aria-label", visible ? "Afficher le mot de passe" : "Masquer le mot de passe");
+    b.setAttribute("title", visible ? "Afficher le mot de passe" : "Masquer le mot de passe");
+    champ.focus();
+  }));
+
+  /* connexion */
+  $("#f-connexion")?.addEventListener("submit", async e => {
+    e.preventDefault();
+    const identifiant = $("#i-utilisateur").value, code = $("#i-code").value;
+    const c = compteDe(identifiant);
+    if(!c){
+      erreurConnexion = "Nom d'utilisateur ou mot de passe incorrect.";
+      return rendre();
+    }
+    const bouton = e.submitter;
+    if(bouton) bouton.disabled = true;
+    try{
+      const {auth,sdk} = await firebasePret;
+      const resultat = await sdk.signInWithEmailAndPassword(auth, emailFirebase(c.id), code);
+      if(resultat.user.email?.toLowerCase() !== emailFirebase(c.id).toLowerCase()) throw new Error("Compte Firebase inattendu");
+    }catch(err){
+      console.error("[Tribune RAF] Connexion Firebase :",err);
+      erreurConnexion = err?.code === "auth/network-request-failed"
+        ? "Connexion internet impossible. Réessayez dans un instant."
+        : "Nom d'utilisateur ou mot de passe incorrect, ou compte Firebase non créé.";
+      return rendre();
+    }
+    erreurConnexion = "";
+    session = { compteId:c.id, utilisateur:c.utilisateur, nom:c.nom, role:c.role };
+    vue = "matchs";
+    toast(`Bienvenue ${c.nom}`, "ok");
+    rendre();
+  });
+
+  $("#b-quitter")?.addEventListener("click", async ()=>{
+    try{ const {auth,sdk} = await firebasePret; await sdk.signOut(auth); }catch(e){}
+    session = null; modale = null; rendre();
+  });
+
+  $$("[data-vue]").forEach(b => b.addEventListener("click", ()=>{ vue = b.dataset.vue; modale = null; rendre(); }));
+
+  /* modification des accès personnels */
+  $("#f-compte")?.addEventListener("submit", sauverCompte);
+  $$('[data-reset-compte]').forEach(b => b.addEventListener('click', ()=> restaurerCompte(b.dataset.resetCompte)));
+
+  /* réserver / annuler */
+  $$("[data-reserver]").forEach(b => b.addEventListener("click", ()=>{
+    modale = { type:"reserver", matchId:b.dataset.reserver, places:null }; rendre();
+  }));
+  $$("[data-annuler]").forEach(b => b.addEventListener("click", ()=> annuler(b.dataset.annuler)));
+
+  /* modale réservation */
+  $$("[data-places]").forEach(b => b.addEventListener("click", ()=>{
+    modale.places = +b.dataset.places;
+    app.querySelectorAll("[data-places]").forEach(x => x.setAttribute("aria-pressed", x === b));
+  }));
+  $("#b-confirmer")?.addEventListener("click", confirmerReservation);
+
+  /* modales : fermeture */
+  $$("[data-fermer]").forEach(b => b.addEventListener("click", ()=>{ modale = null; rendre(); }));
+  $("[data-voile]")?.addEventListener("click", e => { if(e.target.dataset.voile !== undefined){ modale = null; rendre(); } });
+
+  /* admin */
+  $("#b-nouveau")?.addEventListener("click", ()=>{ modale = { type:"match", match:null }; rendre(); });
+  $("#b-csv")?.addEventListener("click", exporterCsv);
+  $("#b-reset-tout")?.addEventListener("click", async ()=>{
+    if(!confirm("Supprimer TOUTES les réservations de la saison ? Les matchs sont conservés.")) return;
+    etat.reservations = []; await enregistrerEtat(); toast("Toutes les réservations ont été réinitialisées","ok"); rendre();
+  });
+  $$("[data-editer]").forEach(b => b.addEventListener("click", ()=>{
+    modale = { type:"match", match: etat.matchs.find(m=>m.id===b.dataset.editer) }; rendre();
+  }));
+  $("#b-sauver-match")?.addEventListener("click", sauverMatch);
+  $$("[data-bascule]").forEach(b => b.addEventListener("click", async ()=>{
+    const m = etat.matchs.find(x=>x.id===b.dataset.bascule);
+    m.ferme = !m.ferme; await enregistrerEtat();
+    toast(m.ferme ? "Réservations fermées" : "Réservations ouvertes", "ok"); rendre();
+  }));
+  $$("[data-vider]").forEach(b => b.addEventListener("click", async ()=>{
+    const m = etat.matchs.find(x=>x.id===b.dataset.vider);
+    if(!confirm(`Vider les réservations de ${m.domicile} — ${m.adverse} ?`)) return;
+    etat.reservations = etat.reservations.filter(r=>r.matchId!==m.id);
+    await enregistrerEtat(); toast("Réservations du match vidées","ok"); rendre();
+  }));
+  $$("[data-supprimer]").forEach(b => b.addEventListener("click", async ()=>{
+    const m = etat.matchs.find(x=>x.id===b.dataset.supprimer);
+    if(!confirm(`Supprimer définitivement ${m.domicile} — ${m.adverse} et ses réservations ?`)) return;
+    etat.matchs = etat.matchs.filter(x=>x.id!==m.id);
+    etat.reservations = etat.reservations.filter(r=>r.matchId!==m.id);
+    await enregistrerEtat(); toast("Match supprimé","ok"); rendre();
+  }));
+  $$("[data-suppr-resa]").forEach(b => b.addEventListener("click", async ()=>{
+    etat.reservations = etat.reservations.filter(r=>r.id!==b.dataset["supprResa"]);
+    await enregistrerEtat(); toast("Réservation retirée","ok"); rendre();
+  }));
+}
+
+document.addEventListener("keydown", e => { if(e.key === "Escape" && modale){ modale = null; rendre(); } });
+
+/* --- Actions ----------------------------------------------------------- */
+async function restaurerCompte(id){
+  if(!estProprietaire() || id === CONFIG.proprietaire) return;
+  const actuel = tousLesComptes().find(c => c.id === id);
+  const base = [...CONFIG.admins,...CONFIG.utilisateurs].find(c => c.id === id);
+  if(!actuel || !base) return;
+  if(!confirm(`Restaurer l'identifiant d'origine de ${base.nom} ? Le mot de passe Firebase ne sera pas modifié.`)) return;
+
+  if(etat.comptes) delete etat.comptes[id];
+  etat.reservations.forEach(r => {
+    if(identiteResa(r) === actuel.utilisateur){ r.utilisateur = base.utilisateur; delete r.email; }
+  });
+  await enregistrerEtat();
+  toast(`Identifiant de ${base.nom} restauré`, "ok");
+  rendre();
+}
+
+async function sauverCompte(e){
+  e.preventDefault();
+
+  const ancienIdentifiant = session.utilisateur;
+  const utilisateur = document.getElementById("c-utilisateur").value.trim().toLowerCase();
+  const codeActuel = document.getElementById("c-code-actuel").value;
+  const code = document.getElementById("c-code").value.trim();
+  const confirmation = document.getElementById("c-code2").value.trim();
+  const erreur = document.getElementById("c-erreur");
+  const refuser = message => { erreur.textContent = message; erreur.hidden = false; };
+
+  if(!/^[a-z0-9._-]{3,24}$/.test(utilisateur)){
+    return refuser("Le nom d'utilisateur doit contenir 3 à 24 lettres, chiffres, points, tirets ou tirets bas.");
+  }
+  const doublon = tousLesComptes().find(c => c.id !== session.compteId && c.utilisateur.toLowerCase() === utilisateur);
+  if(doublon) return refuser("Ce nom d'utilisateur est déjà utilisé. Choisissez-en un autre.");
+  if(code && (code.length < 6 || code.length > 64)) return refuser("Le nouveau mot de passe doit contenir entre 6 et 64 caractères.");
+  if(code !== confirmation) return refuser("Les deux nouveaux mots de passe ne correspondent pas.");
+  if(code && !codeActuel) return refuser("Saisissez votre mot de passe actuel pour confirmer le changement.");
+
+  if(code){
+    try{
+      const {auth,sdk} = await firebasePret;
+      if(!auth.currentUser) return refuser("Votre session Firebase a expiré. Reconnectez-vous.");
+      const justificatif = sdk.EmailAuthProvider.credential(emailFirebase(session.compteId), codeActuel);
+      await sdk.reauthenticateWithCredential(auth.currentUser, justificatif);
+      await sdk.updatePassword(auth.currentUser, code);
+    }catch(err){
+      console.error("[Tribune RAF] Changement du mot de passe Firebase :",err);
+      return refuser(err?.code === "auth/invalid-credential"
+        ? "Le mot de passe actuel est incorrect."
+        : "Firebase n'a pas pu modifier le mot de passe. Réessayez après vous être reconnecté.");
+    }
+  }
+
+  if(!estProprietaire()){
+    etat.comptes ||= {};
+    etat.comptes[session.compteId] = { utilisateur };
+    etat.reservations.forEach(r => {
+      if(identiteResa(r) === ancienIdentifiant){ r.utilisateur = utilisateur; delete r.email; }
+    });
+    await enregistrerEtat();
+  }
+
+  session = { ...session, utilisateur };
+  toast(code ? "Votre mot de passe Firebase a été modifié" : "Votre identifiant a été modifié", "ok");
+  rendre();
+}
+
+async function confirmerReservation(){
+  const m = etat.matchs.find(x=>x.id===modale.matchId);
+  const mienne = maResa(m.id);
+  const n = modale.places ?? (mienne ? mienne.places : 1);
+  const max = restantes(m) + (mienne ? mienne.places : 0);
+
+  if(!reservable(m) && !mienne){ toast("Les réservations ne sont pas ouvertes pour ce match","ko"); return; }
+  if(n < 1 || n > max){ toast(`Impossible : ${max} ${motPlaces(max)} au maximum`,"ko"); return; }
+
+  if(mienne){
+    mienne.places = n; mienne.majLe = new Date().toISOString();
+    toast(`Réservation modifiée : ${n} ${motPlaces(n)}`, "ok");
+  } else {
+    etat.reservations.push({
+      id:"r"+Date.now()+Math.random().toString(36).slice(2,6),
+      matchId:m.id, utilisateur:session.utilisateur, nom:session.nom,
+      places:n, creeLe:new Date().toISOString(),
+    });
+    toast(`${n} ${motPlaces(n)} réservée${n>1?"s":""} pour ${m.domicile} — ${m.adverse}`, "ok");
+  }
+  await enregistrerEtat();
+  modale = null; rendre();
+}
+
+async function annuler(matchId){
+  const m = etat.matchs.find(x=>x.id===matchId);
+  if(!confirm(`Annuler votre réservation pour ${m.domicile} — ${m.adverse} ?`)) return;
+  etat.reservations = etat.reservations.filter(r => !(r.matchId===matchId && identiteResa(r)===session.utilisateur));
+  await enregistrerEtat();
+  toast("Réservation annulée","ok"); rendre();
+}
+
+async function sauverMatch(){
+  const g = id => document.getElementById(id).value.trim();
+  const donnees = {
+    domicile:g("q-dom"), adverse:g("q-adv"), date:g("q-date"), heure:g("q-heure"),
+    lieu:g("q-lieu"), places:parseInt(g("q-places"),10),
+    ouverture:g("q-ouv"), fermeture:g("q-fer"),
+  };
+  if(!donnees.domicile || !donnees.adverse || !donnees.date || !donnees.heure || !donnees.places){
+    toast("Complétez les équipes, la date, l'heure et le nombre de places","ko"); return;
+  }
+  if(donnees.ouverture && donnees.fermeture && donnees.ouverture >= donnees.fermeture){
+    toast("La fermeture doit être postérieure à l'ouverture","ko"); return;
+  }
+  const existant = modale.match;
+  if(existant){
+    const dejaPrises = prises(existant.id);
+    if(donnees.places < dejaPrises){
+      toast(`${dejaPrises} places sont déjà réservées : impossible de descendre en dessous`,"ko"); return;
+    }
+    Object.assign(existant, donnees);
+    toast("Match modifié","ok");
+  } else {
+    etat.matchs.push({ id:"m"+Date.now(), ferme:false, ...donnees });
+    toast("Match ajouté","ok");
+  }
+  await enregistrerEtat();
+  modale = null; rendre();
+}
+
+function exporterCsv(){
+  const l = [["Match","Date","Heure","Lieu","Nom","Nom d'utilisateur","Places","Total match","Places totales","Restantes","Statut"]];
+  matchsTries().forEach(m => {
+    const rs = resaDuMatch(m.id), st = statut(m).mot;
+    const base = [`${m.domicile} - ${m.adverse}`, m.date, m.heure, m.lieu||""];
+    if(!rs.length){
+      l.push([...base, "(aucune réservation)","","", prises(m.id), m.places, restantes(m), st]);
+    } else {
+      rs.forEach(r => l.push([...base, r.nom, identiteResa(r), r.places, prises(m.id), m.places, restantes(m), st]));
+    }
+  });
+  const csv = "\uFEFF" + l.map(r => r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(";")).join("\r\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], { type:"text/csv;charset=utf-8" }));
+  a.download = `reservations-raf-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click(); URL.revokeObjectURL(a.href);
+  toast("Export CSV téléchargé","ok");
+}
+
+/* ==========================================================================
+   9. DÉMARRAGE + SYNCHRO
+   ========================================================================== */
+(async function demarrer(){
+  etat = await chargerEtat();
+  try{
+    const {auth,sdk} = await firebasePret;
+    const utilisateurFirebase = await new Promise(resolve => {
+      const arreter = sdk.onAuthStateChanged(auth, user => { arreter(); resolve(user); }, ()=>resolve(null));
+    });
+    if(utilisateurFirebase?.email){
+      const c = tousLesComptes().find(x => emailFirebase(x.id).toLowerCase() === utilisateurFirebase.email.toLowerCase());
+      if(c) session = { compteId:c.id, utilisateur:c.utilisateur, nom:c.nom, role:c.role };
+    }
+  }catch(e){
+    console.error("[Tribune RAF] Initialisation Firebase :",e);
+    erreurConnexion = "Firebase Authentication est indisponible. Vérifiez votre connexion internet.";
+  }
+  rendre();
+
+  // rafraîchissement du statut (À venir → Ouvert → Fermé) et des places
+  setInterval(async ()=>{
+    if(!session || modale) return;
+    const actif = document.activeElement;
+    const saisieEnCours = actif && ["INPUT","SELECT","TEXTAREA"].includes(actif.tagName);
+    if(saisieEnCours) return;
+    if(MODE_PARTAGE){
+      const frais = await chargerEtat();
+      if(JSON.stringify(frais) !== JSON.stringify(etat)){
+        etat = frais;
+        const c = tousLesComptes().find(x=>x.id===session.compteId);
+        if(c) session = { compteId:c.id, utilisateur:c.utilisateur, nom:c.nom, role:c.role };
+        rendre(); return;
+      }
+      return;
+    }
+    rendre();
+  }, CONFIG.rafraichissementSecondes * 1000);
 })();
 </script>
+
+<style id="raf-modern-theme">
+/* Refonte 2026 — identité RAF jaune & rouge */
+:root{
+  --rouge:#d9162f;
+  --rouge-sombre:#a90820;
+  --jaune:#ffd51e;
+  --jaune-doux:#fff3a6;
+  --noir:#17130e;
+  --anthracite:#29231c;
+  --gris:#766e64;
+  --gris-clair:#f6f2e9;
+  --bord:#e5ded1;
+  --blanc:#fffdf8;
+  --vert:#16724a;
+  --ambre:#9b6500;
+  --r:20px;
+  --ombre:0 18px 50px -30px rgba(39,28,12,.35),0 3px 10px rgba(39,28,12,.05);
+}
+body{
+  background:
+    radial-gradient(circle at 8% 0,rgba(255,213,30,.2),transparent 26rem),
+    linear-gradient(180deg,#fffdf8 0,#f6f2e9 45rem);
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;z-index:-1;
+  background-image:linear-gradient(rgba(23,19,14,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(23,19,14,.11) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:linear-gradient(to bottom,black,transparent 70%);
+}
+.rayures{height:8px;background:linear-gradient(90deg,var(--jaune) 0 58%,var(--rouge) 58%)}
+.entete{
+  background:rgba(255,253,248,.93);color:var(--noir);border-bottom:1px solid rgba(151,132,99,.18);
+  backdrop-filter:blur(18px);box-shadow:0 8px 34px rgba(43,30,12,.06)
+}
+.entete::before{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--jaune) 0 70%,var(--rouge) 70%)}
+.entete-in{max-width:1240px;padding:12px 28px;gap:22px}
+.ecusson{
+  width:42px;height:48px;background:var(--rouge);color:#fff;border:3px solid var(--jaune);
+  box-shadow:0 0 0 2px var(--rouge),0 7px 18px rgba(217,22,47,.22)
+}
+.ecusson.ecusson-officiel{background:transparent;border:0;box-shadow:none;clip-path:none;padding:0;display:block}
+.ecusson-officiel img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(70,20,20,.18))}
+.logo b{font-size:20px;color:var(--noir);letter-spacing:.8px}
+.logo span{color:var(--gris);letter-spacing:1.4px}
+.onglets{background:#f0eadf;padding:5px;border-radius:999px;gap:3px}
+.onglets button{color:var(--gris);padding:8px 16px;border-radius:999px;font-weight:600}
+.onglets button:hover{color:var(--rouge)}
+.onglets button[aria-current="true"]{background:var(--rouge);color:#fff;box-shadow:0 6px 16px rgba(217,22,47,.24)}
+.qui em{color:var(--anthracite);font-weight:600}
+.badge-admin{background:var(--jaune);color:var(--noir);border-radius:999px;padding:3px 8px}
+.lien-quitter{color:var(--rouge);text-decoration:none;font-weight:700}
+.lien-quitter:hover{color:var(--rouge-sombre)}
+.page{max-width:1240px;padding:34px 28px 90px}
+.hero-raf{
+  min-height:320px;border-radius:28px;padding:42px 48px;margin:0 0 22px;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:space-between;gap:40px;color:#fff;
+  background:var(--rouge);box-shadow:0 30px 70px -36px rgba(169,8,32,.7)
+}
+.hero-raf::before{
+  content:"";position:absolute;width:460px;height:460px;border:72px solid var(--jaune);border-radius:50%;
+  right:-85px;top:-180px;opacity:.98
+}
+.hero-raf::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--jaune)
+}
+.hero-texte{position:relative;z-index:1;max-width:650px}
+.hero-surtitre{display:inline-flex;background:var(--jaune);color:var(--noir);padding:6px 12px;border-radius:999px;font-family:var(--data);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:18px}
+.hero-raf h1{font-family:var(--display);font-size:clamp(38px,5.4vw,68px);line-height:.98;text-transform:uppercase;letter-spacing:-1px}
+.hero-raf h1 em{font-style:normal;color:var(--jaune)}
+.hero-raf p{font-size:17px;max-width:560px;margin-top:18px;color:rgba(255,255,255,.82)}
+.hero-score{position:relative;z-index:1;width:190px;aspect-ratio:1;flex:none;border-radius:50%;background:var(--jaune);color:var(--noir);display:grid;place-content:center;text-align:center;transform:rotate(5deg);box-shadow:0 0 0 10px rgba(255,213,30,.16)}
+.hero-logo{display:block;width:112px;height:112px;object-fit:contain;margin:0 auto 5px;filter:drop-shadow(0 8px 10px rgba(80,20,20,.18))}
+.hero-score span,.hero-score small{font-family:var(--display);text-transform:uppercase;letter-spacing:2px}
+.hero-score span{font-size:14px}
+.hero-score strong{font-family:var(--display);font-size:54px;line-height:.95;color:var(--rouge)}
+.hero-score small{font-size:9px;margin-top:6px;font-weight:700}
+.bandeau{border:1px solid rgba(151,132,99,.2);border-radius:15px;background:rgba(255,255,255,.72);box-shadow:none;padding:13px 16px}
+.titre-section{font-size:14px;color:var(--noir);margin:38px 0 17px;letter-spacing:1.7px}
+.titre-section::before{content:"";width:10px;height:10px;background:var(--rouge);border-radius:50%;box-shadow:15px 0 0 var(--jaune);margin-right:13px}
+.titre-section::after{background:linear-gradient(90deg,var(--bord),transparent)}
+.grille{gap:20px;grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}
+.match{border:1px solid rgba(151,132,99,.22);border-radius:22px;box-shadow:var(--ombre);background:rgba(255,253,248,.96);transition:transform .22s ease,box-shadow .22s ease}
+.match:hover{transform:translateY(-4px);box-shadow:0 24px 55px -30px rgba(39,28,12,.48)}
+.match-haut{padding:22px 22px 18px;border-bottom:1px solid var(--bord)}
+.match-haut::before{left:22px;top:auto;bottom:-2px;width:58px;height:4px;border-radius:4px;background:var(--jaune)}
+.match.est-ouvert .match-haut::before{background:var(--rouge)}
+.affiche{font-size:25px;letter-spacing:.1px}
+.affiche i{color:var(--rouge);margin:0 6px}
+.quand{margin-top:9px;color:var(--anthracite)}
+.etat{border-radius:999px;padding:5px 10px;font-weight:700}
+.etat.ouvert{background:#dff5e9;color:#11613e}
+.etat.avenir{background:var(--jaune-doux);color:#6d5200}
+.compteur{padding:18px 22px;background:#fbf8f1}
+.seg{height:12px;border-radius:999px;background:#e3dccf}
+.seg.libre{background:var(--jaune);box-shadow:inset 0 -2px 0 rgba(0,0,0,.08)}
+.seg.libre.chaud{background:var(--rouge)}
+.reservataires{padding:6px 22px 0}
+.match-bas{padding:16px 22px 20px}
+.btn{border-radius:12px;padding:12px 19px;font-weight:600;transition:transform .16s ease,box-shadow .16s ease,background .16s ease}
+.btn:hover:not(:disabled){transform:translateY(-1px)}
+.btn-plein{background:var(--rouge);box-shadow:0 8px 18px rgba(217,22,47,.18)}
+.btn-plein:hover{background:var(--rouge-sombre);box-shadow:0 10px 22px rgba(217,22,47,.3)}
+.btn-noir{background:var(--noir)}
+.btn-clair{background:#fffdf8;border-color:#dcd3c4}
+.connexion{padding:32px;background:var(--rouge);position:relative;overflow:hidden}
+.connexion::before{content:"";position:absolute;width:720px;height:720px;border:130px solid var(--jaune);border-radius:50%;right:-300px;top:-350px}
+.connexion::after{content:"RAF";position:absolute;left:-18px;bottom:-105px;font-family:var(--display);font-weight:700;font-size:310px;line-height:1;color:rgba(255,213,30,.11);letter-spacing:-18px}
+.connexion-boite{position:relative;z-index:1;max-width:460px;border-radius:26px;box-shadow:0 40px 90px -30px rgba(74,0,13,.72);border:1px solid rgba(255,255,255,.3)}
+.connexion-haut{background:var(--noir);padding:36px 34px 30px}
+.connexion-haut .ecusson{width:60px;height:68px;font-size:22px}
+.connexion-haut h1{font-size:34px;letter-spacing:1px;margin-top:18px}
+.connexion-haut p{color:var(--jaune);font-weight:700}
+.connexion-corps{padding:32px 34px 34px;gap:18px;background:#fffdf8}
+label{color:var(--anthracite);font-weight:600}
+input,select,textarea{padding:13px 14px;border-radius:11px;background:#fff;border-color:#dcd3c4}
+input:focus,select:focus{border-color:var(--rouge);box-shadow:0 0 0 4px rgba(217,22,47,.12)}
+.champ-code{position:relative}
+.champ-code input{padding-right:62px}
+.bascule-code{position:absolute;right:4px;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:40px;padding:0;border:0;border-radius:8px;color:#777067;background:transparent;display:grid;place-items:center;box-shadow:none}
+.bascule-code:hover{background:transparent;color:var(--rouge)}
+.bascule-code:focus-visible{outline:3px solid rgba(217,22,47,.3);outline-offset:1px}
+.icone-oeil{position:relative;display:block;width:23px;height:15px;border:2px solid currentColor;border-radius:70% 15% 70% 15%;transform:rotate(45deg)}
+.icone-oeil::after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:currentColor;left:50%;top:50%;transform:translate(-50%,-50%)}
+.bascule-code.est-visible::after{content:"";position:absolute;width:27px;height:2px;border-radius:2px;background:currentColor;transform:rotate(-45deg);box-shadow:0 0 0 2px #fff}
+.modale{border-radius:24px;background:#fffdf8;border:1px solid rgba(255,255,255,.5)}
+.modale-haut{padding:24px 26px;background:var(--noir);color:#fff;border:0}
+.modale-haut p{color:var(--jaune)}
+.modale-corps{padding:26px}
+.modale-bas{padding:0 26px 26px}
+.choix button{border-radius:12px;background:#fffdf8}
+.choix button[aria-pressed="true"]{background:var(--jaune);border-color:var(--jaune);color:var(--noir);box-shadow:0 7px 18px rgba(255,213,30,.24)}
+.choix button[aria-pressed="true"] small{color:var(--anthracite)}
+.stat{border-radius:18px;background:#fffdf8;padding:20px;box-shadow:var(--ombre)}
+.stat.accent{background:var(--rouge)}
+.stat.accent span{color:rgba(255,255,255,.72)}
+.stat.accent b{color:var(--jaune)}
+.tableau-boite{border-radius:18px;border-color:rgba(151,132,99,.22);box-shadow:var(--ombre);background:#fffdf8}
+thead{background:var(--noir);color:#fff}
+th{color:var(--jaune)}
+.toast{border-radius:14px;box-shadow:0 20px 45px -20px rgba(0,0,0,.5)}
+.compte-carte{max-width:720px;margin:20px auto;background:#fffdf8;border:1px solid rgba(151,132,99,.22);border-radius:26px;padding:38px;box-shadow:var(--ombre)}
+.compte-carte h1{font-family:var(--display);font-size:38px;line-height:1;text-transform:uppercase;margin:8px 0 14px}
+.compte-carte>p{color:var(--gris);font-size:16px;max-width:610px;margin-bottom:28px}
+.form-compte{display:grid;gap:20px}
+.form-compte>.btn{justify-self:start}
+.identifiant-actuel{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 20px;border-radius:15px;background:#f6f2e9}
+.identifiant-actuel span{font-family:var(--display);font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gris)}
+.identifiant-actuel strong{font-family:var(--data);font-size:18px;color:var(--rouge)}
+.compte-proprietaire{border-top:8px solid var(--jaune);background:linear-gradient(145deg,#fffdf8,#fff8d2)}
+.bandeau-proprietaire{background:#fff8d2;border-color:#ead25b;margin-bottom:14px}
+.comptes-boite{margin-bottom:34px}
+.acces-code{font-family:var(--data);font-size:13px;background:#f1ece2;padding:6px 9px;border-radius:7px;white-space:nowrap}
+@media(max-width:820px){
+  .entete-in{padding:10px 16px}.onglets{order:3;width:100%;overflow:auto}.onglets button{flex:1;white-space:nowrap}
+  .qui em{display:none}.page{padding:22px 16px 70px}.hero-raf{padding:34px 28px;min-height:290px}.hero-score{width:135px}.hero-logo{width:82px;height:82px}
+}
+@media(max-width:600px){
+  .logo span,.badge-admin{display:none}.lien-quitter{font-size:0}.lien-quitter::after{content:"Quitter";font-size:12px}
+  .hero-raf{padding:30px 24px 34px;display:block;min-height:320px}.hero-raf h1{font-size:40px}.hero-raf p{font-size:15px;padding-right:56px}.hero-score{position:absolute;right:-22px;bottom:-20px;width:125px}.hero-logo{width:76px;height:76px}
+  .grille{grid-template-columns:1fr}.match{border-radius:18px}.connexion{padding:18px}.connexion-boite{max-width:420px}.connexion-corps{padding:26px 22px}.connexion-haut{padding:28px 22px 24px}
+  .compte-carte{padding:26px 20px;border-radius:20px}.compte-carte h1{font-size:32px}.identifiant-actuel{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){.match,.btn{transition:none}.match:hover{transform:none}}
+</style>
+
+<!-- ==========================================================================
+     10. INSTALLATION
+     ==========================================================================
+
+     A. METTRE EN LIGNE SUR GITHUB (2 minutes, gratuit)
+     -------------------------------------------------
+     1. github.com → New repository → nom : "tribune-raf" → Public → Create.
+     2. "uploading an existing file" → glissez ce fichier index.html → Commit.
+     3. Settings → Pages → Source : "Deploy from a branch" → Branch : main / (root) → Save.
+     4. Une minute plus tard le site est en ligne :
+        https://VOTRE-PSEUDO.github.io/tribune-raf/
+     Pour modifier la config ensuite : cliquez sur index.html → l'icône crayon → Commit.
+
+     B. VOS COMPTES
+     ----------------
+     Les identifiants et rôles sont déclarés dans CONFIG, sans aucun mot de passe.
+     Les mots de passe sont gérés et protégés par Firebase Authentication.
+     Consultez le fichier CONFIGURATION-FIREBASE-RAF.md pour créer les comptes.
+
+     C. MODE PARTAGÉ : QUE TOUT LE MONDE VOIE LES MÊMES RÉSERVATIONS
+     ---------------------------------------------------------------
+     Sans cette étape, chaque personne ne voit que ses propres réservations
+     (les données restent dans son navigateur). Pour un vrai partage :
+
+     1. supabase.com → Start your project (gratuit, sans carte bancaire).
+     2. New project → notez la région Europe (Frankfurt/Paris).
+     3. Onglet "SQL Editor" → New query → collez ceci → Run :
+
+          create table raf_state (
+            id   int primary key,
+            data jsonb not null default '{}'::jsonb
+          );
+          alter table raf_state enable row level security;
+          create policy "lecture publique"  on raf_state for select using (true);
+          create policy "ecriture publique" on raf_state for insert with check (true);
+          create policy "maj publique"      on raf_state for update using (true);
+          insert into raf_state (id, data) values (1, '{"matchs":[],"reservations":[]}');
+
+     4. Settings → API → copiez "Project URL" et la clé "anon public".
+     5. Collez-les dans CONFIG.supabaseUrl et CONFIG.supabaseKey en haut du fichier.
+     6. Commit sur GitHub. Terminé : tous les comptes partagent les mêmes données,
+        rafraîchies toutes les 8 secondes.
+
+     Note : la clé "anon" est faite pour être publique, mais avec ces règles RLS
+     toute personne connaissant l'URL du site pourrait écrire dans la table.
+     Là encore : suffisant pour un usage privé entre 8 personnes.
+
+     D. CE QUE FAIT L'APPLI
+     ----------------------
+     · Connexion réservée aux noms d'utilisateur de CONFIG, session conservée.
+     · Matchs groupés par mois, statut calculé en direct :
+       À venir (avant l'ouverture) → Ouvert → Fermé (après la fermeture ou
+       fermeture manuelle admin) → Complet (0 place restante).
+     · Compteur à segments façon tribune + alerte rouge sous 2 places restantes.
+     · Réservation par modale, quantité plafonnée aux places réellement libres.
+     · Une seule réservation par personne et par match : le second clic modifie.
+     · Modification, annulation, historique (matchs passés séparés).
+     · Admin : ajout / modification / suppression de match, ouverture et fermeture
+       manuelles, vidage par match, réinitialisation globale, liste complète des
+       réservations avec totaux, statistiques, export CSV (séparateur ";" + BOM,
+       s'ouvre directement dans Excel français).
+     · Responsive PC / tablette / smartphone, animations légères, notifications,
+       navigation clavier, prefers-reduced-motion respecté.
+
+     E. CALENDRIER 2026-2027
+     -----------------------
+     Les 4 matchs pré-remplis sont des exemples : le calendrier officiel n'était
+     pas publié quand ce fichier a été écrit. Ajoutez les vraies rencontres depuis
+     le tableau de bord (elles sont sauvegardées), ou remplacez directement la
+     liste MATCHS_INITIAUX en haut du fichier.
+     ========================================================================== -->
 </body>
 </html>
